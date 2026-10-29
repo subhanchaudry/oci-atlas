@@ -1,0 +1,44 @@
+name: Installation help
+description: Get help installing, updating, or discovering OCI Atlas.
+title: "[Installation] "
+body:
+  - type: markdown
+    attributes:
+      value: "Share sanitized details only. Omit credentials, configuration files, customer identifiers, and private endpoints."
+  - type: input
+    id: version
+    attributes:
+      label: OCI Atlas version
+      placeholder: "For example, 0.2.1"
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: Client and version
+      placeholder: "For example, Codex CLI and its version"
+    validations:
+      required: true
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating system
+  - type: dropdown
+    id: route
+    attributes:
+      label: Installation route
+      options:
+        - GitHub marketplace
+        - Local marketplace
+        - Workspace import
+        - Release ZIP
+        - Portable skill
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Steps, expected result, and actual result
+      description: Include the step that failed and the sanitized error, if any.
+    validations:
+      required: true

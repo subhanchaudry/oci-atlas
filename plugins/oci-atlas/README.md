@@ -1,17 +1,38 @@
-# OCI Atlas 0.2.0
+# OCI Atlas
 
-Packaged Oracle Cloud Infrastructure knowledge for ChatGPT and Codex.
+**Oracle Cloud expertise for ChatGPT and Codex.**
 
-This self-contained plugin includes one [OCI Atlas skill](skills/oci-atlas/SKILL.md) with 36 references: access and service selection, eight knowledge areas, 15 service guides, three troubleshooting guides, and eight recipes. It uses existing host tools for any requested execution and requires no hosted backend or custom MCP server.
+Understand OCI services, choose architectures, work with resources, and troubleshoot issues with focused guidance grounded in Oracle documentation.
 
-Source, installation instructions, contribution guidance and versioned downloads are in [subhanchaudry/oci-atlas](https://github.com/subhanchaudry/oci-atlas). The packaged [content catalog](skills/oci-atlas/catalog.json) records aliases, sources and review dates; read relevant guides on demand rather than loading the whole catalog.
+**Version 0.2.1 · 36 references · 15 service guides · 8 recipes**
 
-For a supported account package-creation workflow, import this ZIP as a skills-only plugin while preserving `plugin.json` and the complete `skills` directory. For GitHub/local marketplace installation, use the source repository's marketplace and installation guide. A generic chat attachment does not automatically install a plugin.
+## Get started
 
-After installation, ask: “Use OCI Atlas to explain how compartments, VCNs, and IAM fit together. Do not connect to OCI.” For setup, invoke the plugin's onboarding action or ask OCI Atlas to help configure an available OCI access route.
+For Codex CLI with plugin support:
 
-The host must provide any terminal/browser access, and the customer supplies OCI authorization. OCI Atlas adds no credential store, background service or telemetry. The host can still process relevant task data.
+```sh
+codex plugin marketplace add subhanchaudry/oci-atlas --ref v0.2.1
+codex plugin add oci-atlas@oci-atlas-marketplace
+```
 
-Examples are based on documentation and have not been run against a live tenancy. Host installation and OCI browser interaction have not been verified end to end. Consult current sources for changing prices, model IDs, regional availability and exact parameters.
+Start a new session and ask:
 
-UPL 1.0. Community project; no Oracle endorsement is implied. See [LICENSE.txt](LICENSE.txt) and [NOTICE.md](NOTICE.md).
+> Use OCI Atlas to explain how compartments, VCNs, and IAM fit together.
+
+For ChatGPT installation and release ZIP workflows, use the [installation guide](https://github.com/subhanchaudry/oci-atlas/blob/v0.2.1/docs/INSTALL.md). Keep `plugin.json` and the complete `skills` directory together when importing this package through a supported plugin-creation flow.
+
+## Explore OCI
+
+The [OCI Atlas skill](skills/oci-atlas/SKILL.md) routes to tenancy foundations, networking, Compute and storage, databases and data, AI and ML, application platforms, operations and security, and infrastructure architecture. It reads relevant guides on demand.
+
+Recipes connect services into private applications, database access, serverless APIs, private OKE, data ingestion, RAG, and the predictive model lifecycle. See the [full presentation and diagrams](https://github.com/subhanchaudry/oci-atlas) or [content catalog](https://github.com/subhanchaudry/oci-atlas/blob/v0.2.1/docs/CONTENT.md).
+
+## Work with your environment
+
+Knowledge questions require no OCI login. Resource operations use the host's available OCI CLI, Console, or Cloud Shell access and your OCI permissions. OCI Atlas requires no hosted backend or separate OpenAI API key. Keep authentication material in your normal OCI and host authentication flows.
+
+Find more [example prompts](https://github.com/subhanchaudry/oci-atlas/blob/v0.2.1/docs/EXAMPLES.md), [support](https://github.com/subhanchaudry/oci-atlas/blob/v0.2.1/SUPPORT.md), and [contribution guidance](https://github.com/subhanchaudry/oci-atlas/blob/v0.2.1/CONTRIBUTING.md) in the source repository.
+
+---
+
+Released under [UPL 1.0](LICENSE.txt). OCI Atlas is a community project; Oracle and OpenAI endorsement is not implied. See [attribution and notices](NOTICE.md).

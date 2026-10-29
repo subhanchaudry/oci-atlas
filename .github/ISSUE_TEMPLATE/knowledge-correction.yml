@@ -1,0 +1,32 @@
+name: Knowledge correction
+description: Correct or clarify an OCI guide or workflow.
+title: "[Knowledge] "
+body:
+  - type: markdown
+    attributes:
+      value: "Link public documentation and omit customer-specific or sensitive information."
+  - type: input
+    id: guide
+    attributes:
+      label: Guide and section
+      description: Link the guide or give its filename and section title.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: OCI Atlas version or commit
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Explain the current wording, the change needed, and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Official sources
+      description: Include Oracle documentation links and relevant service/version context.
+    validations:
+      required: true

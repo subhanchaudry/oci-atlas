@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 — 2026-10-29
+
+- Redesigned the project README with an original compass banner, two architecture/workflow diagrams, a concise quick start, and linked OCI coverage.
+- Refined both READMEs around using OCI Atlas; moved release evidence and development details to supporting documentation.
+- Updated portable-skill installation for the current `~/.agents/skills` location and extracted release ZIPs.
+- Added community support guidance and issue forms for installation help and knowledge corrections.
+- Retained the 36-reference collection, plugin identity, catalog, and skills-only architecture.
+
 ## 0.2.0 — 2026-10-29
 
 - Added 15 focused service guides, including AI Data Platform workspaces/catalogs, OKE workload identity, Generative AI routing, data pipelines, and secret/key lifecycle.
