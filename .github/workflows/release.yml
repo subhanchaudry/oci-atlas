@@ -1,0 +1,44 @@
+name: Publish OCI Atlas release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Check release metadata and prepare notes
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: python tools/release.py --tag "$RELEASE_TAG" --notes-file "$RUNNER_TEMP/release-notes.md"
+      - name: Check source and build archive
+        run: |
+          python tools/catalog.py --check
+          python tools/check.py
+          python tools/package.py
+      - name: Publish matching tag and assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" dist/*.zip dist/*.sha256 \
+            --verify-tag --latest --title "OCI Atlas $RELEASE_TAG" \
+            --notes-file "$RUNNER_TEMP/release-notes.md"

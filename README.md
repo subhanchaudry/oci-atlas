@@ -6,7 +6,7 @@
 
 Understand OCI services, choose architectures, and work through resource tasks with focused guidance grounded in Oracle documentation. OCI Atlas brings service relationships, practical workflows, and common gotchas into the conversation when they matter.
 
-**[Get started](#quick-start)** · **[Download v0.3.0](https://github.com/subhanchaudry/oci-atlas/releases/tag/v0.3.0)** · **[Explore the guides](docs/CONTENT.md)**
+**[Get started](docs/GETTING-STARTED.md)** · **[Download v1.0.0](https://github.com/subhanchaudry/oci-atlas/releases/tag/v1.0.0)** · **[Explore the guides](docs/CONTENT.md)** · **[Walk through examples](docs/WALKTHROUGHS.md)**
 
 ## What you can do
 
@@ -39,15 +39,15 @@ Knowledge questions require no OCI login. Resource operations use your available
 For Codex CLI with plugin support:
 
 ```sh
-codex plugin marketplace add subhanchaudry/oci-atlas --ref v0.3.0
+codex plugin marketplace add subhanchaudry/oci-atlas --ref v1.0.0
 codex plugin add oci-atlas@oci-atlas-marketplace
 ```
 
 Start a new session, then ask:
 
-> Use OCI Atlas to explain how compartments, VCNs, and IAM fit together.
+> Use OCI Atlas to explain how compartments, VCNs, and IAM fit together. Use packaged guidance only; do not connect to OCI.
 
-For ChatGPT desktop, workspace imports, release ZIPs, and the portable skill route, follow the **[installation guide](docs/INSTALL.md)**. Available installation and execution routes depend on your client and workspace.
+For ChatGPT desktop, workspace imports, release ZIPs, and the portable skill route, follow the **[installation guide](docs/INSTALL.md)**. Available installation and execution routes depend on your client and workspace. Then choose a learning, architecture, inspection, or troubleshooting path in **[Start with OCI Atlas](docs/GETTING-STARTED.md)**.
 
 ## OCI coverage
 
@@ -110,10 +110,14 @@ The database private endpoint and service gateway provide separate paths to the 
 
 > My OKE workload is in ImagePullBackOff. Help me inspect the image reference, registry access, and network path.
 
+Explore three [illustrated walkthroughs](docs/WALKTHROUGHS.md): a containerized API, a private database application, and RAG over application documents. Each connects service choices, prerequisites, identities, and operating responsibilities.
+
 ## Explore and contribute
 
 | Resource | Where to go |
 | --- | --- |
+| Choose your first task | [Getting started](docs/GETTING-STARTED.md) |
+| Illustrated application designs | [Walkthroughs](docs/WALKTHROUGHS.md) |
 | Installation and access routes | [Installation guide](docs/INSTALL.md) |
 | Service guides and recipes | [Content catalog](docs/CONTENT.md) |
 | More ways to use OCI Atlas | [Example prompts](docs/EXAMPLES.md) |
@@ -122,7 +126,7 @@ The database private endpoint and service gateway provide separate paths to the 
 | Source review and releases | [Maintenance](docs/MAINTENANCE.md) |
 | Release history | [Changelog](CHANGELOG.md) |
 
-Guidance links to its authoritative sources and records when it was reviewed. Keep current service availability, model choices, prices, and exact command parameters tied to Oracle's documentation and your installed tools.
+The v1 series keeps the plugin identity and existing guide paths stable, with versioned releases for updates. Guidance links to its authoritative sources and records when it was reviewed. Keep current service availability, model choices, prices, and exact command parameters tied to Oracle's documentation and your installed tools.
 
 ---
 

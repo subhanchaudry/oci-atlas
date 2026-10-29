@@ -38,6 +38,14 @@ For on-premises callers, follow [hybrid routing and DNS](service-hybrid-connecti
 
 For recent attribute changes, inspect [ZPR](service-zpr.md) and applicable network rules; for inspected flows, check [Network Firewall](service-network-firewall.md) routing symmetry and policy. For a web denial inspect [WAF](service-waf.md) logs; for unhealthy backends inspect [load-balancer health](service-load-balancing.md). Preserve TLS hostname/trust in [Bastion](service-bastion.md) tunnels and follow the chosen [database engine](databases-data.md) rather than assuming every private database uses an Autonomous wallet.
 
+## Report the diagnosis
+
+Separate **observed evidence**, **plausible causes**, **the next discriminating check**, and **a correction supported by the result**. Use a short paragraph or table according to the task. Do not present an unperformed check as evidence or make a change merely to complete the pattern.
+
+For a hypothetical timeout: “The only observation supplied is a timeout from the job runtime; the cause remains unconfirmed. Check hostname resolution there first. If it selects the intended private address, inspect forward/return routing and effective security rules next. Propose a specific rule correction only after identifying the blocked flow.” Keep TLS and SQL authorization separate from transport reachability.
+
+For other failure types, use [access diagnosis](troubleshoot-access.md) or [workload diagnosis](troubleshoot-workloads.md) and the same evidence-first reporting approach.
+
 ## Sources
 
 - [OCI network components](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)

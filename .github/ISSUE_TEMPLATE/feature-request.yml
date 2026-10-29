@@ -1,0 +1,26 @@
+name: Feature request
+description: Suggest a useful OCI workflow or improvement to OCI Atlas.
+title: "[Feature] "
+body:
+  - type: markdown
+    attributes:
+      value: "Describe the user need with sanitized examples. Keep credentials, customer data, and private infrastructure details out of this issue."
+  - type: textarea
+    id: goal
+    attributes:
+      label: What are you trying to accomplish?
+      description: Explain the workload or task and what existing guidance misses.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested improvement
+      description: Describe the guide, workflow, or behavior that would help.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Relevant sources and alternatives
+      description: Link public Oracle documentation and related OCI Atlas guidance, if available.

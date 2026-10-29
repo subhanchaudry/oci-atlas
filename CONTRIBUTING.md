@@ -30,4 +30,8 @@ The catalog owns each guide's title, review date, aliases, source titles and URL
 
 ## Changes and releases
 
-Open a focused change describing the knowledge gap, sources consulted, guides affected, and checks performed. Update the changelog. Follow [maintenance and releases](docs/MAINTENANCE.md) for versioning and packaging. Report credentials or sensitive disclosures through the repository host's private reporting mechanism if one is enabled; do not include secrets in a public issue.
+Open a focused pull request using the supplied template. Describe the knowledge gap, sources consulted, guides affected, and checks actually performed. Update the changelog. Use the feature-request form for new workflows and follow the [code of conduct](CODE_OF_CONDUCT.md).
+
+Follow [maintenance and releases](docs/MAINTENANCE.md) for versioning and packaging. In v1, preserve the plugin/skill identity, catalog schema, and existing reference paths. Additive knowledge/workflows use minor releases; corrections use patch releases; incompatible changes require a new major version and migration guidance. Do not bulk-advance review dates.
+
+For vulnerabilities or sensitive disclosures, use the [private reporting route](SUPPORT.md#report-a-security-issue-privately). Do not include credentials or customer data in public issues or pull requests.

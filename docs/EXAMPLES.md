@@ -2,6 +2,8 @@
 
 Use these after installing/enabling OCI Atlas. Replace context descriptions with your own. Prompts requesting resource changes can incur OCI charges; conceptual prompts don't need OCI access.
 
+New to the plugin? Use [Getting started](GETTING-STARTED.md) to choose a path, or explore the [illustrated walkthroughs](WALKTHROUGHS.md) for complete design conversations.
+
 ## Understand and choose
 
 > Use OCI Atlas to explain the difference between compartments, VCNs, subnets, and regions. Show which are resource-management boundaries and which affect network access.

@@ -1,5 +1,33 @@
 # Validation record
 
+## 1.0.0 — 2026-10-29
+
+### Source, package, and publication preparation
+
+- Preserved the 73-reference catalog, its schema, all IDs/paths, 48 service guides, 12 recipes, and UPL 1.0 licensing. The plugin remains 80 files with a 124-line entry skill. Onboarding and illustrated walkthroughs remain repository documentation outside the plugin ZIP.
+- Existing catalog, metadata, local-link, selected sensitive-data-pattern, and archive checks passed. Workflow/issue-form YAML parsed. The new release helper selected only the matching changelog section and rejected mismatched versions, prerelease tags, leading-zero tags, and invalid paths. These are contract checks, not a complete workflow emulator.
+- Oracle documentation was consulted for the three suggested architecture walkthroughs. Review dates on existing service guides were not advanced. The walkthroughs label illustrative responses and designs explicitly rather than claiming deployments.
+- GitHub's Markdown API rendered the README, getting-started guide, and walkthroughs. A local browser preview with Mermaid 12 rendered the two existing README diagrams and all three walkthrough diagrams. The README/banner were visually inspected against light/dark backgrounds; walkthrough flow labels, arrows, and surrounding text were inspected. This preview is distinct from GitHub's own Mermaid implementation.
+- Before publication, a targeted review covered five reachable commits/161 historical blobs, the working files, 166 members from three prior release archives, and 30 log files from seven prior Actions runs. Selected private-key, API-token, OCI identifier, and internal-Oracle-URL patterns produced no matches. File paths/source content and release metadata were also reviewed for customer-specific material. This is a publication-focused review, not a comprehensive security audit. Prior release IDs, publication dates, asset IDs, and digests were captured for preservation checks.
+
+### Fresh installed-skill observations
+
+Codex CLI `0.165.0-alpha.1.2` on macOS installed the local v1.0.0 candidate. A fresh ephemeral session outside the repository used only the installed skill directory in read-only mode for three documentation-only tasks:
+
+| Scenario | Actual observation |
+| --- | --- |
+| Choose a container API runtime | Read service selection and Container Instances/OKE/Functions guides; recommended conditionally, identified availability/scaling inputs, and separated customer operating responsibilities |
+| Design a private database application | Read private application/database recipes and relevant network, IAM, load balancing, Compute, and Object Storage guides; separated HTTPS ingress, private SQL, service-gateway object access, OCI identity, and SQL grants |
+| Diagnose a hypothetical managed-job timeout | Read connectivity guidance; treated the timeout as the only evidence, began with resolution from the actual runtime, and conditioned corrections on the next observation |
+
+The trace contained 13 completed local read commands: `SKILL.md` and 12 distinct references. No model-issued OCI calls, access prechecks, profile/credential reads, external-service calls, or file/resource writes occurred. No demo or production setting was invented. The host attempted normal plugin/MCP initialization and emitted unrelated startup warnings; this was not an offline-host exercise. Final responses were inspected against the actual reads. The optional 30-second live precheck instruction was inspected but not exercised against a tenancy.
+
+### User-reported desktop results and limits
+
+The owner supplied two v0.3.0 desktop conversation outputs: broad onboarding that attempted a slow live read, and a knowledge-only container runtime comparison naming the three focused service guides. These are user-provided observations, not independently captured desktop traces. They informed the v1 conceptual-onboarding and workload-framing refinements; they do not establish a separate ChatGPT account installation or browser/OCI execution compatibility.
+
+Publication evidence—public access, source/tag agreement, workflow outcomes, downloaded asset integrity, private-reporting enablement, installed release pin, and preservation of earlier releases—is recorded in the GitHub release notes. No live OCI provisioning, connection troubleshooting, exhaustive model/service evaluation, hosted execution backend, or public-directory submission was performed.
+
 ## 0.3.0 — 2026-10-29
 
 ### Source, routing, and package

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.0 — 2026-10-29
+
+- Public GitHub launch of OCI Atlas with the complete 73-reference collection, 48 service guides, and 12 recipes.
+- Added four getting-started paths and three illustrated walkthroughs: a containerized API, a private Autonomous Database application, and retrieval-augmented generation.
+- Refined conceptual onboarding, workload-sensitive recommendations, optional connection deadlines, and adaptable architecture/discovery/diagnosis responses.
+- Established v1 compatibility for plugin/skill identity, catalog schema, and existing reference paths; retained UPL 1.0 licensing and community attribution.
+- Added contribution templates, feature requests, community conduct, and private vulnerability reporting guidance.
+- Added tag-triggered publication with tag/manifest agreement, package checks, ZIP, checksum, and changelog-based release notes.
+- Updated pinned installation and update instructions to v1.0.0. No new execution backend, live OCI provisioning, or public plugin-directory submission is included.
+
 ## 0.3.0 — 2026-10-29
 
 - Added 33 focused service guides across networking/security, observability/resilience, databases/migration, GPU/HPC and retrieval, and application/analytics platforms.

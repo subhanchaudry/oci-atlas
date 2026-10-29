@@ -28,20 +28,22 @@ Try a few questions from [examples](EXAMPLES.md), without live writes. Check whe
 python3 tools/catalog.py --check
 python3 tools/check.py
 python3 tools/package.py
-python3 tools/check.py --archive dist/oci-atlas-0.3.0.zip
+python3 tools/check.py --archive dist/oci-atlas-1.0.0.zip
 ```
 
 The checker validates local package structure and content conventions. It doesn't contact OCI, validate every command against a live CLI, fetch all source URLs, or prove host compatibility. The packager uses a fixed ZIP timestamp, refuses unexpected source files, checks archive paths/content, and emits a checksum. Build artifacts are ignored by Git.
 
 ## Version and release
 
-The canonical version is in the plugin manifest. Use SemVer: patch for corrections, minor for additive knowledge/workflows, major for incompatible interface or invocation changes. During 0.x, clearly document changes that affect users. Keep existing skill identifiers and reference paths stable where practical.
+The canonical version is in the plugin manifest. Use SemVer: patch for corrections, minor for additive knowledge/workflows, major for incompatible interface or invocation changes. The v1 series preserves `oci-atlas`, the `oci-atlas-marketplace` source name, the `oci-atlas` skill identity, catalog schema version 1, and all existing reference IDs/paths. Keep these identifiers stable across v1 releases. Incompatible identity/schema/path changes require a new major version and migration guidance. Cloud features and host availability can change independently; this contract does not guarantee universal host support or production certification.
 
 1. Set the version, update the README/version references and add a changelog entry.
 2. Run the commands above and review the archive listing and limitations.
-3. Commit the reviewed source in [subhanchaudry/oci-atlas](https://github.com/subhanchaudry/oci-atlas) and tag the matching version, for example `v0.3.0`.
-4. Attach the ZIP and `.sha256` to that GitHub release. The included GitHub Actions workflow builds downloadable artifacts on pushes, pull requests and manual runs; it doesn't publish a release or submit a plugin automatically.
-5. Test installation when a target host is available, then update compatibility evidence with the exact version, route and observed result. Don't change “not verified” to “verified” from a packaging pass alone.
+3. Commit the reviewed source in [subhanchaudry/oci-atlas](https://github.com/subhanchaudry/oci-atlas) and confirm the main-branch checks. Prepare release notes locally with `python3 tools/release.py --tag v1.0.0 --notes-file /tmp/oci-atlas-release-notes.md`; use the intended version for later releases.
+4. Push an annotated tag matching the manifest version, for example `v1.0.0`. The **Publish OCI Atlas release** workflow validates tag/manifest/changelog agreement, runs the existing checks and packager, then publishes the tag's ZIP and checksum with changelog-based notes. The ordinary check workflow continues building artifacts on pushes, pull requests, and manual runs.
+5. Confirm both workflows, source/tag agreement, and the release asset listing. Download the ZIP/checksum again and verify the digest and archive. Install the pinned release when a target host is available, then record exact versions, routes, and observed results. Do not infer host compatibility from packaging alone.
+
+The publication workflow requires `contents: write` only in its release job and disables persisted checkout credentials. It creates a new release; it does not overwrite previous assets or tags. If a run fails after creating a release, inspect the actual published state before retrying. Recover only the affected release explicitly; do not delete historical releases or use automatic asset clobbering. Public-directory submission is separate and is not performed by this workflow.
 
 Use a pinned tag/commit for customers who need reproducible installs. Workspace imports can follow a branch and sync changes, so document releases before advancing the recommended version. No public OpenAI directory submission is part of this workflow.
 

@@ -15,13 +15,15 @@ OCI Atlas supplies knowledge and workflow instructions. A plugin install does no
 
 ## Onboard without collecting secrets
 
-1. Identify whether the customer wants knowledge, a design, or live work. For knowledge, start answering immediately.
+1. Identify whether the customer wants knowledge, a design, or live work. For knowledge/design questions, start answering immediately without profile or credential inspection. For an ambiguous welcome request, explain the relevant concepts first and clarify the workload or desired inspection scope only where it changes the next step.
 2. For live work, detect available tools. If the CLI exists, inspect its version/help and ask for a profile only if the intended one is not already clear. Read only the profile metadata needed to determine context; don't print entire credential files.
 3. Use an existing authenticated profile. For interactive session setup, OCI supports `oci session authenticate`; the user signs in through the browser. This writes local session configuration, so do it only as part of requested setup. For session-token profiles, pass `--auth security_token`; don't silently switch to an API key when the token expires.
 4. Confirm the tenancy and target context with a harmless scoped read, such as region subscriptions or the requested resource list. Listing public region names alone does not prove access to a customer's resources or identify the active caller.
 5. For browser access, let the user sign in in the host's supported sign-in surface. Check the tenancy, current region, compartment filter, and relevant resource detail page. Never copy browser cookies or tokens into a CLI profile.
 
 Cloud Shell already has a CLI configured for the signed-in OCI user. Preserve its supplied authentication environment rather than applying a local API-key profile over it. The Console region when Cloud Shell starts affects its configuration; inspect the actual context after switching regions. A local laptop normally has no direct route to private OCI endpoints merely because it is signed in.
+
+An optional connection precheck gets one attempt and a 30-second overall deadline when the host can enforce one. Use supported timeout/retry controls or a host-level deadline; do not claim that per-request timeout flags alone bound an entire retried command. If it fails or expires, stop the precheck, distinguish configured metadata from confirmed access, and continue conceptual guidance. Do not automatically reauthenticate or switch credentials. Requested inventory or operational jobs can need their own appropriate time budgets.
 
 ## CLI example conventions
 
@@ -42,6 +44,17 @@ Use JSON results for structured reasoning. Keep list results bounded to the requ
 ## Operational completion
 
 Read before changing state, identify dependencies and IaC ownership, then execute within the customer's request. Use supported waiters/work requests, re-read the resource, and report its actual state. A transport timeout can leave a successful creation behind: inspect before retrying. A CLI exit code of zero is not application readiness. Keep CLI request IDs and sanitized error details when diagnosing failures.
+
+## A useful resource-discovery response
+
+Adapt this pattern to the request rather than forcing a report for a simple lookup:
+
+- **Inspected scope:** selected identity/profile, tenancy, regions, compartments, services, and pagination actually used. Omit sensitive authentication material.
+- **Observed resources:** identifiers, relevant lifecycle state, and relationships supported by returned data.
+- **Visibility limits:** missing permissions, unsupported/indexed search coverage, unqueried regions/services, or incomplete pagination. An empty list is not proof that a tenancy is empty.
+- **Next step:** the smallest useful follow-up within the user's goal. Keep suggested reads/changes distinct from operations completed.
+
+For an illustrative response: “I inspected the selected compartment's Compute instances in the chosen region using the selected profile. The returned instances use these subnets and disks. This is not a tenancy-wide inventory; other regions, services, and inaccessible compartments were not inspected.” Fill such statements only with actual observations.
 
 ## Sources
 

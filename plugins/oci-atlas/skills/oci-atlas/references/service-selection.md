@@ -61,6 +61,16 @@ For retrieval, compare [Oracle AI Vector Search](service-ai-vector-search.md) wh
 
 State the recommended path, the deciding constraints, dependent services, and one or two material alternatives. Identify assumptions and current details to verify. Include a small resource/caller/data-flow map when it clarifies the design; avoid a long catalog of equally weighted options. Use the relevant focused guide for execution detail.
 
+An adaptable architecture response:
+
+1. **Recommendation:** the starting design and the workload it serves.
+2. **Deciding constraints:** requirements that support it and missing inputs that could change the choice. Treat demo/production intent as unknown unless established.
+3. **Dependencies and boundaries:** runtime, network/data flow, identities, data permissions, and existing services to reuse.
+4. **Responsibilities:** what OCI manages and what the customer operates, including application lifecycle and recovery where relevant.
+5. **Next step:** one practical decision or requested action. Identify volatile details to confirm before deployment.
+
+For example: “Start with Container Instances for a conventional API container if Kubernetes is unnecessary. Confirm the availability target before deciding capacity and placement. You still own the image, application configuration, release/replacement process, and frontend design.” This is a conditional recommendation, not a universal default for every API. Keep smaller comparisons brief.
+
 ## Sources
 
 - [OCI Well-Architected Framework](https://docs.oracle.com/en/solutions/oci-best-practices/)

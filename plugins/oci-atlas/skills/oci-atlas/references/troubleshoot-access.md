@@ -35,6 +35,10 @@ Explain the identified failing layer and proposed correction. Carry forward the 
 
 A resource action denied despite IAM permission can be constrained by a [Security Zone](service-cloud-guard-security-zones.md). A network flow blocked after attribute assignment needs [ZPR](service-zpr.md) evaluation rather than another human IAM grant. For database operations, identify whether the failing action manages the service or uses SQL; for [APEX](service-apex-ords.md), [Analytics Cloud](service-analytics-cloud.md), and [Oracle Integration](service-oracle-integration.md), inspect the product role/object boundary. For [GPU/HPC](service-gpu-hpc.md) or [Compute pools](service-compute.md), inspect actual placement/capacity separately from limits and quotas.
 
+## Report the diagnosis
+
+Use the [diagnostic response pattern](troubleshoot-connectivity.md#report-the-diagnosis): observed evidence, hypotheses, next discriminating check, and a supported correction. For authorization failures, name the actual caller and failed operation before suggesting policy changes; report inaccessible or unqueried scope explicitly.
+
 ## Sources
 
 - [OCI common API errors](https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm)

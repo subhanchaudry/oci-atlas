@@ -1,23 +1,26 @@
 # Scope, compatibility, and limitations
 
-## What 0.3.0 provides
+## What 1.0.0 provides
 
 Sourced OCI context, service selection, examples, and reusable workflows across 73 references. It can guide an agent's use of existing tools. It does not introduce an OCI execution service, create a login, or grant permissions. The eight knowledge areas, 48 focused service guides, and 12 recipes cover the expansion listed in the changelog, rather than every OCI catalog entry or API operation. Database guides focus on service selection and operation; they are not comprehensive SQL or database-administration manuals.
+
+The v1 compatibility commitment covers package identity, catalog schema, and existing reference paths; it does not freeze OCI service capabilities or guarantee every host route. See [maintenance](MAINTENANCE.md#version-and-release).
 
 ## Compatibility evidence
 
 | Capability | Evidence for this release |
 | --- | --- |
 | Portable plugin and local marketplace structure | Checked by repository tooling; current platform documentation consulted |
-| Codex CLI installation | Installed v0.3.0 from the local candidate marketplace with Codex CLI `0.165.0-alpha.1.2` on macOS; all 80 installed files matched source. Earlier GitHub installation evidence is in the validation record |
-| Codex CLI skill discovery and explicit activation | Fresh read-only session loaded the installed v0.3.0 skill and 19 distinct references for six documentation-only scenarios |
-| ChatGPT desktop/web plugin discovery and activation | Not verified end to end |
+| Codex CLI installation | Installed v1.0.0 from the local candidate marketplace with Codex CLI `0.165.0-alpha.1.2` on macOS; installed-file/source comparison is recorded with release evidence. Historical GitHub installation evidence is retained |
+| Codex CLI skill discovery and explicit activation | Fresh read-only session loaded the installed v1.0.0 skill and 12 distinct references for three documentation-only scenarios |
+| Codex desktop discovery and activation | User supplied two v0.3.0 conversation outputs showing the plugin mention and named focused references; tool traces were not independently inspected |
+| ChatGPT desktop/web account-plugin installation | Not independently exercised end to end |
 | ChatGPT workspace GitHub import | Documented platform route; depends on workspace administrator/features |
 | Private account ZIP creation | Conditional on account tooling; not verified end to end |
 | Signed-in OCI Console through host browser | Documented host capability; OCI-specific interaction not verified |
 | Cloud Shell through browser controls | Documented OCI access route; terminal interaction not verified |
 | Example OCI commands | Selected command references reviewed; no live execution |
-| Non-mutating prompt checks | One fresh session covering container runtimes, Streaming/Kafka, hybrid private database access, notification delivery, GPU/HPC, and migration/replication/DR; no broad model evaluation |
+| Non-mutating prompt checks | One fresh v1.0.0 session covering service selection, private database architecture, and hypothetical connectivity diagnosis; no broad model evaluation |
 
 ## Boundaries
 

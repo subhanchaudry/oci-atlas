@@ -9,7 +9,7 @@ body:
     id: version
     attributes:
       label: OCI Atlas version
-      placeholder: "For example, 0.2.1"
+      placeholder: "For example, 1.0.0"
     validations:
       required: true
   - type: input

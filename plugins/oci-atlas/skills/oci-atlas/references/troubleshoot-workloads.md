@@ -38,6 +38,10 @@ For an alarm firing without a message, follow [Monitoring/Notifications](service
 
 For database movement, inspect the [migration job](service-database-migration.md), [GoldenGate checkpoints](service-goldengate.md), and application writer state before retrying. For recovery, use [Full Stack DR](service-full-stack-dr.md) and the [backup/DR recipe](recipe-backup-disaster-recovery.md); do not blindly rerun completed role transitions. For Resource Manager drift/import failures, reconcile [configuration, state, and ownership](infrastructure-architecture.md) before applying again.
 
+## Report the diagnosis
+
+Use the [diagnostic response pattern](troubleshoot-connectivity.md#report-the-diagnosis): observed evidence, hypotheses, next discriminating check, and a supported correction. Name the execution/artifact and earliest meaningful failure, separate status from application correctness, and explain replay/side-effect uncertainty before retrying.
+
 ## Sources
 
 - [Kubernetes pod diagnosis](https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/)
