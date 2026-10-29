@@ -1,9 +1,11 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "oci-atlas",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Packaged Oracle Cloud Infrastructure knowledge, service selection, and practical workflows for ChatGPT and Codex.",
   "license": "UPL-1.0",
+  "homepage": "https://github.com/subhanchaudry/oci-atlas",
+  "repository": "https://github.com/subhanchaudry/oci-atlas",
   "keywords": ["oci", "oracle-cloud", "cloud-infrastructure", "architecture", "terraform", "ai", "kubernetes"],
   "extensions": {
     "com.openai": {

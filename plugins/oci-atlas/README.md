@@ -1,8 +1,10 @@
-# OCI Atlas 0.1.0
+# OCI Atlas 0.2.0
 
 Packaged Oracle Cloud Infrastructure knowledge for ChatGPT and Codex.
 
-This self-contained plugin includes one [OCI Atlas skill](skills/oci-atlas/SKILL.md), an access guide, eight knowledge areas, and four cross-service recipes. It uses existing host tools for any requested execution and requires no hosted backend or custom MCP server.
+This self-contained plugin includes one [OCI Atlas skill](skills/oci-atlas/SKILL.md) with 36 references: access and service selection, eight knowledge areas, 15 service guides, three troubleshooting guides, and eight recipes. It uses existing host tools for any requested execution and requires no hosted backend or custom MCP server.
+
+Source, installation instructions, contribution guidance and versioned downloads are in [subhanchaudry/oci-atlas](https://github.com/subhanchaudry/oci-atlas). The packaged [content catalog](skills/oci-atlas/catalog.json) records aliases, sources and review dates; read relevant guides on demand rather than loading the whole catalog.
 
 For a supported account package-creation workflow, import this ZIP as a skills-only plugin while preserving `plugin.json` and the complete `skills` directory. For GitHub/local marketplace installation, use the source repository's marketplace and installation guide. A generic chat attachment does not automatically install a plugin.
 

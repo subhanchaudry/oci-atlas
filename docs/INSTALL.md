@@ -15,7 +15,14 @@ These commands change your Codex plugin configuration and install a cached copy.
 
 > Use OCI Atlas to explain how compartments, VCNs and IAM fit together. Do not connect to OCI.
 
-For a published GitHub repository, register the actual `OWNER/REPOSITORY` instead of `.`. Use `codex plugin marketplace add OWNER/REPOSITORY --ref v0.1.0` to pin a published release tag when that tag exists, then install the same plugin selector. `OWNER/REPOSITORY` is a substitution, not an existing OCI Atlas repository address.
+For GitHub installation pinned to this release:
+
+```sh
+codex plugin marketplace add subhanchaudry/oci-atlas --ref v0.2.0
+codex plugin add oci-atlas@oci-atlas-marketplace
+```
+
+Use the local or GitHub registration for this marketplace, according to where you want updates to come from. Release assets are available from [OCI Atlas v0.2.0](https://github.com/subhanchaudry/oci-atlas/releases/tag/v0.2.0).
 
 Check `codex plugin --help` and `codex plugin marketplace --help` if your client differs. In clients using the plugin browser, open `/plugins`, select the configured marketplace, and install OCI Atlas there.
 
@@ -30,8 +37,8 @@ Desktop UI labels and local execution availability can vary. Verify skill discov
 For a workspace that supports GitHub plugin imports, an administrator can:
 
 1. Open **Admin → Plugins → Add → Import marketplace**.
-2. Enter the real GitHub repository URL. Leave the marketplace directory empty because the catalog is at the repository root.
-3. Select a release tag/commit when a fixed version is desired.
+2. Enter `https://github.com/subhanchaudry/oci-atlas`. Leave the marketplace directory empty because the catalog is at the repository root.
+3. Select `v0.2.0` or its release commit when a fixed version is desired.
 4. Import and make OCI Atlas available to the intended workspace roles.
 5. Install/enable it in a new conversation and try the conceptual prompt.
 

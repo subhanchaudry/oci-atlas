@@ -4,7 +4,7 @@
 
 Edit the repository's plugin source, not installed caches. Keep the entry skill concise and directly link each packaged reference. Put stable service relationships, decision criteria and gotchas in the guides. Leave volatile prices, model IDs, availability matrices and large command schemas in their authoritative sources.
 
-Every substantive guide records the date it was actually reviewed and a source list. A changed review date means a maintainer checked the relevant content, not that a link checker received HTTP 200. Do not bulk-update dates to make content appear fresh.
+Every substantive guide records the date it was actually reviewed and a source list. [catalog.json](../plugins/oci-atlas/skills/oci-atlas/catalog.json) is the canonical metadata source. Edit guide bodies and catalog entries together, then run `python3 tools/catalog.py --write`. This renders the skill routing table, review/source metadata and [content index](CONTENT.md). A changed review date means a maintainer checked the relevant content, not that a link checker received HTTP 200. Do not bulk-update dates to make content appear fresh.
 
 Original synthesized guidance needs citations. Any copied/adapted upstream skill or code also needs a file path, exact upstream revision, license and preserved notices in the package's NOTICE. Currently no upstream skill or executable code is vendored.
 
@@ -25,9 +25,10 @@ Try a few questions from [examples](EXAMPLES.md), without live writes. Check whe
 ## Build and inspect
 
 ```sh
+python3 tools/catalog.py --check
 python3 tools/check.py
 python3 tools/package.py
-python3 tools/check.py --archive dist/oci-atlas-0.1.0.zip
+python3 tools/check.py --archive dist/oci-atlas-0.2.0.zip
 ```
 
 The checker validates local package structure and content conventions. It doesn't contact OCI, validate every command against a live CLI, fetch all source URLs, or prove host compatibility. The packager uses a fixed ZIP timestamp, refuses unexpected source files, checks archive paths/content, and emits a checksum. Build artifacts are ignored by Git.
@@ -38,7 +39,7 @@ The canonical version is in the plugin manifest. Use SemVer: patch for correctio
 
 1. Set the version, update the README/version references and add a changelog entry.
 2. Run the commands above and review the archive listing and limitations.
-3. Commit the reviewed source in your chosen GitHub repository and tag the matching version, for example `v0.1.0`.
+3. Commit the reviewed source in [subhanchaudry/oci-atlas](https://github.com/subhanchaudry/oci-atlas) and tag the matching version, for example `v0.2.0`.
 4. Attach the ZIP and `.sha256` to that GitHub release. The included GitHub Actions workflow builds downloadable artifacts on pushes, pull requests and manual runs; it doesn't publish a release or submit a plugin automatically.
 5. Test installation when a target host is available, then update compatibility evidence with the exact version, route and observed result. Don't change “not verified” to “verified” from a packaging pass alone.
 

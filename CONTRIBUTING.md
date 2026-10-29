@@ -7,9 +7,15 @@ Contribute OCI-specific knowledge that changes an agent's decisions or saves rep
 1. Find the existing topic in the [skill index](plugins/oci-atlas/skills/oci-atlas/SKILL.md). Extend it before adding another explanation of the same concept.
 2. Research official product documentation first, followed by Oracle-owned repositories, product-team posts, and LiveLabs. Check command names and parameters against a command reference or installed help.
 3. Use [the guide template](docs/GUIDE-TEMPLATE.md). Include service relationships, prerequisites, useful decision criteria, practical examples, gotchas, authoritative links, and the date actually reviewed.
-4. Keep files focused. Link shared concepts instead of repeating long IAM, network, or authentication sections. Add new references directly to the skill's routing table and update the README if coverage changes.
+4. Keep files focused. Link shared concepts instead of repeating long IAM, network, or authentication sections. Add the guide to [catalog.json](plugins/oci-atlas/skills/oci-atlas/catalog.json), then run `python3 tools/catalog.py --write` to generate routing and metadata. Update the README if coverage changes.
 5. Clearly mark conditional behavior, version differences, and assumptions. Don't turn a source-checked example into a claim of live testing. Do not guess OCI defaults or copy customer-specific configuration.
-6. Run `python3 tools/check.py`, build with `python3 tools/package.py`, and inspect changed guides and the archive. A live tenancy is not required.
+6. Run `python3 tools/catalog.py --check` and `python3 tools/check.py`, build with `python3 tools/package.py`, and inspect changed guides and the archive. A live tenancy is not required.
+
+## Catalog conventions
+
+Use a stable lowercase hyphenated ID and matching `references/<id>.md` path. Kinds are `access`, `decision`, `domain`, `service`, `troubleshooting`, or `recipe`; focused service guides use `service-`, recipes `recipe-`, and failure guides `troubleshoot-`. Keep `summary` a short request-routing cue and `aliases` useful service names, abbreviations or symptoms. Prefer one canonical explanation per concept and link to it.
+
+The catalog owns each guide's title, review date, aliases, source titles and URLs. Guide bodies own the substantive guidance and the review basis sentence. Set `reviewed` to the date sources/content were actually checked; the renderer never advances it automatically. Preserve upstream file/revision/license attribution in the guide body and NOTICE when adapting material. The renderer replaces the final Sources section, the entry skill's marked routing table, and [CONTENT.md](docs/CONTENT.md). Do not edit those generated sections directly. New guides enter the ZIP through the catalog; unexpected package files fail checks.
 
 ## Style and examples
 

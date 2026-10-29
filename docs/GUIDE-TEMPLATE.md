@@ -2,6 +2,8 @@
 
 Reviewed: YYYY-MM-DD · Basis: documentation review; state any actual execution separately.
 
+Authoring note: add a matching entry to `plugins/oci-atlas/skills/oci-atlas/catalog.json`. The catalog owns the title, review date and Sources list. Remove this note from the finished guide and run `python3 tools/catalog.py --write` after editing the catalog.
+
 ## Choose this service
 
 Explain the workload fit, relevant alternatives, and the distinction the model is likely to miss.

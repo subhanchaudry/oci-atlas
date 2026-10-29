@@ -10,6 +10,8 @@ Use these after installing/enabling OCI Atlas. Replace context descriptions with
 
 > Explain OCI Data Integration versus Data Flow versus Streaming. Map a daily batch transformation and a real-time event ingestion workload to the appropriate service.
 
+> Compare OCI AI Data Platform workspaces and external catalogs with Data Integration tasks and Data Flow applications. Explain where IAM, platform object permissions and database grants apply.
+
 > Explain on-demand model inference, dedicated Generative AI hosting, Generative AI Agents, and Data Science model deployments. Don't assume a particular model or region is available.
 
 ## Design without provisioning
@@ -19,6 +21,12 @@ Use these after installing/enabling OCI Atlas. Replace context descriptions with
 > Plan a Function behind API Gateway. Explain client authentication separately from the gateway's permission to invoke the Function and the Function's access to Object Storage.
 
 > Help me choose a managed OCI approach for RAG over documents already governed by our existing data platform. Explain what can be reused before suggesting new services.
+
+> Plan a private OKE deployment with access to Object Storage. Separate the operator's Kubernetes access, registry image pulls and the application's OCI workload identity.
+
+> Plan a repeatable predictive-model workflow using Data Science. Compare batch scoring with a model deployment and identify the artifact, runtime, networking and rollback requirements.
+
+> Design a daily ingestion pipeline with replay and checkpoints. Choose between Data Integration, Data Flow and an existing AI Data Platform workspace before adding new infrastructure.
 
 ## Inspect using existing access
 
@@ -37,5 +45,9 @@ Use these after installing/enabling OCI Atlas. Replace context descriptions with
 > My application job times out connecting to Autonomous Database. Use OCI Atlas to identify the first checks from the job's network context. Distinguish DNS, routing, TLS and SQL authentication before recommending changes.
 
 > My OKE workload is in ImagePullBackOff. Investigate the image reference, architecture, registry access and runtime network path before proposing cluster changes.
+
+> A request returns NotAuthorizedOrNotFound. Help me distinguish the wrong region/resource from a policy problem, using the identity that actually made the call.
+
+> A Data Integration task works in the designer but the scheduled application run fails. Inspect publication, runtime parameters, identity, network and output evidence before replaying it.
 
 > An OCI alarm exists but nobody received a notification. Explain which evidence distinguishes alarm evaluation, destination configuration, subscription status and actual delivery.

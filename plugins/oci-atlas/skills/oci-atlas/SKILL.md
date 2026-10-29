@@ -10,23 +10,50 @@ Use the foundation model's reasoning with focused OCI knowledge. Answer the user
 
 ## Choose the context
 
-Read only the guide or recipe relevant to the request. Links are relative to this skill. Don't read this entire collection by default. For a cross-service task, start with the recipe and consult service guides only for missing details.
+Read only the relevant reference: a focused guide for a named service, a domain overview for broad questions, a decision guide for alternatives, or a troubleshooting guide for a failure. Links are relative to this skill. Don't read this entire collection by default. For a cross-service task, start with the recipe and consult service guides only for missing details.
+
+<!-- atlas:catalog:start -->
 
 | Request | Read |
 | --- | --- |
-| Set up OCI Atlas; choose CLI, Console, Cloud Shell; authenticate | [Access and tools](references/access-and-tools.md) |
-| Tenancy, compartments, OCIDs, IAM, domains, regions, quotas | [Foundations](references/foundations.md) |
-| VCN, subnet, route, gateway, NSG, DNS, load balancer, private access | [Networking](references/networking.md) |
-| VM, shape, image, boot/block volume, Object/File Storage | [Compute and storage](references/compute-storage.md) |
-| Database selection, Autonomous Database, Data Integration, Data Flow, Streaming | [Databases and data](references/databases-data.md) |
-| Generative AI, agents, RAG, Data Science, inference, AI services | [AI and machine learning](references/ai-ml.md) |
-| OKE, Kubernetes, Functions, API Gateway, OCIR, DevOps | [Application platforms](references/applications.md) |
-| Metrics, logs, Audit, Cloud Guard, secrets, keys, costs, incident diagnosis | [Operations and security](references/operations-security.md) |
-| Terraform, Resource Manager, landing zones, architecture choices | [Infrastructure and architecture](references/infrastructure-architecture.md) |
-| Deploy a private application | [Private application recipe](references/recipe-private-application.md) |
-| Connect an application to Autonomous Database | [Database connectivity recipe](references/recipe-database-connectivity.md) |
-| Publish a function through API Gateway | [Serverless API recipe](references/recipe-serverless-api.md) |
-| Choose and deploy an AI application | [AI application recipe](references/recipe-ai-application.md) |
+| Set up OCI Atlas; CLI, Console, Cloud Shell, authentication | [Access, tools, and onboarding](references/access-and-tools.md) |
+| Choose between services before designing a workload | [OCI service-selection decisions](references/service-selection.md) |
+| Tenancy, compartments, OCIDs, identity domains, regions, quotas | [Tenancy foundations and IAM](references/foundations.md) |
+| Network overview: VCNs, DNS, load balancing, private connectivity | [Networking and private access](references/networking.md) |
+| Compute and storage overview; volumes, backups, File Storage | [Compute and storage](references/compute-storage.md) |
+| Database and data platform overview; select an engine or pipeline | [Databases and data services](references/databases-data.md) |
+| AI and ML overview; model, agent and deployment choices | [AI, agents, and machine learning](references/ai-ml.md) |
+| Application platform overview; containers, serverless, delivery | [Application platforms](references/applications.md) |
+| Operations overview: metrics, logs, Audit, Cloud Guard, cost | [Operations, security, and cost](references/operations-security.md) |
+| Terraform, Resource Manager, landing zones, architecture | [Infrastructure as code and architecture](references/infrastructure-architecture.md) |
+| Write and diagnose IAM policies; users, workloads, scope | [IAM policies and workload identities](references/service-iam-policies.md) |
+| Trace VCN routes, gateways, security and private DNS | [VCN routing, network controls, and DNS](references/service-vcn-routing.md) |
+| Choose and manage an instance, image, shape and boot volume | [Compute instances and persistent disks](references/service-compute.md) |
+| Buckets, objects, versions, retention, lifecycle and access | [Object Storage buckets, objects, and retention](references/service-object-storage.md) |
+| Autonomous Database access, TLS, SQL users, endpoints | [Autonomous Database operations and access](references/service-autonomous-database.md) |
+| OKE clusters, node pools, pod identity and image access | [OKE clusters, workloads, and identities](references/service-oke.md) |
+| Functions applications, deployment, invocation and runtime | [Functions deployment and invocation](references/service-functions.md) |
+| API Gateway gateways, deployments, routes and authentication | [API Gateway deployments and backend access](references/service-api-gateway.md) |
+| Generative AI model APIs, agents, endpoints and regional routing | [Generative AI model and agent selection](references/service-generative-ai.md) |
+| Data Science projects, jobs, model artifacts and deployments | [Data Science notebooks, jobs, and model serving](references/service-data-science.md) |
+| AI Data Platform workspaces, catalogs and permissions | [AI Data Platform workspaces and catalogs](references/service-ai-data-platform.md) |
+| Data Integration flows, tasks, publication and runs | [Data Integration design and runtime artifacts](references/service-data-integration.md) |
+| Data Flow Spark applications, runs and private data access | [Data Flow Spark applications and runs](references/service-data-flow.md) |
+| Streaming pools, streams, partitions and consumer offsets | [Streaming producers, consumers, and replay](references/service-streaming.md) |
+| Separate encryption keys, secrets, versions and rotation | [Secret Management and encryption keys](references/service-secrets-keys.md) |
+| Diagnose authentication, authorization, quotas and capacity | [Diagnose authentication, authorization, and limits](references/troubleshoot-access.md) |
+| Diagnose DNS, timeout, routing, TLS and private access | [Diagnose private and application connectivity](references/troubleshoot-connectivity.md) |
+| Diagnose pod, function, pipeline, model and stack failures | [Diagnose workloads, runs, and serving failures](references/troubleshoot-workloads.md) |
+| Deploy a private application across network and compute services | [Recipe: private application deployment](references/recipe-private-application.md) |
+| Connect an application to Autonomous Database | [Recipe: connect an application to Autonomous Database](references/recipe-database-connectivity.md) |
+| Expose a Function through an authenticated API Gateway | [Recipe: Function behind API Gateway](references/recipe-serverless-api.md) |
+| Choose and deploy an AI application | [Recipe: choose and deploy an AI application](references/recipe-ai-application.md) |
+| Deploy a private OKE workload with scoped access | [Recipe: private OKE application with workload access](references/recipe-private-oke.md) |
+| Build a governed, replayable data ingestion pipeline | [Recipe: governed source-to-target data ingestion](references/recipe-data-ingestion.md) |
+| Build retrieval-augmented generation with source permissions | [Recipe: retrieval over governed enterprise data](references/recipe-rag-application.md) |
+| Train, evaluate, register and deploy a predictive model | [Recipe: train, register, and serve a predictive model](references/recipe-model-lifecycle.md) |
+
+<!-- atlas:catalog:end -->
 
 ## Apply the knowledge
 

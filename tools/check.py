@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import argparse
-from datetime import date
+from collections import Counter
 import json
 from pathlib import Path, PurePosixPath
 import re
@@ -15,19 +15,12 @@ from urllib.parse import unquote, urlsplit
 import xml.etree.ElementTree as ET
 import zipfile
 
+from catalog import expected_files, generated_files, load_catalog
+
 
 REPO = Path(__file__).resolve().parents[1]
 PLUGIN = REPO / "plugins" / "oci-atlas"
 PLUGIN_SCHEMA = "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"
-DOMAINS = {
-    "foundations", "networking", "compute-storage", "databases-data",
-    "ai-ml", "applications", "operations-security", "infrastructure-architecture",
-}
-RECIPES = {
-    "recipe-private-application", "recipe-database-connectivity",
-    "recipe-serverless-api", "recipe-ai-application",
-}
-GUIDES = DOMAINS | RECIPES | {"access-and-tools"}
 LINK = re.compile(r"\[[^\]\n]*\]\(([^)\s]+)\)")
 SECRETS = (
     re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |ENCRYPTED )?PRIVATE KEY-----"),
@@ -92,20 +85,15 @@ def local_links(path: Path, boundary: Path) -> None:
         require(resolved.is_file(), f"Broken local link in {path.name}: {target}")
 
 
-def expected_files() -> set[str]:
-    base = {"plugin.json", "README.md", "NOTICE.md", "LICENSE.txt", "assets/atlas.svg",
-            "skills/oci-atlas/SKILL.md"}
-    return base | {f"skills/oci-atlas/references/{name}.md" for name in GUIDES}
-
-
 def check_package(root: Path) -> dict:
     require(root.is_dir(), f"Missing plugin directory: {root}")
     entries = list(root.rglob("*"))
     require(not any(p.is_symlink() for p in entries), "Plugin contains a symlink")
     actual = {p.relative_to(root).as_posix() for p in entries if p.is_file()}
-    require(actual == expected_files(),
-            f"Unexpected/missing package files: extra={sorted(actual - expected_files())}, "
-            f"missing={sorted(expected_files() - actual)}")
+    expected = expected_files(root)
+    require(actual == expected,
+            f"Unexpected/missing package files: extra={sorted(actual - expected)}, "
+            f"missing={sorted(expected - actual)}")
     for path in (p for p in entries if p.is_file()):
         require(path.stat().st_size <= 1024 * 1024, f"Oversized file: {path.name}")
         text = path.read_text(encoding="utf-8")
@@ -155,19 +143,19 @@ def check_package(root: Path) -> dict:
     require(meta.get("license") == "UPL-1.0", "Missing skill license")
     require(len(text.splitlines()) < 500, "Move detail out of the entry skill")
     routes = set(LINK.findall(text))
-    for name in sorted(GUIDES):
-        relative = f"references/{name}.md"
-        require(relative in routes, f"Guide is not directly routed: {name}")
-        guide = (skill.parent / relative).read_text(encoding="utf-8")
-        reviewed = re.search(r"^Reviewed: (\d{4}-\d{2}-\d{2})", guide, re.MULTILINE)
-        require(reviewed is not None, f"Missing review date: {name}")
-        date.fromisoformat(reviewed.group(1))
-        require("## Sources\n" in guide and "https://docs.oracle.com/" in guide,
-                f"Missing authoritative sources: {name}")
+    catalog = load_catalog(root)
+    for entry in catalog:
+        require(entry["path"] in routes, f"Guide is not directly routed: {entry['id']}")
+    for path, rendered in generated_files(root, repo=None).items():
+        require(path.read_text(encoding="utf-8") == rendered,
+                f"Stale catalog-generated content: {path.name}")
+    counts = Counter(entry["kind"] for entry in catalog)
 
     return {"name": manifest["name"], "version": manifest["version"],
-            "files": len(actual), "knowledge_areas": len(DOMAINS), "recipes": len(RECIPES),
-            "references": len(GUIDES), "entry_lines": len(text.splitlines())}
+            "files": len(actual), "knowledge_areas": counts["domain"],
+            "service_guides": counts["service"], "recipes": counts["recipe"],
+            "troubleshooting_guides": counts["troubleshooting"],
+            "references": len(catalog), "entry_lines": len(text.splitlines())}
 
 
 def check_repository() -> dict:
@@ -178,6 +166,9 @@ def check_repository() -> dict:
         "source": "local", "path": "./plugins/oci-atlas"}}], "Wrong marketplace source")
     require((REPO / "LICENSE.txt").read_bytes() == (PLUGIN / "LICENSE.txt").read_bytes(),
             "Repository and package licenses differ")
+    for path, rendered in generated_files().items():
+        require(path.exists() and path.read_text(encoding="utf-8") == rendered,
+                f"Stale generated content: {path.name}; run tools/catalog.py --write")
     for path in [*REPO.glob("*.md"), *(REPO / "docs").glob("*.md")]:
         local_links(path, REPO)
     return summary

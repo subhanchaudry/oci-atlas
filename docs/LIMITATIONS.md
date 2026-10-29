@@ -1,8 +1,8 @@
 # Scope, compatibility, and limitations
 
-## What 0.1.0 provides
+## What 0.2.0 provides
 
-Sourced OCI context, service selection, examples, and reusable workflows. It can guide an agent's use of existing tools. It does not introduce an OCI execution service, create a login, or grant permissions. The eight knowledge areas are a curated starting point, not every OCI API operation.
+Sourced OCI context, service selection, examples, and reusable workflows across 36 references. It can guide an agent's use of existing tools. It does not introduce an OCI execution service, create a login, or grant permissions. The eight knowledge areas and 15 focused service guides are a curated starting point, not every OCI API operation.
 
 ## Compatibility evidence
 

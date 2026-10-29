@@ -1,0 +1,1256 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "access-and-tools",
+      "kind": "access",
+      "title": "Access, tools, and onboarding",
+      "path": "references/access-and-tools.md",
+      "summary": "Set up OCI Atlas; CLI, Console, Cloud Shell, authentication",
+      "aliases": [
+        "CLI",
+        "Console",
+        "Cloud Shell",
+        "authentication"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OCI CLI concepts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm"
+        },
+        {
+          "title": "Session-token authentication",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/clitoken.htm"
+        },
+        {
+          "title": "Using Cloud Shell",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm"
+        },
+        {
+          "title": "OCI CLI command reference and global options",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/"
+        },
+        {
+          "title": "OCI REST API behavior, request IDs, retry tokens, and ETags",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm"
+        },
+        {
+          "title": "ChatGPT browser availability and sign-in",
+          "url": "https://learn.chatgpt.com/docs/browser"
+        }
+      ]
+    },
+    {
+      "id": "service-selection",
+      "kind": "decision",
+      "title": "OCI service-selection decisions",
+      "path": "references/service-selection.md",
+      "summary": "Choose between services before designing a workload",
+      "aliases": [
+        "service selection",
+        "decision table",
+        "alternatives"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OCI Well-Architected Framework",
+          "url": "https://docs.oracle.com/en/solutions/oci-best-practices/"
+        },
+        {
+          "title": "Data Integration",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-integration/using/overview.htm"
+        },
+        {
+          "title": "Data Flow",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-flow/using/dfs_service_overview.htm"
+        },
+        {
+          "title": "Generative AI product layers",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm"
+        },
+        {
+          "title": "Data Science",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-science/using/overview.htm"
+        }
+      ]
+    },
+    {
+      "id": "foundations",
+      "kind": "domain",
+      "title": "Tenancy foundations and IAM",
+      "path": "references/foundations.md",
+      "summary": "Tenancy, compartments, OCIDs, identity domains, regions, quotas",
+      "aliases": [
+        "tenancy",
+        "compartments",
+        "OCIDs",
+        "regions",
+        "quotas"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "IAM overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm"
+        },
+        {
+          "title": "Policy syntax",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policysyntax.htm"
+        },
+        {
+          "title": "Regions and availability domains",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm"
+        },
+        {
+          "title": "Compartment list command",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/iam/compartment/list.html"
+        },
+        {
+          "title": "Search coverage and visibility",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/queryoverview.htm"
+        },
+        {
+          "title": "Search consistency and missing results",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Search/Troubleshooting/noresults.htm"
+        },
+        {
+          "title": "Compartment quotas",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Quotas/Concepts/resourcequotas.htm"
+        }
+      ]
+    },
+    {
+      "id": "networking",
+      "kind": "domain",
+      "title": "Networking and private access",
+      "path": "references/networking.md",
+      "summary": "Network overview: VCNs, DNS, load balancing, private connectivity",
+      "aliases": [
+        "networking",
+        "DNS",
+        "load balancer",
+        "FastConnect",
+        "VPN"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Networking components and gateway semantics",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm"
+        },
+        {
+          "title": "NSGs and ZPR interactions",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm"
+        },
+        {
+          "title": "Security rule behavior",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securityrules.htm"
+        },
+        {
+          "title": "DNS overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm"
+        },
+        {
+          "title": "Load Balancer overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm"
+        },
+        {
+          "title": "VCN create command",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/network/vcn/create.html"
+        }
+      ]
+    },
+    {
+      "id": "compute-storage",
+      "kind": "domain",
+      "title": "Compute and storage",
+      "path": "references/compute-storage.md",
+      "summary": "Compute and storage overview; volumes, backups, File Storage",
+      "aliases": [
+        "compute",
+        "block volumes",
+        "backups",
+        "File Storage"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Instance operations",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/instances.htm"
+        },
+        {
+          "title": "Shape selection",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm"
+        },
+        {
+          "title": "Boot-volume lifecycle",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm"
+        },
+        {
+          "title": "Block Volume overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/overview.htm"
+        },
+        {
+          "title": "Object Storage resource model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm"
+        },
+        {
+          "title": "File Storage overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/File/Concepts/filestorageoverview.htm"
+        },
+        {
+          "title": "Bucket create command",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/os/bucket/create.html"
+        }
+      ]
+    },
+    {
+      "id": "databases-data",
+      "kind": "domain",
+      "title": "Databases and data services",
+      "path": "references/databases-data.md",
+      "summary": "Database and data platform overview; select an engine or pipeline",
+      "aliases": [
+        "databases",
+        "Autonomous Database",
+        "data platforms"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Base Database Service",
+          "url": "https://docs.oracle.com/en/cloud/paas/base-database/about/index.html"
+        },
+        {
+          "title": "Autonomous Database list command",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/db/autonomous-database/list.html"
+        },
+        {
+          "title": "Autonomous Database private connectivity",
+          "url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/private-endpoints-autonomous.html"
+        },
+        {
+          "title": "MySQL HeatWave",
+          "url": "https://docs.oracle.com/en-us/iaas/mysql-database/home.htm"
+        },
+        {
+          "title": "OCI Database with PostgreSQL",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/postgresql/home.htm"
+        },
+        {
+          "title": "Data Integration concepts and runtime",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-integration/using/overview.htm"
+        },
+        {
+          "title": "Data Flow applications and runs",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-flow/using/concepts.htm"
+        },
+        {
+          "title": "Streaming overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Streaming/Concepts/streamingoverview.htm"
+        },
+        {
+          "title": "AI Data Platform and Data Science architecture",
+          "url": "https://docs.oracle.com/en/solutions/ai-data-platform-data-science-workloads/"
+        }
+      ]
+    },
+    {
+      "id": "ai-ml",
+      "kind": "domain",
+      "title": "AI, agents, and machine learning",
+      "path": "references/ai-ml.md",
+      "summary": "AI and ML overview; model, agent and deployment choices",
+      "aliases": [
+        "AI",
+        "ML",
+        "agents",
+        "inference"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Current Generative AI product and developer entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm"
+        },
+        {
+          "title": "Model concepts and hosting modes",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/concepts.htm"
+        },
+        {
+          "title": "Dedicated clusters",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/ai-cluster.htm"
+        },
+        {
+          "title": "CPU-only regions and routing constraints",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/cpu-only-regions.htm"
+        },
+        {
+          "title": "Generative AI Agents service and tools",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm"
+        },
+        {
+          "title": "Data Science assets, operations and pricing model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-science/using/overview.htm"
+        },
+        {
+          "title": "Data Science project list command",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/data-science/project/list.html"
+        },
+        {
+          "title": "Data Science job definitions and use cases",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-science/using/jobs-about.htm"
+        },
+        {
+          "title": "Data Scientist's OCI guide",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/getting-started-as-data-scientist.htm"
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "kind": "domain",
+      "title": "Application platforms",
+      "path": "references/applications.md",
+      "summary": "Application platform overview; containers, serverless, delivery",
+      "aliases": [
+        "applications",
+        "OCIR",
+        "DevOps",
+        "containers"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OKE clusters, node choices and feature differences",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengclustersnodes.htm"
+        },
+        {
+          "title": "Cluster list command",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/ce/cluster/list.html"
+        },
+        {
+          "title": "Functions overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsoverview.htm"
+        },
+        {
+          "title": "Functions workflows and tools",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm"
+        },
+        {
+          "title": "API Gateway resource model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm"
+        },
+        {
+          "title": "Container Registry",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryoverview.htm"
+        },
+        {
+          "title": "DevOps projects and pipelines",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/devops/using/devops_overview.htm"
+        }
+      ]
+    },
+    {
+      "id": "operations-security",
+      "kind": "domain",
+      "title": "Operations, security, and cost",
+      "path": "references/operations-security.md",
+      "summary": "Operations overview: metrics, logs, Audit, Cloud Guard, cost",
+      "aliases": [
+        "Monitoring",
+        "Logging",
+        "Audit",
+        "Cloud Guard",
+        "budgets"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Monitoring metrics and alarms",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Monitoring/Concepts/monitoringoverview.htm"
+        },
+        {
+          "title": "Alarm list command",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/monitoring/alarm/list.html"
+        },
+        {
+          "title": "Logging categories and log groups",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Logging/Concepts/loggingoverview.htm"
+        },
+        {
+          "title": "Audit coverage",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Audit/Concepts/auditoverview.htm"
+        },
+        {
+          "title": "Cloud Guard concepts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/cloud-guard/using/cg-concepts.htm"
+        },
+        {
+          "title": "Vaults, keys and Secret Management distinction",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm"
+        },
+        {
+          "title": "Secret Management Service",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/secret-management/home.htm"
+        },
+        {
+          "title": "Budget behavior",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/budgetsoverview.htm"
+        },
+        {
+          "title": "Tagging",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Tagging/Concepts/taggingoverview.htm"
+        }
+      ]
+    },
+    {
+      "id": "infrastructure-architecture",
+      "kind": "domain",
+      "title": "Infrastructure as code and architecture",
+      "path": "references/infrastructure-architecture.md",
+      "summary": "Terraform, Resource Manager, landing zones, architecture",
+      "aliases": [
+        "Terraform",
+        "Resource Manager",
+        "landing zones"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Resource Manager configuration, stacks, jobs and drift",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm"
+        },
+        {
+          "title": "Stack list command",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/resource-manager/stack/list.html"
+        },
+        {
+          "title": "Apply jobs and plan resolution",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/create-job-apply.htm"
+        },
+        {
+          "title": "OCI Well-Architected Framework",
+          "url": "https://docs.oracle.com/en/solutions/oci-best-practices/"
+        },
+        {
+          "title": "OCI Cloud Adoption Framework",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/cloud-adoption-framework/"
+        },
+        {
+          "title": "Current landing-zone implementations",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/cloud-adoption-framework/technology-implementation.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-iam-policies",
+      "kind": "service",
+      "title": "IAM policies and workload identities",
+      "path": "references/service-iam-policies.md",
+      "summary": "Write and diagnose IAM policies; users, workloads, scope",
+      "aliases": [
+        "IAM",
+        "policies",
+        "dynamic groups",
+        "resource principals"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Policy syntax",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policysyntax.htm"
+        },
+        {
+          "title": "IAM components and scope",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm"
+        },
+        {
+          "title": "OKE workload identity",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contenggrantingworkloadaccesstoresources.htm"
+        },
+        {
+          "title": "OCI API errors",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-vcn-routing",
+      "kind": "service",
+      "title": "VCN routing, network controls, and DNS",
+      "path": "references/service-vcn-routing.md",
+      "summary": "Trace VCN routes, gateways, security and private DNS",
+      "aliases": [
+        "VCN",
+        "routing",
+        "NSG",
+        "DRG",
+        "private DNS"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Networking components",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm"
+        },
+        {
+          "title": "DRG attachments and route tables",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm"
+        },
+        {
+          "title": "Security rules",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securityrules.htm"
+        },
+        {
+          "title": "DNS overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-compute",
+      "kind": "service",
+      "title": "Compute instances and persistent disks",
+      "path": "references/service-compute.md",
+      "summary": "Choose and manage an instance, image, shape and boot volume",
+      "aliases": [
+        "Compute",
+        "VM",
+        "shape",
+        "image",
+        "instance"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Instance operations",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/instances.htm"
+        },
+        {
+          "title": "Shapes and compatibility",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm"
+        },
+        {
+          "title": "Boot-volume lifecycle",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm"
+        },
+        {
+          "title": "Block Volume and attachments",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/overview.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-object-storage",
+      "kind": "service",
+      "title": "Object Storage buckets, objects, and retention",
+      "path": "references/service-object-storage.md",
+      "summary": "Buckets, objects, versions, retention, lifecycle and access",
+      "aliases": [
+        "Object Storage",
+        "bucket",
+        "versioning",
+        "retention"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Object Storage model and private access",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm"
+        },
+        {
+          "title": "Object versioning",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingversioning.htm"
+        },
+        {
+          "title": "Retention rules and locking",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingretentionrules.htm"
+        },
+        {
+          "title": "Bucket creation options",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/os/bucket/create.html"
+        }
+      ]
+    },
+    {
+      "id": "service-autonomous-database",
+      "kind": "service",
+      "title": "Autonomous Database operations and access",
+      "path": "references/service-autonomous-database.md",
+      "summary": "Autonomous Database access, TLS, SQL users, endpoints",
+      "aliases": [
+        "Autonomous Database",
+        "ADB",
+        "ATP",
+        "ADW",
+        "wallet",
+        "TLS"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Private endpoints and network configuration",
+          "url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/private-endpoints-autonomous.html"
+        },
+        {
+          "title": "Python mTLS connection",
+          "url": "https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/connecting-python-mtls.html"
+        },
+        {
+          "title": "JDBC TLS/mTLS distinctions",
+          "url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/connect-jdbc-thin-wallet.html"
+        },
+        {
+          "title": "Autonomous Database CLI discovery",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/db/autonomous-database/list.html"
+        }
+      ]
+    },
+    {
+      "id": "service-oke",
+      "kind": "service",
+      "title": "OKE clusters, workloads, and identities",
+      "path": "references/service-oke.md",
+      "summary": "OKE clusters, node pools, pod identity and image access",
+      "aliases": [
+        "OKE",
+        "Kubernetes",
+        "node pool",
+        "workload identity"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OKE cluster types and node choices",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengclustersnodes.htm"
+        },
+        {
+          "title": "Workload identity",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contenggrantingworkloadaccesstoresources.htm"
+        },
+        {
+          "title": "Container Registry",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryoverview.htm"
+        },
+        {
+          "title": "Kubernetes pod diagnosis",
+          "url": "https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/"
+        }
+      ]
+    },
+    {
+      "id": "service-functions",
+      "kind": "service",
+      "title": "Functions deployment and invocation",
+      "path": "references/service-functions.md",
+      "summary": "Functions applications, deployment, invocation and runtime",
+      "aliases": [
+        "Functions",
+        "serverless",
+        "Fn Project"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Functions runtime and deployment modes",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsoverview.htm"
+        },
+        {
+          "title": "Signed invocation methods",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsinvokingfunctions.htm"
+        },
+        {
+          "title": "Functions deployment and troubleshooting entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm"
+        },
+        {
+          "title": "API Gateway integration tutorial",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/developer/functions/func-api-gtw/01-summary.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-api-gateway",
+      "kind": "service",
+      "title": "API Gateway deployments and backend access",
+      "path": "references/service-api-gateway.md",
+      "summary": "API Gateway gateways, deployments, routes and authentication",
+      "aliases": [
+        "API Gateway",
+        "routes",
+        "JWT",
+        "API deployment"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Gateway and deployment resource model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm"
+        },
+        {
+          "title": "Gateway-to-Function invocation setup",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/developer/functions/func-api-gtw/01-summary.htm"
+        },
+        {
+          "title": "OCI Logging and service logs",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Logging/Concepts/loggingoverview.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-generative-ai",
+      "kind": "service",
+      "title": "Generative AI model and agent selection",
+      "path": "references/service-generative-ai.md",
+      "summary": "Generative AI model APIs, agents, endpoints and regional routing",
+      "aliases": [
+        "Generative AI",
+        "LLM",
+        "agents",
+        "embeddings"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Current Generative AI API and product entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm"
+        },
+        {
+          "title": "Model concepts and hosting modes",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/concepts.htm"
+        },
+        {
+          "title": "Regional routing and CPU-only access",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/cpu-only-regions.htm"
+        },
+        {
+          "title": "Generative AI Agents tools",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-data-science",
+      "kind": "service",
+      "title": "Data Science notebooks, jobs, and model serving",
+      "path": "references/service-data-science.md",
+      "summary": "Data Science projects, jobs, model artifacts and deployments",
+      "aliases": [
+        "Data Science",
+        "notebook",
+        "training",
+        "model deployment"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Data Science resource and operating model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-science/using/overview.htm"
+        },
+        {
+          "title": "Jobs and job-run use cases",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-science/using/jobs-about.htm"
+        },
+        {
+          "title": "Data Scientist's guide to OCI",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/getting-started-as-data-scientist.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-ai-data-platform",
+      "kind": "service",
+      "title": "AI Data Platform workspaces and catalogs",
+      "path": "references/service-ai-data-platform.md",
+      "summary": "AI Data Platform workspaces, catalogs and permissions",
+      "aliases": [
+        "AI Data Platform",
+        "AIDP",
+        "Workbench",
+        "external catalogs"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "AI Data Platform entry point",
+          "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/"
+        },
+        {
+          "title": "Workspaces and private-network context",
+          "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/workspaces.html"
+        },
+        {
+          "title": "Permissions model",
+          "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/permissions-model.html"
+        },
+        {
+          "title": "External catalogs and source credentials",
+          "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/external-catalogs.html"
+        },
+        {
+          "title": "AI Data Platform control-plane CLI",
+          "url": "https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/ai-data-platform/ai-data-platform/create.html"
+        }
+      ]
+    },
+    {
+      "id": "service-data-integration",
+      "kind": "service",
+      "title": "Data Integration design and runtime artifacts",
+      "path": "references/service-data-integration.md",
+      "summary": "Data Integration flows, tasks, publication and runs",
+      "aliases": [
+        "Data Integration",
+        "ETL",
+        "ELT",
+        "published task"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Data Integration concepts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-integration/using/overview.htm"
+        },
+        {
+          "title": "Data flows and transformation design",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-integration/using/data-flows.htm"
+        },
+        {
+          "title": "Data Integration tutorials",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-integration/tutorials/index.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-data-flow",
+      "kind": "service",
+      "title": "Data Flow Spark applications and runs",
+      "path": "references/service-data-flow.md",
+      "summary": "Data Flow Spark applications, runs and private data access",
+      "aliases": [
+        "Data Flow",
+        "Spark",
+        "application",
+        "run"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Data Flow overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-flow/using/dfs_service_overview.htm"
+        },
+        {
+          "title": "Applications, runs, pools and private access",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-flow/using/concepts.htm"
+        },
+        {
+          "title": "Data Flow developer and troubleshooting entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-flow/using/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-streaming",
+      "kind": "service",
+      "title": "Streaming producers, consumers, and replay",
+      "path": "references/service-streaming.md",
+      "summary": "Streaming pools, streams, partitions and consumer offsets",
+      "aliases": [
+        "Streaming",
+        "Kafka",
+        "partitions",
+        "consumer groups"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Streaming features and use cases",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Streaming/Concepts/streamingoverview.htm"
+        },
+        {
+          "title": "Stream lifecycle and private-endpoint prerequisites",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/managingstreams.htm"
+        },
+        {
+          "title": "OCI API retry and response behavior",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-secrets-keys",
+      "kind": "service",
+      "title": "Secret Management and encryption keys",
+      "path": "references/service-secrets-keys.md",
+      "summary": "Separate encryption keys, secrets, versions and rotation",
+      "aliases": [
+        "Vault",
+        "Secret Management",
+        "KMS",
+        "rotation"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Secret Management",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/secret-management/home.htm"
+        },
+        {
+          "title": "Vaults and key-management concepts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm"
+        },
+        {
+          "title": "IAM principal and policy model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm"
+        }
+      ]
+    },
+    {
+      "id": "troubleshoot-access",
+      "kind": "troubleshooting",
+      "title": "Diagnose authentication, authorization, and limits",
+      "path": "references/troubleshoot-access.md",
+      "summary": "Diagnose authentication, authorization, quotas and capacity",
+      "aliases": [
+        "NotAuthenticated",
+        "NotAuthorizedOrNotFound",
+        "limits",
+        "quota"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OCI common API errors",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm"
+        },
+        {
+          "title": "Session-token authentication",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/clitoken.htm"
+        },
+        {
+          "title": "IAM policy syntax",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policysyntax.htm"
+        },
+        {
+          "title": "Compartment quotas",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Quotas/Concepts/resourcequotas.htm"
+        },
+        {
+          "title": "Request IDs, retries and concurrency",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm"
+        }
+      ]
+    },
+    {
+      "id": "troubleshoot-connectivity",
+      "kind": "troubleshooting",
+      "title": "Diagnose private and application connectivity",
+      "path": "references/troubleshoot-connectivity.md",
+      "summary": "Diagnose DNS, timeout, routing, TLS and private access",
+      "aliases": [
+        "DNS",
+        "timeout",
+        "connectivity",
+        "TLS",
+        "private endpoint"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OCI network components",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm"
+        },
+        {
+          "title": "Security rules and ZPR",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securityrules.htm"
+        },
+        {
+          "title": "DNS",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm"
+        },
+        {
+          "title": "Autonomous Database private endpoint diagnosis",
+          "url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/private-endpoints-autonomous.html"
+        },
+        {
+          "title": "Data Platform workspace private-network context",
+          "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/workspaces.html"
+        }
+      ]
+    },
+    {
+      "id": "troubleshoot-workloads",
+      "kind": "troubleshooting",
+      "title": "Diagnose workloads, runs, and serving failures",
+      "path": "references/troubleshoot-workloads.md",
+      "summary": "Diagnose pod, function, pipeline, model and stack failures",
+      "aliases": [
+        "ImagePullBackOff",
+        "CrashLoopBackOff",
+        "failed run",
+        "work request"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Kubernetes pod diagnosis",
+          "url": "https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/"
+        },
+        {
+          "title": "Function invocation",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsinvokingfunctions.htm"
+        },
+        {
+          "title": "Data Integration design/runtime model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-integration/using/overview.htm"
+        },
+        {
+          "title": "Data Science jobs",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-science/using/jobs-about.htm"
+        },
+        {
+          "title": "Resource Manager jobs and state",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm"
+        }
+      ]
+    },
+    {
+      "id": "recipe-private-application",
+      "kind": "recipe",
+      "title": "Recipe: private application deployment",
+      "path": "references/recipe-private-application.md",
+      "summary": "Deploy a private application across network and compute services",
+      "aliases": [
+        "private application",
+        "load balancer",
+        "deployment"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Load-balancer frontend/backend concepts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm"
+        },
+        {
+          "title": "Bastion access model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Bastion/Concepts/bastionoverview.htm"
+        },
+        {
+          "title": "Well-Architected design considerations",
+          "url": "https://docs.oracle.com/en/solutions/oci-best-practices/"
+        }
+      ]
+    },
+    {
+      "id": "recipe-database-connectivity",
+      "kind": "recipe",
+      "title": "Recipe: connect an application to Autonomous Database",
+      "path": "references/recipe-database-connectivity.md",
+      "summary": "Connect an application to Autonomous Database",
+      "aliases": [
+        "database connectivity",
+        "private ADB",
+        "SQL"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Autonomous Database private endpoint configuration and troubleshooting",
+          "url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/private-endpoints-autonomous.html"
+        },
+        {
+          "title": "Python driver mTLS connection workflow",
+          "url": "https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/connecting-python-mtls.html"
+        },
+        {
+          "title": "JDBC TLS and mTLS distinctions",
+          "url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/connect-jdbc-thin-wallet.html"
+        }
+      ]
+    },
+    {
+      "id": "recipe-serverless-api",
+      "kind": "recipe",
+      "title": "Recipe: Function behind API Gateway",
+      "path": "references/recipe-serverless-api.md",
+      "summary": "Expose a Function through an authenticated API Gateway",
+      "aliases": [
+        "serverless API",
+        "Functions",
+        "API Gateway"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "API Gateway with Functions tutorial and invocation policies",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/developer/functions/func-api-gtw/01-summary.htm"
+        },
+        {
+          "title": "API Gateway endpoints, deployments and backend routing",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm"
+        },
+        {
+          "title": "Functions service overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsoverview.htm"
+        }
+      ]
+    },
+    {
+      "id": "recipe-ai-application",
+      "kind": "recipe",
+      "title": "Recipe: choose and deploy an AI application",
+      "path": "references/recipe-ai-application.md",
+      "summary": "Choose and deploy an AI application",
+      "aliases": [
+        "AI application",
+        "deployment choice",
+        "inference"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OCI enterprise GenAI architecture: layers and design considerations",
+          "url": "https://docs.oracle.com/en/solutions/oci-genai-enterprise/index.html"
+        },
+        {
+          "title": "Current Generative AI capabilities and API entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm"
+        },
+        {
+          "title": "Generative AI Agents tools and retrieval",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm"
+        },
+        {
+          "title": "Data Science managed ML resources",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-science/using/overview.htm"
+        }
+      ]
+    },
+    {
+      "id": "recipe-private-oke",
+      "kind": "recipe",
+      "title": "Recipe: private OKE application with workload access",
+      "path": "references/recipe-private-oke.md",
+      "summary": "Deploy a private OKE workload with scoped access",
+      "aliases": [
+        "private OKE",
+        "private cluster",
+        "workload identity"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OKE cluster/data-plane choices",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengclustersnodes.htm"
+        },
+        {
+          "title": "Workload identity setup",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contenggrantingworkloadaccesstoresources.htm"
+        },
+        {
+          "title": "Registry access model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryoverview.htm"
+        }
+      ]
+    },
+    {
+      "id": "recipe-data-ingestion",
+      "kind": "recipe",
+      "title": "Recipe: governed source-to-target data ingestion",
+      "path": "references/recipe-data-ingestion.md",
+      "summary": "Build a governed, replayable data ingestion pipeline",
+      "aliases": [
+        "ingestion",
+        "pipeline",
+        "checkpoint",
+        "replay"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Data Integration artifact lifecycle",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-integration/using/overview.htm"
+        },
+        {
+          "title": "Spark applications and runs",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-flow/using/concepts.htm"
+        },
+        {
+          "title": "Data Platform external catalogs",
+          "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/external-catalogs.html"
+        },
+        {
+          "title": "Streaming",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Streaming/Concepts/streamingoverview.htm"
+        }
+      ]
+    },
+    {
+      "id": "recipe-rag-application",
+      "kind": "recipe",
+      "title": "Recipe: retrieval over governed enterprise data",
+      "path": "references/recipe-rag-application.md",
+      "summary": "Build retrieval-augmented generation with source permissions",
+      "aliases": [
+        "RAG",
+        "retrieval",
+        "citations",
+        "document permissions"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OCI enterprise GenAI architecture",
+          "url": "https://docs.oracle.com/en/solutions/oci-genai-enterprise/index.html"
+        },
+        {
+          "title": "Generative AI Agents retrieval and tools",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm"
+        },
+        {
+          "title": "Data Platform permissions",
+          "url": "https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/permissions-model.html"
+        },
+        {
+          "title": "Current Generative AI interfaces",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "recipe-model-lifecycle",
+      "kind": "recipe",
+      "title": "Recipe: train, register, and serve a predictive model",
+      "path": "references/recipe-model-lifecycle.md",
+      "summary": "Train, evaluate, register and deploy a predictive model",
+      "aliases": [
+        "model lifecycle",
+        "MLOps",
+        "batch scoring",
+        "serving"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Data Science assets and serving",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-science/using/overview.htm"
+        },
+        {
+          "title": "Repeatable job execution",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/data-science/using/jobs-about.htm"
+        },
+        {
+          "title": "ML lifecycle and model artifacts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/getting-started-as-data-scientist.htm"
+        },
+        {
+          "title": "Data Platform and Data Science integration architecture",
+          "url": "https://docs.oracle.com/en/solutions/ai-data-platform-data-science-workloads/"
+        }
+      ]
+    }
+  ]
+}
