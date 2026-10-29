@@ -9,14 +9,15 @@ Sourced OCI context, service selection, examples, and reusable workflows across 
 | Capability | Evidence for this release |
 | --- | --- |
 | Portable plugin and local marketplace structure | Checked by repository tooling; current platform documentation consulted |
-| Codex CLI install command syntax | Local installed CLI help inspected; no real account installation performed |
-| Codex/ChatGPT plugin discovery and activation | Not verified end to end |
+| Codex CLI GitHub installation | Installed v0.2.1 from GitHub candidate `dd61498` with Codex CLI `0.165.0-alpha.1.2` on macOS; reported installed and enabled |
+| Codex CLI skill discovery and explicit activation | Fresh read-only session loaded the installed skill and relevant references for three documentation-only scenarios |
+| ChatGPT desktop/web plugin discovery and activation | Not verified end to end |
 | ChatGPT workspace GitHub import | Documented platform route; depends on workspace administrator/features |
 | Private account ZIP creation | Conditional on account tooling; not verified end to end |
 | Signed-in OCI Console through host browser | Documented host capability; OCI-specific interaction not verified |
 | Cloud Shell through browser controls | Documented OCI access route; terminal interaction not verified |
 | Example OCI commands | Selected command references reviewed; no live execution |
-| Non-mutating prompt checks | Routing/content walkthroughs only; no independent model-run evaluation |
+| Non-mutating prompt checks | One fresh Codex session covering tenancy/network concepts, data-service selection, and hypothetical private database connectivity; no broad model evaluation |
 
 ## Boundaries
 

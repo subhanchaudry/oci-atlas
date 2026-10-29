@@ -2,6 +2,8 @@
 
 Reviewed: 2026-10-29. Use the route supported by your client and workspace. The [compatibility record](LIMITATIONS.md) distinguishes exercised routes from documented alternatives.
 
+For a private repository, your GitHub account must have read access and your local Git client must be authenticated through your normal credential manager or SSH setup. Repository access and OCI tenancy access are separate. Keep tokens out of installation commands and chat.
+
 ## Codex CLI and local plugin marketplaces
 
 To install from GitHub at a fixed release, run:

@@ -1,5 +1,28 @@
 # Validation record
 
+## 0.2.1 — 2026-10-29
+
+### Installation and guide discovery
+
+Codex CLI `0.165.0-alpha.1.2` on macOS registered the GitHub marketplace at candidate commit `dd61498` and installed `oci-atlas@oci-atlas-marketplace`. The install response identified version `0.2.1`; the subsequent plugin list reported it installed and enabled. Existing marketplace settings were inspected before registration. Repository visibility was preserved as private at the owner's request.
+
+A fresh ephemeral Codex session used the installed skill in read-only mode, outside this repository, for three documentation-only scenarios:
+
+| Scenario | Observed result |
+| --- | --- |
+| Explain compartments versus VCNs | Separated resource/IAM organization from regional networking; requested no OCI authentication |
+| Compare Data Integration, Data Flow, and AI Data Platform | Distinguished published tasks, Spark application/runs, and workspace/catalog objects |
+| Diagnose a hypothetical private Autonomous Database timeout | Started from the job runtime and separated DNS, routing/security, TLS, and SQL authorization without claiming a root cause |
+
+The execution trace showed reads of the installed `SKILL.md` and seven relevant references: foundations, networking, Data Integration, Data Flow, AI Data Platform, database connectivity, and connectivity troubleshooting. No model-issued OCI commands, credential-file reads, or resource writes occurred. The host attempted its normal plugin/MCP startup operations; this was not an offline-host exercise. The installed package's content was compared with release source. These observations establish this CLI route and explicit activation, not universal host compatibility or benchmarked accuracy.
+
+### Presentation and packaging
+
+- Both READMEs were reviewed for removal of testing, validation, build instructions, CI badges, and development-status commentary. Supporting evidence remains in this record and the compatibility document.
+- GitHub's Markdown API rendered the root README. A local preview of that HTML rendered both Mermaid diagrams with Mermaid 12 and was visually inspected in light and dark themes. The SVG banner was also rasterized and inspected against light and dark page backgrounds. Direct logged-out GitHub viewing returned 404 for the private repository; no claim of an authenticated GitHub UI walkthrough is made.
+- Catalog, local references, metadata, license consistency, sensitive-data patterns, and the complete 43-file ZIP passed existing package checks. The banner, support guide, issue forms, and development files remain outside the plugin ZIP. Issue form YAML was parsed.
+- No live OCI operations, browser sign-in, ChatGPT account/workspace installation, public-directory submission, or exhaustive model/service evaluation was performed. Earlier release evidence is retained below.
+
 ## 0.2.0 — 2026-10-29
 
 - Catalog and offline package checks passed: 43 package files, an 85-line entry skill, 36 routed references, eight domain overviews, 15 focused service guides, three troubleshooting guides and eight recipes. All catalog entries have sources, aliases and review dates. Generated routing, title/date/source metadata and the content index agree with the catalog.

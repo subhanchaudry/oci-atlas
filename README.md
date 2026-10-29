@@ -20,7 +20,7 @@ Understand OCI services, choose architectures, and work through resource tasks w
 OCI Atlas supplies the OCI context. ChatGPT or Codex reads the relevant guidance and uses the tools available in your environment when an operation is requested.
 
 ```mermaid
-flowchart TD
+flowchart LR
     request["Your OCI question or task"] --> host["ChatGPT or Codex"]
     host --> atlas["OCI Atlas · relevant guides and recipes"]
     atlas --> answer["Explanation, recommendation, or design"]
