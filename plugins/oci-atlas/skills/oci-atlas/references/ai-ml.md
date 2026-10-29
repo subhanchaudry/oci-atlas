@@ -47,6 +47,12 @@ oci data-science project list --compartment-id "$ATLAS_COMPARTMENT_ID" --all \
 
 Use the [AI application recipe](recipe-ai-application.md) for an end-to-end design.
 
+## Retrieval and accelerated infrastructure
+
+Use [Oracle AI Vector Search](service-ai-vector-search.md) for supported database-native embeddings/vector queries and [Search with OpenSearch](service-opensearch.md) for a managed search/index platform. Compare these with existing platform/agent knowledge sources using the [RAG recipe](recipe-rag-application.md); preserve source permissions and deletion propagation through the retrieval path. Model inference, embedding generation, vector storage, and answer grounding are separate components.
+
+For a concrete custom-infrastructure requirement, use [GPU/HPC](service-gpu-hpc.md) to resolve capacity, driver/runtime compatibility, RDMA fabric, and storage. Compare [File Storage with Lustre](service-lustre.md), [NFS File Storage](service-file-storage.md), and [Block Volume](service-block-volume.md) by workload I/O and client support. Availability of a GPU shape does not reserve a multi-node cluster or demonstrate model performance.
+
 ## Sources
 
 - [Current Generative AI product and developer entry points](https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm)

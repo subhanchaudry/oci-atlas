@@ -28,6 +28,10 @@ For a clone or restore, identify source, point in time, destination and data han
 
 Use the [database connectivity recipe](recipe-database-connectivity.md) for application setup. Unknown hostname suggests DNS investigation; a TCP timeout suggests endpoint/routing/security checks; a TLS failure suggests driver/trust/descriptor checks; successful login with a denied query suggests grants/schema resolution. Changing ATP/ADW workload type is not a network troubleshooting step.
 
+## Related database and application choices
+
+For engine/deployment alternatives, use [Base Database](service-base-database.md), [Exadata](service-exadata.md), and [service selection](service-selection.md). For supported database-native retrieval, use [Oracle AI Vector Search](service-ai-vector-search.md). [APEX workspaces and ORDS](service-apex-ords.md) have application/schema boundaries inside and around the database; OCI compartment access does not supply application or SQL authorization. [Data Safe](service-data-safe.md) and [Database Migration](service-database-migration.md) require their own target connections and privileges.
+
 ## Sources
 
 - [Private endpoints and network configuration](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/private-endpoints-autonomous.html)

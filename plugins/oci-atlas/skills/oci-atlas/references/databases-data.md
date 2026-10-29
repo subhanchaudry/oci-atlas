@@ -42,6 +42,14 @@ oci db autonomous-database list --compartment-id "$ATLAS_COMPARTMENT_ID" --all \
 
 For an ingestion job, inspect source/target identities, data asset connections, schema mappings, network/DNS and data privileges. Publish/run the correct artifact, observe its run status/logs, and verify bounded row counts or output objects. A successful orchestration status alone doesn't establish data correctness. For schema changes, inspect downstream dependencies before updating a mapping or deleting artifacts.
 
+## Canonical engine and lifecycle guides
+
+Start with [service selection](service-selection.md), then load only the chosen engine: [Autonomous Database](service-autonomous-database.md), [Base Database](service-base-database.md), [Exadata](service-exadata.md), [MySQL HeatWave](service-mysql-heatwave.md), [OCI Database with PostgreSQL](service-postgresql.md), or [NoSQL Database](service-nosql.md). [OCI Cache](service-oci-cache.md) addresses cached application state; define the durable source and failure behavior. [Data Safe](service-data-safe.md) adds supported database-security controls and distinct target access.
+
+For moves and ongoing changes, use [Database Migration](service-database-migration.md), [GoldenGate](service-goldengate.md), and the [cutover recipe](recipe-database-migration.md). Replication, database HA, and [application DR](service-full-stack-dr.md) solve different dependencies. A current replica can contain the same accidental deletion as its source.
+
+For transport, distinguish [Queue](service-queue.md) work distribution, [Streaming](service-streaming.md) event logs, and [Streaming with Apache Kafka](service-streaming-kafka.md) managed Kafka clusters. Streaming's Kafka-compatible interface is a separate service interface. [Oracle Integration](service-oracle-integration.md) handles application/business integrations; [Data Integration](service-data-integration.md) handles data tasks. [Analytics Cloud](service-analytics-cloud.md) supplies analytics delivery rather than replacing an ingestion engine.
+
 ## Sources
 
 - [Base Database Service](https://docs.oracle.com/en/cloud/paas/base-database/about/index.html)

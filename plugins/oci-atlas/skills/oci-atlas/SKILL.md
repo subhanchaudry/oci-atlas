@@ -25,10 +25,10 @@ Read only the relevant reference: a focused guide for a named service, a domain 
 | AI and ML overview; model, agent and deployment choices | [AI, agents, and machine learning](references/ai-ml.md) |
 | Application platform overview; containers, serverless, delivery | [Application platforms](references/applications.md) |
 | Operations overview: metrics, logs, Audit, Cloud Guard, cost | [Operations, security, and cost](references/operations-security.md) |
-| Terraform, Resource Manager, landing zones, architecture | [Infrastructure as code and architecture](references/infrastructure-architecture.md) |
+| Terraform, Resource Manager state/import, drift, private endpoints | [Infrastructure as code and architecture](references/infrastructure-architecture.md) |
 | Write and diagnose IAM policies; users, workloads, scope | [IAM policies and workload identities](references/service-iam-policies.md) |
 | Trace VCN routes, gateways, security and private DNS | [VCN routing, network controls, and DNS](references/service-vcn-routing.md) |
-| Choose and manage an instance, image, shape and boot volume | [Compute instances and persistent disks](references/service-compute.md) |
+| Instances, configurations, pools, autoscaling, capacity | [Compute instances and persistent disks](references/service-compute.md) |
 | Buckets, objects, versions, retention, lifecycle and access | [Object Storage buckets, objects, and retention](references/service-object-storage.md) |
 | Autonomous Database access, TLS, SQL users, endpoints | [Autonomous Database operations and access](references/service-autonomous-database.md) |
 | OKE clusters, node pools, pod identity and image access | [OKE clusters, workloads, and identities](references/service-oke.md) |
@@ -41,9 +41,42 @@ Read only the relevant reference: a focused guide for a named service, a domain 
 | Data Flow Spark applications, runs and private data access | [Data Flow Spark applications and runs](references/service-data-flow.md) |
 | Streaming pools, streams, partitions and consumer offsets | [Streaming producers, consumers, and replay](references/service-streaming.md) |
 | Separate encryption keys, secrets, versions and rotation | [Secret Management and encryption keys](references/service-secrets-keys.md) |
+| LB/NLB listeners, backend health, TLS, source behavior | [Load Balancer, Network Load Balancer, and backend health](references/service-load-balancing.md) |
+| FastConnect, VPN, DRG routes, hybrid DNS | [Hybrid connectivity with FastConnect, VPN, DRG, and DNS](references/service-hybrid-connectivity.md) |
+| Bastion sessions and private administrative access | [Bastion sessions and private administration](references/service-bastion.md) |
+| Certificate issuance, trust, consumers, renewal | [Certificates, trust chains, and renewal](references/service-certificates.md) |
+| Cloud Guard detection and Security Zone enforcement | [Cloud Guard findings and Security Zones](references/service-cloud-guard-security-zones.md) |
+| Web Application Firewall policy and enforcement point | [Web Application Firewall policies and enforcement](references/service-waf.md) |
+| Routed Network Firewall inspection and policy | [Network Firewall inspection paths and policies](references/service-network-firewall.md) |
+| ZPR attributes, packet policy, blocked flows | [Zero Trust Packet Routing and security attributes](references/service-zpr.md) |
+| Metrics, alarms, topics, subscriptions, delivery | [Monitoring queries, alarms, and notification delivery](references/service-monitoring-notifications.md) |
+| Log emission, Audit coverage, Connector Hub delivery | [Logging, Audit, and Connector Hub pipelines](references/service-logging-audit-connectors.md) |
+| Block disks, attachments, groups, backups, replication | [Block Volume attachments, backups, and replication](references/service-block-volume.md) |
+| NFS exports, mount targets, snapshots, replication | [File Storage exports, snapshots, and replication](references/service-file-storage.md) |
+| DR protection groups, plans, transitions, recovery | [Full Stack Disaster Recovery plans and dependencies](references/service-full-stack-dr.md) |
+| Host registration, software sources, update jobs | [OS Management Hub registration, sources, and updates](references/service-os-management-hub.md) |
+| Base Database systems, operations, Data Guard | [Base Database systems, maintenance, and Data Guard](references/service-base-database.md) |
+| Exadata dedicated, Exascale, Cloud@Customer choices | [Exadata deployment choices and resource operations](references/service-exadata.md) |
+| MySQL HeatWave, DB systems, HA, client access | [MySQL HeatWave systems, access, and availability](references/service-mysql-heatwave.md) |
+| Managed PostgreSQL, extensions, private clients | [OCI Database with PostgreSQL systems and private access](references/service-postgresql.md) |
+| NoSQL keys, tables, consistency, capacity | [NoSQL tables, key design, and capacity](references/service-nosql.md) |
+| Cache engines, client ACLs, durability, failure behavior | [OCI Cache clusters, users, and application behavior](references/service-oci-cache.md) |
+| Data Safe targets, assessment, audit, masking | [Data Safe targets, assessments, auditing, and masking](references/service-data-safe.md) |
+| Database Migration connections, evaluation, jobs, cutover | [Database Migration resources, evaluation, and cutover](references/service-database-migration.md) |
+| GoldenGate CDC, connections, checkpoints, replication | [GoldenGate deployments, connections, and change replication](references/service-goldengate.md) |
+| GPU/HPC capacity, RDMA clusters, drivers, data paths | [GPU and HPC capacity, cluster networking, and storage](references/service-gpu-hpc.md) |
+| Managed Lustre, parallel I/O, client compatibility | [File Storage with Lustre for parallel workloads](references/service-lustre.md) |
+| Database vectors, embeddings, indexes, filtered retrieval | [Oracle AI Vector Search and retrieval design](references/service-ai-vector-search.md) |
+| OpenSearch clusters, ingestion, search, data roles | [Search with OpenSearch clusters and semantic retrieval](references/service-opensearch.md) |
+| Container Instances runtime and operating responsibility | [Container Instances runtime, image access, and lifecycle](references/service-container-instances.md) |
+| Managed Apache Kafka clusters and client security | [Streaming with Apache Kafka clusters and client access](references/service-streaming-kafka.md) |
+| Queue tasks, visibility, acknowledgement, dead letters | [Queue messages, visibility, and dead-letter handling](references/service-queue.md) |
+| APEX workspaces, schemas, ORDS, application access | [APEX workspaces, application access, and ORDS](references/service-apex-ords.md) |
+| Oracle Integration instances, adapters, activation | [Oracle Integration instances, connections, and activation](references/service-oracle-integration.md) |
+| Analytics Cloud instances, connections, application roles | [Analytics Cloud instances, data connections, and roles](references/service-analytics-cloud.md) |
 | Diagnose authentication, authorization, quotas and capacity | [Diagnose authentication, authorization, and limits](references/troubleshoot-access.md) |
 | Diagnose DNS, timeout, routing, TLS and private access | [Diagnose private and application connectivity](references/troubleshoot-connectivity.md) |
-| Diagnose pod, function, pipeline, model and stack failures | [Diagnose workloads, runs, and serving failures](references/troubleshoot-workloads.md) |
+| Diagnose workloads, notification delivery, migration, stack failures | [Diagnose workloads, runs, and serving failures](references/troubleshoot-workloads.md) |
 | Deploy a private application across network and compute services | [Recipe: private application deployment](references/recipe-private-application.md) |
 | Connect an application to Autonomous Database | [Recipe: connect an application to Autonomous Database](references/recipe-database-connectivity.md) |
 | Expose a Function through an authenticated API Gateway | [Recipe: Function behind API Gateway](references/recipe-serverless-api.md) |
@@ -52,6 +85,10 @@ Read only the relevant reference: a focused guide for a named service, a domain 
 | Build a governed, replayable data ingestion pipeline | [Recipe: governed source-to-target data ingestion](references/recipe-data-ingestion.md) |
 | Build retrieval-augmented generation with source permissions | [Recipe: retrieval over governed enterprise data](references/recipe-rag-application.md) |
 | Train, evaluate, register and deploy a predictive model | [Recipe: train, register, and serve a predictive model](references/recipe-model-lifecycle.md) |
+| Plan on-premises application access to private OCI | [Recipe: on-premises access to private OCI applications](references/recipe-hybrid-private-access.md) |
+| Plan observability through notification receipt | [Recipe: application evidence and notification delivery](references/recipe-observability-delivery.md) |
+| Plan application backup, restore, and DR | [Recipe: application backup, restore, and disaster recovery](references/recipe-backup-disaster-recovery.md) |
+| Sequence migration, replication, and application cutover | [Recipe: database migration, replication, and application cutover](references/recipe-database-migration.md) |
 
 <!-- atlas:catalog:end -->
 

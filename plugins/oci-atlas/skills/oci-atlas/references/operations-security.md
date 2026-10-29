@@ -43,6 +43,14 @@ Use defined tags for governed metadata and free-form tags for simple labels; ins
 
 Budgets are soft spending thresholds with periodically evaluated alerts. They do not stop consumption. For cost questions, state duration, utilization, region, currency, service options, storage/backup retention and network assumptions. Verify the applicable current price inputs rather than claiming an exact bill from a shape name. If cleanup is requested, identify ownership and dependencies; enumerate retained resources after the operation.
 
+## Follow evidence to action and recovery
+
+Use [Monitoring and Notifications](service-monitoring-notifications.md) for metric/alarm/topic/subscription boundaries, and [Logging, Audit, and Connector Hub](service-logging-audit-connectors.md) for evidence pipelines. The [observability delivery recipe](recipe-observability-delivery.md) follows emission through destination receipt; an alarm firing does not establish delivery.
+
+Use [Cloud Guard/Security Zones](service-cloud-guard-security-zones.md) for posture detection and preventative configuration rules, [Certificates](service-certificates.md) for certificate lifecycle, [Data Safe](service-data-safe.md) for database security, and the [network overview](networking.md) for traffic-control distinctions. [OS Management Hub](service-os-management-hub.md) manages supported registered-host software sources and updates; it does not establish application health.
+
+For resilience, load [Block Volume](service-block-volume.md), [File Storage](service-file-storage.md), or the chosen database guide, then [Full Stack DR](service-full-stack-dr.md) for supported application orchestration. Use the [backup/recovery recipe](recipe-backup-disaster-recovery.md) to connect consistency, retention, role ownership, RPO/RTO, restore dependencies, and re-protection. Recovery procedures need evidence from the application before an outcome can be claimed.
+
 ## Sources
 
 - [Monitoring metrics and alarms](https://docs.oracle.com/en-us/iaas/Content/Monitoring/Concepts/monitoringoverview.htm)

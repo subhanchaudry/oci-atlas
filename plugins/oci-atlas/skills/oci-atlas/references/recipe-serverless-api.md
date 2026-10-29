@@ -24,6 +24,10 @@ Preserve the API contract when changing function code or deployment routes. Trac
 
 For requested deletion, check other routes/deployments sharing the function, application, gateway or registry image. Remove only owned dependencies and preserve any required logs. Consult [application platforms](applications.md) for resource relationships and [operations](operations-security.md) for evidence.
 
+## Related execution and operational patterns
+
+Compare [Container Instances](service-container-instances.md) when the backend needs a long-lived container rather than a bounded function invocation. Use [Queue](service-queue.md) for asynchronous work with explicit acknowledgement/retry handling. Add the [observability recipe](recipe-observability-delivery.md) for gateway/backend evidence and notification receipt; a successful deployment does not establish an observable application.
+
 ## Sources
 
 - [API Gateway with Functions tutorial and invocation policies](https://docs.oracle.com/en-us/iaas/Content/developer/functions/func-api-gtw/01-summary.htm)

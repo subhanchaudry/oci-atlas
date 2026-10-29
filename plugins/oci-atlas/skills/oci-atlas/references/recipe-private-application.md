@@ -31,6 +31,10 @@ For cleanup, distinguish workload-owned resources from a shared VCN, gateway or 
 - [Applications](applications.md): OKE or container workflow.
 - [Infrastructure](infrastructure-architecture.md): IaC ownership and repeatability.
 
+## Canonical supporting guides
+
+Use [Load Balancer/NLB](service-load-balancing.md) for frontend/backend health and protocol choice, [Certificates](service-certificates.md) for TLS material/rotation, and [Bastion](service-bastion.md) for scoped administration. For on-premises callers add the [hybrid access recipe](recipe-hybrid-private-access.md). Design [observability delivery](recipe-observability-delivery.md) and [backup/recovery](recipe-backup-disaster-recovery.md) alongside the deployment. For containers without Kubernetes requirements, compare [Container Instances](service-container-instances.md) before choosing the runtime.
+
 ## Sources
 
 - [Load-balancer frontend/backend concepts](https://docs.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm)

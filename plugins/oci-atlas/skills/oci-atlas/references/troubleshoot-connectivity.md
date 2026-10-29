@@ -32,6 +32,12 @@ For Autonomous Database, use its actual connection details. For an external cata
 
 Modify the smallest justified configuration while preserving shared rules. Retest the original flow, then verify the requested application behavior. If access can't be tested from the caller's location, state that limit and specify the remaining check. Keep a record of changed routing/security objects so a later cleanup doesn't remove shared connectivity.
 
+## Service-specific branches
+
+For on-premises callers, follow [hybrid routing and DNS](service-hybrid-connectivity.md): tunnel/virtual-circuit status, DRG imports/exports, forward/return advertisements, and resolver forwarding are distinct. Use the [hybrid recipe](recipe-hybrid-private-access.md) to keep the source runtime explicit.
+
+For recent attribute changes, inspect [ZPR](service-zpr.md) and applicable network rules; for inspected flows, check [Network Firewall](service-network-firewall.md) routing symmetry and policy. For a web denial inspect [WAF](service-waf.md) logs; for unhealthy backends inspect [load-balancer health](service-load-balancing.md). Preserve TLS hostname/trust in [Bastion](service-bastion.md) tunnels and follow the chosen [database engine](databases-data.md) rather than assuming every private database uses an Autonomous wallet.
+
 ## Sources
 
 - [OCI network components](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)

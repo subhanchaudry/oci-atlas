@@ -31,6 +31,10 @@ An HTTP status alone is not a root cause. Some services wrap errors or have addi
 
 Explain the identified failing layer and proposed correction. Carry forward the customer's existing task authorization, but don't use a local error as permission for a tenancy-wide policy grant. After a correction, retry the narrow original operation and report its result. For a timed-out write, first reconcile resource/work-request state; avoid duplicate creation.
 
+## Additional service boundaries
+
+A resource action denied despite IAM permission can be constrained by a [Security Zone](service-cloud-guard-security-zones.md). A network flow blocked after attribute assignment needs [ZPR](service-zpr.md) evaluation rather than another human IAM grant. For database operations, identify whether the failing action manages the service or uses SQL; for [APEX](service-apex-ords.md), [Analytics Cloud](service-analytics-cloud.md), and [Oracle Integration](service-oracle-integration.md), inspect the product role/object boundary. For [GPU/HPC](service-gpu-hpc.md) or [Compute pools](service-compute.md), inspect actual placement/capacity separately from limits and quotas.
+
 ## Sources
 
 - [OCI common API errors](https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm)

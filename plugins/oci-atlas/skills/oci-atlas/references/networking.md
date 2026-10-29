@@ -42,6 +42,14 @@ Inspect the created resource and defaults. Then configure the required subnets, 
 
 Record source, destination hostname/IP, protocol/port, and where the test ran. Check DNS → address/endpoint choice → route and return route → NSGs/security lists/ZPR → host firewall → listener/application. Use VCN Flow Logs where available to refine the hypothesis. Don't resolve a timeout by opening all ports or assigning a public IP without evidence and authorization for that design change.
 
+## Choose the network control for the flow
+
+Use the [VCN routing guide](service-vcn-routing.md) for foundational paths and [hybrid connectivity](service-hybrid-connectivity.md) for FastConnect, VPN, DRG route distributions, and DNS forwarding. The [hybrid access recipe](recipe-hybrid-private-access.md) sequences an on-premises application's access to private OCI resources.
+
+[Load Balancer/NLB](service-load-balancing.md) distribute traffic; [Certificates](service-certificates.md) manages certificate material and consumer rotation; [Bastion](service-bastion.md) supplies scoped administrative sessions. None replaces the application's end-user authentication.
+
+[WAF](service-waf.md) inspects supported web traffic. [Network Firewall](service-network-firewall.md) inspects traffic explicitly routed through it. [ZPR](service-zpr.md) adds attribute-based packet authorization to supported endpoints, alongside applicable NSGs/security lists. [Cloud Guard and Security Zones](service-cloud-guard-security-zones.md) detect posture issues and constrain resource configurations respectively. Select each control for an identified flow or policy requirement rather than deploying every control by default.
+
 ## Sources
 
 - [Networking components and gateway semantics](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)

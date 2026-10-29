@@ -30,6 +30,14 @@ Read the operation's replay semantics and existing outputs before rerunning a pa
 
 Verify the original outcome after correction. Report retained state/output/capacity explicitly. Removing a failed run or Kubernetes object can leave storage, endpoints or billable resources behind.
 
+## Evidence and lifecycle branches
+
+For [Container Instances](service-container-instances.md), separate image pulls, command/exit state, resource pressure, restart policy, and data retention. For [GPU/HPC](service-gpu-hpc.md), inspect drivers/runtime, allocated shape/placement, RDMA fabric, and the actual [Lustre](service-lustre.md) or other storage client. A healthy VCN does not establish the cluster fabric.
+
+For an alarm firing without a message, follow [Monitoring/Notifications](service-monitoring-notifications.md) and the [observability recipe](recipe-observability-delivery.md): alarm transition, topic, subscription confirmation, protocol endpoint, and recipient evidence. For missing logs inspect [Logging/Connector Hub](service-logging-audit-connectors.md) emission, filters, identity, and destination.
+
+For database movement, inspect the [migration job](service-database-migration.md), [GoldenGate checkpoints](service-goldengate.md), and application writer state before retrying. For recovery, use [Full Stack DR](service-full-stack-dr.md) and the [backup/DR recipe](recipe-backup-disaster-recovery.md); do not blindly rerun completed role transitions. For Resource Manager drift/import failures, reconcile [configuration, state, and ownership](infrastructure-architecture.md) before applying again.
+
 ## Sources
 
 - [Kubernetes pod diagnosis](https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/)

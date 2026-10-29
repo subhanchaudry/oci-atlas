@@ -73,6 +73,22 @@
         {
           "title": "Data Science",
           "url": "https://docs.oracle.com/en-us/iaas/Content/data-science/using/overview.htm"
+        },
+        {
+          "title": "OCI service catalog",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/home.htm"
+        },
+        {
+          "title": "Container Instances",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/container-instances/overview-of-container-instances.htm"
+        },
+        {
+          "title": "Streaming with Apache Kafka",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/kafka/concepts.htm"
+        },
+        {
+          "title": "Queue",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/queue/overview.htm"
         }
       ]
     },
@@ -411,7 +427,7 @@
       "kind": "domain",
       "title": "Infrastructure as code and architecture",
       "path": "references/infrastructure-architecture.md",
-      "summary": "Terraform, Resource Manager, landing zones, architecture",
+      "summary": "Terraform, Resource Manager state/import, drift, private endpoints",
       "aliases": [
         "Terraform",
         "Resource Manager",
@@ -430,6 +446,22 @@
         {
           "title": "Apply jobs and plan resolution",
           "url": "https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/create-job-apply.htm"
+        },
+        {
+          "title": "Importing existing Terraform state",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/create-job-import.htm"
+        },
+        {
+          "title": "Resource discovery from a compartment",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/create-stack-compartment.htm"
+        },
+        {
+          "title": "Detecting stack drift",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/detect-drift.htm"
+        },
+        {
+          "title": "Resource Manager private endpoints",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/private-endpoints.htm"
         },
         {
           "title": "OCI Well-Architected Framework",
@@ -515,7 +547,7 @@
       "kind": "service",
       "title": "Compute instances and persistent disks",
       "path": "references/service-compute.md",
-      "summary": "Choose and manage an instance, image, shape and boot volume",
+      "summary": "Instances, configurations, pools, autoscaling, capacity",
       "aliases": [
         "Compute",
         "VM",
@@ -540,6 +572,22 @@
         {
           "title": "Block Volume and attachments",
           "url": "https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/overview.htm"
+        },
+        {
+          "title": "Instance configuration inputs and limitations",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/creatinginstanceconfig.htm"
+        },
+        {
+          "title": "Instance pools and placement",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/creatinginstancepool.htm"
+        },
+        {
+          "title": "Autoscaling policies and lifecycle",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm"
+        },
+        {
+          "title": "Capacity reservations and allocated capacity",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/reserve-capacity.htm"
         }
       ]
     },
@@ -909,6 +957,1004 @@
       ]
     },
     {
+      "id": "service-load-balancing",
+      "kind": "service",
+      "title": "Load Balancer, Network Load Balancer, and backend health",
+      "path": "references/service-load-balancing.md",
+      "summary": "LB/NLB listeners, backend health, TLS, source behavior",
+      "aliases": [
+        "Load Balancer",
+        "Network Load Balancer",
+        "NLB",
+        "backend health"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Load Balancer concepts and components",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm"
+        },
+        {
+          "title": "NLB behavior and service comparison",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/NetworkLoadBalancer/overview.htm"
+        },
+        {
+          "title": "Backend health-check policies",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Balance/Tasks/load_balancer_health_management.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-hybrid-connectivity",
+      "kind": "service",
+      "title": "Hybrid connectivity with FastConnect, VPN, DRG, and DNS",
+      "path": "references/service-hybrid-connectivity.md",
+      "summary": "FastConnect, VPN, DRG routes, hybrid DNS",
+      "aliases": [
+        "FastConnect",
+        "Site-to-Site VPN",
+        "DRG",
+        "BGP",
+        "hybrid DNS"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "FastConnect peering and connectivity models",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/fastconnectoverview.htm"
+        },
+        {
+          "title": "Site-to-Site VPN and supported setup paths",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingIPsec.htm"
+        },
+        {
+          "title": "DRG attachments, routing, and distributions",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm"
+        },
+        {
+          "title": "Private DNS management",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-bastion",
+      "kind": "service",
+      "title": "Bastion sessions and private administration",
+      "path": "references/service-bastion.md",
+      "summary": "Bastion sessions and private administrative access",
+      "aliases": [
+        "Bastion",
+        "SSH session",
+        "port forwarding"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Bastion concepts and session types",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Bastion/Concepts/bastionoverview.htm"
+        },
+        {
+          "title": "Bastion prerequisites and target workflows",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Bastion/home.htm"
+        },
+        {
+          "title": "OCI identity and policy model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-certificates",
+      "kind": "service",
+      "title": "Certificates, trust chains, and renewal",
+      "path": "references/service-certificates.md",
+      "summary": "Certificate issuance, trust, consumers, renewal",
+      "aliases": [
+        "Certificates",
+        "certificate authority",
+        "TLS renewal"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Certificate objects, versions, and trust concepts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/certificates/overview.htm"
+        },
+        {
+          "title": "Issuance, import, renewal, and retrieval entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/certificates/home.htm"
+        },
+        {
+          "title": "Load Balancer certificate integration",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm"
+        },
+        {
+          "title": "Key-management concepts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/KeyManagement/Concepts/keyoverview.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-cloud-guard-security-zones",
+      "kind": "service",
+      "title": "Cloud Guard findings and Security Zones",
+      "path": "references/service-cloud-guard-security-zones.md",
+      "summary": "Cloud Guard detection and Security Zone enforcement",
+      "aliases": [
+        "Cloud Guard",
+        "Security Zones",
+        "detector",
+        "responder"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Cloud Guard targets, recipes, and reporting regions",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/cloud-guard/using/cg-concepts.htm"
+        },
+        {
+          "title": "Security Zone enforcement and Cloud Guard relationships",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/security-zone/using/security-zones.htm"
+        },
+        {
+          "title": "Cloud Guard responders and problem handling",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/cloud-guard/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-waf",
+      "kind": "service",
+      "title": "Web Application Firewall policies and enforcement",
+      "path": "references/service-waf.md",
+      "summary": "Web Application Firewall policy and enforcement point",
+      "aliases": [
+        "WAF",
+        "web application firewall",
+        "web ACL"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Regional WAF and edge enforcement distinctions",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/WAF/Concepts/overview.htm"
+        },
+        {
+          "title": "WAF conditions, policies, protections, and actions",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/WAF/home.htm"
+        },
+        {
+          "title": "Load Balancer components and TLS",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-network-firewall",
+      "kind": "service",
+      "title": "Network Firewall inspection paths and policies",
+      "path": "references/service-network-firewall.md",
+      "summary": "Routed Network Firewall inspection and policy",
+      "aliases": [
+        "Network Firewall",
+        "inspection",
+        "stateful firewall"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Inspection capabilities and routed architectures",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/network-firewall/overview.htm"
+        },
+        {
+          "title": "Policy components, logging, decryption, and lifecycle",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/network-firewall/home.htm"
+        },
+        {
+          "title": "DRG routing model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm"
+        },
+        {
+          "title": "Security rules",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securityrules.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-zpr",
+      "kind": "service",
+      "title": "Zero Trust Packet Routing and security attributes",
+      "path": "references/service-zpr.md",
+      "summary": "ZPR attributes, packet policy, blocked flows",
+      "aliases": [
+        "ZPR",
+        "Zero Trust Packet Routing",
+        "security attributes"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "ZPR resource support and interaction with network controls",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/overview.htm"
+        },
+        {
+          "title": "ZPR policy language",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-policy-overview.htm"
+        },
+        {
+          "title": "Attribute namespaces and lifecycle",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-monitoring-notifications",
+      "kind": "service",
+      "title": "Monitoring queries, alarms, and notification delivery",
+      "path": "references/service-monitoring-notifications.md",
+      "summary": "Metrics, alarms, topics, subscriptions, delivery",
+      "aliases": [
+        "Monitoring",
+        "Notifications",
+        "MQL",
+        "alarm firing",
+        "subscription"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Metric streams, queries, and alarms",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Monitoring/Concepts/monitoringoverview.htm"
+        },
+        {
+          "title": "Topics, subscriptions, and delivery",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Notification/Concepts/notificationoverview.htm"
+        },
+        {
+          "title": "Notifications confirmation and troubleshooting",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Notification/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-logging-audit-connectors",
+      "kind": "service",
+      "title": "Logging, Audit, and Connector Hub pipelines",
+      "path": "references/service-logging-audit-connectors.md",
+      "summary": "Log emission, Audit coverage, Connector Hub delivery",
+      "aliases": [
+        "Logging",
+        "Audit",
+        "Connector Hub",
+        "Service Connector Hub"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Logging kinds, categories, and ingestion",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Logging/Concepts/loggingoverview.htm"
+        },
+        {
+          "title": "Audit coverage and event fields",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Audit/Concepts/auditoverview.htm"
+        },
+        {
+          "title": "Connector sources, tasks, and targets",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm"
+        },
+        {
+          "title": "Connector lifecycle and delivery troubleshooting",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/connector-hub/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-block-volume",
+      "kind": "service",
+      "title": "Block Volume attachments, backups, and replication",
+      "path": "references/service-block-volume.md",
+      "summary": "Block disks, attachments, groups, backups, replication",
+      "aliases": [
+        "Block Volume",
+        "volume groups",
+        "disk attachment",
+        "block replication"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Volumes, attachment types, performance, and durability",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/overview.htm"
+        },
+        {
+          "title": "Volume groups and consistency boundaries",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/volumegroups.htm"
+        },
+        {
+          "title": "Block and boot volume replication",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/volumereplication.htm"
+        },
+        {
+          "title": "Backup and restore task entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Block/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-file-storage",
+      "kind": "service",
+      "title": "File Storage exports, snapshots, and replication",
+      "path": "references/service-file-storage.md",
+      "summary": "NFS exports, mount targets, snapshots, replication",
+      "aliases": [
+        "File Storage",
+        "NFS",
+        "mount target",
+        "file replication"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "File Storage objects and access layers",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/File/Concepts/filestorageoverview.htm"
+        },
+        {
+          "title": "Snapshot lifecycle",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/File/Tasks/managingsnapshots.htm"
+        },
+        {
+          "title": "Replication concepts and target requirements",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/File/Tasks/FSreplication.htm"
+        },
+        {
+          "title": "Creating replication and initial transfer",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/File/Tasks/fsreplication-creating-a-replication.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-full-stack-dr",
+      "kind": "service",
+      "title": "Full Stack Disaster Recovery plans and dependencies",
+      "path": "references/service-full-stack-dr.md",
+      "summary": "DR protection groups, plans, transitions, recovery",
+      "aliases": [
+        "Full Stack Disaster Recovery",
+        "Full Stack DR",
+        "DR plan",
+        "failover"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Full Stack DR scope",
+          "url": "https://docs.oracle.com/en-us/iaas/disaster-recovery/index.html"
+        },
+        {
+          "title": "Protection groups, plans, roles, and recovery objectives",
+          "url": "https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/disaster-recovery-terminology.html"
+        },
+        {
+          "title": "Dependency mapping and ordered operations",
+          "url": "https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/dependency-mapping.html"
+        },
+        {
+          "title": "Built-in groups and supported plan types",
+          "url": "https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/built-in-plan-groups.html"
+        }
+      ]
+    },
+    {
+      "id": "service-os-management-hub",
+      "kind": "service",
+      "title": "OS Management Hub registration, sources, and updates",
+      "path": "references/service-os-management-hub.md",
+      "summary": "Host registration, software sources, update jobs",
+      "aliases": [
+        "OS Management Hub",
+        "OSMH",
+        "patching",
+        "software sources"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Managed instances, agents, groups, and lifecycle model",
+          "url": "https://docs.oracle.com/en-us/iaas/osmh/doc/overview.htm"
+        },
+        {
+          "title": "Registration profiles",
+          "url": "https://docs.oracle.com/en-us/iaas/osmh/doc/profiles.htm"
+        },
+        {
+          "title": "Oracle Linux software sources and Windows distinction",
+          "url": "https://docs.oracle.com/en-us/iaas/osmh/doc/software-sources.htm"
+        },
+        {
+          "title": "Supported setup and environment prerequisites",
+          "url": "https://docs.oracle.com/en-us/iaas/osmh/doc/getstarted.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-base-database",
+      "kind": "service",
+      "title": "Base Database systems, maintenance, and Data Guard",
+      "path": "references/service-base-database.md",
+      "summary": "Base Database systems, operations, Data Guard",
+      "aliases": [
+        "Base Database",
+        "DB system",
+        "Data Guard",
+        "standby"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Base Database editions, versions, and provisioning model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/overview.htm"
+        },
+        {
+          "title": "Base Database task and management interfaces",
+          "url": "https://docs.oracle.com/en/cloud/paas/base-database/index.html"
+        },
+        {
+          "title": "Data Guard roles and prerequisites",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/usingdataguard.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-exadata",
+      "kind": "service",
+      "title": "Exadata deployment choices and resource operations",
+      "path": "references/service-exadata.md",
+      "summary": "Exadata dedicated, Exascale, Cloud@Customer choices",
+      "aliases": [
+        "Exadata",
+        "Exascale",
+        "ExaDB-XS",
+        "Cloud@Customer",
+        "VM cluster"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Dedicated Infrastructure deployment and administration",
+          "url": "https://docs.oracle.com/en/engineered-systems/exadata-cloud-service/index.html"
+        },
+        {
+          "title": "Dedicated Infrastructure technical architecture",
+          "url": "https://docs.oracle.com/en/engineered-systems/exadata-cloud-service/ecscm/exacs-tech-arch.html"
+        },
+        {
+          "title": "Exascale VM clusters, storage vaults, and version differences",
+          "url": "https://docs.oracle.com/en/engineered-systems/exadata-database-exascale/exdxs/overview-exadb-xs-service.html"
+        },
+        {
+          "title": "Exascale cluster management and scaling",
+          "url": "https://docs.oracle.com/en/engineered-systems/exadata-database-exascale/exdxs/manage-vm-clusters.html"
+        }
+      ]
+    },
+    {
+      "id": "service-mysql-heatwave",
+      "kind": "service",
+      "title": "MySQL HeatWave systems, access, and availability",
+      "path": "references/service-mysql-heatwave.md",
+      "summary": "MySQL HeatWave, DB systems, HA, client access",
+      "aliases": [
+        "MySQL HeatWave",
+        "MySQL",
+        "HeatWave",
+        "DB system HA"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "MySQL HeatWave resource and feature entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/mysql-database/home.htm"
+        },
+        {
+          "title": "Managed high availability and role transitions",
+          "url": "https://docs.oracle.com/en-us/iaas/mysql-database/doc/overview-high-availability.html"
+        },
+        {
+          "title": "Database connection workflows",
+          "url": "https://docs.oracle.com/en-us/iaas/mysql-database/doc/connecting-db-system1.html"
+        }
+      ]
+    },
+    {
+      "id": "service-postgresql",
+      "kind": "service",
+      "title": "OCI Database with PostgreSQL systems and private access",
+      "path": "references/service-postgresql.md",
+      "summary": "Managed PostgreSQL, extensions, private clients",
+      "aliases": [
+        "OCI Database with PostgreSQL",
+        "PostgreSQL",
+        "extensions",
+        "psql"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Managed PostgreSQL concepts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/postgresql/overview.htm"
+        },
+        {
+          "title": "Private endpoints, TLS, and Bastion client access",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/postgresql/connect-to-db.htm"
+        },
+        {
+          "title": "Supported extension enablement",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/postgresql/config-list-enable-extension.htm"
+        },
+        {
+          "title": "Backup, configuration, and node lifecycle entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/postgresql/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-nosql",
+      "kind": "service",
+      "title": "NoSQL tables, key design, and capacity",
+      "path": "references/service-nosql.md",
+      "summary": "NoSQL keys, tables, consistency, capacity",
+      "aliases": [
+        "NoSQL Database",
+        "NoSQL",
+        "shard key",
+        "table capacity"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "NoSQL cloud concepts",
+          "url": "https://docs.oracle.com/en/cloud/paas/nosql-cloud/dtddt/cloud-concepts.html"
+        },
+        {
+          "title": "Table schema, primary keys, and shard keys",
+          "url": "https://docs.oracle.com/en/cloud/paas/nosql-cloud/dtddt/designing-a-table-in-oracle-nosql-database-cloud-service.html"
+        },
+        {
+          "title": "SDKs, global tables, IAM, and capacity task entry points",
+          "url": "https://docs.oracle.com/en/cloud/paas/nosql-cloud/index.html"
+        }
+      ]
+    },
+    {
+      "id": "service-oci-cache",
+      "kind": "service",
+      "title": "OCI Cache clusters, users, and application behavior",
+      "path": "references/service-oci-cache.md",
+      "summary": "Cache engines, client ACLs, durability, failure behavior",
+      "aliases": [
+        "OCI Cache",
+        "Valkey",
+        "Redis",
+        "cache users"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OCI Cache engine and cluster overview",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ocicache/overview.htm"
+        },
+        {
+          "title": "Cache users and access control",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ocicache/cache-users.htm"
+        },
+        {
+          "title": "Authentication, sharding, configuration, and replication entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/ocicache/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-data-safe",
+      "kind": "service",
+      "title": "Data Safe targets, assessments, auditing, and masking",
+      "path": "references/service-data-safe.md",
+      "summary": "Data Safe targets, assessment, audit, masking",
+      "aliases": [
+        "Data Safe",
+        "database security",
+        "data masking",
+        "target registration"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Data Safe capabilities and feature entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/data-safe/index.html"
+        },
+        {
+          "title": "Target registration",
+          "url": "https://docs.oracle.com/en-us/iaas/data-safe/doc/target-database-registration.html"
+        },
+        {
+          "title": "Target connectivity choices",
+          "url": "https://docs.oracle.com/en-us/iaas/data-safe/doc/connectivity-options-target-databases.html"
+        },
+        {
+          "title": "Masking workflow and data-change implications",
+          "url": "https://docs.oracle.com/en-us/iaas/data-safe/doc/data-masking-overview.html"
+        }
+      ]
+    },
+    {
+      "id": "service-database-migration",
+      "kind": "service",
+      "title": "Database Migration resources, evaluation, and cutover",
+      "path": "references/service-database-migration.md",
+      "summary": "Database Migration connections, evaluation, jobs, cutover",
+      "aliases": [
+        "Database Migration",
+        "DMS",
+        "migration job",
+        "initial load"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Database Migration service and supported approach",
+          "url": "https://docs.oracle.com/en-us/iaas/database-migration/doc/oracle-cloud-infrastructure-database-migration.html"
+        },
+        {
+          "title": "Connections, migrations, and job terminology",
+          "url": "https://docs.oracle.com/en-us/iaas/database-migration/doc/database-migration-terminology.html"
+        },
+        {
+          "title": "Preparation and taskflows",
+          "url": "https://docs.oracle.com/en-us/iaas/database-migration/doc/getting-started.html"
+        },
+        {
+          "title": "Migration overview and underlying tool boundaries",
+          "url": "https://docs.oracle.com/en-us/iaas/database-migration/doc/overview.html"
+        }
+      ]
+    },
+    {
+      "id": "service-goldengate",
+      "kind": "service",
+      "title": "GoldenGate deployments, connections, and change replication",
+      "path": "references/service-goldengate.md",
+      "summary": "GoldenGate CDC, connections, checkpoints, replication",
+      "aliases": [
+        "GoldenGate",
+        "CDC",
+        "Extract",
+        "Replicat"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OCI GoldenGate deployment scope",
+          "url": "https://docs.oracle.com/en/cloud/paas/goldengate-service/ocigg/about-oracle-cloud-infrastructure-goldengate.html"
+        },
+        {
+          "title": "Source and target support matrix",
+          "url": "https://docs.oracle.com/en/cloud/paas/goldengate-service/ocigg/whats-supported.html"
+        },
+        {
+          "title": "Connection, deployment, and replication task entry points",
+          "url": "https://docs.oracle.com/en/cloud/paas/goldengate-service/index.html"
+        },
+        {
+          "title": "End-to-end Oracle database replication workflow",
+          "url": "https://docs.oracle.com/en/cloud/paas/goldengate-service/ocigg/quickstarts/replicate-data-between-cloud-databases-in-the-same-region.html"
+        }
+      ]
+    },
+    {
+      "id": "service-gpu-hpc",
+      "kind": "service",
+      "title": "GPU and HPC capacity, cluster networking, and storage",
+      "path": "references/service-gpu-hpc.md",
+      "summary": "GPU/HPC capacity, RDMA clusters, drivers, data paths",
+      "aliases": [
+        "GPU",
+        "HPC",
+        "RDMA",
+        "cluster network",
+        "Compute cluster"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "HPC and accelerator infrastructure models",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/References/high-performance-compute.htm"
+        },
+        {
+          "title": "Cluster networks with instance pools",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/managingclusternetworks.htm"
+        },
+        {
+          "title": "Compute clusters and individual node management",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/compute-clusters.htm"
+        },
+        {
+          "title": "Current shape and architecture compatibility",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-lustre",
+      "kind": "service",
+      "title": "File Storage with Lustre for parallel workloads",
+      "path": "references/service-lustre.md",
+      "summary": "Managed Lustre, parallel I/O, client compatibility",
+      "aliases": [
+        "File Storage with Lustre",
+        "Lustre",
+        "parallel filesystem"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Managed Lustre architecture and service features",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/lustre/overview.htm"
+        },
+        {
+          "title": "Supported clients and filesystem mounting",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/lustre/file-system-connect.htm"
+        },
+        {
+          "title": "Capacity, encryption, maintenance, and root-squash tasks",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/lustre/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-ai-vector-search",
+      "kind": "service",
+      "title": "Oracle AI Vector Search and retrieval design",
+      "path": "references/service-ai-vector-search.md",
+      "summary": "Database vectors, embeddings, indexes, filtered retrieval",
+      "aliases": [
+        "Oracle AI Vector Search",
+        "VECTOR",
+        "HNSW",
+        "IVF",
+        "vector search"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Vector data, compatibility, and embeddings",
+          "url": "https://docs.oracle.com/en/database/oracle/oracle-database/26/vecse/overview-ai-vector-search.html"
+        },
+        {
+          "title": "Vector index structures and SQL contract",
+          "url": "https://docs.oracle.com/en/database/oracle/oracle-database/26/sqlrf/create-vector-index.html"
+        },
+        {
+          "title": "Database vector access paths and SDK boundaries",
+          "url": "https://docs.oracle.com/en/cloud/paas/autonomous-database/vcapi/concepts/oracle-ai-database-vector-search.html"
+        }
+      ]
+    },
+    {
+      "id": "service-opensearch",
+      "kind": "service",
+      "title": "Search with OpenSearch clusters and semantic retrieval",
+      "path": "references/service-opensearch.md",
+      "summary": "OpenSearch clusters, ingestion, search, data roles",
+      "aliases": [
+        "Search with OpenSearch",
+        "OpenSearch",
+        "semantic search",
+        "search index"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Managed OpenSearch concepts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ociopensearch.htm"
+        },
+        {
+          "title": "Cluster connectivity and ingestion interface",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Tasks/ingestingociopensearchdata.htm"
+        },
+        {
+          "title": "Semantic-search integration",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/semanticsearch.htm"
+        },
+        {
+          "title": "Cluster backup, resize, and lifecycle entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-container-instances",
+      "kind": "service",
+      "title": "Container Instances runtime, image access, and lifecycle",
+      "path": "references/service-container-instances.md",
+      "summary": "Container Instances runtime and operating responsibility",
+      "aliases": [
+        "Container Instances",
+        "containers without Kubernetes",
+        "restart policy"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Container Instances operating model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/container-instances/overview-of-container-instances.htm"
+        },
+        {
+          "title": "Creation, registry access, restart policies, and storage",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/container-instances/creating-a-container-instance.htm"
+        },
+        {
+          "title": "Container logs and lifecycle tasks",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/container-instances/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-streaming-kafka",
+      "kind": "service",
+      "title": "Streaming with Apache Kafka clusters and client access",
+      "path": "references/service-streaming-kafka.md",
+      "summary": "Managed Apache Kafka clusters and client security",
+      "aliases": [
+        "Streaming with Apache Kafka",
+        "managed Kafka",
+        "brokers",
+        "Kafka ACL"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Managed Kafka concepts and resource model",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/kafka/concepts.htm"
+        },
+        {
+          "title": "SASL/SCRAM client security",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/kafka/security-sasl.htm"
+        },
+        {
+          "title": "Versions, ACLs, mTLS, and lifecycle tasks",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/kafka/home.htm"
+        },
+        {
+          "title": "Separate OCI Streaming service",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Streaming/Concepts/streamingoverview.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-queue",
+      "kind": "service",
+      "title": "Queue messages, visibility, and dead-letter handling",
+      "path": "references/service-queue.md",
+      "summary": "Queue tasks, visibility, acknowledgement, dead letters",
+      "aliases": [
+        "Queue",
+        "visibility timeout",
+        "dead-letter queue",
+        "DLQ"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Queue visibility, deletion, and processing concepts",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/queue/overview.htm"
+        },
+        {
+          "title": "Dead-letter queue handling",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/queue/deadletterqueues.htm"
+        },
+        {
+          "title": "Message publication, consumption, and lifecycle interfaces",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/queue/home.htm"
+        }
+      ]
+    },
+    {
+      "id": "service-apex-ords",
+      "kind": "service",
+      "title": "APEX workspaces, application access, and ORDS",
+      "path": "references/service-apex-ords.md",
+      "summary": "APEX workspaces, schemas, ORDS, application access",
+      "aliases": [
+        "APEX",
+        "ORDS",
+        "workspace",
+        "parsing schema"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "APEX cloud deployment entry points",
+          "url": "https://docs.oracle.com/en/cloud/paas/apex/index.html"
+        },
+        {
+          "title": "Workspace-to-schema relationships",
+          "url": "https://docs.oracle.com/en/database/oracle/apex/26.1/aeadm/managing-workspace-to-schema-assignments.html"
+        },
+        {
+          "title": "ORDS deployment and monitoring responsibilities",
+          "url": "https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/26.3/ordig/deploying-and-monitoring-oracle-rest-data-services.html"
+        },
+        {
+          "title": "ORDS database pool installation and configuration",
+          "url": "https://docs.oracle.com/en/database/oracle/oracle-rest-data-services/26.3/ordig/installing-and-configuring-oracle-rest-data-services.html"
+        }
+      ]
+    },
+    {
+      "id": "service-oracle-integration",
+      "kind": "service",
+      "title": "Oracle Integration instances, connections, and activation",
+      "path": "references/service-oracle-integration.md",
+      "summary": "Oracle Integration instances, adapters, activation",
+      "aliases": [
+        "Oracle Integration",
+        "OIC",
+        "adapters",
+        "business integration"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "OCI instance administration and inbound/outbound access",
+          "url": "https://docs.oracle.com/en-us/iaas/application-integration/index.html"
+        },
+        {
+          "title": "Oracle Integration product documentation and adapters",
+          "url": "https://docs.oracle.com/en/cloud/paas/application-integration/index.html"
+        },
+        {
+          "title": "Outbound network access",
+          "url": "https://docs.oracle.com/en-us/iaas/application-integration/doc/manage-outbound-network-access.html"
+        },
+        {
+          "title": "Activation and connection-update behavior",
+          "url": "https://docs.oracle.com/en/cloud/paas/application-integration/integrations-user/activate-deactivate-integrations.html"
+        }
+      ]
+    },
+    {
+      "id": "service-analytics-cloud",
+      "kind": "service",
+      "title": "Analytics Cloud instances, data connections, and roles",
+      "path": "references/service-analytics-cloud.md",
+      "summary": "Analytics Cloud instances, connections, application roles",
+      "aliases": [
+        "Analytics Cloud",
+        "OAC",
+        "semantic model",
+        "analytics snapshot"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Analytics Cloud service and administration entry points",
+          "url": "https://docs.oracle.com/en-us/iaas/analytics-cloud/index.html"
+        },
+        {
+          "title": "Instance creation and setup",
+          "url": "https://docs.oracle.com/en-us/iaas/analytics-cloud/doc/create-services.html"
+        },
+        {
+          "title": "Identity accounts versus OAC application roles",
+          "url": "https://docs.oracle.com/en/cloud/paas/analytics-cloud/acgov/users-roles-pages-oracle-analytics-cloud-console.html"
+        },
+        {
+          "title": "Product administration, content backup, and permissions",
+          "url": "https://docs.oracle.com/en/cloud/paas/analytics-cloud/acabi/understanding-administration-pages.html"
+        }
+      ]
+    },
+    {
       "id": "troubleshoot-access",
       "kind": "troubleshooting",
       "title": "Diagnose authentication, authorization, and limits",
@@ -986,7 +2032,7 @@
       "kind": "troubleshooting",
       "title": "Diagnose workloads, runs, and serving failures",
       "path": "references/troubleshoot-workloads.md",
-      "summary": "Diagnose pod, function, pipeline, model and stack failures",
+      "summary": "Diagnose workloads, notification delivery, migration, stack failures",
       "aliases": [
         "ImagePullBackOff",
         "CrashLoopBackOff",
@@ -1249,6 +2295,132 @@
         {
           "title": "Data Platform and Data Science integration architecture",
           "url": "https://docs.oracle.com/en/solutions/ai-data-platform-data-science-workloads/"
+        }
+      ]
+    },
+    {
+      "id": "recipe-hybrid-private-access",
+      "kind": "recipe",
+      "title": "Recipe: on-premises access to private OCI applications",
+      "path": "references/recipe-hybrid-private-access.md",
+      "summary": "Plan on-premises application access to private OCI",
+      "aliases": [
+        "hybrid access",
+        "on-premises application",
+        "private connectivity recipe"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "FastConnect connectivity and peering models",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/fastconnectoverview.htm"
+        },
+        {
+          "title": "Site-to-Site VPN setup paths",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingIPsec.htm"
+        },
+        {
+          "title": "DRG routing",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm"
+        },
+        {
+          "title": "Private DNS",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm"
+        }
+      ]
+    },
+    {
+      "id": "recipe-observability-delivery",
+      "kind": "recipe",
+      "title": "Recipe: application evidence and notification delivery",
+      "path": "references/recipe-observability-delivery.md",
+      "summary": "Plan observability through notification receipt",
+      "aliases": [
+        "observability",
+        "alarm delivery",
+        "notification recipe"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Monitoring streams and alarm evaluation",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Monitoring/Concepts/monitoringoverview.htm"
+        },
+        {
+          "title": "Notifications topics and subscriptions",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Notification/Concepts/notificationoverview.htm"
+        },
+        {
+          "title": "Logging categories and ingestion",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Logging/Concepts/loggingoverview.htm"
+        },
+        {
+          "title": "Connector source-task-target relationships",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm"
+        }
+      ]
+    },
+    {
+      "id": "recipe-backup-disaster-recovery",
+      "kind": "recipe",
+      "title": "Recipe: application backup, restore, and disaster recovery",
+      "path": "references/recipe-backup-disaster-recovery.md",
+      "summary": "Plan application backup, restore, and DR",
+      "aliases": [
+        "backup versus replication",
+        "RPO",
+        "RTO",
+        "application recovery"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Recovery objectives and DR resource terminology",
+          "url": "https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/disaster-recovery-terminology.html"
+        },
+        {
+          "title": "Application dependency ordering",
+          "url": "https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/dependency-mapping.html"
+        },
+        {
+          "title": "Volume groups and recovery consistency",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/volumegroups.htm"
+        },
+        {
+          "title": "File Storage replication boundaries",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/File/Tasks/FSreplication.htm"
+        }
+      ]
+    },
+    {
+      "id": "recipe-database-migration",
+      "kind": "recipe",
+      "title": "Recipe: database migration, replication, and application cutover",
+      "path": "references/recipe-database-migration.md",
+      "summary": "Sequence migration, replication, and application cutover",
+      "aliases": [
+        "migration recipe",
+        "cutover",
+        "replication sequence",
+        "rollback boundary"
+      ],
+      "reviewed": "2026-10-29",
+      "sources": [
+        {
+          "title": "Database Migration scope and underlying workflow",
+          "url": "https://docs.oracle.com/en-us/iaas/database-migration/doc/overview.html"
+        },
+        {
+          "title": "Migration preparation",
+          "url": "https://docs.oracle.com/en-us/iaas/database-migration/doc/getting-started.html"
+        },
+        {
+          "title": "GoldenGate source-target support",
+          "url": "https://docs.oracle.com/en/cloud/paas/goldengate-service/ocigg/whats-supported.html"
+        },
+        {
+          "title": "Data Guard roles and transitions",
+          "url": "https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/usingdataguard.htm"
         }
       ]
     }

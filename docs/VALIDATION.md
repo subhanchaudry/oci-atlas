@@ -1,5 +1,35 @@
 # Validation record
 
+## 0.3.0 — 2026-10-29
+
+### Source, routing, and package
+
+- Oracle's current service catalog and owning product documentation were consulted while authoring 33 service guides and four recipes. Every addition records the actual review date, source links, aliases, and a focused routing summary in the existing catalog schema. The new bodies are approximately 451–496 words before sources. They are original synthesis; no upstream skill or executable code was vendored.
+- Existing catalog, metadata, local-link, license, selected sensitive-data-pattern, and archive checks passed. The ZIP contains 80 files: 73 references and seven package files. All 37 additions are directly routed and packaged. The collection has 48 service guides, 12 recipes, eight domains, three troubleshooting guides, one access guide, and one decision guide. All 36 prior IDs, kinds, and reference paths remain intact.
+- The entry skill is 122 lines. Generated navigation, review/source metadata, and the content index agree with the catalog. Skill frontmatter, workflow, and both issue forms parsed with Ruby's YAML library. Both README Mermaid diagrams and the repository-only banner were retained; README language remains focused on the product. The earlier rendering record is below; no new visual-rendering claim is made for this content expansion.
+- The archive passed path/member, CRC, and byte comparison checks and has a SHA-256 companion. The installed candidate's 80 files were compared byte-for-byte with plugin source. Checks do not establish every external URL, command, host, or service behavior.
+
+### Fresh installation and documentation-only walkthrough
+
+Codex CLI `0.165.0-alpha.1.2` on macOS replaced the OCI Atlas marketplace registration with the local candidate checkout, then installed `oci-atlas@oci-atlas-marketplace` version `0.3.0`. No other marketplace was changed. A fresh ephemeral session outside the repository used the installed skill in read-only mode for all six requested scenarios:
+
+| Scenario | Actual observation |
+| --- | --- |
+| Container Instances versus OKE and Functions | Read the three focused service guides; distinguished managed container lifecycle, Kubernetes orchestration, and bounded invocation, including remaining operating ownership |
+| Streaming versus managed Apache Kafka | Read both focused guides; distinguished streams/pools from clusters/brokers and management IAM from client authorization; left exact Streaming Kafka-client settings for current documentation |
+| Private database access from on-premises | Read hybrid and database connectivity recipes plus the hybrid service guide; separated forward/return routing, DRG, DNS, TLS, and SQL access from the real application runtime |
+| FIRING alarm without notification receipt | Read observability and Monitoring/Notifications guidance; separated evaluation, destination, subscription, endpoint acceptance, and recipient evidence; made no delivery or root-cause claim |
+| GPU/HPC networking and storage | Read GPU/HPC, Lustre, and File Storage guides; separated RDMA from VCN paths and compared object, attached, NFS, and parallel-file storage without inventing capacity/performance figures |
+| Migration versus replication and DR | Read migration/recovery recipes and Database Migration, GoldenGate, Base Database, and Full Stack DR guides; separated movement, checkpoints, standby roles, retained recovery points, orchestration, and writer cutover |
+
+The trace contained 21 completed local read commands for the cached `SKILL.md` and 19 distinct references (one recipe was read twice). No model-issued OCI commands, credential-file reads, external-service calls, or resource writes occurred. The host performed normal plugin/MCP startup attempts and emitted unrelated connection warnings; this was not an offline-host exercise. The session's final answer was reviewed against the actual reads. This checks explicit skill activation and these six scenarios, not general model accuracy or implicit activation reliability.
+
+### Release scope
+
+Repository visibility was confirmed **private** before publication. Publication evidence (GitHub checks, downloaded asset integrity, and the final release pin) is recorded in the GitHub release notes separately from these content/host observations. The historical installation and presentation evidence below is retained separately.
+
+No live OCI discovery, provisioning, browser sign-in, database movement, recovery action, extensive evaluation, new execution backend, or public-directory submission was performed. ChatGPT account/workspace installation remains unexercised; see [compatibility](LIMITATIONS.md).
+
 ## 0.2.1 — 2026-10-29
 
 ### Installation and guide discovery

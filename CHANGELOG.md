@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 — 2026-10-29
+
+- Added 33 focused service guides across networking/security, observability/resilience, databases/migration, GPU/HPC and retrieval, and application/analytics platforms.
+- Added four recipes for hybrid private access, observability and notification delivery, application backup/restore/DR, and database migration/replication/cutover.
+- Expanded the collection to 73 references: 48 service guides, 12 recipes, eight domain overviews, three troubleshooting guides, one access guide, and one decision guide.
+- Deepened Compute configurations/pools/autoscaling/capacity and Resource Manager state import, resource discovery, drift, private endpoints, and ownership reconciliation.
+- Clarified runtime, messaging, database, retrieval, integration, access-control, and recovery choices; connected existing overviews and recipes to canonical service guidance.
+- Updated catalog aliases/direct routing, coverage, examples, and pinned installation instructions. Preserved the plugin identity, UPL 1.0 license, diagrams, knowledge-first architecture, and private repository.
+
 ## 0.2.1 — 2026-10-29
 
 - Redesigned the project README with an original compass banner, two architecture/workflow diagrams, a concise quick start, and linked OCI coverage.

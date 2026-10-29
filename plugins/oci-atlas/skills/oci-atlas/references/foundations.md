@@ -48,6 +48,12 @@ Before creating a compartment, determine its parent and intended policy ownershi
 
 Separate four different blockers: IAM authorization, Oracle-set service limits, administrator-set compartment quotas, and current service capacity. A limit increase does not guarantee available capacity. Budgets are spending alerts, not hard enforcement. Use quotas for supported resource consumption controls, not as a universal monetary ceiling.
 
+## Service roles and enforcement boundaries
+
+Keep OCI resource administration distinct from the application or data plane. Database creation/backup privileges do not grant SQL schema access. An [APEX workspace](service-apex-ords.md) partitions low-code development/schema access inside a database; it is not an OCI compartment. [Analytics Cloud roles](service-analytics-cloud.md), [Oracle Integration activation rights](service-oracle-integration.md), and [Kafka client ACLs](service-streaming-kafka.md) are additional product-specific controls.
+
+For a denied operation, inspect [Security Zone constraints](service-cloud-guard-security-zones.md) as well as IAM. For a blocked packet, inspect [ZPR security attributes and policies](service-zpr.md) with the network path. An IAM grant does not override either enforcement layer.
+
 ## Sources
 
 - [IAM overview](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)

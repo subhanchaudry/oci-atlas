@@ -23,6 +23,10 @@ Before retrying, inspect committed output and the intended append/merge/overwrit
 
 Deleting a failed execution, connection or catalog doesn't necessarily delete target data, and deleting a shared asset can break other jobs. Enumerate downstream consumers and retention requirements before cleanup. See the relevant [selection guide](service-selection.md) or focused data-service reference for details.
 
+## Select transport and replication deliberately
+
+Use [Queue](service-queue.md) for distributed tasks, [Streaming](service-streaming.md) for retained event consumption, or [Streaming with Apache Kafka](service-streaming-kafka.md) when Kafka platform requirements determine the choice. Inspect [GoldenGate](service-goldengate.md) for supported database change replication and the [migration recipe](recipe-database-migration.md) when an application cutover is the goal. [Oracle Integration](service-oracle-integration.md) fits business application integrations; it does not share Data Integration's publication/run objects.
+
 ## Sources
 
 - [Data Integration artifact lifecycle](https://docs.oracle.com/en-us/iaas/Content/data-integration/using/overview.htm)

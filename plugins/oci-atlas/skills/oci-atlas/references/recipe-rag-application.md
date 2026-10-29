@@ -22,6 +22,10 @@ Track source version, parsing/embedding/index configuration, and model/prompt re
 
 When cleaning up, distinguish generated index artifacts from authoritative source data and shared model endpoints. Preserve the source unless deletion was explicitly requested. Use [Generative AI](service-generative-ai.md) and [AI Data Platform](service-ai-data-platform.md) only for their relevant boundaries.
 
+## Retrieval-store alternatives
+
+[Oracle AI Vector Search](service-ai-vector-search.md) can keep retrieval near existing relational data and SQL governance. [Search with OpenSearch](service-opensearch.md) supplies a search/index platform with its own data roles, ingestion, and index lifecycle. Compare both against the existing platform or managed agent knowledge source before adding another store. Verify supported versions/integrations, embedding compatibility, tenant filters, deletion propagation, and source authorization at retrieval time. A current index or HTTP 200 response does not establish relevant, permitted evidence.
+
 ## Sources
 
 - [OCI enterprise GenAI architecture](https://docs.oracle.com/en/solutions/oci-genai-enterprise/index.html)

@@ -9,7 +9,7 @@ For a private repository, your GitHub account must have read access and your loc
 To install from GitHub at a fixed release, run:
 
 ```sh
-codex plugin marketplace add subhanchaudry/oci-atlas --ref v0.2.1
+codex plugin marketplace add subhanchaudry/oci-atlas --ref v0.3.0
 codex plugin add oci-atlas@oci-atlas-marketplace
 ```
 
@@ -24,7 +24,7 @@ codex plugin marketplace add .
 codex plugin add oci-atlas@oci-atlas-marketplace
 ```
 
-Use the local or GitHub registration for this marketplace, according to where you want updates to come from. Release assets are available from [OCI Atlas v0.2.1](https://github.com/subhanchaudry/oci-atlas/releases/tag/v0.2.1).
+Use the local or GitHub registration for this marketplace, according to where you want updates to come from. Release assets are available from [OCI Atlas v0.3.0](https://github.com/subhanchaudry/oci-atlas/releases/tag/v0.3.0).
 
 Check `codex plugin --help` and `codex plugin marketplace --help` if your client differs. In clients using the plugin browser, open `/plugins`, select the configured marketplace, and install OCI Atlas there.
 
@@ -40,7 +40,7 @@ For a workspace that supports GitHub plugin imports, an administrator can:
 
 1. Open **Admin → Plugins → Add → Import marketplace**.
 2. Enter `https://github.com/subhanchaudry/oci-atlas`. Leave the marketplace directory empty because the catalog is at the repository root.
-3. Select `v0.2.1` or its release commit when a fixed version is desired.
+3. Select `v0.3.0` or its release commit when a fixed version is desired.
 4. Import and make OCI Atlas available to the intended workspace roles.
 5. Install/enable it in a new conversation and try the conceptual prompt.
 
@@ -56,9 +56,9 @@ This repository and ZIP do not create a listing in the universal public plugin d
 
 For an agent that supports local Agent Skills but not plugin marketplaces, copy the complete `plugins/oci-atlas/skills/oci-atlas` directory from a checkout into that host's documented skill directory. Codex's current user-level location is `~/.agents/skills/oci-atlas`.
 
-You can also use the [release ZIP](https://github.com/subhanchaudry/oci-atlas/releases/tag/v0.2.1):
+You can also use the [release ZIP](https://github.com/subhanchaudry/oci-atlas/releases/tag/v0.3.0):
 
-1. Extract `oci-atlas-0.2.1.zip` to a working folder.
+1. Extract `oci-atlas-0.3.0.zip` to a working folder.
 2. Find `oci-atlas/skills/oci-atlas` inside the extracted package.
 3. Copy that complete inner `oci-atlas` folder to `~/.agents/skills/oci-atlas`. Keep `SKILL.md`, `catalog.json`, and the complete `references` directory together. Inspect any existing destination first to avoid overwriting another copy.
 4. Start a new session and invoke OCI Atlas with the conceptual prompt above. In Codex, use `/skills` or `$oci-atlas` to select the skill explicitly.
@@ -71,7 +71,15 @@ For live tasks, follow the packaged [access guide](../plugins/oci-atlas/skills/o
 
 ## Update or remove
 
-Update the canonical checkout or marketplace source, then use the host's refresh/upgrade and reinstall flow. Inspect `codex plugin marketplace upgrade --help` for the installed version. Don't edit a cached plugin. To uninstall through the CLI, inspect `codex plugin remove --help` and remove the selected `oci-atlas@oci-atlas-marketplace` installation. A separately copied skill must be managed separately. Neither uninstall route deletes OCI resources.
+For a local checkout, update the canonical source and use the host's refresh/reinstall flow. A Git marketplace pinned to an older tag keeps that tag until its source registration changes. With the documented Codex CLI, replace only the OCI Atlas marketplace registration and reinstall from the new release:
+
+```sh
+codex plugin marketplace remove oci-atlas-marketplace
+codex plugin marketplace add subhanchaudry/oci-atlas --ref v0.3.0
+codex plugin add oci-atlas@oci-atlas-marketplace
+```
+
+Start a fresh session. Use `codex plugin list --marketplace oci-atlas-marketplace --json` to inspect the installed version. Check your client's current help if its update flow differs, and don't edit a cached plugin. To uninstall through the CLI, inspect `codex plugin remove --help` and remove the selected `oci-atlas@oci-atlas-marketplace` installation. A separately copied skill must be managed separately. Neither uninstall route deletes OCI resources.
 
 ## Sources
 

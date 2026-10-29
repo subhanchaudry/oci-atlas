@@ -44,6 +44,14 @@ A DevOps project contains build pipelines, deployment pipelines, artifacts, envi
 
 Console search terms are **Kubernetes clusters**, **Functions**, **API gateways**, **Container Registry**, and **DevOps**. CLI roots include `oci ce`, `oci fn`, `oci api-gateway`, `oci artifacts container`, and `oci devops`; use `kubectl`, image tooling or Fn tooling only when required by the chosen task and available locally. Check help for exact resource command names.
 
+## Additional application and integration platforms
+
+[Container Instances](service-container-instances.md) runs containers without a Kubernetes control plane. Compare it with [OKE](service-oke.md) when orchestration is required and [Functions](service-functions.md) for bounded invocations. Define restart, exposure, durable storage, image-pull access, and operating ownership explicitly.
+
+[Queue](service-queue.md) distributes work to consumers with visibility/retry handling. [Streaming](service-streaming.md) and [Streaming with Apache Kafka](service-streaming-kafka.md) support partitioned event processing with different resource and compatibility models. Choose the delivery contract before choosing a client library.
+
+[APEX and ORDS](service-apex-ords.md) serve database-centric low-code and REST workloads: workspace, parsing schema, application login, and OCI compartment are different boundaries. [Oracle Integration](service-oracle-integration.md) connects business applications through adapters/integrations, whereas Data Integration publishes data tasks. [Analytics Cloud](service-analytics-cloud.md) exposes governed analytics with its own roles, data connections, and source permissions.
+
 ## Sources
 
 - [OKE clusters, node choices and feature differences](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengclustersnodes.htm)

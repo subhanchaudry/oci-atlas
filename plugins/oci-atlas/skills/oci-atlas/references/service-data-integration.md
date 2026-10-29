@@ -29,6 +29,10 @@ When a design changes, check publication state rather than repeatedly editing th
 
 For cleanup, inspect schedules, published consumers, connection reuse and retained target data. Don't delete a shared data asset solely because one task failed. Use [data ingestion](recipe-data-ingestion.md) for the full source-to-target workflow.
 
+## Choose the integration layer
+
+[Oracle Integration](service-oracle-integration.md) addresses application/business integrations and adapters. Data Integration addresses data assets, transformations, publication, and task runs. For ongoing database change capture inspect [GoldenGate](service-goldengate.md); for an engine move and coordinated cutover use the [migration recipe](recipe-database-migration.md). These are separate lifecycle and authorization models.
+
 ## Sources
 
 - [Data Integration concepts](https://docs.oracle.com/en-us/iaas/Content/data-integration/using/overview.htm)

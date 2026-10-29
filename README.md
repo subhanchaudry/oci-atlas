@@ -6,7 +6,7 @@
 
 Understand OCI services, choose architectures, and work through resource tasks with focused guidance grounded in Oracle documentation. OCI Atlas brings service relationships, practical workflows, and common gotchas into the conversation when they matter.
 
-**[Get started](#quick-start)** · **[Download v0.2.1](https://github.com/subhanchaudry/oci-atlas/releases/tag/v0.2.1)** · **[Explore the guides](docs/CONTENT.md)**
+**[Get started](#quick-start)** · **[Download v0.3.0](https://github.com/subhanchaudry/oci-atlas/releases/tag/v0.3.0)** · **[Explore the guides](docs/CONTENT.md)**
 
 ## What you can do
 
@@ -39,7 +39,7 @@ Knowledge questions require no OCI login. Resource operations use your available
 For Codex CLI with plugin support:
 
 ```sh
-codex plugin marketplace add subhanchaudry/oci-atlas --ref v0.2.1
+codex plugin marketplace add subhanchaudry/oci-atlas --ref v0.3.0
 codex plugin add oci-atlas@oci-atlas-marketplace
 ```
 
@@ -51,20 +51,20 @@ For ChatGPT desktop, workspace imports, release ZIPs, and the portable skill rou
 
 ## OCI coverage
 
-**36 focused references · 15 service guides · 8 cross-service recipes**
+**73 focused references · 48 service guides · 12 cross-service recipes**
 
 | Knowledge area | What you can explore |
 | --- | --- |
 | [Foundations](plugins/oci-atlas/skills/oci-atlas/references/foundations.md) | Tenancies, compartments, IAM, regions, OCIDs, limits, and quotas |
-| [Networking](plugins/oci-atlas/skills/oci-atlas/references/networking.md) | VCNs, subnets, routing, gateways, NSGs, DNS, load balancing, and private access |
-| [Compute and storage](plugins/oci-atlas/skills/oci-atlas/references/compute-storage.md) | Instances, shapes, images, volumes, backups, Object Storage, and File Storage |
-| [Databases and data](plugins/oci-atlas/skills/oci-atlas/references/databases-data.md) | Autonomous Database, AI Data Platform, Data Integration, Data Flow, and Streaming |
-| [AI and ML](plugins/oci-atlas/skills/oci-atlas/references/ai-ml.md) | Generative AI, agents, RAG, Data Science, inference, and deployment choices |
-| [Application platforms](plugins/oci-atlas/skills/oci-atlas/references/applications.md) | OKE, Functions, API Gateway, Container Registry, and DevOps |
-| [Operations and security](plugins/oci-atlas/skills/oci-atlas/references/operations-security.md) | Monitoring, Logging, Audit, Cloud Guard, secrets, keys, tagging, and cost |
-| [Infrastructure and architecture](plugins/oci-atlas/skills/oci-atlas/references/infrastructure-architecture.md) | Terraform, Resource Manager, landing zones, and architecture patterns |
+| [Networking](plugins/oci-atlas/skills/oci-atlas/references/networking.md) | VCNs, DNS, load balancing, FastConnect/VPN, Bastion, firewalls, and ZPR |
+| [Compute and storage](plugins/oci-atlas/skills/oci-atlas/references/compute-storage.md) | Instances and pools, autoscaling, GPU/HPC, Block Volume, Object Storage, NFS, and Lustre |
+| [Databases and data](plugins/oci-atlas/skills/oci-atlas/references/databases-data.md) | Autonomous, Base Database, Exadata, MySQL, PostgreSQL, NoSQL, Cache, migration, and data pipelines |
+| [AI and ML](plugins/oci-atlas/skills/oci-atlas/references/ai-ml.md) | Generative AI, agents, Data Science, AI Vector Search, OpenSearch, and deployment choices |
+| [Application platforms](plugins/oci-atlas/skills/oci-atlas/references/applications.md) | OKE, Container Instances, Functions, APIs, Kafka, Queue, APEX, Oracle Integration, and analytics |
+| [Operations and security](plugins/oci-atlas/skills/oci-atlas/references/operations-security.md) | Metrics and notifications, logs and Audit, Cloud Guard, security, host updates, and recovery |
+| [Infrastructure and architecture](plugins/oci-atlas/skills/oci-atlas/references/infrastructure-architecture.md) | Terraform, Resource Manager, state import, drift, private endpoints, and landing zones |
 
-The [full catalog](docs/CONTENT.md) includes service-selection guidance, troubleshooting paths, and recipes for private applications, database connectivity, serverless APIs, private OKE, ingestion, RAG, and the predictive model lifecycle.
+The [full catalog](docs/CONTENT.md) brings these together with service-selection decisions, troubleshooting paths, and 12 recipes—from private applications and AI workflows to hybrid access, notification delivery, backup/recovery, and database cutover.
 
 ## Example architecture: a private application
 

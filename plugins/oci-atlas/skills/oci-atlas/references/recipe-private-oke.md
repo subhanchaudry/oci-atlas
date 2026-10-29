@@ -24,6 +24,10 @@ Report cluster/context, artifact revision, rollout state, client reachability an
 
 Identify workload-owned Services, load balancers, PVCs/volumes and image references. Remove only requested resources; preserve a shared cluster or VCN. Report retained disks and data explicitly. Load [OKE](service-oke.md), [routing](service-vcn-routing.md) or [IAM](service-iam-policies.md) only as needed.
 
+## Supporting network and resilience guidance
+
+Use [Load Balancer/NLB](service-load-balancing.md) for supported service exposure and health, [Certificates](service-certificates.md) for the chosen TLS boundary, and [hybrid networking](service-hybrid-connectivity.md) for on-premises operators/callers. For persistent data, follow the actual [Block Volume](service-block-volume.md) or [File Storage](service-file-storage.md) lifecycle. Coordinate application recovery with the [backup/DR recipe](recipe-backup-disaster-recovery.md); restoring a Kubernetes manifest does not restore its data.
+
 ## Sources
 
 - [OKE cluster/data-plane choices](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengclustersnodes.htm)

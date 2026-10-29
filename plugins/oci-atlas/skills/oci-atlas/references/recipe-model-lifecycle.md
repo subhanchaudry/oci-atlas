@@ -25,6 +25,10 @@ For a failed run, inspect the first artifact/environment/data/network error. For
 
 Enumerate notebooks, jobs/runs, artifacts, endpoints, storage and schedules. Deactivate or remove only requested resources, distinguishing stopped compute from retained storage. Preserve data and shared models according to the chosen ownership/retention intent. See [Data Science](service-data-science.md) for resource boundaries.
 
+## Specialized infrastructure and operations
+
+When managed training/serving cannot meet the stated requirement, use [GPU/HPC](service-gpu-hpc.md) to plan capacity, runtime drivers, fabric, and checkpoints; compare [Lustre](service-lustre.md) with [NFS](service-file-storage.md) and [attached disks](service-block-volume.md) by actual I/O needs. Keep [notification delivery](recipe-observability-delivery.md) and [artifact/data recovery](recipe-backup-disaster-recovery.md) explicit. An available GPU or copied model artifact does not establish a reproducible serving endpoint.
+
 ## Sources
 
 - [Data Science assets and serving](https://docs.oracle.com/en-us/iaas/Content/data-science/using/overview.htm)

@@ -42,6 +42,14 @@ oci os bucket create --namespace-name "$ATLAS_NAMESPACE" \
 
 Re-read bucket configuration before uploading. For deletion, establish whether objects, versions, multipart uploads, retention rules, backups, or shared mounts must be retained. Distinguish changing bucket metadata from reading or deleting its objects. Account for storage, retained backups, network traffic, and attached services when discussing cost.
 
+## Focused storage and fleet choices
+
+Use [Compute](service-compute.md) for instance configurations, pools, autoscaling, and capacity ownership; [GPU/HPC](service-gpu-hpc.md) for accelerated shapes, RDMA cluster choices, drivers, and data staging. A larger VM or ordinary VCN does not automatically provide a suitable distributed-training fabric.
+
+Choose [Block Volume](service-block-volume.md) for attached disks and volume groups, [File Storage](service-file-storage.md) for managed NFS, [File Storage with Lustre](service-lustre.md) for compatible parallel-filesystem workloads, and [Object Storage](service-object-storage.md) for objects/artifacts. Match client semantics, concurrency, recovery needs, and data location before comparing nominal throughput.
+
+Storage replication and backups have different failure coverage. Use the [backup/recovery recipe](recipe-backup-disaster-recovery.md) to connect retained recovery points, application consistency, key availability, and a restore path. [OS Management Hub](service-os-management-hub.md) addresses registered host updates, not application release management.
+
 ## Sources
 
 - [Instance operations](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/instances.htm)

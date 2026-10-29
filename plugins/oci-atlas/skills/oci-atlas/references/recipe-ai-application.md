@@ -22,6 +22,10 @@ Record model/version or artifact digest, prompt/configuration revision and data/
 
 Before cleanup, identify application, endpoint, dedicated capacity, data-source and storage ownership. Delete only the requested resources and report retained billable capacity. Load [AI/ML](ai-ml.md), [databases/data](databases-data.md), or [applications](applications.md) only for the missing detail.
 
+## Infrastructure and retrieval alternatives
+
+For custom accelerated infrastructure, load [GPU/HPC](service-gpu-hpc.md) and [Lustre](service-lustre.md) only when the runtime and I/O requirements justify them. For retrieval, compare [database-native AI Vector Search](service-ai-vector-search.md), [OpenSearch](service-opensearch.md), and existing managed knowledge sources through the [RAG recipe](recipe-rag-application.md). For a container backend that does not need Kubernetes, inspect [Container Instances](service-container-instances.md).
+
 ## Sources
 
 - [OCI enterprise GenAI architecture: layers and design considerations](https://docs.oracle.com/en/solutions/oci-genai-enterprise/index.html)

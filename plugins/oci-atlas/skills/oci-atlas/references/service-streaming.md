@@ -28,6 +28,10 @@ For lag, inspect production rate, partition distribution, consumer errors and pr
 
 Consumers writing downstream systems should handle duplicates/replay according to the business contract. Changing a consumer group or cursor can reread data. Before deletion, identify producers/consumers and any requirement to archive/replay retained events; stream deletion is not a routine way to resolve lag.
 
+## Distinguish adjacent messaging services
+
+[Streaming with Apache Kafka](service-streaming-kafka.md) is a separate managed Kafka service with its own clusters, broker endpoints, client security, and lifecycle. This guide describes OCI Streaming, including its Kafka-compatible interface. Identify the actual service before applying Kafka administration instructions or promising feature compatibility. For competing workers claiming tasks rather than independent readers replaying an event log, inspect [Queue](service-queue.md).
+
 ## Sources
 
 - [Streaming features and use cases](https://docs.oracle.com/en-us/iaas/Content/Streaming/Concepts/streamingoverview.htm)

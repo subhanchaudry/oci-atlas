@@ -21,6 +21,10 @@ Unknown hostname → inspect DNS. Timeout → inspect routing, endpoint policy a
 
 For password/wallet rotation, identify consumers and supported overlap/rollout behavior. Before deleting a database or secret, identify the application dependency and requested retention. Use [databases/data](databases-data.md) and [networking](networking.md) only when their details are needed.
 
+## Private callers and other engines
+
+For an on-premises runtime, use the [hybrid access recipe](recipe-hybrid-private-access.md) and [DRG/DNS guide](service-hybrid-connectivity.md). For temporary administration, use [Bastion](service-bastion.md); a session is not a permanent production application connection. For another engine, follow its actual endpoint/client rules in [Base Database](service-base-database.md), [MySQL HeatWave](service-mysql-heatwave.md), or [PostgreSQL](service-postgresql.md). OCI control-plane access, TCP/TLS success, SQL authentication, and table privileges remain separate checks.
+
 ## Sources
 
 - [Autonomous Database private endpoint configuration and troubleshooting](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/private-endpoints-autonomous.html)
