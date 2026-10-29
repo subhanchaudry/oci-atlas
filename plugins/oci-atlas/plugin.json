@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "oci-atlas",
+  "version": "0.1.0",
+  "description": "Packaged Oracle Cloud Infrastructure knowledge, service selection, and practical workflows for ChatGPT and Codex.",
+  "license": "UPL-1.0",
+  "keywords": ["oci", "oracle-cloud", "cloud-infrastructure", "architecture", "terraform", "ai", "kubernetes"],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/oci-atlas/SKILL.md",
+      "interface": {
+        "displayName": "OCI Atlas",
+        "shortDescription": "OCI knowledge and workflows",
+        "longDescription": "Understand OCI services, choose architectures, navigate a tenancy, and work through resource tasks using your available OCI CLI or signed-in browser. Loads focused, sourced knowledge only when needed. Requires your own OCI access for live operations.",
+        "category": "Developer Tools",
+        "capabilities": ["Read", "Write"],
+        "defaultPrompt": [
+          "Help me understand my OCI tenancy and choose the right services.",
+          "Plan and provision an OCI workload using my available tools.",
+          "Investigate an OCI issue and explain what to check next."
+        ],
+        "logo": "./assets/atlas.svg",
+        "composerIcon": "./assets/atlas.svg"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "oci-atlas-marketplace",
+  "interface": {"displayName": "OCI Atlas"},
+  "plugins": [
+    {
+      "name": "oci-atlas",
+      "source": {"source": "local", "path": "./plugins/oci-atlas"}
+    }
+  ]
+}

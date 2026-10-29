@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="OCI Atlas compass">
+  <rect width="128" height="128" rx="28" fill="#12333C"/>
+  <circle cx="64" cy="64" r="43" fill="none" stroke="#B6D6CC" stroke-width="3"/>
+  <path d="M64 15v10m0 78v10M15 64h10m78 0h10" stroke="#B6D6CC" stroke-width="3"/>
+  <path d="M82 38 72 73 46 90 56 55Z" fill="#F2AA77"/>
+  <path d="m82 38-26 17 16 18Z" fill="#FFF3DC"/>
+  <circle cx="64" cy="64" r="4" fill="#12333C"/>
+</svg>
