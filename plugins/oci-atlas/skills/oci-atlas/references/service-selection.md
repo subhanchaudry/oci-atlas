@@ -1,6 +1,6 @@
 # OCI service-selection decisions
 
-Reviewed: 2026-10-29 · Basis: documentation-based decision guidance; no workload benchmarking.
+Reviewed: 2026-11-03
 
 ## Use the workload's constraint
 
@@ -70,6 +70,10 @@ An adaptable architecture response:
 5. **Next step:** one practical decision or requested action. Identify volatile details to confirm before deployment.
 
 For example: “Start with Container Instances for a conventional API container if Kubernetes is unnecessary. Confirm the availability target before deciding capacity and placement. You still own the image, application configuration, release/replacement process, and frontend design.” This is a conditional recommendation, not a universal default for every API. Keep smaller comparisons brief.
+
+## Start with a customer outcome
+
+For requests spanning services, use [workload selection](workload-selection.md) to identify the smallest complete workflow. Compare reuse of an existing service with a new managed service using application compatibility, operating ownership, recovery and total retained cost. Return a recommendation and the requirements that could change it, not an unranked service list.
 
 ## Sources
 

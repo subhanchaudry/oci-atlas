@@ -1,6 +1,6 @@
 # Hybrid connectivity with FastConnect, VPN, DRG, and DNS
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose the connection and ownership
 
@@ -30,6 +30,10 @@ Use Console **FastConnect**, **Site-to-Site VPN**, **Dynamic routing gateways**,
 Plan independent failure paths according to the provider/location topology; two logical connections can share a physical dependency. Inspect current Oracle redundancy guidance rather than assuming a backup VPN will receive the right routes automatically.
 
 For failure, separate carrier/circuit state, IPSec negotiation, BGP, route selection, security, DNS, MTU and application behavior. A small probe working does not establish large-payload behavior. Before changing advertisements, document affected prefixes and rollback intent. Before cleanup, identify shared DRG attachments and provider commitments; deleting an OCI object does not necessarily cancel a carrier service. Use the [hybrid application recipe](recipe-hybrid-private-access.md) for a cross-team sequence.
+
+## Provider and OCI handoff
+
+Maintain a shared record of customer prefixes, OCI prefixes, ASN/peering settings, route owners, DNS forwarding and escalation contacts. Include provider charges and circuit/port/data-transfer assumptions separately. A topology with two connections still needs independent failure domains; document application behavior when either path is lost.
 
 ## Sources
 

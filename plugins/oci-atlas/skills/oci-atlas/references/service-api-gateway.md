@@ -1,6 +1,6 @@
 # API Gateway deployments and backend access
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live gateway changes.
+Reviewed: 2026-11-03
 
 ## Understand the objects
 
@@ -27,6 +27,10 @@ For a Function backend, inspect the documented gateway principal/policy pattern 
 401/403 → determine which layer rejected identity. Missing path/method → compare the actual URL/deployment prefix and routes. Backend timeout/5xx → inspect backend network/invocation and logs. TLS failure → inspect endpoint hostname/certificate/trust. These are starting branches, not an assertion that every status has one cause.
 
 For updates, preserve versioned API contracts and identify consumers before removing routes. When cleaning up, distinguish deployment deletion, gateway deletion and backend deletion; a shared gateway can host other APIs. Don't silently replace a private endpoint with public access to diagnose reachability.
+
+## Client and backend contract
+
+Write down deployment prefix, HTTP method/path, caller authentication, backend identity, timeout and response mapping for each route. A gateway rejecting a client and a backend rejecting the gateway require different fixes. Include gateway requests, backend runtime and log retention in the estimate; preserve old routes until known consumers have moved.
 
 ## Sources
 

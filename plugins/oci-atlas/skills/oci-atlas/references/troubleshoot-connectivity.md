@@ -1,6 +1,6 @@
 # Diagnose private and application connectivity
 
-Reviewed: 2026-10-29 · Basis: documentation review; no network probes or changes.
+Reviewed: 2026-11-03
 
 ## Define the failing flow
 
@@ -46,6 +46,10 @@ For a hypothetical timeout: “The only observation supplied is a timeout from t
 
 For other failure types, use [access diagnosis](troubleshoot-access.md) or [workload diagnosis](troubleshoot-workloads.md) and the same evidence-first reporting approach.
 
+## Use Network Path Analyzer with runtime observations
+
+For supported OCI endpoints, Network Path Analyzer can model the configured route and security path without sending application traffic. Choose source, destination, protocol and port matching the failing flow; inspect the first blocked or unsupported segment. It does not establish DNS, guest firewall, listener, TLS or SQL behavior. Confirm those from the actual runtime and use [private DNS](service-dns.md) for resolver forwarding. See the [Network Path Analyzer guide](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/path_analyzer.htm).
+
 ## Sources
 
 - [OCI network components](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
@@ -53,3 +57,4 @@ For other failure types, use [access diagnosis](troubleshoot-access.md) or [work
 - [DNS](https://docs.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm)
 - [Autonomous Database private endpoint diagnosis](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/private-endpoints-autonomous.html)
 - [Data Platform workspace private-network context](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/workspaces.html)
+- [Network Path Analyzer](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/path_analyzer.htm)

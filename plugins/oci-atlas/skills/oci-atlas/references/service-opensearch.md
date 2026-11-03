@@ -1,6 +1,6 @@
 # Search with OpenSearch clusters and semantic retrieval
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose the search workload
 
@@ -32,6 +32,10 @@ Separate OCI provisioning/work-request state from OpenSearch health and data-que
 Plan index/mapping changes with the required reindexing and application alias/consumer transition. A model or vector-dimension change can require rebuilding data; don't update only the query model. Define how source deletion or revoked access reaches the index.
 
 Inspect supported backup/restore and resize procedures before operational changes. Before cleanup, distinguish a rebuildable index from authoritative source data and a shared cluster from an application-owned one. Removing an ingestion definition does not necessarily remove indexed content or storage charges. Use [AI Vector Search](service-ai-vector-search.md) for database-local alternatives and [the RAG recipe](recipe-rag-application.md) for retrieval/application boundaries.
+
+## Search release contract
+
+Record index mappings, analyzers, embedding configuration, ingestion checkpoint and data-role filters as one release. Budget cluster resources, replicas and retained indexes. Use a new index and controlled consumer switch for incompatible mappings; removing an ingestion connector does not revoke content already copied into an index.
 
 ## Sources
 

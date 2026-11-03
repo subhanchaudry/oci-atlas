@@ -1,6 +1,22 @@
 # Recipe: Function behind API Gateway
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; not a live-tested API.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** Authenticated API request reaching a bounded handler.
+
+**Inputs:** Request/response schema; client authentication; gateway visibility; Function runtime/image; subnet; downstream services; idempotency key.
+
+**Flow:** Client → gateway authentication/route → Function invocation → permitted data operation → response.
+
+**Starting configuration:** Use one route and one bounded handler first. Preserve gateway configuration and prior image digest for rollback; retries of requests that write need a business idempotency contract.
+
+## Completion and handoff
+
+The valid caller receives the expected response, an invalid caller is denied, and correlated logs identify the handler execution. Verify direct invocation separately from gateway behavior.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Intent and identity map
 

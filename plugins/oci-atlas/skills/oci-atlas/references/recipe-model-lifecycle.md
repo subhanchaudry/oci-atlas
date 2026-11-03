@@ -1,6 +1,22 @@
 # Recipe: train, register, and serve a predictive model
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; no live training or model deployment.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** A versioned predictive model reaches batch or online consumers.
+
+**Inputs:** Prediction schema; data/version/window; split/metric; environment; code revision; artifact storage; batch/online contract; promotion owner.
+
+**Flow:** Training data → repeatable job → evaluated artifact → registry → batch job or deployment → application.
+
+**Starting configuration:** Use Data Science jobs and model deployment when suitable. Keep training, promotion and serving identities separate. Retain prior artifacts/environment for rollback and coordinate feature/data changes.
+
+## Completion and handoff
+
+Inspect agreed evaluation metrics, artifact loading and prediction schema with representative inputs. Compare candidate behavior against the incumbent before promotion.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Resolve the ML outcome
 

@@ -1,6 +1,6 @@
 # Object Storage buckets, objects, and retention
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live object operations.
+Reviewed: 2026-11-03
 
 ## Establish the exact target
 
@@ -26,6 +26,10 @@ In Console search **Buckets**, then verify compartment and region. Inspect `oci 
 Validate a transfer with the relevant metadata/checksum and a bounded read when appropriate. A successful bucket creation says nothing about a workload's ability to read objects. For private clients, check service-gateway routing and the actual endpoint along with IAM.
 
 For cleanup, inspect object versions, retained objects, multipart uploads and policies. Do not claim “empty” from one page of current objects. Preserve the difference between deleting a bucket's contents and deleting only a selected prefix/version. Report anything retained by policy rather than bypassing that policy.
+
+## A usable object inventory
+
+For each selected bucket, report region, namespace, access mode, tier, versioning, retention and the exact prefix inspected. Price retained versions, retrieval, requests and replication separately using current terms. For a document pipeline, preserve the object key and version or ETag in downstream metadata so an update can replace the correct materialization.
 
 ## Sources
 

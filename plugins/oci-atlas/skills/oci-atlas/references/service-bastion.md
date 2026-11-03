@@ -1,6 +1,6 @@
 # Bastion sessions and private administration
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose a session for the actual target
 
@@ -30,6 +30,10 @@ Navigate to **Bastions** and inspect `oci bastion --help`. Identify the selected
 For session creation errors, inspect IAM, target placement and required service prerequisites. For a tunnel failure, check session state/expiry, client allowlist, key pairing, target port and network rules. For a login failure after connection, inspect target user/key or SQL authentication. Do not broaden database grants or publicize the target merely because an SSH tunnel failed.
 
 Record the session identifier and expiry without logging secret material. Reconnecting to an expired session requires a supported new session, not a permanent bypass. Deleting a session or bastion does not delete its target, and closing a local terminal is not proof a session resource was removed. Preserve a shared bastion and its unrelated sessions during requested cleanup. See [connectivity troubleshooting](troubleshoot-connectivity.md) for the remaining path.
+
+## Session handoff
+
+Record session type, target, allowed client source, local forwarding port and expiration. Use the generated connection instructions rather than exposing the target to the internet. For persistent workloads, hand off to [hybrid connectivity](service-hybrid-connectivity.md); a short administrative tunnel is not an application availability design.
 
 ## Sources
 

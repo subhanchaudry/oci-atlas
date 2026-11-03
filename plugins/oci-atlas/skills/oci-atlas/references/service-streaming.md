@@ -1,6 +1,6 @@
 # Streaming producers, consumers, and replay
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live message publication.
+Reviewed: 2026-11-03
 
 ## Model the delivery contract
 
@@ -31,6 +31,10 @@ Consumers writing downstream systems should handle duplicates/replay according t
 ## Distinguish adjacent messaging services
 
 [Streaming with Apache Kafka](service-streaming-kafka.md) is a separate managed Kafka service with its own clusters, broker endpoints, client security, and lifecycle. This guide describes OCI Streaming, including its Kafka-compatible interface. Identify the actual service before applying Kafka administration instructions or promising feature compatibility. For competing workers claiming tasks rather than independent readers replaying an event log, inspect [Queue](service-queue.md).
+
+## Consumer operating contract
+
+Record each consumer group, partition/key strategy, committed position, retention requirement and replay owner. Estimate ingress, retained data and consumer traffic from workload volume. Separate replay into a selected sink or namespace when it can repeat business effects. Use [event processing](recipe-event-processing.md) to connect transport state to an idempotent consumer.
 
 ## Sources
 

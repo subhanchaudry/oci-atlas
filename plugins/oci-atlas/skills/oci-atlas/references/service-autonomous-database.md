@@ -1,6 +1,6 @@
 # Autonomous Database operations and access
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live database or SQL changes.
+Reviewed: 2026-11-03
 
 ## Select the right deployment
 
@@ -31,6 +31,10 @@ Use the [database connectivity recipe](recipe-database-connectivity.md) for appl
 ## Related database and application choices
 
 For engine/deployment alternatives, use [Base Database](service-base-database.md), [Exadata](service-exadata.md), and [service selection](service-selection.md). For supported database-native retrieval, use [Oracle AI Vector Search](service-ai-vector-search.md). [APEX workspaces and ORDS](service-apex-ords.md) have application/schema boundaries inside and around the database; OCI compartment access does not supply application or SQL authorization. [Data Safe](service-data-safe.md) and [Database Migration](service-database-migration.md) require their own target connections and privileges.
+
+## Application handoff
+
+Give the application owner the selected connection service, private hostname, port, TLS mode and schema identity through the appropriate configuration flow. Keep passwords and wallets separate. Estimate compute, storage and retained protection independently; record which connection pools and scheduled jobs must be changed during an endpoint or credential update.
 
 ## Sources
 

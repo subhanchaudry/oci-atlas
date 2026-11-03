@@ -1,6 +1,6 @@
 # File Storage exports, snapshots, and replication
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Select the shared-file model
 
@@ -32,6 +32,10 @@ A snapshot consuming little initial storage can retain changed/deleted data late
 For poor performance, inspect client behavior, placement, metadata/throughput characteristics and application concurrency before substituting a different storage service. For stale mounts, identify the active server/export and client state before recreating data resources.
 
 Before deleting an export, mount target, snapshot or filesystem, enumerate clients, shared exports and recovery consumers. Unmount and quiesce through the application owner's workflow. Report retained snapshots, replicas and data explicitly. Use the [backup/recovery recipe](recipe-backup-disaster-recovery.md) for application consistency and recovery ordering.
+
+## Shared-client handoff
+
+Record filesystem, mount target, export, client mount options, application UID/GID and recovery owner. Include snapshots, replication and retained data in capacity planning. Capture a mount inventory before maintenance so restored exports can be reconnected to the actual clients rather than merely recreated in the Console.
 
 ## Sources
 

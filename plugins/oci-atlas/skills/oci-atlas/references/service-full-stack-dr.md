@@ -1,6 +1,6 @@
 # Full Stack Disaster Recovery plans and dependencies
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested planning and operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose the recovery objective
 
@@ -30,6 +30,10 @@ Navigate to **Disaster recovery** and inspect the current Full Stack DR CLI/API 
 Do not restart a partially completed transition from the beginning without inspecting service roles and committed state. A step that timed out may already have changed the database role or launched capacity. Keep traffic/writer ownership explicit to avoid conflicting active applications.
 
 After transition, inspect protection direction, retained source resources and the supported return/reprotection procedure. Failback is a separate operation with prerequisites, not a promised automatic rollback. Remove drill or standby resources only within the requested scope, accounting for shared infrastructure and retained data. Use [the application recovery recipe](recipe-backup-disaster-recovery.md) for a broader decision sequence and the owning database/storage guides for their specific protection mechanisms.
+
+## Recovery operating record
+
+Keep a dependency-ordered record of protection groups, plan revision, writer ownership, DNS/client transition and external integration steps. Budget standby capacity, replicated storage and recovery-only resources. Use an explicit completion condition for each step and a supported recovery path after partial execution; plan success alone is not the business transaction result.
 
 ## Sources
 

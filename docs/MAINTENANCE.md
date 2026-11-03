@@ -2,54 +2,28 @@
 
 ## Canonical source and organization
 
-Edit the repository's plugin source, not installed caches. Keep the entry skill concise and directly link each packaged reference. Put stable service relationships, decision criteria and gotchas in the guides. Leave volatile prices, model IDs, availability matrices and large command schemas in their authoritative sources.
+Edit the repository's plugin source, not installed caches. Keep the entry skill concise and load focused references as needed. The catalog owns guide IDs, titles, paths, aliases, review dates and source links. Guide bodies own substantive explanations and operating workflows.
 
-Every substantive guide records the date it was actually reviewed and a source list. [catalog.json](../plugins/oci-atlas/skills/oci-atlas/catalog.json) is the canonical metadata source. Edit guide bodies and catalog entries together, then run `python3 tools/catalog.py --write`. This renders the skill routing table, review/source metadata and [content index](CONTENT.md). A changed review date means a maintainer checked the relevant content, not that a link checker received HTTP 200. Do not bulk-update dates to make content appear fresh.
+After editing the catalog and guide bodies, render navigation and source metadata with `python3 tools/catalog.py --write`. Preserve one canonical explanation per concept and link dependent recipes. Use the date sources and content were actually reviewed; do not advance dates merely because a URL responds.
 
-Original synthesized guidance needs citations. Any copied/adapted upstream skill or code also needs a file path, exact upstream revision, license and preserved notices in the package's NOTICE. Currently no upstream skill or executable code is vendored.
+## Source maintenance
 
-## Update when evidence changes
+Use current owning product documentation for behavior and Oracle Architecture Center for workload patterns. Consult installed command help where syntax matters. Keep prices, regional availability, model choices, capacity and service limits tied to current sources. Preserve upstream licenses and exact revisions when adapting source; do not vendor unpinned code.
 
-1. Identify the changed service behavior or recurring user confusion.
-2. Read current owning product documentation and relevant release notes; consult command help when syntax matters.
-3. Revise the affected canonical guide and dependent recipes. Distinguish documented facts from suggested design choices.
-4. Check the entry routing and aliases when a service is renamed or a new topic is added.
-5. Run the lightweight checks, inspect changed examples, and update the changelog.
-
-Before a release, review changed topics and outstanding stale-content issues. A monthly freshness triage is recommended, with extra attention to AI APIs, model capabilities, regional behavior and product renames. This is a documented maintenance practice; the repository does not create a recurring cloud task or external automation.
-
-## Lightweight review prompts
-
-Try a few questions from [examples](EXAMPLES.md), without live writes. Check whether the agent selects the relevant guide, avoids loading the entire library, distinguishes service boundaries and asks only for information that changes the answer. Check at least one unrelated request for unnecessary activation. Record observed behavior accurately; a static route check is not an independent model evaluation.
-
-## Build and inspect
-
-```sh
-python3 tools/catalog.py --check
-python3 tools/check.py
-python3 tools/package.py
-python3 tools/check.py --archive dist/oci-atlas-1.0.0.zip
-```
-
-The checker validates local package structure and content conventions. It doesn't contact OCI, validate every command against a live CLI, fetch all source URLs, or prove host compatibility. The packager uses a fixed ZIP timestamp, refuses unexpected source files, checks archive paths/content, and emits a checksum. Build artifacts are ignored by Git.
+Review changing AI APIs, product terminology and service retirement notices regularly. Revise dependent recipes when a service boundary changes. Keep application examples aligned with their documented dependencies and configuration interfaces.
 
 ## Version and release
 
-The canonical version is in the plugin manifest. Use SemVer: patch for corrections, minor for additive knowledge/workflows, major for incompatible interface or invocation changes. The v1 series preserves `oci-atlas`, the `oci-atlas-marketplace` source name, the `oci-atlas` skill identity, catalog schema version 1, and all existing reference IDs/paths. Keep these identifiers stable across v1 releases. Incompatible identity/schema/path changes require a new major version and migration guidance. Cloud features and host availability can change independently; this contract does not guarantee universal host support or production certification.
+The manifest is the canonical version. Use patches for corrections, minor releases for additive knowledge/workflows, and a major release for incompatible identity/schema/path changes. The v1 series preserves the plugin and marketplace names, skill identity, catalog schema version 1 and existing reference paths.
 
-1. Set the version, update the README/version references and add a changelog entry.
-2. Run the commands above and review the archive listing and limitations.
-3. Commit the reviewed source in [subhanchaudry/oci-atlas](https://github.com/subhanchaudry/oci-atlas) and confirm the main-branch checks. Prepare release notes locally with `python3 tools/release.py --tag v1.0.0 --notes-file /tmp/oci-atlas-release-notes.md`; use the intended version for later releases.
-4. Push an annotated tag matching the manifest version, for example `v1.0.0`. The **Publish OCI Atlas release** workflow validates tag/manifest/changelog agreement, runs the existing checks and packager, then publishes the tag's ZIP and checksum with changelog-based notes. The ordinary check workflow continues building artifacts on pushes, pull requests, and manual runs.
-5. Confirm both workflows, source/tag agreement, and the release asset listing. Download the ZIP/checksum again and verify the digest and archive. Install the pinned release when a target host is available, then record exact versions, routes, and observed results. Do not infer host compatibility from packaging alone.
+Prepare the package with `python3 tools/package.py`. The output is a versioned ZIP and SHA-256 companion. Examples remain in the repository and packaged recipes link to their matching release tag.
 
-The publication workflow requires `contents: write` only in its release job and disables persisted checkout credentials. It creates a new release; it does not overwrite previous assets or tags. If a run fails after creating a release, inspect the actual published state before retrying. Recover only the affected release explicitly; do not delete historical releases or use automatic asset clobbering. Public-directory submission is separate and is not performed by this workflow.
+Update the changelog and installation version together. Prepare notes with `python3 tools/release.py --tag v1.1.0 --notes-file /tmp/oci-atlas-release-notes.md`. The tag-triggered release workflow publishes the matching ZIP and checksum. Preserve historical tags/assets and inspect partial publication state before retrying; do not automatically overwrite an existing release.
 
-Use a pinned tag/commit for customers who need reproducible installs. Workspace imports can follow a branch and sync changes, so document releases before advancing the recommended version. No public OpenAI directory submission is part of this workflow.
+Pinned tags provide reproducible customer installs. Workspace imports following a branch can sync changes. Public-directory submission is separate from GitHub distribution.
 
 ## Sources
 
-- [Agent Skills authoring practices](https://agentskills.io/skill-creation/best-practices)
-- [Oracle skill authoring standards](https://github.com/oracle/skills/blob/main/SKILL_AUTHORING_GUIDE.md)
 - [OCI service release notes](https://docs.oracle.com/en-us/iaas/releasenotes/)
+- [Oracle Architecture Center](https://docs.oracle.com/solutions/)
 - [Plugin packaging](https://developers.openai.com/plugins/build/plugins)

@@ -1,6 +1,6 @@
 # OKE clusters, workloads, and identities
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live cluster operations.
+Reviewed: 2026-11-03
 
 ## Select the cluster and data plane
 
@@ -27,6 +27,10 @@ Registry image-pull authentication can be a separate mechanism from the applicat
 For ImagePullBackOff inspect events, image existence/digest, pull authentication and egress. For Pending inspect resources, node conditions, placement and storage. For CrashLoopBackOff inspect termination state and current/previous logs. For failed readiness inspect probe parameters and actual serving behavior. Check version compatibility and drain/disruption implications before node cycling or upgrades.
 
 Delete workload-owned consumers before shared cluster/network/storage dependencies. A removed Deployment is not proof its PVC, external load balancer or image was removed.
+
+## Capacity and release ownership
+
+Budget for the chosen cluster features, worker capacity, volumes, load balancers, registry storage and observability. Specify requests/limits and readiness behavior before configuring replicas. Record namespace, service account, immutable image, configuration version and persistent-volume ownership; a rollback of the Deployment does not reverse a database migration.
 
 ## Sources
 

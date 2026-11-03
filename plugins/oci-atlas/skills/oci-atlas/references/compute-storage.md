@@ -1,6 +1,6 @@
 # Compute and storage
 
-Reviewed: 2026-10-29 · Basis: documentation review; examples are not live-tested.
+Reviewed: 2026-11-03
 
 ## Select the resource
 
@@ -49,6 +49,10 @@ Use [Compute](service-compute.md) for instance configurations, pools, autoscalin
 Choose [Block Volume](service-block-volume.md) for attached disks and volume groups, [File Storage](service-file-storage.md) for managed NFS, [File Storage with Lustre](service-lustre.md) for compatible parallel-filesystem workloads, and [Object Storage](service-object-storage.md) for objects/artifacts. Match client semantics, concurrency, recovery needs, and data location before comparing nominal throughput.
 
 Storage replication and backups have different failure coverage. Use the [backup/recovery recipe](recipe-backup-disaster-recovery.md) to connect retained recovery points, application consistency, key availability, and a restore path. [OS Management Hub](service-os-management-hub.md) addresses registered host updates, not application release management.
+
+## Choose by persistence and recovery
+
+Classify application binaries, authoritative records, shared files, scratch space and checkpoints before selecting storage. Document what survives a runtime replacement. Use [HPC workloads](recipe-hpc-workload.md) for parallel I/O and [cost planning](service-cost-management.md) to account for retained volumes, replicas and backups after compute stops.
 
 ## Sources
 

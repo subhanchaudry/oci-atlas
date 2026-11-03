@@ -1,6 +1,6 @@
 # AI, agents, and machine learning
 
-Reviewed: 2026-10-29 · Basis: documentation review; examples are not live-tested.
+Reviewed: 2026-11-03
 
 ## Select the layer
 
@@ -52,6 +52,10 @@ Use the [AI application recipe](recipe-ai-application.md) for an end-to-end desi
 Use [Oracle AI Vector Search](service-ai-vector-search.md) for supported database-native embeddings/vector queries and [Search with OpenSearch](service-opensearch.md) for a managed search/index platform. Compare these with existing platform/agent knowledge sources using the [RAG recipe](recipe-rag-application.md); preserve source permissions and deletion propagation through the retrieval path. Model inference, embedding generation, vector storage, and answer grounding are separate components.
 
 For a concrete custom-infrastructure requirement, use [GPU/HPC](service-gpu-hpc.md) to resolve capacity, driver/runtime compatibility, RDMA fabric, and storage. Compare [File Storage with Lustre](service-lustre.md), [NFS File Storage](service-file-storage.md), and [Block Volume](service-block-volume.md) by workload I/O and client support. Availability of a GPU shape does not reserve a multi-node cluster or demonstrate model performance.
+
+## Choose the operational boundary
+
+Use [managed agents](service-generative-ai-agents.md) for supported knowledge/tool/session lifecycles; use the [RAG recipe](recipe-rag-application.md) for application-owned ingestion and retrieval. Preserve model/embedding revisions, data scope and operating ownership. GPU infrastructure is a choice for a concrete runtime need, not a prerequisite for calling a hosted model.
 
 ## Sources
 

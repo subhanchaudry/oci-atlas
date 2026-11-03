@@ -1,6 +1,6 @@
 # Web Application Firewall policies and enforcement
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Select the enforcement model
 
@@ -30,6 +30,10 @@ For unexpected blocking, correlate timestamp, request ID, rule/action, path, met
 Narrow an evidenced false-positive exception to the relevant condition instead of disabling protection for the entire application. Avoid collecting sensitive bodies or credentials merely to explain a rule match. For apparently unprotected traffic, confirm frontend association, DNS and whether direct origin access follows a separate path.
 
 Before deletion or rollback, restore the intended association and account for DNS changes where applicable. Preserve a shared policy and other protected applications. See [load balancing](service-load-balancing.md) for backend health, [Certificates](service-certificates.md) for TLS, and [Network Firewall](service-network-firewall.md) for a different traffic-inspection layer.
+
+## Application rollout
+
+Begin with the application paths, intended clients and known legitimate request sizes/formats. Correlate rule matches with backend responses before narrowing an exception. Record policy association and prior rule configuration for rollback; include request volume and logging in the cost estimate instead of assuming a shared policy has no operating cost.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # Data Integration design and runtime artifacts
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live tasks or schedules.
+Reviewed: 2026-11-03
 
 ## Choose it for the integration workload
 
@@ -32,6 +32,10 @@ For cleanup, inspect schedules, published consumers, connection reuse and retain
 ## Choose the integration layer
 
 [Oracle Integration](service-oracle-integration.md) addresses application/business integrations and adapters. Data Integration addresses data assets, transformations, publication, and task runs. For ongoing database change capture inspect [GoldenGate](service-goldengate.md); for an engine move and coordinated cutover use the [migration recipe](recipe-database-migration.md). These are separate lifecycle and authorization models.
+
+## Publication and data contract
+
+Record source/target schema, watermark, expected partition/window, transformation revision and published task version. Define append versus replacement behavior before rerunning a failed task. Budget workspace/runtime consumption and staging/target storage using the actual schedule. Revoke a connection only after checking all published tasks that use it.
 
 ## Sources
 

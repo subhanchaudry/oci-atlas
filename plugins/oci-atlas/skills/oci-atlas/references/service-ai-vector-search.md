@@ -1,6 +1,6 @@
 # Oracle AI Vector Search and retrieval design
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; illustrative SQL, no live schema changes.
+Reviewed: 2026-11-03
 
 ## Select a retrieval capability, not a new database by default
 
@@ -42,6 +42,10 @@ Use the database's supported SQL client, documented SDK or advertised REST inter
 A populated vector column does not prove useful retrieval; a fast query does not establish relevance or permitted access. Preserve tenant/document filters in the actual retrieval query/application, not only in a prompt. Re-embedding or changing distance/index choices can require coordinated data and query updates.
 
 Keep authoritative source data separate from rebuildable embeddings/indexes. For deletion or revoked access, remove/update retrieval material through the intended propagation path. Do not drop a shared schema to reset one index. Use the [RAG recipe](recipe-rag-application.md) to connect retrieval, source authorization and grounded application responses.
+
+## Index and application handoff
+
+Record embedding model, dimensions, element format, distance metric, chunking version and permission-filter fields together. Keep ingestion and query embeddings compatible. Begin with a bounded exact query before adding an approximate index; inspect relevance and filtered results separately from latency. Rebuild into a separate collection when changing embedding configuration.
 
 ## Sources
 

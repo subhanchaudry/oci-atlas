@@ -1,6 +1,6 @@
 # Functions deployment and invocation
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live deployments.
+Reviewed: 2026-11-03
 
 ## Select the deployment mode
 
@@ -31,6 +31,10 @@ Use Console **Functions** or inspect `oci fn application`, `oci fn function`, an
 Distinguish cold-start latency, timeout configuration, out-of-memory/runtime failure and an unreachable downstream service. Retrying a function can repeat application side effects; inspect the contract/idempotency behavior before resending a write request. A successful HTTP response is not evidence that all asynchronous processing completed.
 
 For updates, preserve contract compatibility and record artifact/configuration revision. Before deletion, inspect gateway routes, event integrations and shared application settings; keep shared registry artifacts and networking unless their removal is requested.
+
+## Invocation contract
+
+Document trigger payload, maximum useful processing duration, retry behavior and business idempotency key. Keep the image digest and application configuration together for updates. Include execution, image storage, logs and downstream service calls in cost planning. For longer or replayable work, use the [event-processing recipe](recipe-event-processing.md) rather than stretching an HTTP request indefinitely.
 
 ## Sources
 

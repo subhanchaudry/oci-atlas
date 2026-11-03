@@ -1,6 +1,6 @@
 # Oracle Integration instances, connections, and activation
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Distinguish application integration from data integration
 
@@ -32,6 +32,10 @@ Distinguish instance availability, activation/configuration, adapter authenticat
 Use tracking/correlation metadata and bounded sanitized payloads for diagnosis. Broad tracing can expose sensitive business content. Before changing a shared connection, enumerate integrations that use it; a credential refresh can affect more than the failing flow.
 
 Before deactivation/deletion, inspect schedules, inbound consumers, running executions and shared connections/agents. Deleting the OCI instance is much broader than removing an unused integration version. Preserve data-system ownership and record incomplete or retained runtime work. Use [Data Integration](service-data-integration.md) for ETL-specific workflows and [hybrid connectivity](service-hybrid-connectivity.md) for underlying private routes.
+
+## Integration release handoff
+
+Record integration version, activation, connection references, schedule and business tracking key. Define retries and reconciliation for partially completed business transactions. Include message/runtime consumption and connectivity dependencies in planning. Use [SaaS extensions](recipe-saas-extension.md) to separate Fusion API permissions from OCI resource permissions.
 
 ## Sources
 

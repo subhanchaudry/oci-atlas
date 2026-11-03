@@ -1,6 +1,6 @@
 # IAM policies and workload identities
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live policy changes.
+Reviewed: 2026-11-03
 
 ## Model the caller before the policy
 
@@ -31,6 +31,10 @@ For supported enhanced clusters, an OKE workload is identified by cluster, names
 ## Work and diagnose
 
 Use Console **Policies**, **Domains**, or **Dynamic Groups**; inspect `oci iam policy --help` for resource policy operations. Identity-domain APIs can use a different interface from core IAM. For a denied request, compare the actual resource OCID, region, caller, policy scope and dependent resources. A 404 `NotAuthorizedOrNotFound` doesn't distinguish missing resources from denied visibility. Changing the wrong caller's policy will not fix it.
+
+## Access handoff
+
+Record the exact operation, principal type, target compartment and dependent resource for each grant. Include one permitted request and one out-of-scope request in the access handoff. When retiring an application, remove its grant only after checking other members of the same dynamic group; deleting a policy does not delete the workload or its credentials.
 
 ## Sources
 

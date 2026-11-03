@@ -1,6 +1,22 @@
 # Recipe: private OKE application with workload access
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; not a live deployment.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** A private Kubernetes workload with scoped OCI access.
+
+**Inputs:** Cluster/context/namespace; supported identity model; service account; digest; requests/limits; ingress visibility; dependent resources; storage ownership.
+
+**Flow:** Operator → private Kubernetes API; runtime → registry; client → ingress/service/pod; pod identity → OCI dependency.
+
+**Starting configuration:** Reuse a suitable cluster. Keep Kubernetes RBAC, image pull access and OCI workload permissions separate. Preserve PVCs and shared ingress during workload cleanup.
+
+## Completion and handoff
+
+Rollout and readiness succeed, the intended client reaches the service, and the pod performs only its scoped downstream operation. A working node principal is not proof of pod identity.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Intent
 

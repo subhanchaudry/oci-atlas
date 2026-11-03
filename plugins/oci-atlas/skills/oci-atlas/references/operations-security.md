@@ -1,6 +1,6 @@
 # Operations, security, and cost
 
-Reviewed: 2026-10-29 · Basis: documentation review; examples are not live-tested.
+Reviewed: 2026-11-03
 
 ## Pick the right evidence
 
@@ -50,6 +50,10 @@ Use [Monitoring and Notifications](service-monitoring-notifications.md) for metr
 Use [Cloud Guard/Security Zones](service-cloud-guard-security-zones.md) for posture detection and preventative configuration rules, [Certificates](service-certificates.md) for certificate lifecycle, [Data Safe](service-data-safe.md) for database security, and the [network overview](networking.md) for traffic-control distinctions. [OS Management Hub](service-os-management-hub.md) manages supported registered-host software sources and updates; it does not establish application health.
 
 For resilience, load [Block Volume](service-block-volume.md), [File Storage](service-file-storage.md), or the chosen database guide, then [Full Stack DR](service-full-stack-dr.md) for supported application orchestration. Use the [backup/recovery recipe](recipe-backup-disaster-recovery.md) to connect consistency, retention, role ownership, RPO/RTO, restore dependencies, and re-protection. Recovery procedures need evidence from the application before an outcome can be claimed.
+
+## Connect operating cost to ownership
+
+Use [cost management](service-cost-management.md) for estimates, tags, budgets and retained resources; [APM](service-apm.md) for application traces; and [support handoff](troubleshoot-support-handoff.md) for unresolved service incidents. An operating handoff should name the resource owner, application signal, escalation path and recovery dependency.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # Exadata deployment choices and resource operations
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Resolve the Exadata offering first
 
@@ -30,6 +30,10 @@ Use the selected **Exadata Database Service** Console entry and its current `oci
 Separate allocation shortage, cluster/guest health, database-open state, listener/service configuration and SQL authorization. Increasing a VM cluster's compute does not necessarily resolve a database-storage limit or a bad query plan. Check current billing semantics before promising that stopping a VM/cluster stops charges.
 
 Coordinate service-supported maintenance with the application's availability design and the actual infrastructure/database owner. Before cleanup, enumerate databases, homes, clusters, shared vault/infrastructure and protection dependencies. Remove only the requested layer and preserve retained backups/data. A successful database deletion does not imply dedicated infrastructure or other billable capacity was removed. Use [Full Stack DR](service-full-stack-dr.md) for cross-layer recovery planning rather than treating infrastructure redundancy as complete DR.
+
+## Capacity and responsibility record
+
+Document infrastructure, VM cluster and database ownership separately, including maintenance windows and scaling responsibility. Price the selected offering rather than transferring another Exadata deployment model's assumptions. Capture shared database consumers before changing cluster resources; one application request does not authorize estate-wide maintenance.
 
 ## Sources
 

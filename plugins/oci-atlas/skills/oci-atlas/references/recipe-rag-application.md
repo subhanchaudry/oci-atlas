@@ -1,6 +1,22 @@
 # Recipe: retrieval over governed enterprise data
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; no live ingestion or inference.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** A question answered from permitted document passages.
+
+**Inputs:** Source bucket/prefix; document ownership; embedding model/dimensions; database version; retrieval filters; generation API/model; citation contract; deletion policy.
+
+**Flow:** Documents → parse/chunk/embed → vector store; question → compatible embedding → permitted retrieval → model → source-referenced answer.
+
+**Starting configuration:** The [RAG example](https://github.com/subhanchaudry/oci-atlas/tree/v1.1.0/examples/rag) uses an existing bucket, Autonomous Database and model endpoints. It has one application data boundary; multi-user deployment requires authorization before retrieval. Re-embed into a distinct collection when changing embedding configuration.
+
+## Completion and handoff
+
+Inspect passages and source versions before generation. Check unknown questions, deleted documents and denied scope; a generated citation must resolve to a retrieved source, not a model-invented URL.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Resolve the knowledge contract
 

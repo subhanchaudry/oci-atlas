@@ -1,6 +1,6 @@
 # Data Flow Spark applications and runs
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live Spark runs.
+Reviewed: 2026-11-03
 
 ## Choose the execution model
 
@@ -25,6 +25,10 @@ Verify output partitioning/schema and a bounded record count or business invaria
 Artifact read failure → inspect URI and execution identity. Connection error → inspect private endpoint/DNS/routes and source auth. Class/package mismatch → inspect runtime and bundled dependencies. Memory/skew issue → inspect plan, partitions and workload characteristics before increasing all compute. Current limits and available runtime settings must be checked at execution time.
 
 For reruns, establish overwrite/append and partial-output behavior. Canceling or deleting run metadata doesn't establish that output objects were removed. Retain the application/run/code identifiers needed to reproduce a result and clean up only the requested data/capacity.
+
+## Run handoff
+
+Record Spark/runtime version, application artifact URI/revision, driver/executor sizing, arguments, output prefix and log location. Keep partial outputs separate from committed outputs so retries cannot silently double-count data. Compare elapsed execution and data shuffle against the required completion window before changing worker sizes; retained objects and private-network dependencies outlive a run.
 
 ## Sources
 

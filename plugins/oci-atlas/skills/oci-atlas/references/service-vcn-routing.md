@@ -1,6 +1,6 @@
 # VCN routing, network controls, and DNS
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live network changes.
+Reviewed: 2026-11-03
 
 ## Describe one flow
 
@@ -30,6 +30,10 @@ Private DNS must answer from the caller's resolver context. Establish resolver e
 Navigate through **Virtual cloud networks**, the subnet details, route table, NSGs and DNS. Inspect `oci network ... --help` or `oci dns ... --help` for the selected object. Read existing rule arrays before replacing them in an update. Route and security objects can be shared by other workloads.
 
 For a change, capture the previous intended configuration, modify the smallest relevant object, and retest from the actual source. For cleanup, inspect VNICs, private endpoints and gateway references before deletion. See [connectivity diagnosis](troubleshoot-connectivity.md) for symptom-based checks.
+
+## Network change record
+
+Record a flow as source CIDR or NSG, destination hostname/address, protocol, port, next hop and return route. Keep the previous route/rule set for rollback. Use [private DNS](service-dns.md) for resolver ownership and [connectivity diagnosis](troubleshoot-connectivity.md) for Network Path Analyzer; a modeled path does not replace an application request.
 
 ## Sources
 

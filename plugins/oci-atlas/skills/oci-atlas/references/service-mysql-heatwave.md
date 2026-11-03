@@ -1,6 +1,6 @@
 # MySQL HeatWave systems, access, and availability
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose the MySQL workload layer
 
@@ -32,6 +32,10 @@ Managed HA, read scaling and inbound/outbound replication have different writer/
 For failures, separate network/TLS/authentication, SQL privileges, storage/capacity and replication/feature-specific errors. Avoid granting broad administrator rights to an application to fix a wrong hostname or missing schema grant.
 
 Before deleting a DB system, replica, channel or HeatWave cluster, identify consumers, recovery retention and whether data or compute is being removed. Preserve requested backups and report retained capacity. Use [database migration](recipe-database-migration.md) for cutover sequencing and [hybrid access](recipe-hybrid-private-access.md) for on-premises clients.
+
+## Application and capacity handoff
+
+Record endpoint, application SQL user, schema revision, HA/read-replica roles and backup policy. Include HeatWave capacity only when the workload uses that feature. Distinguish transactional query behavior from data loaded into an accelerator; keep role/endpoint changes coordinated with client pools and replication consumers.
 
 ## Sources
 

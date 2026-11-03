@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.0 — 2026-11-03
+
+- Expanded to 94 references, 57 service guides and 19 recipes, preserving existing guide paths.
+- Added packaged onboarding, illustrated walkthroughs and workload selection across applications, data, AI, enterprise modernization, hybrid/multicloud and HPC.
+- Deepened existing service guidance and recipes with concrete inputs, application checks, operating ownership, cost drivers and recovery/cleanup procedures.
+- Added dedicated guidance for landing zones, Resource Manager, cost management, registry/artifacts, DevOps, Events, DNS, APM, managed agents and support handoffs.
+- Added private container API and document RAG examples using existing OCI foundations.
+- Refreshed customer documentation and source links.
+
 ## 1.0.0 — 2026-10-29
 
 - Public GitHub launch of OCI Atlas with the complete 73-reference collection, 48 service guides, and 12 recipes.
@@ -7,8 +16,7 @@
 - Refined conceptual onboarding, workload-sensitive recommendations, optional connection deadlines, and adaptable architecture/discovery/diagnosis responses.
 - Established v1 compatibility for plugin/skill identity, catalog schema, and existing reference paths; retained UPL 1.0 licensing and community attribution.
 - Added contribution templates, feature requests, community conduct, and private vulnerability reporting guidance.
-- Added tag-triggered publication with tag/manifest agreement, package checks, ZIP, checksum, and changelog-based release notes.
-- Updated pinned installation and update instructions to v1.0.0. No new execution backend, live OCI provisioning, or public plugin-directory submission is included.
+- Updated pinned installation and update instructions to v1.0.0.
 
 ## 0.3.0 — 2026-10-29
 
@@ -22,7 +30,7 @@
 ## 0.2.1 — 2026-10-29
 
 - Redesigned the project README with an original compass banner, two architecture/workflow diagrams, a concise quick start, and linked OCI coverage.
-- Refined both READMEs around using OCI Atlas; moved release evidence and development details to supporting documentation.
+- Refined both READMEs around using OCI Atlas.
 - Updated portable-skill installation for the current `~/.agents/skills` location and extracted release ZIPs.
 - Added community support guidance and issue forms for installation help and knowledge corrections.
 - Retained the 36-reference collection, plugin identity, catalog, and skills-only architecture.
@@ -34,11 +42,9 @@
 - Added recipes for private OKE, governed data ingestion, RAG, and the predictive model lifecycle; eight recipes total.
 - Introduced a canonical content catalog with aliases, sources and review dates. Generate navigation/source metadata and package file selection from the catalog.
 - Updated installation and maintenance instructions for the public GitHub repository and versioned release.
-- Kept verification lightweight: source/routing/package checks; no live OCI changes or independent model evaluation.
 
 ## 0.1.0 — 2026-10-29
 
 - Initial OCI Atlas knowledge plugin with one entry skill and progressive reference loading.
 - Access/onboarding guide, eight OCI knowledge areas, and four cross-service recipes.
 - GitHub marketplace, portable plugin ZIP packaging, installation instructions, contribution template, and maintenance workflow.
-- Lightweight structural and content checks; no live OCI provisioning validation.

@@ -1,6 +1,6 @@
 # Data Science notebooks, jobs, and model serving
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live notebooks, training or serving.
+Reviewed: 2026-11-03
 
 ## Choose the execution object
 
@@ -32,6 +32,10 @@ For deployment, confirm artifact/serving compatibility and endpoint access, then
 Manage notebooks' active/deactivated states with storage retention in mind. A deactivated notebook can retain billable storage. Model artifacts and model deployments have distinct retention and cost lifecycles. Read current shape/capacity and pricing inputs before sizing or promising a cost.
 
 For changes, preserve application contracts and record the artifact/environment revision. Before deleting a project or artifact, enumerate dependent notebooks, runs, deployments and retained data; don't erase shared assets as a side effect of a failed experiment.
+
+## Reproducibility and cost boundary
+
+Record the environment, code revision, input snapshot, job arguments, artifact location and serving schema as one model release. Track notebook sessions, job compute, model deployments, storage and logs separately; an idle notebook and an active serving endpoint have different lifecycles. Keep dataset access and model-promotion ownership explicit.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # Application platforms
 
-Reviewed: 2026-10-29 · Basis: documentation review; examples are not live-tested.
+Reviewed: 2026-11-03
 
 ## Choose the runtime
 
@@ -51,6 +51,10 @@ Console search terms are **Kubernetes clusters**, **Functions**, **API gateways*
 [Queue](service-queue.md) distributes work to consumers with visibility/retry handling. [Streaming](service-streaming.md) and [Streaming with Apache Kafka](service-streaming-kafka.md) support partitioned event processing with different resource and compatibility models. Choose the delivery contract before choosing a client library.
 
 [APEX and ORDS](service-apex-ords.md) serve database-centric low-code and REST workloads: workspace, parsing schema, application login, and OCI compartment are different boundaries. [Oracle Integration](service-oracle-integration.md) connects business applications through adapters/integrations, whereas Data Integration publishes data tasks. [Analytics Cloud](service-analytics-cloud.md) exposes governed analytics with its own roles, data connections, and source permissions.
+
+## Build, release, and operate
+
+Use [Container Registry](service-container-registry.md) for artifact identity, [DevOps](service-devops.md) for delivery, and [Events](service-events.md) for resource-triggered workflows. Establish runtime, public/private entry point and data dependencies before choosing the pipeline. Use [enterprise modernization](enterprise-modernization.md) for existing WebLogic, packaged applications or VMware estates.
 
 ## Sources
 

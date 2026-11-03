@@ -1,6 +1,6 @@
 # Streaming with Apache Kafka clusters and client access
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Distinguish the two streaming services
 
@@ -32,6 +32,10 @@ Bootstrap succeeds but metadata requests fail → inspect advertised broker addr
 Changing partitions, retention, consumer offsets or serializers can alter ordering, replay and compatibility. Resetting offsets can repeat side effects; inspect the application idempotency/transaction contract first. A managed cluster does not automatically make an arbitrary sink exactly once.
 
 Before upgrades or configuration changes, review supported version transitions, client compatibility and maintenance impact. Before deletion, enumerate topics, consumers, retained data and backup/export needs. Preserve external sources and shared clusters unless their removal is requested. Record resulting cluster/client behavior, not only a successful OCI work request.
+
+## Client migration handoff
+
+Inventory client versions, authentication, topic configuration, partitioning, consumer groups and connector dependencies. Budget brokers/capacity, retention and cross-network traffic using the selected service. Coordinate offset migration and sink idempotency before moving consumers; similar topic names do not identify the same retained event history.
 
 ## Sources
 

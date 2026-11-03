@@ -1,6 +1,6 @@
 # NoSQL tables, key design, and capacity
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Select the data model deliberately
 
@@ -30,6 +30,10 @@ Use Console **NoSQL Database** and inspect current `oci nosql --help` plus the s
 An index being created does not guarantee every expected query uses it. A successful table-management operation does not establish application read/write access. Retrying a write requires the application's key/version/idempotency contract; avoid inventing exactly-once business effects from a successful transport response.
 
 Changing a primary/shard-key design can require a new table and coordinated data movement. Expiring a row and deleting the entire table are different scopes. Before cleanup, identify applications, regional replicas, indexes and any export/retention requirement. Keep the authoritative data source clear if a table is a derived materialization. Use [service selection](service-selection.md) for comparison with PostgreSQL/MySQL/Autonomous and [OCI Cache](service-oci-cache.md) for transient cache semantics.
+
+## Workload sizing record
+
+Describe dominant queries, key distribution, item sizes, consistency and TTL alongside configured capacity. Measure throttling against hot keys and query/index access before scaling. Retain the source/export plan when changing key design, and distinguish expired application records from regional replica or table cleanup.
 
 ## Sources
 

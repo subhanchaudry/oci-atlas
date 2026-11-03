@@ -1,6 +1,6 @@
 # Container Instances runtime, image access, and lifecycle
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose a managed container runtime
 
@@ -30,6 +30,10 @@ Navigate to **Container instances** and inspect `oci container-instances --help`
 Image failure → inspect actual registry endpoint, credentials, subnet path and architecture. Repeated exits → inspect application exit code, entry point/configuration, resource pressure and restart policy. Healthy lifecycle but no response → inspect application listener, security rules, routing and frontend health separately.
 
 Review current support before assuming an image or resource change is in place versus a replacement. Preserve useful capacity/rollback references when updating a consumer-facing application. For cleanup, inspect attached/shared filesystems, image repositories, secrets and external frontends. Deleting the runtime should not delete unrelated data or claim a registry image was removed. Use [load balancing](service-load-balancing.md) for ingress and [OKE](service-oke.md) when Kubernetes is the deciding requirement.
+
+## Application handoff
+
+Record immutable image digest, architecture, port, resources, private VNIC, health path and secret references. Separate image-pull authorization from runtime resource-principal access. Container runtime memory is not durable storage. Use the [private application recipe](recipe-private-application.md) and versioned example for application checks and replacement/cleanup sequencing.
 
 ## Sources
 

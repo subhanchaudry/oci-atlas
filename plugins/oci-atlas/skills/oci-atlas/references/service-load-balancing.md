@@ -1,6 +1,6 @@
 # Load Balancer, Network Load Balancer, and backend health
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose the traffic contract
 
@@ -29,6 +29,10 @@ Navigate to **Load balancers** or **Network load balancers**. Inspect installed 
 For unhealthy backends, check the listener process, health-check port/path, security rules, return routing and application dependencies. For certificate errors, inspect hostname, chain and frontend/backend TLS separately. For intermittent responses, correlate backend health transitions, session persistence, timeouts and deployment revision.
 
 When updating members, preserve healthy capacity and use the service's supported draining/weight behavior rather than terminating all servers. Determine whether OKE or another controller owns the frontend before changing it manually. Before deletion, inspect DNS records, API consumers, Kubernetes ownership and certificate associations. Remove requested resources without deleting shared networking or application data.
+
+## Sizing and endpoint handoff
+
+Record LB versus NLB, frontend address, listener protocol, backend port, health path, TLS termination point and client-address expectations. Include minimum/configured capacity and traffic assumptions in the estimate. Drain old backends before removal, and check an application request through the frontend after a certificate or backend change.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # OCI Database with PostgreSQL systems and private access
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Establish managed-service compatibility
 
@@ -32,6 +32,10 @@ Unknown hostname or timeout → inspect resolver, routes and network rules. TLS 
 Use observed workload/node/storage signals for sizing; don't assume memory used by a database cache is a leak. Review node/configuration and maintenance effects before resizing or changing topology. Confirm current backup/restore semantics and retained recovery points instead of equating high availability with protection against logical deletion.
 
 Before cleanup, identify schemas, applications, integrations, backups and management ownership. Deleting a database system is broader than dropping an unused schema or removing a temporary client. Preserve requested data and report retained resources. See [Bastion](service-bastion.md) and [connectivity diagnosis](troubleshoot-connectivity.md) for access paths, and the [migration recipe](recipe-database-migration.md) for coordinated cutover.
+
+## Migration and operations handoff
+
+Record exact engine version, required extensions, application roles, endpoint, maintenance and backup settings. Assess source schema compatibility before loading data. Include system capacity, storage and retained recovery points in planning; preserve a schema-level rollback strategy separately from service-level recovery.
 
 ## Sources
 

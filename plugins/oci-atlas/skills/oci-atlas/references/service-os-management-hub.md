@@ -1,6 +1,6 @@
 # OS Management Hub registration, sources, and updates
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Establish management scope
 
@@ -32,6 +32,10 @@ For missing packages, inspect OS compatibility, source selection, entitlement an
 Keep content promotion and deployment scheduling explicit. Changing a shared software source or group can affect many machines beyond the one in the current incident. Removing a lifecycle stage or source without inspecting membership can break update reproducibility.
 
 For cleanup, distinguish unregistering an instance from terminating Compute or removing guest data. Preserve the application's maintenance ownership and record any remaining reboots or failed nodes. Do not claim vulnerability remediation is complete from update submission alone; relevant installed-state and application evidence must support that outcome.
+
+## Maintenance handoff
+
+Record host group, software source/version, update window, reboot requirement and application owner. Promote a selected package set through the existing lifecycle rather than mixing ad hoc updates with managed sources. Keep OS patch status separate from application compatibility, and preserve a supported host recovery path before changing critical packages.
 
 ## Sources
 

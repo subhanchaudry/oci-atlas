@@ -1,6 +1,6 @@
 # Logging, Audit, and Connector Hub pipelines
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Select the evidence source
 
@@ -30,6 +30,10 @@ Use Console **Logging**, **Audit**, and **Connector Hub**. Inspect `oci logging`
 For no data movement, inspect source filters/time, connector state, permissions, target availability and supported processing behavior. Replaying a pipeline can duplicate downstream application effects, so inspect the destination contract before rerunning data. Audit event time and log arrival time can differ; do not invent causality from adjacent timestamps alone.
 
 Plan changes around shared consumers and sensitive outputs. Removing a connector does not necessarily delete destination objects; deleting a log group can remove evidence needed by other workflows. Keep deletion/retention intent explicit. Use [Monitoring and Notifications](service-monitoring-notifications.md) for alarms and delivery and [the observability recipe](recipe-observability-delivery.md) to connect the layers.
+
+## Evidence contract
+
+Specify emitter, fields to retain/redact, destination, time zone, retention period and access owner. Track log volume and downstream storage/processing independently. Preserve request and trace identifiers across services so [APM](service-apm.md), logs and Audit can be correlated without copying full request bodies.
 
 ## Sources
 

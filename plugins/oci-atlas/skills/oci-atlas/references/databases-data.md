@@ -1,6 +1,6 @@
 # Databases and data services
 
-Reviewed: 2026-10-29 · Basis: documentation review; examples are not live-tested.
+Reviewed: 2026-11-03
 
 ## Choose by workload and operating responsibility
 
@@ -49,6 +49,10 @@ Start with [service selection](service-selection.md), then load only the chosen 
 For moves and ongoing changes, use [Database Migration](service-database-migration.md), [GoldenGate](service-goldengate.md), and the [cutover recipe](recipe-database-migration.md). Replication, database HA, and [application DR](service-full-stack-dr.md) solve different dependencies. A current replica can contain the same accidental deletion as its source.
 
 For transport, distinguish [Queue](service-queue.md) work distribution, [Streaming](service-streaming.md) event logs, and [Streaming with Apache Kafka](service-streaming-kafka.md) managed Kafka clusters. Streaming's Kafka-compatible interface is a separate service interface. [Oracle Integration](service-oracle-integration.md) handles application/business integrations; [Data Integration](service-data-integration.md) handles data tasks. [Analytics Cloud](service-analytics-cloud.md) supplies analytics delivery rather than replacing an ingestion engine.
+
+## From source to a business result
+
+Start with the [lakehouse recipe](recipe-lakehouse-analytics.md) for ingestion through analytics and the [AIDP private-source recipe](recipe-aidp-private-source.md) for governed source access. Specify who owns source privileges, processing code, target schemas and business measures. Freshness must be measured at the consuming table or dashboard, not only at the ingestion job.
 
 ## Sources
 

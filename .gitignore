@@ -18,3 +18,12 @@ node_modules/
 *.tfplan
 *.auto.tfvars
 *.tfvars.json
+
+# Local application configuration and deployment state
+examples/**/.venv/
+examples/**/__pycache__/
+examples/**/config.env
+examples/**/.terraform/
+examples/**/*.tfstate*
+examples/**/*.tfvars
+examples/**/*.plan

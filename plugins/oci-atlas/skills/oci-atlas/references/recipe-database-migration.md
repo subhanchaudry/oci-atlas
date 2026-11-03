@@ -1,6 +1,22 @@
 # Recipe: database migration, replication, and application cutover
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; no live data movement or cutover.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** Application writers move to a compatible target.
+
+**Inputs:** Source/target versions/features; data volume/change rate; method; grants/network; staging; synchronization boundary; writer-stop and rollback conditions.
+
+**Flow:** Source → initial load → supported change capture/apply → writer drain → target connection → application.
+
+**Starting configuration:** Keep source and retained logs until the agreed acceptance point. Budget overlapping environments and temporary replication resources. After target-only writes, rollback requires an explicit data reconciliation plan.
+
+## Completion and handoff
+
+Reconcile key data invariants and object coverage; confirm new writes and scheduled jobs use the target. Record failed or excluded objects rather than hiding them behind a successful job.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Define the authoritative database transition
 
@@ -36,3 +52,4 @@ Preserve the source, backups, logs and temporary migration artifacts according t
 - [Migration preparation](https://docs.oracle.com/en-us/iaas/database-migration/doc/getting-started.html)
 - [GoldenGate source-target support](https://docs.oracle.com/en/cloud/paas/goldengate-service/ocigg/whats-supported.html)
 - [Data Guard roles and transitions](https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/usingdataguard.htm)
+- [Custom application migration architecture](https://docs.oracle.com/en/solutions/migrate-oracle-db-custom-apps/considerations-moving-cloud1.html)

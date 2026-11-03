@@ -6,7 +6,7 @@
 
 Understand OCI services, choose architectures, and work through resource tasks with focused guidance grounded in Oracle documentation. OCI Atlas brings service relationships, practical workflows, and common gotchas into the conversation when they matter.
 
-**[Get started](docs/GETTING-STARTED.md)** · **[Download v1.0.0](https://github.com/subhanchaudry/oci-atlas/releases/tag/v1.0.0)** · **[Explore the guides](docs/CONTENT.md)** · **[Walk through examples](docs/WALKTHROUGHS.md)**
+**[Get started](docs/GETTING-STARTED.md)** · **[Download v1.1.0](https://github.com/subhanchaudry/oci-atlas/releases/tag/v1.1.0)** · **[Explore the guides](docs/CONTENT.md)** · **[Walk through examples](docs/WALKTHROUGHS.md)**
 
 ## What you can do
 
@@ -39,7 +39,7 @@ Knowledge questions require no OCI login. Resource operations use your available
 For Codex CLI with plugin support:
 
 ```sh
-codex plugin marketplace add subhanchaudry/oci-atlas --ref v1.0.0
+codex plugin marketplace add subhanchaudry/oci-atlas --ref v1.1.0
 codex plugin add oci-atlas@oci-atlas-marketplace
 ```
 
@@ -51,7 +51,7 @@ For ChatGPT desktop, workspace imports, release ZIPs, and the portable skill rou
 
 ## OCI coverage
 
-**73 focused references · 48 service guides · 12 cross-service recipes**
+**94 focused references · 57 service guides · 19 cross-service recipes**
 
 | Knowledge area | What you can explore |
 | --- | --- |
@@ -64,7 +64,15 @@ For ChatGPT desktop, workspace imports, release ZIPs, and the portable skill rou
 | [Operations and security](plugins/oci-atlas/skills/oci-atlas/references/operations-security.md) | Metrics and notifications, logs and Audit, Cloud Guard, security, host updates, and recovery |
 | [Infrastructure and architecture](plugins/oci-atlas/skills/oci-atlas/references/infrastructure-architecture.md) | Terraform, Resource Manager, state import, drift, private endpoints, and landing zones |
 
-The [full catalog](docs/CONTENT.md) brings these together with service-selection decisions, troubleshooting paths, and 12 recipes—from private applications and AI workflows to hybrid access, notification delivery, backup/recovery, and database cutover.
+The [full catalog](docs/CONTENT.md) brings these together with service-selection decisions, troubleshooting paths, and 19 recipes—from private applications and AI workflows to hybrid access, notification delivery, backup/recovery, and database cutover.
+
+## Start with your workload
+
+Use [Choose an OCI workload path](plugins/oci-atlas/skills/oci-atlas/references/workload-selection.md) to connect a customer outcome to the right architecture and guides: APIs, private databases, event processing, lakehouses, AI/ML, SaaS extensions, enterprise modernization, migration, recovery, hybrid/multicloud, and HPC.
+
+[Getting started](plugins/oci-atlas/skills/oci-atlas/references/getting-started.md) and the [illustrated walkthroughs](plugins/oci-atlas/skills/oci-atlas/references/walkthroughs.md) are included in the plugin. Ask for a design, a scoped inspection, or an operational task in the same conversation.
+
+Two [application examples](examples/README.md) connect the guidance to source code: a private Container Instances API with Autonomous Database access, and document RAG using Object Storage, database vectors, and Generative AI. Both use existing customer foundations and explain their configuration, operating steps, and cleanup boundaries.
 
 ## Example architecture: a private application
 
@@ -123,7 +131,7 @@ Explore three [illustrated walkthroughs](docs/WALKTHROUGHS.md): a containerized 
 | More ways to use OCI Atlas | [Example prompts](docs/EXAMPLES.md) |
 | Questions and corrections | [Support](SUPPORT.md) |
 | Add or improve guidance | [Contributing](CONTRIBUTING.md) |
-| Source review and releases | [Maintenance](docs/MAINTENANCE.md) |
+| Content maintenance and releases | [Maintenance](docs/MAINTENANCE.md) |
 | Release history | [Changelog](CHANGELOG.md) |
 
 The v1 series keeps the plugin identity and existing guide paths stable, with versioned releases for updates. Guidance links to its authoritative sources and records when it was reviewed. Keep current service availability, model choices, prices, and exact command parameters tied to Oracle's documentation and your installed tools.

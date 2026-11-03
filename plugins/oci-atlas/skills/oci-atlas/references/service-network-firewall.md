@@ -1,6 +1,6 @@
 # Network Firewall inspection paths and policies
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose the control by traffic
 
@@ -30,6 +30,10 @@ Use Console **Network firewalls** and **Network firewall policies**, or current 
 For a timeout, inspect route selection and return routing before changing a deny rule. For missing logs, inspect logging enablement and whether the actual flow traverses this firewall. For an inspected TLS failure, distinguish certificate trust, protocol support and application behavior from ordinary reachability.
 
 Explain whether a proposed decryption, NAT or route change alters addresses or trust seen by downstream systems. Don't paste a sample default route into shared tables without resolving its scope. When rolling back or removing a firewall, update traffic steering through an explicit supported path first; deleting a routed next hop can interrupt unrelated workloads. Preserve shared policies and [Certificates](service-certificates.md)/secret dependencies unless their removal is requested. Use [hybrid connectivity](service-hybrid-connectivity.md) for provider/VPN and DRG coordination.
+
+## Inspection handoff
+
+Record forward and return routing, firewall policy revision, required application destinations and TLS inspection boundaries. Confirm certificate trust and data handling before decrypting traffic. Include firewall capacity, logs and any redundant path in the estimate. Rollback must restore a coherent route and policy pair, not only remove the firewall.
 
 ## Sources
 

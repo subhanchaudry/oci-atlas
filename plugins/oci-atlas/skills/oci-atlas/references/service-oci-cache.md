@@ -1,6 +1,6 @@
 # OCI Cache clusters, users, and application behavior
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Establish the engine and data contract
 
@@ -31,8 +31,11 @@ Timeout → check DNS/routes/security from the application. Authentication/ACL e
 
 Plan resizing/maintenance around supported availability and client reconnect behavior; do not promise zero application impact. Never use a broad flush to diagnose a single key without explicit scope. Before deletion, enumerate session/coordination dependencies and the intended data rebuild path. Report retained replicas/resources. See [NoSQL](service-nosql.md) and [database selection](service-selection.md) when the data contract requires persistent managed records.
 
+## Cache recovery contract
+
+Define TTL, eviction, maximum tolerable stale data and cache-miss fallback for each key class. Sessions or coordination keys need an explicit failure policy. Estimate cluster capacity and replicas from working-set size; verify application reconnect behavior during maintenance instead of assuming the cache is a durable source of truth.
+
 ## Sources
 
-- [OCI Cache engine and cluster overview](https://docs.oracle.com/en-us/iaas/Content/ocicache/overview.htm)
+- [OCI Cache engine and cluster overview](https://docs.oracle.com/en-us/iaas/Content/ocicache/home.htm)
 - [Cache users and access control](https://docs.oracle.com/en-us/iaas/Content/ocicache/cache-users.htm)
-- [Authentication, sharding, configuration, and replication entry points](https://docs.oracle.com/en-us/iaas/Content/ocicache/home.htm)

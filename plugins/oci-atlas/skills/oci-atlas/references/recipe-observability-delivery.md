@@ -1,6 +1,22 @@
 # Recipe: application evidence and notification delivery
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; no live alarm or message changes.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** An application signal reaches its intended operator.
+
+**Inputs:** Application/resource; metric/log/trace; time window; signal condition; destination; recipient; retention and response owner.
+
+**Flow:** Emitter → collection/query → alarm or connector → topic/subscriber → recipient.
+
+**Starting configuration:** Start with one useful application signal. Add [APM](service-apm.md) for request traces; scope retention and redaction before expanding collection.
+
+## Completion and handoff
+
+Correlate one bounded signal through all configured stages and record actual receipt. A firing alarm and a delivered message remain separate observations.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Define the operational question
 
@@ -35,3 +51,4 @@ Before changing a shared topic, connector or log group, enumerate dependent alar
 - [Notifications topics and subscriptions](https://docs.oracle.com/en-us/iaas/Content/Notification/Concepts/notificationoverview.htm)
 - [Logging categories and ingestion](https://docs.oracle.com/en-us/iaas/Content/Logging/Concepts/loggingoverview.htm)
 - [Connector source-task-target relationships](https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm)
+- [Microservices tracing architecture](https://docs.oracle.com/en/solutions/oci-apm-for-microservices/)

@@ -1,6 +1,6 @@
 # Compute instances and persistent disks
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live launches or resizes.
+Reviewed: 2026-11-03
 
 ## Resolve the launch inputs
 
@@ -42,6 +42,10 @@ Before termination, identify boot-volume preservation, separate block volumes, b
 ## Typical failure branches
 
 Insufficient capacity → inspect alternative approved placements/shapes, not policy grants. Failed SSH → inspect user/key, route, security and guest state. Application fails after an image change → inspect architecture/runtime and cloud-init logs. Disk still full after expansion → inspect guest layout before adding another disk.
+
+## Sizing and ownership handoff
+
+Capture baseline CPU, memory, disk and network demand before choosing pool minimum/maximum sizes. Include boot/block storage, backups and reserved capacity in the cost estimate. Record image revision, bootstrap owner, patch window and drain behavior alongside the instance configuration so replacement workers can reproduce the application.
 
 ## Sources
 

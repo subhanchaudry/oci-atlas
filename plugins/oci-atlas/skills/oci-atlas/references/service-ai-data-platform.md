@@ -1,6 +1,6 @@
 # AI Data Platform workspaces and catalogs
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live workspace or catalog changes.
+Reviewed: 2026-11-03
 
 ## Understand the boundaries
 
@@ -27,6 +27,10 @@ Use the current Console and installed `oci ai-data-platform --help` for supporte
 ## Gotchas and lifecycle
 
 Do not transplant Data Integration “publish task to application” semantics into Data Platform workflows. Do not transfer a SQL tool's capabilities from an unrelated agent service. Inspect external-catalog operation limitations even when the underlying DB account has broader privileges. Before deleting a workspace/folder/catalog, enumerate contained artifacts, schedules and external consumers; a metadata deletion and source-data deletion are different operations.
+
+## Source-to-workflow handoff
+
+Use the [private-source recipe](recipe-aidp-private-source.md) for external catalog discovery from workspace compute. Record source credentials by secure reference, source-visible schemas, catalog permissions, runtime and output owner. Include scheduled compute, retained storage and source-system load in planning; a catalog registration does not by itself copy the source data.
 
 ## Sources
 

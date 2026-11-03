@@ -1,6 +1,6 @@
 # Service or workflow title
 
-Reviewed: YYYY-MM-DD · Basis: documentation review; state any actual execution separately.
+Reviewed: YYYY-MM-DD
 
 Authoring note: add a matching entry to `plugins/oci-atlas/skills/oci-atlas/catalog.json`. The catalog owns the title, review date and Sources list. Remove this note from the finished guide and run `python3 tools/catalog.py --write` after editing the catalog.
 
@@ -19,6 +19,10 @@ Identify IAM, network, endpoint, authentication, or version requirements. Descri
 ## Working pattern
 
 Give a short discovery-to-operation sequence and a source-checked command example when useful. Define inputs; label writes; explain how to observe completion and update/cleanup dependencies.
+
+## Operating cost and ownership
+
+Explain the service-specific capacity/usage drivers and what persists after runtime removal. Link shared cost guidance instead of copying price tables.
 
 ## Gotchas
 

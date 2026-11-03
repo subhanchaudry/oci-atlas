@@ -1,6 +1,6 @@
 # Data Safe targets, assessments, auditing, and masking
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose the database-security task
 
@@ -30,6 +30,10 @@ Navigate to **Data Safe → Target databases** and the requested feature. Inspec
 For a failed assessment or collection job, inspect target readiness, grants, listener/TLS, connector/endpoint health and feature-specific errors. OCI Audit and database activity auditing answer different questions. A lack of collected audit records can reflect configuration or retention, not an absence of database activity.
 
 Review automatic registration policies and shared connectors before changing them; a policy can affect additional PDBs. Before deregistration or removing an endpoint, enumerate dependent targets, reports and collection/retention needs. Deleting Data Safe metadata and deleting the database are different operations. Use [Base Database](service-base-database.md), [Autonomous Database](service-autonomous-database.md), and [hybrid connectivity](service-hybrid-connectivity.md) for the underlying resource and network boundaries.
+
+## Assessment-to-action record
+
+Retain the target/PDB, feature, assessment time, finding and owner of the proposed correction. Budget retained audit data and any separately metered capabilities using current service terms. A masking workflow should name its approved copy, related-column rules and application invariants before any value changes.
 
 ## Sources
 

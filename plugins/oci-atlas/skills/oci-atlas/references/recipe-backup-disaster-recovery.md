@@ -1,6 +1,22 @@
 # Recipe: application backup, restore, and disaster recovery
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; no live restore or failover.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** A business application restored with a controlled writer.
+
+**Inputs:** RPO/RTO; failure scenario; data stores; retained point; standby capacity; network/keys/secrets; writer/DNS ownership; recovery operator.
+
+**Flow:** Recovery point or replica → restored data → application dependencies → controlled writer → client endpoint → reprotection.
+
+**Starting configuration:** Keep an isolated restoration separate from a live role transition. Preserve authoritative data and keys; a rollback after new writes requires reconciliation, not simply pointing DNS back.
+
+## Completion and handoff
+
+Check the recovered data point and business invariant, intended writer, client path and subsequent protection. Report observed times only when measured.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Choose the failure and outcome
 

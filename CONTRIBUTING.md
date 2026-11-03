@@ -8,8 +8,8 @@ Contribute OCI-specific knowledge that changes an agent's decisions or saves rep
 2. Research official product documentation first, followed by Oracle-owned repositories, product-team posts, and LiveLabs. Check command names and parameters against a command reference or installed help.
 3. Use [the guide template](docs/GUIDE-TEMPLATE.md). Include service relationships, prerequisites, useful decision criteria, practical examples, gotchas, authoritative links, and the date actually reviewed.
 4. Keep files focused. Link shared concepts instead of repeating long IAM, network, or authentication sections. Add the guide to [catalog.json](plugins/oci-atlas/skills/oci-atlas/catalog.json), then run `python3 tools/catalog.py --write` to generate routing and metadata. Update the README if coverage changes.
-5. Clearly mark conditional behavior, version differences, and assumptions. Don't turn a source-checked example into a claim of live testing. Do not guess OCI defaults or copy customer-specific configuration.
-6. Run `python3 tools/catalog.py --check` and `python3 tools/check.py`, build with `python3 tools/package.py`, and inspect changed guides and the archive. A live tenancy is not required.
+5. Clearly mark conditional behavior, version differences, and assumptions. Describe prerequisites and supported behavior precisely. Do not guess OCI defaults or copy customer-specific configuration.
+6. Run `python3 tools/catalog.py --check` and `python3 tools/check.py`, build with `python3 tools/package.py`, and inspect changed guides and the archive.
 
 ## Catalog conventions
 

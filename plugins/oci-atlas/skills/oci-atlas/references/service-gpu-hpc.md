@@ -1,6 +1,6 @@
 # GPU and HPC capacity, cluster networking, and storage
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Select the execution requirement
 
@@ -30,6 +30,10 @@ Use Console **Instances**, **Cluster networks**, **Compute clusters**, and the r
 For launch failure, distinguish IAM/quota, unsupported placement and actual capacity. For poor scaling, inspect collective/network behavior, data pipeline, CPU preprocessing, runtime and workload distribution before adding nodes. A GPU out-of-memory failure and host memory exhaustion require different investigation.
 
 Before resizing or deleting a pool/cluster, identify scheduler jobs, checkpoints, attached/shared storage and node-local data. Preserve requested artifacts in a durable location and account for retained disks/capacity commitments. Do not claim stopping nodes eliminates every charge. Use [Compute](service-compute.md) for pool lifecycle and [Monitoring](service-monitoring-notifications.md) for resource signals alongside application evidence.
+
+## Job and data handoff
+
+Record image/driver versions, scheduler queue, placement, GPU/fabric requirements, dataset path and checkpoint destination. Budget reserved/idle capacity and storage separately from productive job time. Use the [HPC recipe](recipe-hpc-workload.md) for staged inputs, scheduler submission, recovery from checkpoints and worker cleanup.
 
 ## Sources
 

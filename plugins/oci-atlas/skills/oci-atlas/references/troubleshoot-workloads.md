@@ -1,6 +1,6 @@
 # Diagnose workloads, runs, and serving failures
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live incident actions.
+Reviewed: 2026-11-03
 
 ## Find the execution that actually failed
 
@@ -41,6 +41,10 @@ For database movement, inspect the [migration job](service-database-migration.md
 ## Report the diagnosis
 
 Use the [diagnostic response pattern](troubleshoot-connectivity.md#report-the-diagnosis): observed evidence, hypotheses, next discriminating check, and a supported correction. Name the execution/artifact and earliest meaningful failure, separate status from application correctness, and explain replay/side-effect uncertainty before retrying.
+
+## Preserve partial outcomes before retrying
+
+Capture artifact revision, run/request ID, first meaningful error and any committed outputs. Separate control-plane completion from application readiness. For a consumer, inspect acknowledgement and business idempotency; for a data task, inspect watermarks and target partitions; for IaC, inspect state ownership and the next plan. Escalate with the [support handoff](troubleshoot-support-handoff.md) instead of replaying an unknown write.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # Diagnose authentication, authorization, and limits
 
-Reviewed: 2026-10-29 · Basis: documentation review; no credential or policy changes.
+Reviewed: 2026-11-03
 
 ## Capture a minimal incident record
 
@@ -38,6 +38,10 @@ A resource action denied despite IAM permission can be constrained by a [Securit
 ## Report the diagnosis
 
 Use the [diagnostic response pattern](troubleshoot-connectivity.md#report-the-diagnosis): observed evidence, hypotheses, next discriminating check, and a supported correction. For authorization failures, name the actual caller and failed operation before suggesting policy changes; report inaccessible or unqueried scope explicitly.
+
+## Escalate the smallest unresolved boundary
+
+If the caller cannot inspect the policy or dependency, identify the exact operation, resource and required administrator view. Use [support handoff](troubleshoot-support-handoff.md) for request IDs and reproduction details. Do not infer absent resources from inaccessible scope or ask the customer to grant tenancy administration as a diagnostic shortcut.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # File Storage with Lustre for parallel workloads
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose by I/O behavior
 
@@ -32,6 +32,10 @@ For a failed mount, inspect client compatibility, advertised filesystem endpoint
 Inspect the service's current scaling and maintenance behavior before scheduling a capacity change. Shared clients can remain dependent on the filesystem after a training run ends. Do not assume node shutdown removes a managed filesystem or stops its storage charges.
 
 Define the protection/export/recovery approach from the selected service's documented capabilities and the application's data contract. Do not transfer NFS snapshot/replication claims to Lustre without verification. Before cleanup, quiesce relevant writers, identify active mounts and preserve requested datasets/checkpoints. Use [GPU/HPC](service-gpu-hpc.md) for cluster execution and [File Storage](service-file-storage.md) when NFS fits the workload better.
+
+## Dataset lifecycle
+
+Classify input datasets, scratch files and checkpoints before sizing the filesystem. Record client compatibility and expected concurrency with the mount configuration. Budget retained filesystem capacity after workers stop. Preserve authoritative inputs and completed checkpoints outside disposable scratch paths according to the chosen recovery design.
 
 ## Sources
 

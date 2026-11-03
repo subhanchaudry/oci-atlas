@@ -1,6 +1,6 @@
 # APEX workspaces, application access, and ORDS
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Resolve the deployment and application goal
 
@@ -32,6 +32,10 @@ For a missing route, inspect the selected pool/schema alias, module status and r
 In a self-managed deployment, pool credentials, JDBC connectivity and Java/runtime configuration can fail independently of APEX code. Preserve private configuration/wallets outside source and use the supported upgrade process.
 
 Before deleting a workspace, app, REST module or schema, identify mapped schemas, shared applications and authoritative data. An application export is not automatically a complete database backup. Use [Autonomous Database](service-autonomous-database.md) or [Base Database](service-base-database.md) for the underlying service lifecycle.
+
+## Application release handoff
+
+Record application export, parsing schema, REST modules, authentication scheme, workspace mappings and database changes. Keep schema migrations reversible where possible; importing an earlier APEX app does not undo changed data. Review ORDS pool and source database capacity together before treating slow pages as a need for more frontend servers.
 
 ## Sources
 

@@ -1,6 +1,22 @@
 # Recipe: choose and deploy an AI application
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; not a live-tested application.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** An application task completed through the selected AI API.
+
+**Inputs:** Task/input/output; data location/classification; model or agent interface; caller identity; endpoint; expected load and latency; tool permissions.
+
+**Flow:** Client → application → model/agent → optional permitted data/tool → response.
+
+**Starting configuration:** Use on-demand inference when it fits. Dedicated capacity, GPU serving and managed agent orchestration require a stated capability need. Use [managed agents](service-generative-ai-agents.md) for its resource lifecycle.
+
+## Completion and handoff
+
+A synthetic request follows the selected API schema; response parsing, authorization and failure handling work independently of answer quality. Inspect evidence relevance and tool effects separately.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Start from the task
 

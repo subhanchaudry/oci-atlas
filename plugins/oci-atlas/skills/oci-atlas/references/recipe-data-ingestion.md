@@ -1,6 +1,22 @@
 # Recipe: governed source-to-target data ingestion
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; no live data movement.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** A bounded source slice becomes a reconciled target dataset.
+
+**Inputs:** Source/target contracts; source credentials; runtime; watermark; cadence; schema rules; rejected-record destination; append/merge/replace semantics.
+
+**Flow:** Source → ingestion runtime → staged/curated target → consuming query.
+
+**Starting configuration:** Use the smallest suitable existing engine. Commit output and watermark consistently; restart from a known boundary. The [lakehouse recipe](recipe-lakehouse-analytics.md) adds analytics consumption and the [AIDP recipe](recipe-aidp-private-source.md) covers private catalogs.
+
+## Completion and handoff
+
+Reconcile source and target counts for the selected window plus a business invariant, rejected records and duplicates. A completed run is not evidence that every source partition was consumed.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Choose the control plane
 
@@ -33,3 +49,4 @@ Use [Queue](service-queue.md) for distributed tasks, [Streaming](service-streami
 - [Spark applications and runs](https://docs.oracle.com/en-us/iaas/Content/data-flow/using/concepts.htm)
 - [Data Platform external catalogs](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/external-catalogs.html)
 - [Streaming](https://docs.oracle.com/en-us/iaas/Content/Streaming/Concepts/streamingoverview.htm)
+- [Lakehouse reference architecture](https://docs.oracle.com/en/solutions/data-platform-lakehouse/index.html)

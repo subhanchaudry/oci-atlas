@@ -1,6 +1,6 @@
 # Networking and private access
 
-Reviewed: 2026-10-29 · Basis: documentation review; examples are not live-tested.
+Reviewed: 2026-11-03
 
 ## Choose a path, not just a subnet
 
@@ -49,6 +49,10 @@ Use the [VCN routing guide](service-vcn-routing.md) for foundational paths and [
 [Load Balancer/NLB](service-load-balancing.md) distribute traffic; [Certificates](service-certificates.md) manages certificate material and consumer rotation; [Bastion](service-bastion.md) supplies scoped administrative sessions. None replaces the application's end-user authentication.
 
 [WAF](service-waf.md) inspects supported web traffic. [Network Firewall](service-network-firewall.md) inspects traffic explicitly routed through it. [ZPR](service-zpr.md) adds attribute-based packet authorization to supported endpoints, alongside applicable NSGs/security lists. [Cloud Guard and Security Zones](service-cloud-guard-security-zones.md) detect posture issues and constrain resource configurations respectively. Select each control for an identified flow or policy requirement rather than deploying every control by default.
+
+## Follow the complete workload path
+
+For an application design, show client ingress, runtime-to-data access, administration, DNS and required egress separately. Use [private DNS](service-dns.md) and the [hybrid recipe](recipe-hybrid-private-access.md) for cross-network resolution; use [multicloud access](recipe-multicloud-application.md) when another cloud owns the application runtime.
 
 ## Sources
 

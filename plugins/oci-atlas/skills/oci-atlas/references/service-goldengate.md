@@ -1,6 +1,6 @@
 # GoldenGate deployments, connections, and change replication
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Define the replication contract
 
@@ -30,6 +30,10 @@ Navigate to **GoldenGate** and inspect current `oci goldengate --help` plus the 
 For growing lag, separate source capture, distribution/network, target apply and target workload pressure. A live process can still be stalled on an object, missing privilege or unsupported transformation. Before repositioning a checkpoint, inspect replay/duplicate and data-loss consequences; don't reset progress to suppress an error.
 
 Coordinate DDL/schema changes and maintenance using the supported connector behavior. Replication does not automatically replicate every user, job, network rule or application dependency. Before cleanup, identify processes, retained trails/checkpoints, connection reuse and the authoritative data source. Stopping a deployment does not necessarily remove retained resources or stop all charges. Use the [migration recipe](recipe-database-migration.md) for cutover and [database service guides](databases-data.md) for target management.
+
+## Replication handoff
+
+Record capture, trail/distribution, apply, source log retention, checkpoint and schema-change ownership. Monitor lag at each boundary rather than only deployment health. Size deployment and retained trails for the change rate and interruption window; replay needs an explicit duplicate/conflict policy at the target.
 
 ## Sources
 

@@ -1,6 +1,22 @@
 # Recipe: on-premises access to private OCI applications
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; no live network changes.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** An on-premises runtime reaches a private OCI application.
+
+**Inputs:** Source network/runtime; destination FQDN/port; existing VPN/FastConnect/DRG; routes; DNS; security; provider and customer owners.
+
+**Flow:** Caller → customer router → approved private connection → DRG → application subnet; return route and resolver forwarding are explicit.
+
+**Starting configuration:** Reuse existing circuits and resolvers. Changes to redundancy or provider routing require coordination with their owners; preserve other applications sharing the connection.
+
+## Completion and handoff
+
+Resolve the private name and complete TLS/application authentication from the actual caller. Inspect connection state, routes and application response independently.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Define the application flow
 

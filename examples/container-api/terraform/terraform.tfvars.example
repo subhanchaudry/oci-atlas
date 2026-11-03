@@ -1,0 +1,18 @@
+region                = "<workload-region>"
+home_region           = "<tenancy-home-region>"
+tenancy_id            = "<tenancy-ocid>"
+compartment_id        = "<workload-compartment-ocid>"
+secret_compartment_id = "<secret-compartment-ocid>"
+subnet_id             = "<existing-private-subnet-ocid>"
+nsg_ids               = ["<existing-nsg-ocid>"]
+availability_domain   = "<tenancy-specific-availability-domain-name>"
+db_secret_id          = "<existing-secret-ocid>"
+db_dsn                = "tcps://<private-database-host>:<tls-port>/<service-name>"
+image_url             = "<registry>/<namespace>/<repository>@sha256:<image-digest>"
+config_file_profile   = "<selected-profile>"
+auth                  = "SecurityToken"
+# For a private registry, establish its supported image-pull policy before applying:
+# image_pull_secret = {
+#   registry_endpoint = "<registry-host>"
+#   secret_id         = "<existing-registry-credential-secret-ocid>"
+# }

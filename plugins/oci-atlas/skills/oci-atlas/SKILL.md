@@ -10,12 +10,16 @@ Use the foundation model's reasoning with focused OCI knowledge. Answer the user
 
 ## Choose the context
 
-Read only the relevant reference: a focused guide for a named service, a domain overview for broad questions, a decision guide for alternatives, or a troubleshooting guide for a failure. Links are relative to this skill. Don't read this entire collection by default. For a cross-service task, start with the recipe and consult service guides only for missing details.
+Read only the relevant reference: a focused guide for a named service, a domain overview for broad questions, a decision guide for alternatives, or a troubleshooting guide for a failure. Links are relative to this skill. Don't read this entire collection by default. For a cross-service task, start with workload selection or the relevant recipe and consult service guides only for missing details. For a welcome or onboarding request, use getting-started; for an illustrated design, use walkthroughs. Keep conceptual work independent of OCI login.
 
 <!-- atlas:catalog:start -->
 
 | Request | Read |
 | --- | --- |
+| Get started with explanations, designs, inspection, or a scoped operational task | [Start with OCI Atlas](references/getting-started.md) |
+| Host my API, process files, search documents, analyze data, or modernize applications | [Choose an OCI workload path](references/workload-selection.md) |
+| Walk through a container API, private database application, or document RAG | [Three application architecture walkthroughs](references/walkthroughs.md) |
+| Assess WebLogic, packaged applications, and VMware migration choices | [Choose an enterprise application modernization path](references/enterprise-modernization.md) |
 | Set up OCI Atlas; CLI, Console, Cloud Shell, authentication | [Access, tools, and onboarding](references/access-and-tools.md) |
 | Choose between services before designing a workload | [OCI service-selection decisions](references/service-selection.md) |
 | Tenancy, compartments, OCIDs, identity domains, regions, quotas | [Tenancy foundations and IAM](references/foundations.md) |
@@ -89,6 +93,23 @@ Read only the relevant reference: a focused guide for a named service, a domain 
 | Plan observability through notification receipt | [Recipe: application evidence and notification delivery](references/recipe-observability-delivery.md) |
 | Plan application backup, restore, and DR | [Recipe: application backup, restore, and disaster recovery](references/recipe-backup-disaster-recovery.md) |
 | Sequence migration, replication, and application cutover | [Recipe: database migration, replication, and application cutover](references/recipe-database-migration.md) |
+| Deploy or update Terraform stacks; import ownership and resolve drift | [Resource Manager stacks, plans, and ownership](references/service-resource-manager.md) |
+| Adopt OCI foundations without replacing existing tenancy ownership | [Landing-zone adoption and existing tenancy foundations](references/service-landing-zones.md) |
+| Estimate workload cost, explain spend, tag ownership, and identify retained charges | [Cost planning, budgets, and resource ownership](references/service-cost-management.md) |
+| Publish and pull immutable images; separate registry access from runtime identity | [Container Registry and artifact delivery](references/service-container-registry.md) |
+| Deliver a source revision through artifacts to a supported runtime | [DevOps builds, deployments, and rollback](references/service-devops.md) |
+| Route supported resource changes to Functions, Streaming, or Notifications | [Events rules and resource-triggered actions](references/service-events.md) |
+| Resolve application names across VCNs, on-premises, and other clouds | [DNS zones, views, and private resolution](references/service-dns.md) |
+| Trace slow application requests across services and data calls | [Application Performance Monitoring and traces](references/service-apm.md) |
+| Configure managed agents independently from direct model inference | [Generative AI Agents, knowledge, tools, and sessions](references/service-generative-ai-agents.md) |
+| Prepare a concise Oracle support or administrator handoff | [Support handoff and incident evidence](references/troubleshoot-support-handoff.md) |
+| Process uploaded files, retry work, and reconcile dead letters | [Recipe: Process uploaded objects with idempotent consumers](references/recipe-event-processing.md) |
+| Connect ingestion, curated data, and governed analytics | [Recipe: Build a governed lakehouse and analytics path](references/recipe-lakehouse-analytics.md) |
+| Register and query a private source from AIDP workspace compute | [Recipe: Connect AIDP to a private database source](references/recipe-aidp-private-source.md) |
+| Plan application and database access across cloud ownership boundaries | [Recipe: Connect a multicloud application to Oracle data](references/recipe-multicloud-application.md) |
+| Extend Fusion workflows without confusing SaaS and OCI authorization | [Recipe: Extend SaaS with application and integration services](references/recipe-saas-extension.md) |
+| Plan WebLogic runtime, database, ingress, and release ownership | [Recipe: Modernize a WebLogic application on OCI](references/recipe-weblogic-application.md) |
+| Stage data, schedule accelerated jobs, preserve checkpoints, and release capacity | [Recipe: Run an HPC or GPU job with recoverable data](references/recipe-hpc-workload.md) |
 
 <!-- atlas:catalog:end -->
 

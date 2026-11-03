@@ -1,6 +1,6 @@
 # Queue messages, visibility, and dead-letter handling
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose work delivery versus an event log
 
@@ -30,6 +30,10 @@ Navigate to **Queues** and inspect `oci queue --help` plus the selected supporte
 Repeated delivery can reflect expired visibility, a worker crash, failed deletion or intentional replay. Empty receive results can reflect in-flight work, polling/scope or no available messages; they are not proof the entire pipeline is complete. A dead-letter message needs diagnosis of the underlying data/handler problem before redrive.
 
 For replay or backlog clearing, identify affected business effects and the exact requested message scope. Do not purge a production queue to investigate one bad message. Preserve the application schema/version contract when deploying new consumers. Before deleting a queue, enumerate producers, in-flight work, retained failures and recovery/export requirements. Use [Streaming](service-streaming.md) or [managed Kafka](service-streaming-kafka.md) when the actual requirement is log-oriented replay.
+
+## Worker operating contract
+
+Set visibility duration from expected processing time, with supported extension behavior for longer tasks. Acknowledge only after the business result is durable. Track backlog age, retries and dead letters alongside throughput; a drained queue does not prove every business operation succeeded. Use [event processing](recipe-event-processing.md) for bounded replay and cleanup.
 
 ## Sources
 

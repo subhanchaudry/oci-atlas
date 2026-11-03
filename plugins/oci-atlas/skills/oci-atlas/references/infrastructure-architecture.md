@@ -1,6 +1,6 @@
 # Infrastructure as code and architecture
 
-Reviewed: 2026-10-29 · Basis: documentation review; examples are not live-tested.
+Reviewed: 2026-11-03
 
 ## Choose the management path
 
@@ -55,6 +55,10 @@ Use regional subnets, private application backends and workload-scoped identitie
 A landing zone establishes reusable tenancy/network/security foundations. Evaluate Oracle's current landing-zone guidance before inventing a new tenancy layout, but don't deploy a full landing zone for a simple task or claim that a template makes an environment compliant. Use Well-Architected pillars to identify relevant tradeoffs rather than attaching a generic checklist to every answer.
 
 For recovery decisions, use the [backup and disaster recovery recipe](recipe-backup-disaster-recovery.md) and [Full Stack DR guide](service-full-stack-dr.md). Storage replication, database role transitions, and application orchestration solve different dependencies; a successful Terraform apply establishes none of them by itself.
+
+## Reusable foundations and workload delivery
+
+Use [landing zones](service-landing-zones.md) for tenancy foundation adoption and [Resource Manager](service-resource-manager.md) for stack ownership, plan/apply and drift decisions. Reuse the existing network and database when they fit. Pin workload artifacts and keep resource outputs distinct from application endpoints and credentials.
 
 ## Sources
 

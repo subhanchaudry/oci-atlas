@@ -1,6 +1,6 @@
 # Generative AI model and agent selection
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live inference or endpoint provisioning.
+Reviewed: 2026-11-03
 
 ## Resolve the product and request contract
 
@@ -28,6 +28,10 @@ Don't persist “latest” model IDs, token limits or price tables in a static r
 5. For RAG, inspect retrieval context and source permissions separately. For tools, inspect actual tool authorization and execution. Model instructions alone don't enforce data access.
 
 For model changes, inspect payload compatibility, output behavior, routing and consumers before updating an application. For dedicated-resource cleanup, identify endpoint references and retained billable capacity. Use [AI application](recipe-ai-application.md) or [RAG](recipe-rag-application.md) only when the task spans services.
+
+## Choose model calls or an agent lifecycle
+
+Use [Generative AI Agents](service-generative-ai-agents.md) for knowledge bases, ingestion, tools, sessions and endpoints. For direct inference, record endpoint, serving mode, model identifier, request format and output contract together. Track input/output tokens and embedding volume where returned; separate dedicated capacity from request-based usage and keep client timeouts/retries bounded.
 
 ## Sources
 

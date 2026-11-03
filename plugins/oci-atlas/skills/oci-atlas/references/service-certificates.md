@@ -1,6 +1,6 @@
 # Certificates, trust chains, and renewal
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose the certificate lifecycle
 
@@ -32,6 +32,10 @@ Treat issuance/renewal, selection of the current version, consumer refresh, and 
 For TLS errors, separate expired/not-yet-valid dates, hostname mismatch, incomplete chain, untrusted issuer, protocol/cipher compatibility and mTLS client authentication. A successful certificate import does not repair a missing intermediate on a separately configured backend. Revocation is different from deletion and depends on how clients validate trust.
 
 Before disabling or deleting a certificate, CA or associated key, enumerate consumers and dependent issuance chains. A shared root or encryption key can affect many workloads. Use [load balancing](service-load-balancing.md) for listeners and backend health, and [secret/key guidance](service-secrets-keys.md) for distinct key lifecycle operations.
+
+## Renewal handoff
+
+Maintain hostname/SAN, issuer, expiry, consumer association and renewal owner together. After renewal, inspect the certificate presented by the actual listener, including intermediates; an updated certificate resource does not prove every consumer switched. Preserve the prior valid association while resolving a failed rollout.
 
 ## Sources
 

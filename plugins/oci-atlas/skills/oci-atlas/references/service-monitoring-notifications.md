@@ -1,6 +1,6 @@
 # Monitoring queries, alarms, and notification delivery
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Model the entire delivery chain
 
@@ -30,6 +30,10 @@ Use Console **Metrics Explorer**, **Alarm Definitions**, and **Topics**. Inspect
 Alarm never fires → inspect query scope, metric availability, time window and suppression. Firing alarm but no message → inspect destination, service authorization and relevant publication evidence. Published but not received → inspect subscription confirmation, endpoint response, filtering and delivery diagnostics. An email appearing in one inbox does not prove every subscriber received it.
 
 For updates, preserve useful dimensions and avoid merging unrelated resource streams into a misleading aggregate. Keep sensitive payloads out of broad topics. Before deletion, identify alarms, event rules and connectors using a shared topic. Use the [observability recipe](recipe-observability-delivery.md) for logs/metrics/notifications together and [Logging/Connector Hub](service-logging-audit-connectors.md) for evidence transport.
+
+## Operating handoff
+
+Record query, dimensions, evaluation window, missing-data behavior, recipient and escalation owner. Price custom metric ingestion, notification traffic and retention where applicable. Acknowledge and suppress alerts through the established incident process; deleting an alarm to quiet a noisy signal removes ongoing coverage.
 
 ## Sources
 

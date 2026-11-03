@@ -1,6 +1,6 @@
 # Block Volume attachments, backups, and replication
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose storage and protection separately
 
@@ -30,6 +30,10 @@ Navigate to **Block volumes**, **Boot volumes**, **Volume groups**, and **Backup
 For poor performance, correlate workload, guest device metrics, volume performance level and instance limits before assuming capacity size is the cause. For an unavailable attachment, separate placement, IAM, key access and guest connection problems.
 
 Record retained backups, replica/destination resources and their cost after instance termination. Before detaching an active disk, coordinate application writes and the guest unmount. Before deletion, identify mounted consumers and retention requirements; an attachment delete and a volume delete are different actions. Use [Compute](service-compute.md) for instance lifecycle and the [recovery recipe](recipe-backup-disaster-recovery.md) for application-wide sequencing.
+
+## Capacity handoff
+
+Record capacity, performance configuration, attachment mode, guest device/filesystem, backup policy and encryption-key reference. Budget provisioned capacity/performance plus backups and replication separately. Restore into a distinct target when investigating data loss; formatting or overwriting the original volume destroys recovery options.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # Database Migration resources, evaluation, and cutover
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested planning and operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose migration scope and method
 
@@ -30,6 +30,10 @@ Use Console **Database migrations** and the current Database Migration CLI/API r
 For job failure, identify the earliest failed phase and resource state before retrying. A completed bulk copy can coexist with a broken incremental stream; a small lag is not proof every object or application dependency is migrated. Inspect source log retention and target apply errors before advancing a cutover.
 
 Preserve the original database and required recovery resources according to the chosen retention intent. Do not delete source data simply because a migration job is successful, or describe a consumer connection update as proof that all writers switched. Enumerate temporary storage, connections, jobs and replication resources before removing them. Use [GoldenGate](service-goldengate.md) for ongoing CDC concepts and the [migration recipe](recipe-database-migration.md) for the cross-service/application sequence.
+
+## Cutover handoff
+
+Record source/target compatibility, evaluation results, staging resources, checkpoint and the application writer-stop procedure. Budget overlapping source/target capacity and replication/staging retention. Preserve the source until the agreed acceptance point; target-only writes change the rollback problem and must be reconciled before returning traffic.
 
 ## Sources
 

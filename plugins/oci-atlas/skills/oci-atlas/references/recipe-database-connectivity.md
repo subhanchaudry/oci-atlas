@@ -1,6 +1,22 @@
 # Recipe: connect an application to Autonomous Database
 
-Reviewed: 2026-10-29 · Basis: documentation-based suggested pattern; not a live-tested connection.
+Reviewed: 2026-11-03
+
+## Workload contract
+
+**Outcome:** Application SQL connection through the intended private path.
+
+**Inputs:** Runtime location; database private hostname/service/port; driver/version; TLS or mTLS; application SQL grants; secure credential/wallet source.
+
+**Flow:** Application resolver → private endpoint → TLS listener → SQL session → permitted object.
+
+**Starting configuration:** Start with the existing database and network. Keep connection-pool sizing and retry limits explicit. A credential rotation should refresh the pool through the application lifecycle; it should not recreate the database.
+
+## Completion and handoff
+
+Resolve the expected private address, connect with hostname verification, run SELECT 1 FROM dual and a permitted application read. Record which layer failed; do not print connection secrets.
+
+Return the selected scope, artifact/configuration revision, observed application result, remaining dependencies and operating owner. Include recurring capacity and retained data in [cost planning](service-cost-management.md); keep cleanup scoped to workload-owned resources.
 
 ## Resolve the connection contract
 

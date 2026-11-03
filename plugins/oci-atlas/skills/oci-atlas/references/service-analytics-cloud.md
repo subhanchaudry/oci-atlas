@@ -1,6 +1,6 @@
 # Analytics Cloud instances, data connections, and roles
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose the analytics layer
 
@@ -30,6 +30,10 @@ Use Console **Analytics Cloud** for the instance and the product's **Console**/c
 Missing data can reflect source grants, filters, cache/refresh, mapping or the selected identity. Separate these from instance unavailability. For performance, inspect query/model behavior and source capacity before increasing instance capacity indiscriminately.
 
 An OAC snapshot/content export does not automatically back up the authoritative source database or recreate every external credential/network dependency. Plan service changes using supported backup/restore and migration procedures. Before cleanup, enumerate shared connections, scheduled deliveries/refreshes and downstream users; deleting one workbook and deleting the instance have very different scopes. Use [database guides](databases-data.md) for source management and [Data Integration](service-data-integration.md) for upstream data movement.
+
+## Business-consumption handoff
+
+Record workbook/semantic model, source connection, application roles, row-level access and refresh schedule. Validate a representative business measure with its owner before publishing broadly. Budget capacity and source-query load together; retain content exports and document separately managed source data and credentials.
 
 ## Sources
 

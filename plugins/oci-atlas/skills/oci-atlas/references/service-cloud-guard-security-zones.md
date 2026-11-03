@@ -1,6 +1,6 @@
 # Cloud Guard findings and Security Zones
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Separate detection from enforcement
 
@@ -30,6 +30,10 @@ Navigate to **Cloud Guard** or **Security Zones**. Resolve tenancy enablement, r
 An automatic responder changes operational behavior. Inspect its permissions, matching conditions and affected resources before enabling it; a diagnostic request alone does not authorize enabling broad automatic remediation. Prefer a narrowly scoped change over dismissing an unexplained finding.
 
 For unexpected denials, compare IAM permissions, Security Zone policy and service prerequisites as separate layers. For missing findings, inspect target scope, monitored resource support and reporting context. Before removing a target, zone or recipe, identify inherited effects and consumers. Keep finding closure and actual mitigation distinct. Use [IAM](service-iam-policies.md) for caller grants and [network controls](service-zpr.md) for packet-level authorization.
+
+## Finding and enforcement handoff
+
+For a finding, retain detector, affected resource, evidence time, intended correction and current observed state. For an enforced denial, record the zone recipe and specific constraint. Keep automatic responders scoped to explicit operational intent; remove obsolete targets only after identifying inherited monitoring and other resource owners.
 
 ## Sources
 

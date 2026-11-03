@@ -1,6 +1,6 @@
 # Access, tools, and onboarding
 
-Reviewed: 2026-10-29 · Basis: documentation review; no live sign-in or command execution.
+Reviewed: 2026-11-03
 
 ## Choose an execution route
 
@@ -55,6 +55,10 @@ Adapt this pattern to the request rather than forcing a report for a simple look
 - **Next step:** the smallest useful follow-up within the user's goal. Keep suggested reads/changes distinct from operations completed.
 
 For an illustrative response: “I inspected the selected compartment's Compute instances in the chosen region using the selected profile. The returned instances use these subnets and disks. This is not a tenancy-wide inventory; other regions, services, and inaccessible compartments were not inspected.” Fill such statements only with actual observations.
+
+## A connection handoff customers can reuse
+
+Summarize the chosen execution route, confirmed identity, tenancy, region, compartment and one successful scoped read. List missing permissions or unreachable endpoints precisely. For setup failures, retain useful design work and use [support handoff](troubleshoot-support-handoff.md) when the remaining issue requires an administrator; never ask for a complete credential file.
 
 ## Sources
 

@@ -1,6 +1,6 @@
 # Secret Management and encryption keys
 
-Reviewed: 2026-10-29 · Basis: documentation review; no secret reads or key changes.
+Reviewed: 2026-11-03
 
 ## Select the object by purpose
 
@@ -26,6 +26,10 @@ For keys, rotation, disabling and scheduled deletion have different impacts. Enu
 ## Diagnose
 
 If an application fails after rotation, inspect which version it retrieves, runtime identity, propagation/cache, network access and external credential validity. If a service can't use a key, inspect the service's required principal/policy and key lifecycle state. Don't grant all secret access to a human group to fix a workload-specific failure.
+
+## Rotation handoff
+
+Document secret consumers, the version/stage requested, cache lifetime and external credential update order. Rotate the external credential and its secret representation as a coordinated change, with a rollback window supported by that system. Track vault/key and secret usage separately in [cost planning](service-cost-management.md); do not export secret values in an inventory.
 
 ## Sources
 

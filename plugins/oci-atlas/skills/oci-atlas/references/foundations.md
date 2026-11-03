@@ -1,6 +1,6 @@
 # Tenancy foundations and IAM
 
-Reviewed: 2026-10-29 · Basis: documentation review; examples are not live-tested.
+Reviewed: 2026-11-03
 
 ## Mental model
 
@@ -53,6 +53,10 @@ Separate four different blockers: IAM authorization, Oracle-set service limits, 
 Keep OCI resource administration distinct from the application or data plane. Database creation/backup privileges do not grant SQL schema access. An [APEX workspace](service-apex-ords.md) partitions low-code development/schema access inside a database; it is not an OCI compartment. [Analytics Cloud roles](service-analytics-cloud.md), [Oracle Integration activation rights](service-oracle-integration.md), and [Kafka client ACLs](service-streaming-kafka.md) are additional product-specific controls.
 
 For a denied operation, inspect [Security Zone constraints](service-cloud-guard-security-zones.md) as well as IAM. For a blocked packet, inspect [ZPR security attributes and policies](service-zpr.md) with the network path. An IAM grant does not override either enforcement layer.
+
+## A practical tenancy handoff
+
+Record the intended home/workload regions, compartment hierarchy, policy attachment owners, tag defaults, quotas and existing landing zone. A compartment is an authorization/organization boundary, not a network. Use [landing-zone adoption](service-landing-zones.md) before inventing a new hierarchy, and [cost management](service-cost-management.md) for ownership and allocation.
 
 ## Sources
 

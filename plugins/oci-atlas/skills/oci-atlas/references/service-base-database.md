@@ -1,6 +1,6 @@
 # Base Database systems, maintenance, and Data Guard
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Choose the operating model
 
@@ -31,8 +31,12 @@ RAC availability and cross-region recovery address different failures. A changed
 
 Plan maintenance through the owning service workflow, including application compatibility and backup readiness. Before deleting a PDB, database, DB home or DB system, enumerate contained data and dependent consumers. Preserve the requested backups/standbys and report retained resources. Use the [migration recipe](recipe-database-migration.md) for relocation/cutover and [Full Stack DR](service-full-stack-dr.md) for application-wide orchestration.
 
+## Database operating record
+
+Record DB system, DB home, database/PDB, service names, patch ownership, licensing model and recovery policy. Include standby capacity and backup storage in sizing. Coordinate application pools and jobs when service roles change; retain the previous connection configuration without allowing competing writers after failover.
+
 ## Sources
 
-- [Base Database editions, versions, and provisioning model](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/overview.htm)
+- [Base Database editions, versions, and provisioning model](https://docs.oracle.com/en/cloud/paas/base-database/guide/about.html)
 - [Base Database task and management interfaces](https://docs.oracle.com/en/cloud/paas/base-database/index.html)
 - [Data Guard roles and prerequisites](https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/usingdataguard.htm)

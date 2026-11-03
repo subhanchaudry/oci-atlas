@@ -1,6 +1,6 @@
 # Zero Trust Packet Routing and security attributes
 
-Reviewed: 2026-10-29 · Basis: Oracle documentation review; suggested operational workflow.
+Reviewed: 2026-11-03
 
 ## Understand the enforcement boundary
 
@@ -30,6 +30,10 @@ Use Console **Zero Trust Packet Routing**, security attributes and the protected
 For a sudden timeout after labeling, compare source/destination assignments and the applicable policies with the prior configuration. Check both sides of the flow and retain the base network checks. Do not fix a missing ZPR allow by broadly opening every subnet rule; the additional layer still applies.
 
 Maintain an explicit owner and meaning for each namespace/value. Before deleting or changing a shared attribute or rule, enumerate protected consumers and intended remaining flows. A routing change can expose new paths even when attribute policy is stable, so inspect the combined design after topology changes. Use [network troubleshooting](troubleshoot-connectivity.md) to separate routing, security, TLS and application authorization.
+
+## Attribute rollout
+
+Build a small source-role to destination-role flow table before assigning security attributes. Check management dependencies and administration access as well as application traffic. Stage the intended policy and record previous attribute assignments, because changing an attribute can alter reachability without changing any subnet route.
 
 ## Sources
 
