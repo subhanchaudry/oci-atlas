@@ -1,10 +1,10 @@
 # Three application architecture walkthroughs
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 These walkthroughs connect service choices, access boundaries, and operating responsibilities.
 
-For installation, use [Install OCI Atlas](https://github.com/subhanchaudry/oci-atlas/blob/v1.1.0/docs/INSTALL.md). For choosing a first conversation, use [Start with OCI Atlas](getting-started.md).
+For installation, use [Install OCI Atlas](https://github.com/subhanchaudry/oci-atlas/blob/v1.2.0/docs/INSTALL.md). For choosing a first conversation, use [Start with OCI Atlas](getting-started.md).
 
 ## 1. A small containerized API
 
@@ -145,8 +145,22 @@ For requested implementation, ingest a bounded authorized sample, then inspect s
 - Guides: [RAG recipe](recipe-rag-application.md), [AI Vector Search](service-ai-vector-search.md), [Generative AI](service-generative-ai.md), and [OpenSearch](service-opensearch.md).
 - Oracle: [AI Vector Search concepts and compatibility](https://docs.oracle.com/en/database/oracle/oracle-database/26/vecse/overview-ai-vector-search.html), [Generative AI models and developer interfaces](https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm), and [Object Storage resource model](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm).
 
+## Apply current service choices
+
+For the container API, use the [registry guide](service-container-registry.md) to distinguish build publishing from cache pulls. For the database application, compare [Database Tools](service-database-tools.md) only when managed client/tool access is needed. For RAG, consult [Enterprise AI](service-generative-ai.md) for hosting and context limits. These are design options; the two repository examples keep their existing runtime contracts and have not been live-tested by this documentation release.
+
 ## Sources
 
 - [Well-Architected Framework](https://docs.oracle.com/en/solutions/oci-best-practices/)
 - [Container Instances](https://docs.oracle.com/en-us/iaas/Content/container-instances/overview-of-container-instances.htm)
 - [AI Vector Search](https://docs.oracle.com/en/database/oracle/oracle-database/26/vecse/overview-ai-vector-search.html)
+- [Pull-through cache and top-level repositories](https://docs.oracle.com/en-us/iaas/releasenotes/registry/OCIR-Top-Level-and-Pull-Through-Repositories.htm)
+- [Database Tools overview](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview.html)
+- [Database Tools MCP server support and authentication](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview-mcp-server.html)
+- [CIMD client access](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/cimd.htm)
+- [MCP service logs](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/logging.htm)
+- [Agent Sandbox lifecycle](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/sandboxes.htm)
+- [Hosted browser-session authentication](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/hosted-deployments-oauth.htm)
+- [Hosted persistent file storage](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/hosted-applications-persistent-file-storage.htm)
+- [OCI Responses API compaction](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/responses-api-compaction.htm)
+- [Current model, hosting and routing releases](https://docs.oracle.com/en-us/iaas/releasenotes/services/generative-ai/)

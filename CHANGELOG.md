@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.0 — 2026-11-17
+
+- Prepared documentation-only minor release; publication is a separate action. Research cutoff: November 17, 2026.
+- Expanded to 100 references and 63 service guides while retaining 19 recipes, catalog schema version 1, identity, existing IDs, aliases, and paths.
+- Added Cloud Migrations, Database Tools, Database Management, Ops Insights, Internet of Things, and Speech guides.
+- Reviewed all eight domains and refreshed current identity, networking, compute, database, AI/ML, application-platform, operations, and migration/recovery guidance.
+- Added a dated GA-only evidence register, explicit regional/configuration restrictions, and deferrals for previews, limited availability, future announcements, and unresolved deployment claims.
+- Clarified public and packaged installation, onboarding, coverage, MCP boundaries, and update instructions. Added a benefit-oriented [v1.2 change summary](https://github.com/subhanchaudry/oci-atlas/blob/v1.2.0/docs/WHATS-NEW-1.2.md).
+- Prepared reproducible package/checksum and release notes. [Validation](https://github.com/subhanchaudry/oci-atlas/blob/v1.2.0/docs/VALIDATION-1.2.md) distinguishes documentation checks from host installation and live tenancy testing; no live deployment is claimed. Versioned links resolve after publication.
+
 ## 1.1.0 — 2026-11-03
 
 - Expanded to 94 references, 57 service guides and 19 recipes, preserving existing guide paths.

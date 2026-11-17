@@ -1,6 +1,6 @@
 # Recipe: Build a governed lakehouse and analytics path
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Outcome and inputs
 
@@ -40,8 +40,18 @@ Keep source data, curated outputs and OAC content as separate recovery scopes. F
 
 Use [cost management](service-cost-management.md) to record runtime, retained storage, traffic and shared-service costs. Use [workload selection](workload-selection.md) for alternatives and [support handoff](troubleshoot-support-handoff.md) for unresolved service boundaries.
 
+## Choose table ownership before optimization
+
+Distinguish AIDP-owned Iceberg tables from external-source registration and [Autonomous Iceberg external tables](service-autonomous-database.md). Record metadata ownership, storage permissions, freshness and write authority. Measure partition pruning on the actual query rather than promising a fixed performance gain. Keep preview lineage or bundle workflows outside the required delivery path.
+
 ## Sources
 
 - [Lakehouse reference architecture](https://docs.oracle.com/en/solutions/data-platform-lakehouse/index.html)
-- [Data Flow](https://docs.oracle.com/en-us/iaas/Content/data-flow/home.htm)
+- [Data Flow](https://docs.oracle.com/en-us/iaas/Content/data-flow/using/dfs_service_overview.htm)
 - [AI Data Platform](https://docs.oracle.com/en/cloud/paas/ai-data-platform/)
+- [AIDP dated feature history and preview labels](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidwn/index.html)
+- [AIDP deployed agents and runtime identity](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/agent-flow-deployment.html)
+- [AI compute autoscaling](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/ai-compute.html)
+- [Agent memory and retention](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/agent-memory.html)
+- [Autonomous built-in A2A and MCP tools](https://docs.oracle.com/en-us/iaas/releasenotes/autonomous-database-serverless/2026-11-support-mcp-server.htm)
+- [Iceberg external-table partition pruning](https://docs.oracle.com/en-us/iaas/releasenotes/autonomous-database-serverless/2026-10-partition-pruning.htm)

@@ -1,6 +1,6 @@
 # Diagnose authentication, authorization, and limits
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Capture a minimal incident record
 
@@ -43,6 +43,10 @@ Use the [diagnostic response pattern](troubleshoot-connectivity.md#report-the-di
 
 If the caller cannot inspect the policy or dependency, identify the exact operation, resource and required administrator view. Use [support handoff](troubleshoot-support-handoff.md) for request IDs and reproduction details. Do not infer absent resources from inaccessible scope or ask the customer to grant tenancy administration as a diagnostic shortcut.
 
+## Check token audience and database tool identity
+
+For OAuth/MCP failures, distinguish the client token audience and trust relationship from OCI resource policies and the connection's SQL grants. Consult [IAM](service-iam-policies.md) and [Database Tools](service-database-tools.md). For a Security Zone violation, inspect the effective recipe before expanding IAM or removing protection.
+
 ## Sources
 
 - [OCI common API errors](https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm)
@@ -50,3 +54,11 @@ If the caller cannot inspect the policy or dependency, identify the exact operat
 - [IAM policy syntax](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policysyntax.htm)
 - [Compartment quotas](https://docs.oracle.com/en-us/iaas/Content/Quotas/Concepts/resourcequotas.htm)
 - [Request IDs, retries and concurrency](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm)
+- [ID-JAG token exchange](https://docs.oracle.com/en-us/iaas/releasenotes/identity/id-jag-token-exchange-across-trust-domains.htm)
+- [Identity Assurance requirements](https://docs.oracle.com/en-us/iaas/Content/Identity/securing/gs.htm)
+- [Identity service updates](https://docs.oracle.com/en-us/iaas/releasenotes/services/identity/)
+- [Database Tools overview](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview.html)
+- [Database Tools MCP server support and authentication](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview-mcp-server.html)
+- [CIMD client access](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/cimd.htm)
+- [MCP service logs](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/logging.htm)
+- [Corrected Security Zone enforcement](https://docs.oracle.com/en-us/iaas/releasenotes/security-zone/security-zone-policy-enforcement-in-affected-compartments.htm)

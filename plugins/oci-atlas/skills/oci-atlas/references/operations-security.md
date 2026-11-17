@@ -1,6 +1,6 @@
 # Operations, security, and cost
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Pick the right evidence
 
@@ -55,6 +55,10 @@ For resilience, load [Block Volume](service-block-volume.md), [File Storage](ser
 
 Use [cost management](service-cost-management.md) for estimates, tags, budgets and retained resources; [APM](service-apm.md) for application traces; and [support handoff](troubleshoot-support-handoff.md) for unresolved service incidents. An operating handoff should name the resource owner, application signal, escalation path and recovery dependency.
 
+## Connect service signals to action
+
+Use [Database Management](service-database-management.md) and [Ops Insights](service-ops-insights.md) for database operations and historical diagnosis. [Data Safe](service-data-safe.md) adds cryptographic posture findings. Check endpoint family separately from collector/agent reachability in [Monitoring](service-monitoring-notifications.md) and [OS Management Hub](service-os-management-hub.md). The [Security Zones guide](service-cloud-guard-security-zones.md) explains newly enforced constraints without treating removal of protection as a neutral fix.
+
 ## Sources
 
 - [Monitoring metrics and alarms](https://docs.oracle.com/en-us/iaas/Content/Monitoring/Concepts/monitoringoverview.htm)
@@ -66,3 +70,14 @@ Use [cost management](service-cost-management.md) for estimates, tags, budgets a
 - [Secret Management Service](https://docs.oracle.com/en-us/iaas/Content/secret-management/home.htm)
 - [Budget behavior](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/budgetsoverview.htm)
 - [Tagging](https://docs.oracle.com/en-us/iaas/Content/Tagging/Concepts/taggingoverview.htm)
+- [Diagnostics and Management target support](https://docs.oracle.com/en-us/iaas/database-management/doc/database-management-oracle-databases.html)
+- [Unified onboarding](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/unified-onboarding-dbm-opsi.htm)
+- [Privilege analysis](https://docs.oracle.com/en-us/iaas/releasenotes/database-management/privilege-analysis.htm)
+- [Database Management releases](https://docs.oracle.com/en-us/iaas/releasenotes/services/database-management/)
+- [Ops Insights scope, retention and service-change notice](https://docs.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html)
+- [AWR collection and customer-owned warehouse](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/awr-snapshot-collection-bring-your-own-warehouse.htm)
+- [SQL Monitoring reports](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/sql-monitoring-reports.htm)
+- [Data Safe cryptographic assessment](https://docs.oracle.com/en-us/iaas/releasenotes/data-safe/crypto-assessment.htm)
+- [Monitoring IPv6 endpoint support](https://docs.oracle.com/en-us/iaas/releasenotes/monitoring/monitoring-ipv6.htm)
+- [OS Management Hub IPv6](https://docs.oracle.com/en-us/iaas/releasenotes/os-management-hub/release-3.7_ipv6.htm)
+- [Corrected Security Zone enforcement](https://docs.oracle.com/en-us/iaas/releasenotes/security-zone/security-zone-policy-enforcement-in-affected-compartments.htm)

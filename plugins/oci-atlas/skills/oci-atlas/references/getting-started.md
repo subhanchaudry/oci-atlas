@@ -1,10 +1,10 @@
 # Start with OCI Atlas
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
-OCI Atlas adds focused Oracle Cloud knowledge to ChatGPT and Codex. Start with the [installation guide](https://github.com/subhanchaudry/oci-atlas/blob/v1.1.0/docs/INSTALL.md), enable the plugin, and open a fresh conversation. Choose the path closest to your goal below.
+OCI Atlas adds focused Oracle Cloud knowledge to ChatGPT and Codex. Start with the [installation guide](https://github.com/subhanchaudry/oci-atlas/blob/v1.2.0/docs/INSTALL.md), enable the plugin, and open a fresh conversation. Choose the path closest to your goal below.
 
-Knowledge questions and architecture discussions require no OCI login. Inspecting or changing resources uses your available tools, authenticated identity, and OCI permissions. A plugin installation does not connect a tenancy.
+Knowledge questions and architecture discussions require no OCI login. Inspecting or changing resources uses your available tools, authenticated identity, and OCI permissions. A plugin installation does not connect a tenancy. Atlas includes no execution tools or MCP endpoint. Its OCI MCP guides describe separately authenticated services. In the prepared v1.2 package, versioned GitHub links resolve after publication; the packaged guides remain available locally.
 
 ## Understand OCI
 
@@ -61,6 +61,10 @@ Use this path to narrow down a failure before changing infrastructure.
 **What to expect:** observed evidence separated from hypotheses, the next useful check, and a correction tied to evidence. A timeout alone should not lead to public exposure or broad policy grants.
 
 Continue with [connectivity diagnosis](troubleshoot-connectivity.md), [access diagnosis](troubleshoot-access.md), or [workload diagnosis](troubleshoot-workloads.md).
+
+## Check availability for a new design
+
+Use documented, generally available features. Ask for the relevant region, edition, configuration, and evidence date before adopting a newly announced capability. Preview dependencies and unresolved announcements stay outside supported recommendations. A documented shape or model does not establish available capacity in your region. Start with the relevant service guide and its dated Sources; use current Oracle documentation when the decision depends on changing details.
 
 ## Keep the conversation useful
 

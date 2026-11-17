@@ -1,6 +1,6 @@
 # GPU and HPC capacity, cluster networking, and storage
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Select the execution requirement
 
@@ -35,9 +35,22 @@ Before resizing or deleting a pool/cluster, identify scheduler jobs, checkpoints
 
 Record image/driver versions, scheduler queue, placement, GPU/fabric requirements, dataset path and checkpoint destination. Budget reserved/idle capacity and storage separately from productive job time. Use the [HPC recipe](recipe-hpc-workload.md) for staged inputs, scheduler submission, recovery from checkpoints and worker cleanup.
 
+## Check cluster health before workload scale-up
+
+Cluster Health Checks distinguish passive Oracle Cloud Agent health signals from optional active Slurm/Kubernetes tests. Inspect supported images, agents and GPU configurations first. Active tests exercise GPUs, transfers and inter-node communication; schedule them around running jobs and preserve checkpoints before repair. A diagnostic pass is evidence about the tested cluster, not model quality or sustained application throughput.
+
+For eligible OKE nodes, connect health signals to the configured [GPU repair workflow](service-oke.md). Correlate the node, fault, maintenance event and repair state rather than treating every warning as permission to terminate a node.
+
+## Availability boundary for announced hardware
+
+At the November 17, 2026 review, Google's TPU offering on OCI is announced for 2027 and is excluded from current deployment recommendations. Vera/Rubin has explicit Oracle GA announcement language, but that does not establish a provisionable shape, access path, or regional capacity. Use the current shape and configuration documentation before proposing a deployment; unresolved hardware details stay outside this guide's operating instructions.
+
 ## Sources
 
 - [HPC and accelerator infrastructure models](https://docs.oracle.com/en-us/iaas/Content/Compute/References/high-performance-compute.htm)
 - [Cluster networks with instance pools](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/managingclusternetworks.htm)
 - [Compute clusters and individual node management](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/compute-clusters.htm)
 - [Current shape and architecture compatibility](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm)
+- [GPU Cluster Health Checks](https://docs.oracle.com/en-us/iaas/releasenotes/compute/cluster-health-checks.htm)
+- [Future TPU announcement](https://www.oracle.com/news/announcement/ai-world-oracle-brings-google-tpus-to-oracle-cloud-infrastructure-2026-10-27/)
+- [Vera/Rubin GA announcement and expansion scope](https://www.oracle.com/news/announcement/ai-world-nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-2026-10-27/)

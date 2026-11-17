@@ -4,15 +4,17 @@
 
 **Oracle Cloud expertise for ChatGPT and Codex.**
 
-Understand OCI services, choose architectures, and work through resource tasks with focused guidance grounded in Oracle documentation. OCI Atlas brings service relationships, practical workflows, and common gotchas into the conversation when they matter.
+OCI Atlas helps cloud engineers, architects, and application teams understand OCI, choose services, and diagnose problems. Its guides connect service behavior to identities, network paths, operating responsibilities, and recovery choices, with links to Oracle's documentation.
 
-**[Get started](docs/GETTING-STARTED.md)** · **[Download v1.1.0](https://github.com/subhanchaudry/oci-atlas/releases/tag/v1.1.0)** · **[Explore the guides](docs/CONTENT.md)** · **[Walk through examples](docs/WALKTHROUGHS.md)**
+**[Get started](docs/GETTING-STARTED.md)** · **[What changed in v1.2](docs/WHATS-NEW-1.2.md)** · **[Explore the guides](docs/CONTENT.md)** · **[Published releases](https://github.com/subhanchaudry/oci-atlas/releases)**
+
+This checkout prepares **v1.2.0**, with research reviewed through **November 17, 2026**. The ZIP and release notes are prepared locally; publication is a separate step. Use the local checkout route below until the v1.2.0 tag is published.
 
 ## What you can do
 
 - **Understand services.** Navigate tenancy structure, IAM, networking, data platforms, and AI services with OCI terminology explained in context.
 - **Choose architectures.** Compare services, identify dependencies, and connect the pieces into a design suited to your workload.
-- **Work with resources.** Use your available OCI CLI, Console, or Cloud Shell access to complete clearly scoped tasks.
+- **Prepare resource tasks.** Identify prerequisites, scope, verification, and cleanup. An authorized host can carry them out using its own OCI access.
 - **Troubleshoot OCI.** Follow the actual caller, network path, and resource lifecycle to narrow down a failure.
 
 ## How it works
@@ -32,14 +34,14 @@ flowchart LR
     class answer,tenancy result
 ```
 
-Knowledge questions require no OCI login. Resource operations use your available tools, authenticated identity, and OCI permissions. The skill loads focused references as needed and requires no hosted backend or separate OpenAI API key.
+Knowledge questions require no OCI login. **Atlas supplies guidance; resource operations depend on the host's tools, authentication, and OCI permissions.** It includes no execution tools, hosted backend, or MCP server, and requires no separate OpenAI API key. Its guides to OCI MCP services explain those services; they do not connect them to your conversation.
 
 ## Quick start
 
-For Codex CLI with plugin support:
+For Codex CLI with plugin support, run these commands from this repository checkout:
 
 ```sh
-codex plugin marketplace add subhanchaudry/oci-atlas --ref v1.1.0
+codex plugin marketplace add .
 codex plugin add oci-atlas@oci-atlas-marketplace
 ```
 
@@ -51,7 +53,7 @@ For ChatGPT desktop, workspace imports, release ZIPs, and the portable skill rou
 
 ## OCI coverage
 
-**94 focused references · 57 service guides · 19 cross-service recipes**
+**100 focused references · 63 service guides · 19 cross-service recipes**
 
 | Knowledge area | What you can explore |
 | --- | --- |
@@ -59,12 +61,18 @@ For ChatGPT desktop, workspace imports, release ZIPs, and the portable skill rou
 | [Networking](plugins/oci-atlas/skills/oci-atlas/references/networking.md) | VCNs, DNS, load balancing, FastConnect/VPN, Bastion, firewalls, and ZPR |
 | [Compute and storage](plugins/oci-atlas/skills/oci-atlas/references/compute-storage.md) | Instances and pools, autoscaling, GPU/HPC, Block Volume, Object Storage, NFS, and Lustre |
 | [Databases and data](plugins/oci-atlas/skills/oci-atlas/references/databases-data.md) | Autonomous, Base Database, Exadata, MySQL, PostgreSQL, NoSQL, Cache, migration, and data pipelines |
-| [AI and ML](plugins/oci-atlas/skills/oci-atlas/references/ai-ml.md) | Generative AI, agents, Data Science, AI Vector Search, OpenSearch, and deployment choices |
+| [AI and ML](plugins/oci-atlas/skills/oci-atlas/references/ai-ml.md) | Enterprise AI, AIDP, agents, Data Science, Speech, retrieval, and deployment choices |
 | [Application platforms](plugins/oci-atlas/skills/oci-atlas/references/applications.md) | OKE, Container Instances, Functions, APIs, Kafka, Queue, APEX, Oracle Integration, and analytics |
 | [Operations and security](plugins/oci-atlas/skills/oci-atlas/references/operations-security.md) | Metrics and notifications, logs and Audit, Cloud Guard, security, host updates, and recovery |
 | [Infrastructure and architecture](plugins/oci-atlas/skills/oci-atlas/references/infrastructure-architecture.md) | Terraform, Resource Manager, state import, drift, private endpoints, and landing zones |
 
-The [full catalog](docs/CONTENT.md) brings these together with service-selection decisions, troubleshooting paths, and 19 recipes—from private applications and AI workflows to hybrid access, notification delivery, backup/recovery, and database cutover.
+The [full catalog](docs/CONTENT.md) brings these together with service-selection decisions, troubleshooting paths, and 19 recipes—from private applications and AI workflows to hybrid access, notification delivery, backup/recovery, and database cutover. New guides cover Cloud Migrations, Database Tools, Database Management, Ops Insights, Internet of Things, and Speech.
+
+## Current service coverage
+
+v1.2 incorporates documented, generally available OCI capabilities. Recommendations exclude previews, limited availability, and future announcements. Each affected guide states its relevant region, edition, version, or configuration constraints. Service availability does not establish capacity in your tenancy.
+
+The dated [release evidence register](docs/RELEASE-EVIDENCE-1.2.md) records included changes and deferred announcements. Current regional support, model access, prices, quotas, and capacity still need checking for a specific deployment. Documentation validation and live tenancy testing are reported separately in the [validation record](docs/VALIDATION-1.2.md).
 
 ## Start with your workload
 
@@ -133,6 +141,7 @@ Explore three [illustrated walkthroughs](docs/WALKTHROUGHS.md): a containerized 
 | Add or improve guidance | [Contributing](CONTRIBUTING.md) |
 | Content maintenance and releases | [Maintenance](docs/MAINTENANCE.md) |
 | Release history | [Changelog](CHANGELOG.md) |
+| v1.2 benefits and availability evidence | [What's new](docs/WHATS-NEW-1.2.md) · [Evidence register](docs/RELEASE-EVIDENCE-1.2.md) |
 
 The v1 series keeps the plugin identity and existing guide paths stable, with versioned releases for updates. Guidance links to its authoritative sources and records when it was reviewed. Keep current service availability, model choices, prices, and exact command parameters tied to Oracle's documentation and your installed tools.
 

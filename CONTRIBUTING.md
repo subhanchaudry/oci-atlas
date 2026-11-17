@@ -5,10 +5,10 @@ Contribute OCI-specific knowledge that changes an agent's decisions or saves rep
 ## Add or update a guide
 
 1. Find the existing topic in the [skill index](plugins/oci-atlas/skills/oci-atlas/SKILL.md). Extend it before adding another explanation of the same concept.
-2. Research official product documentation first, followed by Oracle-owned repositories, product-team posts, and LiveLabs. Check command names and parameters against a command reference or installed help.
+2. Research official product documentation first, followed by Oracle-owned repositories, product-team posts, and LiveLabs. Check command names and parameters against a command reference or installed help. Recommended architectures and operational guidance must use generally available functionality. Exclude public preview, limited availability, and future announcements, including preview dependencies. An explicit Oracle GA announcement can support a high-level description but cannot establish operational configuration or regional capacity.
 3. Use [the guide template](docs/GUIDE-TEMPLATE.md). Include service relationships, prerequisites, useful decision criteria, practical examples, gotchas, authoritative links, and the date actually reviewed.
 4. Keep files focused. Link shared concepts instead of repeating long IAM, network, or authentication sections. Add the guide to [catalog.json](plugins/oci-atlas/skills/oci-atlas/catalog.json), then run `python3 tools/catalog.py --write` to generate routing and metadata. Update the README if coverage changes.
-5. Clearly mark conditional behavior, version differences, and assumptions. Describe prerequisites and supported behavior precisely. Do not guess OCI defaults or copy customer-specific configuration.
+5. Clearly mark region, realm, edition, version, and configuration restrictions. Record each addition's exact source, availability status, affected guides, and review date in the release evidence register; see [v1.2](docs/RELEASE-EVIDENCE-1.2.md). Defer unresolved claims rather than infer availability. Do not guess OCI defaults or copy customer-specific configuration.
 6. Run `python3 tools/catalog.py --check` and `python3 tools/check.py`, build with `python3 tools/package.py`, and inspect changed guides and the archive.
 
 ## Catalog conventions

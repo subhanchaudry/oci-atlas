@@ -1,6 +1,6 @@
 # Full Stack Disaster Recovery plans and dependencies
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose the recovery objective
 
@@ -35,9 +35,14 @@ After transition, inspect protection direction, retained source resources and th
 
 Keep a dependency-ordered record of protection groups, plan revision, writer ownership, DNS/client transition and external integration steps. Budget standby capacity, replicated storage and recovery-only resources. Use an explicit completion condition for each step and a supported recovery path after partial execution; plan success alone is not the business transaction result.
 
+## PostgreSQL members and moving-instance networking
+
+PostgreSQL DB systems can participate in cross-region switchover/failover plans with a prepared warm standby. Inspect the required service policies and generated prechecks before execution. For moving Compute instances, destination reserved private IPs and drill-specific VNIC mappings help preserve addressing or isolate a drill. Check destination subnet, hostname and application dependencies. These additions do not replicate an application's external services or eliminate standby capacity requirements.
+
 ## Sources
 
 - [Full Stack DR scope](https://docs.oracle.com/en-us/iaas/disaster-recovery/index.html)
 - [Protection groups, plans, roles, and recovery objectives](https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/disaster-recovery-terminology.html)
 - [Dependency mapping and ordered operations](https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/dependency-mapping.html)
 - [Built-in groups and supported plan types](https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/built-in-plan-groups.html)
+- [PostgreSQL recovery and moving-instance enhancements](https://docs.oracle.com/en-us/iaas/releasenotes/disaster-recovery/oct-2026.htm)

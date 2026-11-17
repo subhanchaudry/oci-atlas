@@ -1,6 +1,6 @@
 # Recipe: database migration, replication, and application cutover
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Workload contract
 
@@ -46,6 +46,10 @@ Use [Database Migration](service-database-migration.md) for managed jobs/evaluat
 
 Preserve the source, backups, logs and temporary migration artifacts according to the requested retention and acceptance intent. A successful copy does not authorize deleting the original database. Enumerate staging objects, replication deployments, connections and retained capacity before cleanup. Report the completed migration/application scope and remaining consumers or protection work without claiming measured downtime or acceptance that was not observed.
 
+## Keep VM relocation and upgrades distinct
+
+Use [Cloud Migrations](service-cloud-migrations.md) for whole-guest relocation; preserve the database-consistency and client-cutover work in this recipe. For an existing managed service, [HeatWave blue/green](service-mysql-heatwave.md) or [PostgreSQL major upgrades](service-postgresql.md) may address an upgrade need without becoming a general cross-engine migration solution.
+
 ## Sources
 
 - [Database Migration scope and underlying workflow](https://docs.oracle.com/en-us/iaas/database-migration/doc/overview.html)
@@ -53,3 +57,8 @@ Preserve the source, backups, logs and temporary migration artifacts according t
 - [GoldenGate source-target support](https://docs.oracle.com/en/cloud/paas/goldengate-service/ocigg/whats-supported.html)
 - [Data Guard roles and transitions](https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/usingdataguard.htm)
 - [Custom application migration architecture](https://docs.oracle.com/en/solutions/migrate-oracle-db-custom-apps/considerations-moving-cloud1.html)
+- [Cloud Migrations resource model and workflow](https://docs.oracle.com/en-us/iaas/Content/cloud-migration/cloud-migration-overview.htm)
+- [Supported AWS Arm migrations](https://docs.oracle.com/en-us/iaas/releasenotes/cloud-migration/ocm_aws_arm_migration.htm)
+- [HeatWave blue/green deployment](https://docs.oracle.com/en-us/iaas/releasenotes/mysql-database/heatwave-blue-green-deployments.htm)
+- [PostgreSQL in-place major upgrades](https://docs.oracle.com/en-us/iaas/releasenotes/postgresql/inplace-upgrade.htm)
+- [PostgreSQL recovery and moving-instance enhancements](https://docs.oracle.com/en-us/iaas/releasenotes/disaster-recovery/oct-2026.htm)

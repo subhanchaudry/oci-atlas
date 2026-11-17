@@ -34,13 +34,13 @@ Read only the relevant reference: a focused guide for a named service, a domain 
 | Trace VCN routes, gateways, security and private DNS | [VCN routing, network controls, and DNS](references/service-vcn-routing.md) |
 | Instances, configurations, pools, autoscaling, capacity | [Compute instances and persistent disks](references/service-compute.md) |
 | Buckets, objects, versions, retention, lifecycle and access | [Object Storage buckets, objects, and retention](references/service-object-storage.md) |
-| Autonomous Database access, TLS, SQL users, endpoints | [Autonomous Database operations and access](references/service-autonomous-database.md) |
+| Autonomous Database access, TLS, SQL users, endpoints | [Autonomous AI Database operations and access](references/service-autonomous-database.md) |
 | OKE clusters, node pools, pod identity and image access | [OKE clusters, workloads, and identities](references/service-oke.md) |
 | Functions applications, deployment, invocation and runtime | [Functions deployment and invocation](references/service-functions.md) |
 | API Gateway gateways, deployments, routes and authentication | [API Gateway deployments and backend access](references/service-api-gateway.md) |
-| Generative AI model APIs, agents, endpoints and regional routing | [Generative AI model and agent selection](references/service-generative-ai.md) |
+| Choose model inference, hosted applications, Agent Sandbox and Responses API behavior | [Generative AI model and agent selection](references/service-generative-ai.md) |
 | Data Science projects, jobs, model artifacts and deployments | [Data Science notebooks, jobs, and model serving](references/service-data-science.md) |
-| AI Data Platform workspaces, catalogs and permissions | [AI Data Platform workspaces and catalogs](references/service-ai-data-platform.md) |
+| Work with AIDP catalogs, deployed agents, memory and AI compute | [AI Data Platform catalogs, agents, and compute](references/service-ai-data-platform.md) |
 | Data Integration flows, tasks, publication and runs | [Data Integration design and runtime artifacts](references/service-data-integration.md) |
 | Data Flow Spark applications, runs and private data access | [Data Flow Spark applications and runs](references/service-data-flow.md) |
 | Streaming pools, streams, partitions and consumer offsets | [Streaming producers, consumers, and replay](references/service-streaming.md) |
@@ -110,6 +110,12 @@ Read only the relevant reference: a focused guide for a named service, a domain 
 | Extend Fusion workflows without confusing SaaS and OCI authorization | [Recipe: Extend SaaS with application and integration services](references/recipe-saas-extension.md) |
 | Plan WebLogic runtime, database, ingress, and release ownership | [Recipe: Modernize a WebLogic application on OCI](references/recipe-weblogic-application.md) |
 | Stage data, schedule accelerated jobs, preserve checkpoints, and release capacity | [Recipe: Run an HPC or GPU job with recoverable data](references/recipe-hpc-workload.md) |
+| Move supported VMware VMs or AWS EC2 instances to OCI Compute | [Cloud Migrations discovery, replication, and VM cutover](references/service-cloud-migrations.md) |
+| Connect database clients and MCP tools using Database Tools identities and private endpoints | [Database Tools connections and MCP access](references/service-database-tools.md) |
+| Monitor database fleets, inspect privilege use, and run scoped database jobs | [Database Management diagnostics, jobs, and privileges](references/service-database-management.md) |
+| Analyze historical database and host capacity, SQL trends, and AWR evidence | [Ops Insights capacity, SQL trends, and AWR collection](references/service-ops-insights.md) |
+| Ingest device telemetry and operate digital twins and IoT Flow Runtimes | [Internet of Things domains, digital twins, and flows](references/service-internet-of-things.md) |
+| Transcribe recordings or streams and generate speech through supported Speech APIs | [Speech transcription and realtime voice output](references/service-speech.md) |
 
 <!-- atlas:catalog:end -->
 
@@ -131,6 +137,8 @@ A clear request authorizes work within its stated scope. Carry that authorizatio
 Check dependencies and existing Terraform/Resource Manager ownership before changing resources. Use request/work-request IDs and resulting resource state to verify operations. After a timeout, reconcile state before retrying creation. Continue bounded tasks, but stop repeated failing writes when their outcome or authorization is unclear.
 
 ## Know when to look up current details
+
+Recommend generally available capabilities with feature-specific evidence. Exclude preview, limited-availability and future offerings from the default workflow. Check dependencies as well as the feature label; a GA release note does not make a preview credential or deployment path GA. Explicit GA announcements can support high-level descriptions, but operational instructions need owning documentation. If sources conflict or regional/configuration support is unresolved, explain the gap and defer that option.
 
 Use packaged context for stable concepts and common patterns. Consult current Oracle documentation or installed `oci ... --help` for exact parameters, unsupported topics, and version-sensitive behavior. Verify prices, model IDs, regional availability, quotas, service limits, shapes, and preview status when they affect an action or recommendation. A guide's review date is not a guarantee of current availability.
 

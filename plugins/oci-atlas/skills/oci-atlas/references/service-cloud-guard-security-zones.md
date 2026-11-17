@@ -1,6 +1,6 @@
 # Cloud Guard findings and Security Zones
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Separate detection from enforcement
 
@@ -35,8 +35,13 @@ For unexpected denials, compare IAM permissions, Security Zone policy and servic
 
 For a finding, retain detector, affected resource, evidence time, intended correction and current observed state. For an enforced denial, record the zone recipe and specific constraint. Keep automatic responders scoped to explicit operational intent; remove obsolete targets only after identifying inherited monitoring and other resource owners.
 
+## Diagnose newly enforced zone constraints
+
+Oracle's October 2026 correction restored enforcement for some OC1 compartments whose Security Zone association previously appeared configured without enforcing policies. If a formerly successful operation now reports a zone violation, inspect the effective zone and constraint before changing IAM. Removing a subcompartment from a zone changes its protection; it is not a routine retry or a neutral troubleshooting step.
+
 ## Sources
 
 - [Cloud Guard targets, recipes, and reporting regions](https://docs.oracle.com/en-us/iaas/Content/cloud-guard/using/cg-concepts.htm)
 - [Security Zone enforcement and Cloud Guard relationships](https://docs.oracle.com/en-us/iaas/Content/security-zone/using/security-zones.htm)
 - [Cloud Guard responders and problem handling](https://docs.oracle.com/en-us/iaas/Content/cloud-guard/home.htm)
+- [Corrected Security Zone enforcement](https://docs.oracle.com/en-us/iaas/releasenotes/security-zone/security-zone-policy-enforcement-in-affected-compartments.htm)

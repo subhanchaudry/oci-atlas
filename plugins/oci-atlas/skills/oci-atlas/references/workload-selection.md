@@ -1,6 +1,6 @@
 # Choose an OCI workload path
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Start with the outcome
 
@@ -33,9 +33,35 @@ Return the recommended path, existing services to reuse, architecture/data flow,
 
 Oracle Architecture Center reference architectures describe patterns; solution playbooks describe implementation paths; Built & Deployed stories describe particular customer systems. Do not transfer a story's performance or topology to another customer. Verify current product behavior against its owning documentation. Select the relevant pattern instead of loading the whole library.
 
-Two versioned source examples are available: [private container API](https://github.com/subhanchaudry/oci-atlas/tree/v1.1.0/examples/container-api) and [RAG over documents](https://github.com/subhanchaudry/oci-atlas/tree/v1.1.0/examples/rag). They consume existing foundations and expose their required inputs.
+Two versioned source examples are available: [private container API](https://github.com/subhanchaudry/oci-atlas/tree/v1.2.0/examples/container-api) and [RAG over documents](https://github.com/subhanchaudry/oci-atlas/tree/v1.2.0/examples/rag). They consume existing foundations and expose their required inputs.
+
+## More workload entry points
+
+- **Move VMware or AWS instances:** [Cloud Migrations](service-cloud-migrations.md), then application cutover and infrastructure ownership.
+- **Connect an AI client to database tools:** [Database Tools](service-database-tools.md), then identity, SQL privileges and private connectivity.
+- **Investigate a database fleet:** [Database Management](service-database-management.md) for operations; [Ops Insights](service-ops-insights.md) for trends.
+- **Collect device telemetry:** [IoT](service-internet-of-things.md), then downstream event-processing and retention decisions.
+- **Transcribe or speak:** [Speech](service-speech.md), then any authorized retrieval or application workflow.
 
 ## Sources
 
 - [Architecture Center](https://docs.oracle.com/solutions/)
 - [Well-Architected Framework](https://docs.oracle.com/en/solutions/oci-best-practices/)
+- [Cloud Migrations resource model and workflow](https://docs.oracle.com/en-us/iaas/Content/cloud-migration/cloud-migration-overview.htm)
+- [Supported AWS Arm migrations](https://docs.oracle.com/en-us/iaas/releasenotes/cloud-migration/ocm_aws_arm_migration.htm)
+- [Database Tools overview](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview.html)
+- [Database Tools MCP server support and authentication](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview-mcp-server.html)
+- [CIMD client access](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/cimd.htm)
+- [MCP service logs](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/logging.htm)
+- [Diagnostics and Management target support](https://docs.oracle.com/en-us/iaas/database-management/doc/database-management-oracle-databases.html)
+- [Unified onboarding](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/unified-onboarding-dbm-opsi.htm)
+- [Privilege analysis](https://docs.oracle.com/en-us/iaas/releasenotes/database-management/privilege-analysis.htm)
+- [Database Management releases](https://docs.oracle.com/en-us/iaas/releasenotes/services/database-management/)
+- [Ops Insights scope, retention and service-change notice](https://docs.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html)
+- [AWR collection and customer-owned warehouse](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/awr-snapshot-collection-bring-your-own-warehouse.htm)
+- [SQL Monitoring reports](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/sql-monitoring-reports.htm)
+- [IoT resources, endpoints and limits](https://docs.oracle.com/en-us/iaas/Content/internet-of-things/overview.htm)
+- [Flow Runtime integrations and privilege delegation](https://docs.oracle.com/en-us/iaas/releasenotes/internet-of-things/update-11102026.htm)
+- [Development and Production domain groups](https://docs.oracle.com/en-us/iaas/releasenotes/internet-of-things/update-04142026.htm)
+- [Speech capabilities, regional restrictions and jobs](https://docs.oracle.com/en-us/iaas/Content/speech/using/speech.htm)
+- [Realtime TTS API availability](https://docs.oracle.com/en-us/iaas/releasenotes/speech/realtime-tts.htm)

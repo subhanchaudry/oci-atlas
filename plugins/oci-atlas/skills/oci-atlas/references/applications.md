@@ -1,6 +1,6 @@
 # Application platforms
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose the runtime
 
@@ -56,6 +56,10 @@ Console search terms are **Kubernetes clusters**, **Functions**, **API gateways*
 
 Use [Container Registry](service-container-registry.md) for artifact identity, [DevOps](service-devops.md) for delivery, and [Events](service-events.md) for resource-triggered workflows. Establish runtime, public/private entry point and data dependencies before choosing the pipeline. Use [enterprise modernization](enterprise-modernization.md) for existing WebLogic, packaged applications or VMware estates.
 
+## Delivery, devices, and managed tools
+
+Use [Container Registry](service-container-registry.md) for regional cache and repository-path decisions, and [OKE](service-oke.md) for supported version, node, storage and repair behavior. [IoT](service-internet-of-things.md) adds device telemetry and digital twins with managed flows. [Database Tools](service-database-tools.md) supplies a separate database-access service for applications and MCP clients; Atlas supplies documentation for it, not a server implementation.
+
 ## Sources
 
 - [OKE clusters, node choices and feature differences](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengclustersnodes.htm)
@@ -65,3 +69,14 @@ Use [Container Registry](service-container-registry.md) for artifact identity, [
 - [API Gateway resource model](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Concepts/apigatewayoverview.htm)
 - [Container Registry](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryoverview.htm)
 - [DevOps projects and pipelines](https://docs.oracle.com/en-us/iaas/Content/devops/using/devops_overview.htm)
+- [Pull-through cache and top-level repositories](https://docs.oracle.com/en-us/iaas/releasenotes/registry/OCIR-Top-Level-and-Pull-Through-Repositories.htm)
+- [OKE Kubernetes 1.37.1 support and retirement notice](https://docs.oracle.com/en-us/iaas/releasenotes/conteng/conteng-K8s-1-37-1-support.htm)
+- [OKE GPU maintenance event repair](https://docs.oracle.com/en-us/iaas/releasenotes/conteng/conteng_node-maintenance-event-repair.htm)
+- [OKE File Storage support for virtual nodes](https://docs.oracle.com/en-us/iaas/releasenotes/conteng/conteng_virtual-nodes-persistent-storage-support.htm)
+- [IoT resources, endpoints and limits](https://docs.oracle.com/en-us/iaas/Content/internet-of-things/overview.htm)
+- [Flow Runtime integrations and privilege delegation](https://docs.oracle.com/en-us/iaas/releasenotes/internet-of-things/update-11102026.htm)
+- [Development and Production domain groups](https://docs.oracle.com/en-us/iaas/releasenotes/internet-of-things/update-04142026.htm)
+- [Database Tools overview](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview.html)
+- [Database Tools MCP server support and authentication](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview-mcp-server.html)
+- [CIMD client access](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/cimd.htm)
+- [MCP service logs](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/logging.htm)

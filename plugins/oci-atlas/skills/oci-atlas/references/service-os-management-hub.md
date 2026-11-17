@@ -1,6 +1,6 @@
 # OS Management Hub registration, sources, and updates
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Establish management scope
 
@@ -37,9 +37,14 @@ For cleanup, distinguish unregistering an instance from terminating Compute or r
 
 Record host group, software source/version, update window, reboot requirement and application owner. Promote a selected package set through the existing lifecycle rather than mixing ad hoc updates with managed sources. Keep OS patch status separate from application compatibility, and preserve a supported host recovery path before changing critical packages.
 
+## IPv6 management API access
+
+OS Management Hub supports IPv6 for its management API; IPv4 remains the default and IPv6 must be enabled through the documented access configuration. Verify the selected client/endpoint path separately from agent check-in and package-source reachability. Successful API access alone does not demonstrate that a managed host can download and install its updates.
+
 ## Sources
 
 - [Managed instances, agents, groups, and lifecycle model](https://docs.oracle.com/en-us/iaas/osmh/doc/overview.htm)
 - [Registration profiles](https://docs.oracle.com/en-us/iaas/osmh/doc/profiles.htm)
 - [Oracle Linux software sources and Windows distinction](https://docs.oracle.com/en-us/iaas/osmh/doc/software-sources.htm)
 - [Supported setup and environment prerequisites](https://docs.oracle.com/en-us/iaas/osmh/doc/getstarted.htm)
+- [OS Management Hub IPv6](https://docs.oracle.com/en-us/iaas/releasenotes/os-management-hub/release-3.7_ipv6.htm)

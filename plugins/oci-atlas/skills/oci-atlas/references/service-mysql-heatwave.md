@@ -1,6 +1,6 @@
 # MySQL HeatWave systems, access, and availability
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose the MySQL workload layer
 
@@ -37,8 +37,13 @@ Before deleting a DB system, replica, channel or HeatWave cluster, identify cons
 
 Record endpoint, application SQL user, schema revision, HA/read-replica roles and backup policy. Include HeatWave capacity only when the workload uses that feature. Distinguish transactional query behavior from data loaded into an accelerator; keep role/endpoint changes coordinated with client pools and replication consumers.
 
+## Plan upgrades with blue/green validation
+
+Blue/green deployments support low-downtime upgrades and infrastructure changes for standalone DB systems. Prepare a green target, validate application behavior and coordinate the client switch from the blue source. Confirm current eligibility and the supported transition/rollback sequence; do not generalize this workflow to every HA topology or promise zero downtime. Record write ownership and retained source/target charges through cutover. Consult current supported versions rather than copying a historical default into a deployment.
+
 ## Sources
 
 - [MySQL HeatWave resource and feature entry points](https://docs.oracle.com/en-us/iaas/mysql-database/home.htm)
 - [Managed high availability and role transitions](https://docs.oracle.com/en-us/iaas/mysql-database/doc/overview-high-availability.html)
 - [Database connection workflows](https://docs.oracle.com/en-us/iaas/mysql-database/doc/connecting-db-system1.html)
+- [HeatWave blue/green deployment](https://docs.oracle.com/en-us/iaas/releasenotes/mysql-database/heatwave-blue-green-deployments.htm)

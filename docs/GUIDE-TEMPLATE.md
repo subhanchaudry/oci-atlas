@@ -16,6 +16,8 @@ Explain the service's important objects, their scope, and dependencies. Link sha
 
 Identify IAM, network, endpoint, authentication, or version requirements. Describe Console search terms and CLI command families without hard-coding customer context.
 
+State region/realm, edition, configuration and access restrictions. Use only generally available functionality in recommendations and operational instructions; exclude preview dependencies. Record exact supporting documentation and the availability decision in the release evidence register. A GA announcement alone does not prove configuration or capacity.
+
 ## Working pattern
 
 Give a short discovery-to-operation sequence and a source-checked command example when useful. Define inputs; label writes; explain how to observe completion and update/cleanup dependencies.

@@ -1,6 +1,6 @@
 # Network Firewall inspection paths and policies
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose the control by traffic
 
@@ -35,9 +35,14 @@ Explain whether a proposed decryption, NAT or route change alters addresses or t
 
 Record forward and return routing, firewall policy revision, required application destinations and TLS inspection boundaries. Confirm certificate trust and data handling before decrypting traffic. Include firewall capacity, logs and any redundant path in the estimate. Rollback must restore a coherent route and policy pair, not only remove the firewall.
 
+## Capture traffic at the firewall
+
+Network Firewall can be a VTAP source for packets on its attached VNICs. Use a scoped capture filter and authorized destination to investigate the selected flow. Captured encrypted traffic remains encrypted: packet capture is not TLS decryption. Correlate timestamps, translated addresses and both directions with firewall logs and [routing](service-vcn-routing.md) before changing policy. Captures can contain sensitive traffic; limit retention and access to the diagnostic purpose.
+
 ## Sources
 
 - [Inspection capabilities and routed architectures](https://docs.oracle.com/en-us/iaas/Content/network-firewall/overview.htm)
 - [Policy components, logging, decryption, and lifecycle](https://docs.oracle.com/en-us/iaas/Content/network-firewall/home.htm)
 - [DRG routing model](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm)
 - [Security rules](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securityrules.htm)
+- [Network Firewall VTAP source](https://docs.oracle.com/en-us/iaas/releasenotes/network-firewall/network-firewall-as-vtap-source.htm)

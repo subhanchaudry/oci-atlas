@@ -46,6 +46,22 @@ New to the plugin? Use [Getting started](GETTING-STARTED.md) to choose a path, o
 
 > Compare Oracle AI Vector Search, Search with OpenSearch, and our existing platform knowledge sources for RAG. Include permission filters, embedding compatibility, and deletion propagation.
 
+## Explore the v1.2 additions
+
+> Compare Cloud Migrations for AWS Arm VMs with Database Migration and GoldenGate. Preserve guest architecture, and separate replication, application cutover, and disaster recovery.
+
+> Explain Database Tools MCP versus Autonomous AI Database's built-in MCP tools. Identify client authentication, OCI permission, SQL grants, and network access. Do not assume Atlas supplies an MCP server.
+
+> Compare Database Management diagnostics with Ops Insights capacity and SQL trends. Identify collection, licensing, and warehouse ownership before recommending onboarding.
+
+> Design an IoT device-to-digital-twin workflow using supported Flow Runtime integrations. Identify the domain-group type, limits, and downstream permissions.
+
+> Compare batch transcription, realtime transcription, and realtime speech generation. Check current regional and API support; do not assume realtime TTS has a Console workflow.
+
+> Design hybrid access for two overlapping IPv4 networks. Explain whether documented DRG translation applies, including translated addresses, DNS, return routing, and security rules.
+
+> Compare Enterprise AI hosted applications, Agent Sandbox, and an AIDP agent workflow. Use only generally available capabilities and exclude preview credential dependencies. State where authentication, persistence, memory, and compute ownership differ.
+
 ## Inspect using existing access
 
 > Use OCI Atlas and my selected OCI CLI profile to list visible compartments. State which scope you checked and any visibility limitations. Make no resource changes.

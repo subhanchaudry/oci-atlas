@@ -1,6 +1,6 @@
 # IAM policies and workload identities
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Model the caller before the policy
 
@@ -36,9 +36,19 @@ Use Console **Policies**, **Domains**, or **Dynamic Groups**; inspect `oci iam p
 
 Record the exact operation, principal type, target compartment and dependent resource for each grant. Include one permitted request and one out-of-scope request in the access handoff. When retiring an application, remove its grant only after checking other members of the same dynamic group; deleting a policy does not delete the workload or its credentials.
 
+## Identity-domain authentication and delegated access
+
+An OAuth access token, an OCI request signature and a database login have different audiences and authorization rules. Identity-domain OAuth resource indicators let a client request a token for a specified resource; they do not create OCI resource grants. With ID-JAG, a source domain exchanges an ID token for a short-lived signed assertion, and the target independently decides whether to issue an access token. Establish trust, token audience and target authorization rather than forwarding a token to an unrelated service.
+
+Identity Assurance adds identity verification and biometric checks for supported policies. It requires an IAM Premium domain, a licensed supported external verification provider, administrative permissions and the documented user enrollment prerequisites, including a passkey. It does not replace application authorization or establish that every sensitive action is automatically protected. Keep provider credentials in the normal secure configuration flow.
+
 ## Sources
 
 - [Policy syntax](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policysyntax.htm)
 - [IAM components and scope](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
 - [OKE workload identity](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contenggrantingworkloadaccesstoresources.htm)
 - [OCI API errors](https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm)
+- [ID-JAG token exchange](https://docs.oracle.com/en-us/iaas/releasenotes/identity/id-jag-token-exchange-across-trust-domains.htm)
+- [Identity Assurance requirements](https://docs.oracle.com/en-us/iaas/Content/Identity/securing/gs.htm)
+- [Identity service updates](https://docs.oracle.com/en-us/iaas/releasenotes/services/identity/)
+- [OAuth resource indicators](https://docs.oracle.com/en-us/iaas/releasenotes/identity/oauth-resource-indicators-for-identity-domains.htm)

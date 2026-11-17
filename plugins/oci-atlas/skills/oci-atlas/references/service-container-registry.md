@@ -1,6 +1,6 @@
 # Container Registry and artifact delivery
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose the artifact store
 
@@ -25,8 +25,15 @@ For pull failures, inspect exact endpoint/namespace/repository/digest, CPU archi
 
 Budget retained layers/images and related transfer using current terms. Before deleting old images or applying retention policies, enumerate deployed digests and rollback dependencies. Do not remove a shared repository as part of one container's cleanup. Continue with [DevOps](service-devops.md).
 
+## Regional pull-through caches and repository paths
+
+A pull-through cache retrieves images from an approved Container Registry endpoint in another OCI region in the same realm. Initial pulls stream and cache the image locally; later pulls can use the cache. These repositories are private and pull-only. Push a new image to a standard repository; do not configure a build pipeline to push to a cache or assume arbitrary external registries are supported sources.
+
+The top-level capability allows root and child image paths within one repository resource and can be selected for standard or cache repositories. Align image references, repository permissions and runtime credentials with that boundary. Test an immutable digest through the intended regional endpoint and track cache storage and upstream availability separately.
+
 ## Sources
 
 - [Container Registry](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryoverview.htm)
 - [Artifact Registry](https://docs.oracle.com/en-us/iaas/Content/artifacts/overview.htm)
 - [Container Instances registry secrets](https://docs.oracle.com/en-us/iaas/Content/container-instances/vault-secrets-image-authorization.htm)
+- [Pull-through cache and top-level repositories](https://docs.oracle.com/en-us/iaas/releasenotes/registry/OCIR-Top-Level-and-Pull-Through-Repositories.htm)

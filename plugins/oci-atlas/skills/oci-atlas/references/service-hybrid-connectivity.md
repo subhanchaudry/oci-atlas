@@ -1,6 +1,6 @@
 # Hybrid connectivity with FastConnect, VPN, DRG, and DNS
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose the connection and ownership
 
@@ -35,9 +35,17 @@ For failure, separate carrier/circuit state, IPSec negotiation, BGP, route selec
 
 Maintain a shared record of customer prefixes, OCI prefixes, ASN/peering settings, route owners, DNS forwarding and escalation contacts. Include provider charges and circuit/port/data-transfer assumptions separately. A topology with two connections still needs independent failure domains; document application behavior when either path is lost.
 
+## Maintenance and overlapping address space
+
+FastConnect traffic draining is available for private virtual circuits across partner, direct and Oracle Interconnect connections. Before draining, verify the alternate path and its route advertisements, then observe application traffic during the change. Draining is a maintenance control, not evidence that redundant connectivity already exists. Direct cross-connect features such as minimum links and interface hold-timers have their own scope.
+
+For overlapping IPv4 networks, use the [DRG NAT guidance](service-vcn-routing.md). Include translated prefixes in the shared network handoff and verify what the remote application and firewall actually see.
+
 ## Sources
 
 - [FastConnect peering and connectivity models](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/fastconnectoverview.htm)
 - [Site-to-Site VPN and supported setup paths](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingIPsec.htm)
 - [DRG attachments, routing, and distributions](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm)
 - [Private DNS management](https://docs.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm)
+- [FastConnect maintenance controls](https://docs.oracle.com/en-us/iaas/releasenotes/network/fast-connect-enhancements.htm)
+- [IPv4 NAT on DRG attachments](https://docs.oracle.com/en-us/iaas/releasenotes/network/nat-drg.htm)

@@ -1,6 +1,6 @@
 # Access, tools, and onboarding
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose an execution route
 
@@ -60,6 +60,12 @@ For an illustrative response: “I inspected the selected compartment's Compute 
 
 Summarize the chosen execution route, confirmed identity, tenancy, region, compartment and one successful scoped read. List missing permissions or unreachable endpoints precisely. For setup failures, retain useful design work and use [support handoff](troubleshoot-support-handoff.md) when the remaining issue requires an administrator; never ask for a complete credential file.
 
+## Console assistance and regional Cloud Shell
+
+Console AI is a separate OCI Console capability with its own tenancy and regional availability. Atlas does not enable it or rely on it to answer a knowledge question. Check the current supported-region list and the signed-in tenancy's access before recommending it.
+
+Cloud Shell supports regional launch. Confirm the shell's actual region, selected CLI profile/authentication and network context before running an operation; do not infer them from a browser tab or assume access to a private endpoint. A local Codex shell, OCI Cloud Shell and an agent's hosted workspace are distinct execution environments.
+
 ## Sources
 
 - [OCI CLI concepts](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
@@ -68,3 +74,5 @@ Summarize the chosen execution route, confirmed identity, tenancy, region, compa
 - [OCI CLI command reference and global options](https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/)
 - [OCI REST API behavior, request IDs, retry tokens, and ETags](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm)
 - [ChatGPT browser availability and sign-in](https://learn.chatgpt.com/docs/browser)
+- [Console AI regional availability](https://docs.oracle.com/en-us/iaas/releasenotes/console/consoleai-availability-oct-2026.htm)
+- [Cloud Shell regional launch](https://docs.oracle.com/en-us/iaas/releasenotes/cloud-shell/regional_launch.htm)

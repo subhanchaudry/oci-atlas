@@ -1,6 +1,6 @@
 # Recipe: application evidence and notification delivery
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Workload contract
 
@@ -45,6 +45,10 @@ Define an owner, useful signal scope, retention and expected recipient/action. R
 
 Before changing a shared topic, connector or log group, enumerate dependent alarms, event rules and consumers. Deleting a connector does not necessarily delete exported destination data; deleting a log can remove evidence. Remove only requested temporary artifacts and report retained destinations/retention explicitly. A successful configuration operation should not be reported as verified alert receipt.
 
+## Include database evidence where needed
+
+For a database-backed application, link the alert/trace window to [Database Management](service-database-management.md) and [Ops Insights](service-ops-insights.md) when enabled for the target. Verify collection freshness before interpreting absent data. Retain relevant SQL/AWR evidence under the chosen access and retention policy; monitoring enablement is not proof that a notification reached its recipient.
+
 ## Sources
 
 - [Monitoring streams and alarm evaluation](https://docs.oracle.com/en-us/iaas/Content/Monitoring/Concepts/monitoringoverview.htm)
@@ -52,3 +56,10 @@ Before changing a shared topic, connector or log group, enumerate dependent alar
 - [Logging categories and ingestion](https://docs.oracle.com/en-us/iaas/Content/Logging/Concepts/loggingoverview.htm)
 - [Connector source-task-target relationships](https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm)
 - [Microservices tracing architecture](https://docs.oracle.com/en/solutions/oci-apm-for-microservices/)
+- [Diagnostics and Management target support](https://docs.oracle.com/en-us/iaas/database-management/doc/database-management-oracle-databases.html)
+- [Unified onboarding](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/unified-onboarding-dbm-opsi.htm)
+- [Privilege analysis](https://docs.oracle.com/en-us/iaas/releasenotes/database-management/privilege-analysis.htm)
+- [Database Management releases](https://docs.oracle.com/en-us/iaas/releasenotes/services/database-management/)
+- [Ops Insights scope, retention and service-change notice](https://docs.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html)
+- [AWR collection and customer-owned warehouse](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/awr-snapshot-collection-bring-your-own-warehouse.htm)
+- [SQL Monitoring reports](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/sql-monitoring-reports.htm)

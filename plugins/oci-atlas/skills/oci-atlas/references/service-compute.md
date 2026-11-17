@@ -1,6 +1,6 @@
 # Compute instances and persistent disks
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Resolve the launch inputs
 
@@ -46,6 +46,12 @@ Insufficient capacity → inspect alternative approved placements/shapes, not po
 ## Sizing and ownership handoff
 
 Capture baseline CPU, memory, disk and network demand before choosing pool minimum/maximum sizes. Include boot/block storage, backups and reserved capacity in the cost estimate. Record image revision, bootstrap owner, patch window and drain behavior alongside the instance configuration so replacement workers can reproduce the application.
+
+## Acceleron-backed shapes and image compatibility
+
+The documented Ax families include Intel Standard4, AMD E6 and Arm A4 variants, plus DenseIO E6 Ax. Use the exact shape identifier and supported image/networking combination. Ax networking uses AcceleratedPV on supported shapes; an image that works on another Flex family is not sufficient compatibility evidence. Keep CPU architecture, image generation, guest drivers and the supported resize/migration path together.
+
+Distinguish network-attached Block Volume from local NVMe devices and inspect the selected shape's storage contract. A performance comparison from another shape or vendor benchmark does not establish this workload's throughput. Resolve current regional shape visibility and actual capacity before recommending a launch.
 
 ## Sources
 

@@ -1,6 +1,6 @@
-# Autonomous Database operations and access
+# Autonomous AI Database operations and access
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Select the right deployment
 
@@ -36,9 +36,19 @@ For engine/deployment alternatives, use [Base Database](service-base-database.md
 
 Give the application owner the selected connection service, private hostname, port, TLS mode and schema identity through the appropriate configuration flow. Keep passwords and wallets separate. Estimate compute, storage and retained protection independently; record which connection pools and scheduled jobs must be changed during an endpoint or credential update.
 
+## Built-in agent tools and lakehouse access
+
+Autonomous AI Database Serverless exposes A2A Server and MCP Server controls in its Tool configuration page, including enable/disable actions and the access URL. Use that supported configuration path and verify the client's authentication and database privileges. Enabling a protocol endpoint does not grant access to every schema or make generated SQL read-only. This differs from the separately provisioned [Database Tools MCP Server](service-database-tools.md).
+
+For Iceberg external tables, partition pruning can reduce files read using Iceberg metadata. Inspect table metadata, storage credentials and an actual query plan; do not infer a performance improvement from the table format alone. AIDP-managed Iceberg tables and Autonomous external tables have different ownership and configuration.
+
+Use [Database Management](service-database-management.md) for operational diagnostics and [Ops Insights](service-ops-insights.md) for historical capacity/SQL analysis, with the feature matrix for the selected Autonomous deployment.
+
 ## Sources
 
 - [Private endpoints and network configuration](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/private-endpoints-autonomous.html)
 - [Python mTLS connection](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/connecting-python-mtls.html)
 - [JDBC TLS/mTLS distinctions](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/connect-jdbc-thin-wallet.html)
 - [Autonomous Database CLI discovery](https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/db/autonomous-database/list.html)
+- [Autonomous built-in A2A and MCP tools](https://docs.oracle.com/en-us/iaas/releasenotes/autonomous-database-serverless/2026-11-support-mcp-server.htm)
+- [Iceberg external-table partition pruning](https://docs.oracle.com/en-us/iaas/releasenotes/autonomous-database-serverless/2026-10-partition-pruning.htm)

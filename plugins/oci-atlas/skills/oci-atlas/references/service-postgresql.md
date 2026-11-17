@@ -1,6 +1,6 @@
 # OCI Database with PostgreSQL systems and private access
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Establish managed-service compatibility
 
@@ -37,9 +37,17 @@ Before cleanup, identify schemas, applications, integrations, backups and manage
 
 Record exact engine version, required extensions, application roles, endpoint, maintenance and backup settings. Assess source schema compatibility before loading data. Include system capacity, storage and retained recovery points in planning; preserve a schema-level rollback strategy separately from service-level recovery.
 
+## Major upgrades and regional recovery
+
+The managed service supports in-place major-version upgrades. Check the supported source/target pair, extensions, prechecks, maintenance impact and recovery procedure before starting; use the service workflow rather than assuming direct shell access to run pg_upgrade on a managed host. Validate application queries after the upgrade.
+
+[Full Stack DR](service-full-stack-dr.md) supports orchestration between eligible primary and warm standby PostgreSQL DB systems across regions. Establish that standby and its dependencies first; adding a member to a protection group is not proof of a current recovery point.
+
 ## Sources
 
 - [Managed PostgreSQL concepts](https://docs.oracle.com/en-us/iaas/Content/postgresql/overview.htm)
 - [Private endpoints, TLS, and Bastion client access](https://docs.oracle.com/en-us/iaas/Content/postgresql/connect-to-db.htm)
 - [Supported extension enablement](https://docs.oracle.com/en-us/iaas/Content/postgresql/config-list-enable-extension.htm)
 - [Backup, configuration, and node lifecycle entry points](https://docs.oracle.com/en-us/iaas/Content/postgresql/home.htm)
+- [PostgreSQL in-place major upgrades](https://docs.oracle.com/en-us/iaas/releasenotes/postgresql/inplace-upgrade.htm)
+- [PostgreSQL recovery and moving-instance enhancements](https://docs.oracle.com/en-us/iaas/releasenotes/disaster-recovery/oct-2026.htm)

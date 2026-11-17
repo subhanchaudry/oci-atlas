@@ -1,6 +1,6 @@
 # Monitoring queries, alarms, and notification delivery
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Model the entire delivery chain
 
@@ -35,8 +35,13 @@ For updates, preserve useful dimensions and avoid merging unrelated resource str
 
 Record query, dimensions, evaluation window, missing-data behavior, recipient and escalation owner. Price custom metric ingestion, notification traffic and retention where applicable. Acknowledge and suppress alerts through the established incident process; deleting an alarm to quiet a noisy signal removes ongoing coverage.
 
+## Dual-stack API access
+
+Monitoring supports dual-stack API endpoints while retaining existing IPv4 endpoints. Use the documented endpoint and verify DNS, client address-family support, routing and security from the actual collector. An IPv6 API connection does not mean every monitored resource or notification subscriber uses IPv6. Recheck metric ingestion/query and notification delivery separately after changing endpoint configuration.
+
 ## Sources
 
 - [Metric streams, queries, and alarms](https://docs.oracle.com/en-us/iaas/Content/Monitoring/Concepts/monitoringoverview.htm)
 - [Topics, subscriptions, and delivery](https://docs.oracle.com/en-us/iaas/Content/Notification/Concepts/notificationoverview.htm)
 - [Notifications confirmation and troubleshooting](https://docs.oracle.com/en-us/iaas/Content/Notification/home.htm)
+- [Monitoring IPv6 endpoint support](https://docs.oracle.com/en-us/iaas/releasenotes/monitoring/monitoring-ipv6.htm)

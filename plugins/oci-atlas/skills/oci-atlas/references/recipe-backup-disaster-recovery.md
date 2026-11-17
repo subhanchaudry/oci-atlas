@@ -1,6 +1,6 @@
 # Recipe: application backup, restore, and disaster recovery
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Workload contract
 
@@ -44,9 +44,14 @@ Use service-specific guidance for [Block Volume](service-block-volume.md), [File
 
 Identify exercise-only resources and the retained recovery material before removing anything. Keep shared networking, authoritative data and required keys available. Deleting a failed plan execution is different from removing launched capacity, restored disks or replicated data. Report what remains billable and which recovery dependencies still need an owner.
 
+## Account for supported new members
+
+For a PostgreSQL workload, evaluate the supported [Full Stack DR primary/warm-standby path](service-full-stack-dr.md). Verify protection, region pair, policies and generated prechecks before plan execution. For moving Compute instances, record standby addressing and drill VNIC mappings. A successful isolated drill does not establish that production DNS/client switching was tested.
+
 ## Sources
 
 - [Recovery objectives and DR resource terminology](https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/disaster-recovery-terminology.html)
 - [Application dependency ordering](https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/dependency-mapping.html)
 - [Volume groups and recovery consistency](https://docs.oracle.com/en-us/iaas/Content/Block/Concepts/volumegroups.htm)
 - [File Storage replication boundaries](https://docs.oracle.com/en-us/iaas/Content/File/Tasks/FSreplication.htm)
+- [PostgreSQL recovery and moving-instance enhancements](https://docs.oracle.com/en-us/iaas/releasenotes/disaster-recovery/oct-2026.htm)

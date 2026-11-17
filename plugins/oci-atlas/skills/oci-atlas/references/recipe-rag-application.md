@@ -1,6 +1,6 @@
 # Recipe: retrieval over governed enterprise data
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Workload contract
 
@@ -10,7 +10,7 @@ Reviewed: 2026-11-03
 
 **Flow:** Documents → parse/chunk/embed → vector store; question → compatible embedding → permitted retrieval → model → source-referenced answer.
 
-**Starting configuration:** The [RAG example](https://github.com/subhanchaudry/oci-atlas/tree/v1.1.0/examples/rag) uses an existing bucket, Autonomous Database and model endpoints. It has one application data boundary; multi-user deployment requires authorization before retrieval. Re-embed into a distinct collection when changing embedding configuration.
+**Starting configuration:** The [RAG example](https://github.com/subhanchaudry/oci-atlas/tree/v1.2.0/examples/rag) uses an existing bucket, Autonomous Database and model endpoints. It has one application data boundary; multi-user deployment requires authorization before retrieval. Re-embed into a distinct collection when changing embedding configuration.
 
 ## Completion and handoff
 
@@ -42,9 +42,22 @@ When cleaning up, distinguish generated index artifacts from authoritative sourc
 
 [Oracle AI Vector Search](service-ai-vector-search.md) can keep retrieval near existing relational data and SQL governance. [Search with OpenSearch](service-opensearch.md) supplies a search/index platform with its own data roles, ingestion, and index lifecycle. Compare both against the existing platform or managed agent knowledge source before adding another store. Verify supported versions/integrations, embedding compatibility, tenant filters, deletion propagation, and source authorization at retrieval time. A current index or HTTP 200 response does not establish relevant, permitted evidence.
 
+## Select the database access boundary
+
+If retrieval or SQL tools use [Database Tools MCP](service-database-tools.md), verify the client, server connection and database grants independently. Autonomous built-in tools use their own configuration path. Compaction or agent memory must not replace source-level authorization, deletion propagation or retrieval freshness checks.
+
 ## Sources
 
 - [OCI enterprise GenAI architecture](https://docs.oracle.com/en/solutions/oci-genai-enterprise/index.html)
 - [Generative AI Agents retrieval and tools](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm)
 - [Data Platform permissions](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/permissions-model.html)
 - [Current Generative AI interfaces](https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm)
+- [Database Tools overview](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview.html)
+- [Database Tools MCP server support and authentication](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview-mcp-server.html)
+- [CIMD client access](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/cimd.htm)
+- [MCP service logs](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/logging.htm)
+- [Agent Sandbox lifecycle](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/sandboxes.htm)
+- [Hosted browser-session authentication](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/hosted-deployments-oauth.htm)
+- [Hosted persistent file storage](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/hosted-applications-persistent-file-storage.htm)
+- [OCI Responses API compaction](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/responses-api-compaction.htm)
+- [Current model, hosting and routing releases](https://docs.oracle.com/en-us/iaas/releasenotes/services/generative-ai/)

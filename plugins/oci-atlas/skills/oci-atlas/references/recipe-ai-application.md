@@ -1,6 +1,6 @@
 # Recipe: choose and deploy an AI application
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Workload contract
 
@@ -42,9 +42,22 @@ Before cleanup, identify application, endpoint, dedicated capacity, data-source 
 
 For custom accelerated infrastructure, load [GPU/HPC](service-gpu-hpc.md) and [Lustre](service-lustre.md) only when the runtime and I/O requirements justify them. For retrieval, compare [database-native AI Vector Search](service-ai-vector-search.md), [OpenSearch](service-opensearch.md), and existing managed knowledge sources through the [RAG recipe](recipe-rag-application.md). For a container backend that does not need Kubernetes, inspect [Container Instances](service-container-instances.md).
 
+## Choose execution and state deliberately
+
+Use [Agent Sandbox](service-generative-ai.md) when bounded managed code execution fits; define timeouts, network access and exported results. Hosted application persistence has a documented single-replica constraint. For an [AIDP agent](service-ai-data-platform.md), distinguish the deployed revision, caller authorization, runtime identity and downstream credentials. Keep preview-dependent credential setup outside a GA-only architecture.
+
 ## Sources
 
 - [OCI enterprise GenAI architecture: layers and design considerations](https://docs.oracle.com/en/solutions/oci-genai-enterprise/index.html)
 - [Current Generative AI capabilities and API entry points](https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm)
 - [Generative AI Agents tools and retrieval](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm)
 - [Data Science managed ML resources](https://docs.oracle.com/en-us/iaas/Content/data-science/using/overview.htm)
+- [Agent Sandbox lifecycle](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/sandboxes.htm)
+- [Hosted browser-session authentication](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/hosted-deployments-oauth.htm)
+- [Hosted persistent file storage](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/hosted-applications-persistent-file-storage.htm)
+- [OCI Responses API compaction](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/responses-api-compaction.htm)
+- [Current model, hosting and routing releases](https://docs.oracle.com/en-us/iaas/releasenotes/services/generative-ai/)
+- [AIDP dated feature history and preview labels](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidwn/index.html)
+- [AIDP deployed agents and runtime identity](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/agent-flow-deployment.html)
+- [AI compute autoscaling](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/ai-compute.html)
+- [Agent memory and retention](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/agent-memory.html)

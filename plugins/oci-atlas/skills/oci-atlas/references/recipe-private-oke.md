@@ -1,6 +1,6 @@
 # Recipe: private OKE application with workload access
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Workload contract
 
@@ -44,8 +44,16 @@ Identify workload-owned Services, load balancers, PVCs/volumes and image referen
 
 Use [Load Balancer/NLB](service-load-balancing.md) for supported service exposure and health, [Certificates](service-certificates.md) for the chosen TLS boundary, and [hybrid networking](service-hybrid-connectivity.md) for on-premises operators/callers. For persistent data, follow the actual [Block Volume](service-block-volume.md) or [File Storage](service-file-storage.md) lifecycle. Coordinate application recovery with the [backup/DR recipe](recipe-backup-disaster-recovery.md); restoring a Kubernetes manifest does not restore its data.
 
+## Check node and delivery compatibility
+
+Before rollout, check the [OKE version and add-on lifecycle](service-oke.md). Select persistent storage for the actual node type. If using a [regional registry cache](service-container-registry.md), push to the standard source repository and test the destination digest pull. For eligible GPU repair, preserve checkpoints and inspect node/maintenance-event outcomes separately from application recovery.
+
 ## Sources
 
 - [OKE cluster/data-plane choices](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengclustersnodes.htm)
 - [Workload identity setup](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contenggrantingworkloadaccesstoresources.htm)
 - [Registry access model](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryoverview.htm)
+- [OKE Kubernetes 1.37.1 support and retirement notice](https://docs.oracle.com/en-us/iaas/releasenotes/conteng/conteng-K8s-1-37-1-support.htm)
+- [OKE GPU maintenance event repair](https://docs.oracle.com/en-us/iaas/releasenotes/conteng/conteng_node-maintenance-event-repair.htm)
+- [OKE File Storage support for virtual nodes](https://docs.oracle.com/en-us/iaas/releasenotes/conteng/conteng_virtual-nodes-persistent-storage-support.htm)
+- [Pull-through cache and top-level repositories](https://docs.oracle.com/en-us/iaas/releasenotes/registry/OCIR-Top-Level-and-Pull-Through-Repositories.htm)

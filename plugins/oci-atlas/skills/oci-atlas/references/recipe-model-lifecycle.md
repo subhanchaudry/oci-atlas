@@ -1,6 +1,6 @@
 # Recipe: train, register, and serve a predictive model
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Workload contract
 
@@ -45,9 +45,15 @@ Enumerate notebooks, jobs/runs, artifacts, endpoints, storage and schedules. Dea
 
 When managed training/serving cannot meet the stated requirement, use [GPU/HPC](service-gpu-hpc.md) to plan capacity, runtime drivers, fabric, and checkpoints; compare [Lustre](service-lustre.md) with [NFS](service-file-storage.md) and [attached disks](service-block-volume.md) by actual I/O needs. Keep [notification delivery](recipe-observability-delivery.md) and [artifact/data recovery](recipe-backup-disaster-recovery.md) explicit. An available GPU or copied model artifact does not establish a reproducible serving endpoint.
 
+## Verify the deployed artifact
+
+For supported Data Science deployments, select and verify the [artifact signature](service-data-science.md) as part of the release record. Keep that integrity result separate from model evaluation. For service-managed OKE compute targets, inspect job egress, object mounts and run-retention settings using the same runtime that will execute production work.
+
 ## Sources
 
 - [Data Science assets and serving](https://docs.oracle.com/en-us/iaas/Content/data-science/using/overview.htm)
 - [Repeatable job execution](https://docs.oracle.com/en-us/iaas/Content/data-science/using/jobs-about.htm)
 - [ML lifecycle and model artifacts](https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/getting-started-as-data-scientist.htm)
 - [Data Platform and Data Science integration architecture](https://docs.oracle.com/en/solutions/ai-data-platform-data-science-workloads/)
+- [Artifact signature verification](https://docs.oracle.com/en-us/iaas/releasenotes/data-science/artifact-signature.htm)
+- [Compute-target egress, mounts and run retention](https://docs.oracle.com/en-us/iaas/releasenotes/data-science/egress-mounts-jobs-compute-targets.htm)

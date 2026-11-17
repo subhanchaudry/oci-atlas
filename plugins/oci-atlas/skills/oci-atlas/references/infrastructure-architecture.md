@@ -1,6 +1,6 @@
 # Infrastructure as code and architecture
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose the management path
 
@@ -60,6 +60,10 @@ For recovery decisions, use the [backup and disaster recovery recipe](recipe-bac
 
 Use [landing zones](service-landing-zones.md) for tenancy foundation adoption and [Resource Manager](service-resource-manager.md) for stack ownership, plan/apply and drift decisions. Reuse the existing network and database when they fit. Pin workload artifacts and keep resource outputs distinct from application endpoints and credentials.
 
+## Migration and recovery ownership
+
+Use [Cloud Migrations](service-cloud-migrations.md) to plan VM relocation, [Database Migration](service-database-migration.md) for engine/service moves, and [Full Stack DR](service-full-stack-dr.md) for application recovery. Record which workflow owns the target configuration and state before applying a generated plan. Reconcile target resources with the intended long-term Terraform/Resource Manager owner rather than introducing a second writer.
+
 ## Sources
 
 - [Resource Manager configuration, stacks, jobs and drift](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm)
@@ -72,3 +76,6 @@ Use [landing zones](service-landing-zones.md) for tenancy foundation adoption an
 - [OCI Well-Architected Framework](https://docs.oracle.com/en/solutions/oci-best-practices/)
 - [OCI Cloud Adoption Framework](https://docs.oracle.com/en-us/iaas/Content/cloud-adoption-framework/)
 - [Current landing-zone implementations](https://docs.oracle.com/en-us/iaas/Content/cloud-adoption-framework/technology-implementation.htm)
+- [Cloud Migrations resource model and workflow](https://docs.oracle.com/en-us/iaas/Content/cloud-migration/cloud-migration-overview.htm)
+- [Supported AWS Arm migrations](https://docs.oracle.com/en-us/iaas/releasenotes/cloud-migration/ocm_aws_arm_migration.htm)
+- [PostgreSQL recovery and moving-instance enhancements](https://docs.oracle.com/en-us/iaas/releasenotes/disaster-recovery/oct-2026.htm)

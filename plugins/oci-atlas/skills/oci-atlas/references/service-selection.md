@@ -1,6 +1,6 @@
 # OCI service-selection decisions
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Use the workload's constraint
 
@@ -75,6 +75,19 @@ For example: “Start with Container Instances for a conventional API container 
 
 For requests spanning services, use [workload selection](workload-selection.md) to identify the smallest complete workflow. Compare reuse of an existing service with a new managed service using application compatibility, operating ownership, recovery and total retained cost. Return a recommendation and the requirements that could change it, not an unranked service list.
 
+## Additional service boundaries
+
+| Need | Start with | Distinction |
+| --- | --- | --- |
+| Relocate supported VMware/AWS VMs | [Cloud Migrations](service-cloud-migrations.md) | Preserve guest architecture; database-service migration is separate |
+| Expose selected database operations to a client | [Database Tools](service-database-tools.md) | Client OAuth, SQL privileges and private access are separate |
+| Diagnose and manage database operations | [Database Management](service-database-management.md) | Match target type and management option |
+| Explain historical capacity/SQL trends | [Ops Insights](service-ops-insights.md) | Collection coverage and warehouse ownership matter |
+| Model devices and normalize telemetry | [IoT](service-internet-of-things.md) | Digital twins and domains differ from a message queue |
+| Turn audio into text or text into voice | [Speech](service-speech.md) | Choose batch/streaming and feature-specific region |
+
+Recommend generally available features with documented prerequisites. An announcement, preview or catalog listing alone does not establish a deployable configuration in the customer's region.
+
 ## Sources
 
 - [OCI Well-Architected Framework](https://docs.oracle.com/en/solutions/oci-best-practices/)
@@ -86,3 +99,21 @@ For requests spanning services, use [workload selection](workload-selection.md) 
 - [Container Instances](https://docs.oracle.com/en-us/iaas/Content/container-instances/overview-of-container-instances.htm)
 - [Streaming with Apache Kafka](https://docs.oracle.com/en-us/iaas/Content/kafka/concepts.htm)
 - [Queue](https://docs.oracle.com/en-us/iaas/Content/queue/overview.htm)
+- [Cloud Migrations resource model and workflow](https://docs.oracle.com/en-us/iaas/Content/cloud-migration/cloud-migration-overview.htm)
+- [Supported AWS Arm migrations](https://docs.oracle.com/en-us/iaas/releasenotes/cloud-migration/ocm_aws_arm_migration.htm)
+- [Database Tools overview](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview.html)
+- [Database Tools MCP server support and authentication](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview-mcp-server.html)
+- [CIMD client access](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/cimd.htm)
+- [MCP service logs](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/logging.htm)
+- [Diagnostics and Management target support](https://docs.oracle.com/en-us/iaas/database-management/doc/database-management-oracle-databases.html)
+- [Unified onboarding](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/unified-onboarding-dbm-opsi.htm)
+- [Privilege analysis](https://docs.oracle.com/en-us/iaas/releasenotes/database-management/privilege-analysis.htm)
+- [Database Management releases](https://docs.oracle.com/en-us/iaas/releasenotes/services/database-management/)
+- [Ops Insights scope, retention and service-change notice](https://docs.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html)
+- [AWR collection and customer-owned warehouse](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/awr-snapshot-collection-bring-your-own-warehouse.htm)
+- [SQL Monitoring reports](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/sql-monitoring-reports.htm)
+- [IoT resources, endpoints and limits](https://docs.oracle.com/en-us/iaas/Content/internet-of-things/overview.htm)
+- [Flow Runtime integrations and privilege delegation](https://docs.oracle.com/en-us/iaas/releasenotes/internet-of-things/update-11102026.htm)
+- [Development and Production domain groups](https://docs.oracle.com/en-us/iaas/releasenotes/internet-of-things/update-04142026.htm)
+- [Speech capabilities, regional restrictions and jobs](https://docs.oracle.com/en-us/iaas/Content/speech/using/speech.htm)
+- [Realtime TTS API availability](https://docs.oracle.com/en-us/iaas/releasenotes/speech/realtime-tts.htm)

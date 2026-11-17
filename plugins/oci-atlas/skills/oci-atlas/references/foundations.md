@@ -1,6 +1,6 @@
 # Tenancy foundations and IAM
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Mental model
 
@@ -58,6 +58,10 @@ For a denied operation, inspect [Security Zone constraints](service-cloud-guard-
 
 Record the intended home/workload regions, compartment hierarchy, policy attachment owners, tag defaults, quotas and existing landing zone. A compartment is an authorization/organization boundary, not a network. Use [landing-zone adoption](service-landing-zones.md) before inventing a new hierarchy, and [cost management](service-cost-management.md) for ownership and allocation.
 
+## Choose the identity boundary
+
+Use [IAM policies and workload identities](service-iam-policies.md) to separate identity-domain sign-in, OAuth delegation and OCI resource grants. Identity Assurance has its own domain/provider prerequisites. For an application that uses SQL or MCP tools, also identify the database principal; a valid token does not confer table access. [Database Tools](service-database-tools.md) describes that additional boundary.
+
 ## Sources
 
 - [IAM overview](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/overview.htm)
@@ -67,3 +71,10 @@ Record the intended home/workload regions, compartment hierarchy, policy attachm
 - [Search coverage and visibility](https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/queryoverview.htm)
 - [Search consistency and missing results](https://docs.oracle.com/en-us/iaas/Content/Search/Troubleshooting/noresults.htm)
 - [Compartment quotas](https://docs.oracle.com/en-us/iaas/Content/Quotas/Concepts/resourcequotas.htm)
+- [ID-JAG token exchange](https://docs.oracle.com/en-us/iaas/releasenotes/identity/id-jag-token-exchange-across-trust-domains.htm)
+- [Identity Assurance requirements](https://docs.oracle.com/en-us/iaas/Content/Identity/securing/gs.htm)
+- [Identity service updates](https://docs.oracle.com/en-us/iaas/releasenotes/services/identity/)
+- [Database Tools overview](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview.html)
+- [Database Tools MCP server support and authentication](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview-mcp-server.html)
+- [CIMD client access](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/cimd.htm)
+- [MCP service logs](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/logging.htm)

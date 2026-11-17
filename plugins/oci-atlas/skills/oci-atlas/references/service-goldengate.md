@@ -1,6 +1,6 @@
 # GoldenGate deployments, connections, and change replication
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Define the replication contract
 
@@ -35,9 +35,14 @@ Coordinate DDL/schema changes and maintenance using the supported connector beha
 
 Record capture, trail/distribution, apply, source log retention, checkpoint and schema-change ownership. Monitor lag at each boundary rather than only deployment health. Size deployment and retained trails for the change rate and interruption window; replay needs an explicit duplicate/conflict policy at the target.
 
+## AI and processing-engine connections
+
+GoldenGate now lists connections for OCI Generative AI, OpenAI, Google Gemini, Voyage AI, Apache Spark, Databricks Engine and Oracle AI Data Platform Engine. A connection type identifies an integration option; it is not proof of bidirectional replication or permission to send every source column to that service. Check deployment/version support, source/target direction, credential handling, data classification and replay effects before adding a connection to a pipeline. Model inference and engine processing can introduce costs beyond replication.
+
 ## Sources
 
 - [OCI GoldenGate deployment scope](https://docs.oracle.com/en/cloud/paas/goldengate-service/ocigg/about-oracle-cloud-infrastructure-goldengate.html)
 - [Source and target support matrix](https://docs.oracle.com/en/cloud/paas/goldengate-service/ocigg/whats-supported.html)
 - [Connection, deployment, and replication task entry points](https://docs.oracle.com/en/cloud/paas/goldengate-service/index.html)
 - [End-to-end Oracle database replication workflow](https://docs.oracle.com/en/cloud/paas/goldengate-service/ocigg/quickstarts/replicate-data-between-cloud-databases-in-the-same-region.html)
+- [GoldenGate AI and engine connections](https://docs.oracle.com/en-us/iaas/releasenotes/goldengate/r12connections.htm)

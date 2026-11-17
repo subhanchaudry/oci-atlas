@@ -1,6 +1,6 @@
 # VCN routing, network controls, and DNS
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Describe one flow
 
@@ -35,9 +35,16 @@ For a change, capture the previous intended configuration, modify the smallest r
 
 Record a flow as source CIDR or NSG, destination hostname/address, protocol, port, next hop and return route. Keep the previous route/rule set for rollback. Use [private DNS](service-dns.md) for resolver ownership and [connectivity diagnosis](troubleshoot-connectivity.md) for Network Path Analyzer; a modeled path does not replace an application request.
 
+## Overlapping IPv4 networks
+
+DRG attachments support policies for 1:1 IPv4 source NAT, destination NAT, or both. Use this documented option when overlapping networks cannot be renumbered; ordinary peering alone does not resolve an overlap. It differs from the NAT gateway used for outbound internet access.
+
+Record original and translated prefixes, the attachment/policy boundary, routes in both directions, and addresses visible to security rules and applications. Align DNS answers with the addresses clients can reach. Test one intended flow and its return path before broadening translation. Preserve the previous route and NAT policy together for rollback.
+
 ## Sources
 
 - [Networking components](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 - [DRG attachments and route tables](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm)
 - [Security rules](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securityrules.htm)
 - [DNS overview](https://docs.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm)
+- [IPv4 NAT on DRG attachments](https://docs.oracle.com/en-us/iaas/releasenotes/network/nat-drg.htm)

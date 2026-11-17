@@ -1,6 +1,6 @@
 # OCI Cache clusters, users, and application behavior
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Establish the engine and data contract
 
@@ -35,7 +35,12 @@ Plan resizing/maintenance around supported availability and client reconnect beh
 
 Define TTL, eviction, maximum tolerable stale data and cache-miss fallback for each key class. Sessions or coordination keys need an explicit failure policy. Estimate cluster capacity and replicas from working-set size; verify application reconnect behavior during maintenance instead of assuming the cache is a durable source of truth.
 
+## IPv6 client and management paths
+
+OCI Cache supports dual-stack API and cluster endpoints with the documented OC1 scope. Existing IPv4 endpoints continue to work. Cluster IPv6 requires a new cluster in an IPv6-capable VCN/subnet; existing clusters are not upgraded in place. Resolve AAAA records, client support and security/routing before moving consumers. A new cluster needs an application cache-warming and cutover plan, not an assumption that old cache contents transferred.
+
 ## Sources
 
 - [OCI Cache engine and cluster overview](https://docs.oracle.com/en-us/iaas/Content/ocicache/home.htm)
 - [Cache users and access control](https://docs.oracle.com/en-us/iaas/Content/ocicache/cache-users.htm)
+- [OCI Cache dual-stack endpoints](https://docs.oracle.com/en-us/iaas/releasenotes/oci-cache/sep2026-ipv6-support.htm)

@@ -1,6 +1,6 @@
 # Data Science notebooks, jobs, and model serving
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose the execution object
 
@@ -37,8 +37,16 @@ For changes, preserve application contracts and record the artifact/environment 
 
 Record the environment, code revision, input snapshot, job arguments, artifact location and serving schema as one model release. Track notebook sessions, job compute, model deployments, storage and logs separately; an idle notebook and an active serving endpoint have different lifecycles. Keep dataset access and model-promotion ownership explicit.
 
+## Artifact verification and compute-target jobs
+
+Data Science can sign a model artifact with an OCI Vault key and verify the selected signature during model-deployment creation. Record the artifact/signature/key association and required key permissions. Verification establishes artifact integrity, not model quality, safe behavior or approval for production use.
+
+Jobs on service-managed OKE compute targets support custom egress and Object Storage mounts. Verify access from that job runtime; do not transfer networking assumptions from a notebook or another target. Job-run and pipeline-run retention can be configured from 1 to 90 days, with 90 days as the documented default and per-run overrides. Align diagnostic retention with audit needs and retained artifacts; a run-record policy is not an object-deletion policy.
+
 ## Sources
 
 - [Data Science resource and operating model](https://docs.oracle.com/en-us/iaas/Content/data-science/using/overview.htm)
 - [Jobs and job-run use cases](https://docs.oracle.com/en-us/iaas/Content/data-science/using/jobs-about.htm)
 - [Data Scientist's guide to OCI](https://docs.oracle.com/en-us/iaas/Content/GSG/Reference/getting-started-as-data-scientist.htm)
+- [Artifact signature verification](https://docs.oracle.com/en-us/iaas/releasenotes/data-science/artifact-signature.htm)
+- [Compute-target egress, mounts and run retention](https://docs.oracle.com/en-us/iaas/releasenotes/data-science/egress-mounts-jobs-compute-targets.htm)

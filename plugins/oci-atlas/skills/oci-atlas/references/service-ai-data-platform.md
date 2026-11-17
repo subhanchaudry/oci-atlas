@@ -1,6 +1,6 @@
-# AI Data Platform workspaces and catalogs
+# AI Data Platform catalogs, agents, and compute
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Understand the boundaries
 
@@ -32,6 +32,20 @@ Do not transplant Data Integration “publish task to application” semantics i
 
 Use the [private-source recipe](recipe-aidp-private-source.md) for external catalog discovery from workspace compute. Record source credentials by secure reference, source-visible schemas, catalog permissions, runtime and output owner. Include scheduled compute, retained storage and source-system load in planning; a catalog registration does not by itself copy the source data.
 
+## Agents, workflows, and AI compute
+
+AIDP agents and knowledge bases are separate from [Generative AI Agents](service-generative-ai-agents.md). A deployment is a snapshot; editing the agent does not update the serving deployment until redeployment. Record the deployed revision and compute, then test invocation and downstream tools separately. A workflow Agent Task sends a prompt to an already deployed agent; it does not deploy that agent.
+
+AI compute autoscaling uses configured replica bounds, request/CPU thresholds and cooldown. Set limits from workload demand and cost assumptions. Agent memory and session retention require explicit ownership: distinguish per-user long-term memory from conversation history, inspect database consumption, and plan deletion of retained data.
+
+Run As describes the deployed agent's platform identity; caller authorization and downstream tool credentials remain separate. The deployment documentation links service-account credentials to Credential Store (Preview). This GA-only collection does not prescribe that preview credential setup or treat the Run As release note as proof that its entire dependency path is GA.
+
+## External data and feature status
+
+Snowflake is a supported external-catalog source. This means connecting to an existing Snowflake environment; it does not establish native Snowflake-on-OCI provisioning. AIDP also supports Iceberg tables, whose write/ownership model must be distinguished from querying an external catalog.
+
+Use feature-specific status. Git integration, bundles/CI-CD, lineage, Credential Store and ML experiments/models have preview labels in the reviewed documentation; omit those preview workflows from GA recommendations. Newly announced ontologies and semantic reasoning are not substitutes for documented catalog, knowledge-base and agent operations.
+
 ## Sources
 
 - [AI Data Platform entry point](https://docs.oracle.com/en/cloud/paas/ai-data-platform/)
@@ -39,3 +53,7 @@ Use the [private-source recipe](recipe-aidp-private-source.md) for external cata
 - [Permissions model](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/permissions-model.html)
 - [External catalogs and source credentials](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/external-catalogs.html)
 - [AI Data Platform control-plane CLI](https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/ai-data-platform/ai-data-platform/create.html)
+- [AIDP dated feature history and preview labels](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidwn/index.html)
+- [AIDP deployed agents and runtime identity](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/agent-flow-deployment.html)
+- [AI compute autoscaling](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/ai-compute.html)
+- [Agent memory and retention](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/agent-memory.html)

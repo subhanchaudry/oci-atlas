@@ -1,6 +1,6 @@
 # Networking and private access
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose a path, not just a subnet
 
@@ -54,6 +54,10 @@ Use the [VCN routing guide](service-vcn-routing.md) for foundational paths and [
 
 For an application design, show client ingress, runtime-to-data access, administration, DNS and required egress separately. Use [private DNS](service-dns.md) and the [hybrid recipe](recipe-hybrid-private-access.md) for cross-network resolution; use [multicloud access](recipe-multicloud-application.md) when another cloud owns the application runtime.
 
+## Address overlap and maintenance
+
+Use [DRG NAT](service-vcn-routing.md) when a supported IPv4 translation design is needed for overlapping networks. Include translated addresses in DNS, routing and security analysis. Use [FastConnect maintenance controls](service-hybrid-connectivity.md) only after confirming an alternate application path; [firewall packet capture](service-network-firewall.md) supplies evidence without changing the flow's authorization.
+
 ## Sources
 
 - [Networking components and gateway semantics](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
@@ -62,3 +66,6 @@ For an application design, show client ingress, runtime-to-data access, administ
 - [DNS overview](https://docs.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm)
 - [Load Balancer overview](https://docs.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm)
 - [VCN create command](https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/network/vcn/create.html)
+- [IPv4 NAT on DRG attachments](https://docs.oracle.com/en-us/iaas/releasenotes/network/nat-drg.htm)
+- [FastConnect maintenance controls](https://docs.oracle.com/en-us/iaas/releasenotes/network/fast-connect-enhancements.htm)
+- [Network Firewall VTAP source](https://docs.oracle.com/en-us/iaas/releasenotes/network-firewall/network-firewall-as-vtap-source.htm)

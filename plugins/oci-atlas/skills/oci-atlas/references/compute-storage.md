@@ -1,6 +1,6 @@
 # Compute and storage
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Select the resource
 
@@ -54,6 +54,10 @@ Storage replication and backups have different failure coverage. Use the [backup
 
 Classify application binaries, authoritative records, shared files, scratch space and checkpoints before selecting storage. Document what survives a runtime replacement. Use [HPC workloads](recipe-hpc-workload.md) for parallel I/O and [cost planning](service-cost-management.md) to account for retained volumes, replicas and backups after compute stops.
 
+## Select compatible infrastructure
+
+[Compute](service-compute.md) covers documented Ax shapes and image/networking compatibility. [GPU/HPC](service-gpu-hpc.md) adds cluster health diagnostics before scaling jobs. For relocating existing VMware or AWS assets, begin with [Cloud Migrations](service-cloud-migrations.md), preserving architecture, data and cutover ownership. Exact shape availability and usable capacity remain environment-specific.
+
 ## Sources
 
 - [Instance operations](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/instances.htm)
@@ -63,3 +67,6 @@ Classify application binaries, authoritative records, shared files, scratch spac
 - [Object Storage resource model](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/objectstorageoverview.htm)
 - [File Storage overview](https://docs.oracle.com/en-us/iaas/Content/File/Concepts/filestorageoverview.htm)
 - [Bucket create command](https://docs.oracle.com/en-us/iaas/tools/oci-cli/latest/oci_cli_docs/cmdref/os/bucket/create.html)
+- [GPU Cluster Health Checks](https://docs.oracle.com/en-us/iaas/releasenotes/compute/cluster-health-checks.htm)
+- [Cloud Migrations resource model and workflow](https://docs.oracle.com/en-us/iaas/Content/cloud-migration/cloud-migration-overview.htm)
+- [Supported AWS Arm migrations](https://docs.oracle.com/en-us/iaas/releasenotes/cloud-migration/ocm_aws_arm_migration.htm)

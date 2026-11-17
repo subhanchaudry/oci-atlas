@@ -1,6 +1,6 @@
 # Recipe: Run an HPC or GPU job with recoverable data
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Outcome and inputs
 
@@ -40,8 +40,13 @@ Record job IDs, environment, inputs and checkpoints. Resume only from an applica
 
 Use [cost management](service-cost-management.md) to record runtime, retained storage, traffic and shared-service costs. Use [workload selection](workload-selection.md) for alternatives and [support handoff](troubleshoot-support-handoff.md) for unresolved service boundaries.
 
+## Validate health before job admission
+
+Use [Cluster Health Checks](service-gpu-hpc.md) to separate passive node signals from active GPU/interconnect tests. Run active diagnostics in an appropriate job window and preserve checkpoints before repair. Record the tested nodes and workload conditions; diagnostic success alone does not validate training quality or sustained scaling.
+
 ## Sources
 
 - [HPC reference architecture](https://docs.oracle.com/en/solutions/deploy-hpc-on-oci/)
 - [GPU cluster architecture](https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/index.html)
 - [Compute shapes](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm)
+- [GPU Cluster Health Checks](https://docs.oracle.com/en-us/iaas/releasenotes/compute/cluster-health-checks.htm)

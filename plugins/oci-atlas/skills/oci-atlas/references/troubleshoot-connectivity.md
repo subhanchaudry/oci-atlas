@@ -1,6 +1,6 @@
 # Diagnose private and application connectivity
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Define the failing flow
 
@@ -50,6 +50,10 @@ For other failure types, use [access diagnosis](troubleshoot-access.md) or [work
 
 For supported OCI endpoints, Network Path Analyzer can model the configured route and security path without sending application traffic. Choose source, destination, protocol and port matching the failing flow; inspect the first blocked or unsupported segment. It does not establish DNS, guest firewall, listener, TLS or SQL behavior. Confirm those from the actual runtime and use [private DNS](service-dns.md) for resolver forwarding. See the [Network Path Analyzer guide](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/path_analyzer.htm).
 
+## Inspect translated and dual-stack addresses
+
+For overlapping networks, record the original and translated addresses at each [DRG NAT](service-vcn-routing.md) boundary. For dual-stack endpoints, inspect both A and AAAA answers and the address family selected by the real client. An IPv4 probe does not validate an IPv6 path. Compare firewall captures with the expected encrypted traffic rather than assuming capture decrypts it.
+
 ## Sources
 
 - [OCI network components](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
@@ -58,3 +62,6 @@ For supported OCI endpoints, Network Path Analyzer can model the configured rout
 - [Autonomous Database private endpoint diagnosis](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/private-endpoints-autonomous.html)
 - [Data Platform workspace private-network context](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/workspaces.html)
 - [Network Path Analyzer](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/path_analyzer.htm)
+- [IPv4 NAT on DRG attachments](https://docs.oracle.com/en-us/iaas/releasenotes/network/nat-drg.htm)
+- [Network Firewall VTAP source](https://docs.oracle.com/en-us/iaas/releasenotes/network-firewall/network-firewall-as-vtap-source.htm)
+- [Monitoring IPv6 endpoint support](https://docs.oracle.com/en-us/iaas/releasenotes/monitoring/monitoring-ipv6.htm)

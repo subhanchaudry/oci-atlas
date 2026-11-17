@@ -1,6 +1,6 @@
 # Host requirements and scope
 
-OCI Atlas supplies sourced OCI knowledge, service selection and reusable workflows. Version 1.1 includes 94 references, 57 service guides and 19 recipes. Application examples are maintained alongside the plugin in the repository.
+OCI Atlas supplies sourced OCI knowledge, service selection and reusable workflows. Version 1.2 includes 100 references, 63 service guides and 19 recipes. Application examples are maintained alongside the plugin in the repository; this release adds no runnable examples or integrations.
 
 ## Choose the appropriate host capability
 
@@ -12,6 +12,16 @@ OCI Atlas supplies sourced OCI knowledge, service selection and reusable workflo
 | Run application examples | The example's documented runtime, existing services, network paths and scoped credentials |
 
 Installation and browser/shell availability depend on the product, version and managed workspace. A web conversation does not automatically have access to a laptop's CLI profile. Installing Atlas creates no OCI login, hosted execution service or additional IAM rights.
+
+Atlas is a knowledge plugin, not an MCP server. OCI's database-native tools, Database Tools MCP endpoints, Enterprise AI hosted applications, and Agent Sandbox are separate services with their own authentication, permissions, and lifecycle. Describing them does not connect them to the host.
+
+## Availability and evidence
+
+The v1.2 research cutoff is November 17, 2026. Only documented, generally available functionality enters recommended architectures and operational guidance. Oracle GA announcements can establish a high-level offering; exact shapes, access, endpoints, configuration, and regional capacity require owning documentation and environment checks. Preview, limited availability, future announcements, and unresolved source conflicts are deferred.
+
+The [evidence register](RELEASE-EVIDENCE-1.2.md) records accepted changes and exclusions, including future TPUs/Cerebras, AI Media Models preview, Cost Advisor limited availability, native Snowflake-on-OCI, AI Security Mesh, and unverified AIDP ontology/reasoning capabilities. Snowflake external catalogs are a distinct documented integration. AIDP service-account setup currently links to a Preview credential feature and is not prescribed here.
+
+Review dates identify the content and sources reviewed, not proof of universal regional availability or a successful deployment. See the [validation record](VALIDATION-1.2.md) for documentation checks separately from live testing.
 
 ## Workload prerequisites
 

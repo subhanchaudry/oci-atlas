@@ -4,12 +4,14 @@ Use the route supported by your client and workspace. See [host requirements and
 
 The source repository and release downloads are public. No GitHub token is needed to read them. Resource operations still require your own OCI access; downloading OCI Atlas does not connect your tenancy. After installation, follow [Getting started](GETTING-STARTED.md) for a first conversation.
 
+**v1.2.0 preparation status:** use a local checkout to review this version now. Commands and links pinned to `v1.2.0` below apply after that tag is published. Check [published releases](https://github.com/subhanchaudry/oci-atlas/releases) for versions currently available. Workspace imports can still require GitHub authorization even for a public repository.
+
 ## Codex CLI and local plugin marketplaces
 
-To install from GitHub at a fixed release, run:
+After publication, install from GitHub at the fixed release:
 
 ```sh
-codex plugin marketplace add subhanchaudry/oci-atlas --ref v1.1.0
+codex plugin marketplace add subhanchaudry/oci-atlas --ref v1.2.0
 codex plugin add oci-atlas@oci-atlas-marketplace
 ```
 
@@ -24,13 +26,13 @@ codex plugin marketplace add .
 codex plugin add oci-atlas@oci-atlas-marketplace
 ```
 
-Use the local or GitHub registration for this marketplace, according to where you want updates to come from. Release assets are available from [OCI Atlas v1.1.0](https://github.com/subhanchaudry/oci-atlas/releases/tag/v1.1.0).
+Use the local or GitHub registration for this marketplace, according to where you want updates to come from. The prepared release's destination is [OCI Atlas v1.2.0](https://github.com/subhanchaudry/oci-atlas/releases/tag/v1.2.0); this link resolves only after publication.
 
 Check `codex plugin --help` and `codex plugin marketplace --help` if your client differs. In clients using the plugin browser, open `/plugins`, select the configured marketplace, and install OCI Atlas there.
 
 ## ChatGPT desktop
 
-In a supported local Work/Codex environment, register the GitHub marketplace or checkout using the commands above. Restart the desktop app, open Plugins, and install OCI Atlas from **OCI Atlas**. Enable it for the conversation and start a new conversation if it has not appeared. The repository catalog lives in `.agents/plugins/marketplace.json`.
+In a local environment supporting configured plugin marketplaces, register the GitHub marketplace or checkout using the commands above. Open **Plugins** in the desktop app, select the configured OCI Atlas marketplace, and install OCI Atlas. Use a new conversation after installation; restart the client if needed for discovery. If local marketplaces are unavailable in that environment, use the supported workspace-import route below. The repository catalog lives in `.agents/plugins/marketplace.json`.
 
 Desktop UI labels and local execution availability can vary. Verify skill discovery with the conceptual prompt above before attempting OCI operations. The plugin uses the host's existing browser/shell capabilities; it does not install a browser controller or OCI CLI.
 
@@ -40,8 +42,8 @@ For a workspace that supports GitHub plugin imports, an administrator can:
 
 1. Open **Admin → Plugins → Add → Import marketplace**.
 2. Enter `https://github.com/subhanchaudry/oci-atlas`. Leave the marketplace directory empty because the catalog is at the repository root.
-3. Select `v1.1.0` or its release commit when a fixed version is desired.
-4. Import and make OCI Atlas available to the intended workspace roles.
+3. Select a published tag or commit when a fixed version is desired; `v1.2.0` applies after publication.
+4. Authorize GitHub access if prompted, review import results, and configure the plugin's installation policy for the intended workspace roles. New marketplaces sync daily by default; a fixed reference prevents following later branch changes.
 5. Install/enable it in a new conversation and try the conceptual prompt.
 
 Import does not provide OCI credentials or browser access. Web-based signed-in browsing depends on the plan, workspace and rollout. A web conversation does not automatically have your laptop's terminal or CLI profile. Local computer access, if supported/enabled, is a separate host feature.
@@ -56,9 +58,9 @@ This repository and ZIP do not create a listing in the universal public plugin d
 
 For an agent that supports local Agent Skills but not plugin marketplaces, copy the complete `plugins/oci-atlas/skills/oci-atlas` directory from a checkout into that host's documented skill directory. Codex's current user-level location is `~/.agents/skills/oci-atlas`.
 
-You can also use the [release ZIP](https://github.com/subhanchaudry/oci-atlas/releases/tag/v1.1.0):
+You can also use the [release ZIP](https://github.com/subhanchaudry/oci-atlas/releases/tag/v1.2.0):
 
-1. Extract `oci-atlas-1.1.0.zip` to a working folder.
+1. Extract `oci-atlas-1.2.0.zip` to a working folder.
 2. Find `oci-atlas/skills/oci-atlas` inside the extracted package.
 3. Copy that complete inner `oci-atlas` folder to `~/.agents/skills/oci-atlas`. Keep `SKILL.md`, `catalog.json`, and the complete `references` directory together. Inspect any existing destination first to avoid overwriting another copy.
 4. Start a new session and invoke OCI Atlas with the conceptual prompt above. In Codex, use `/skills` or `$oci-atlas` to select the skill explicitly.
@@ -75,11 +77,13 @@ For a local checkout, update the canonical source and use the host's refresh/rei
 
 ```sh
 codex plugin marketplace remove oci-atlas-marketplace
-codex plugin marketplace add subhanchaudry/oci-atlas --ref v1.1.0
+codex plugin marketplace add subhanchaudry/oci-atlas --ref v1.2.0
 codex plugin add oci-atlas@oci-atlas-marketplace
 ```
 
 Start a fresh session. Use `codex plugin list --marketplace oci-atlas-marketplace --json` to inspect the installed version. Check your client's current help if its update flow differs, and don't edit a cached plugin. To uninstall through the CLI, inspect `codex plugin remove --help` and remove the selected `oci-atlas@oci-atlas-marketplace` installation. A separately copied skill must be managed separately. Neither uninstall route deletes OCI resources.
+
+For a Git registration intentionally following a branch, `codex plugin marketplace upgrade oci-atlas-marketplace` refreshes its snapshot. Refreshing a marketplace is not proof that an already running conversation loaded the new package: use the host's install/refresh flow, inspect the listed version, and open a new session. Changing a pinned tag requires changing that registration as shown above, after the destination tag exists.
 
 ## Sources
 
@@ -89,4 +93,4 @@ Start a fresh session. Use `codex plugin list --marketplace oci-atlas-marketplac
 - [Workspace GitHub imports](https://learn.chatgpt.com/docs/enterprise/plugin-management)
 - [Browser capabilities and availability](https://learn.chatgpt.com/docs/browser)
 - [Local computer access](https://learn.chatgpt.com/docs/enterprise/cloud-local-access)
-- Local `codex plugin add --help` and `codex plugin marketplace add --help`, inspected 2026-10-29.
+- Local `codex plugin` add/list/remove and marketplace add/upgrade/remove help, inspected 2026-11-17. Help inspection does not validate installation in every account or workspace.

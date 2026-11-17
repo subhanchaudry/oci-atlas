@@ -1,6 +1,6 @@
 # Databases and data services
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose by workload and operating responsibility
 
@@ -54,6 +54,10 @@ For transport, distinguish [Queue](service-queue.md) work distribution, [Streami
 
 Start with the [lakehouse recipe](recipe-lakehouse-analytics.md) for ingestion through analytics and the [AIDP private-source recipe](recipe-aidp-private-source.md) for governed source access. Specify who owns source privileges, processing code, target schemas and business measures. Freshness must be measured at the consuming table or dashboard, not only at the ingestion job.
 
+## Access, operations, and lifecycle
+
+Choose [Database Tools](service-database-tools.md) for connection/MCP access, [Database Management](service-database-management.md) for operational diagnostics and jobs, and [Ops Insights](service-ops-insights.md) for historical capacity and SQL trends. These services complement the database engine; they do not replace its SQL grants. Consult the owning [Autonomous](service-autonomous-database.md), [HeatWave](service-mysql-heatwave.md), [PostgreSQL](service-postgresql.md) and [GoldenGate](service-goldengate.md) guides for new tools, upgrade and integration boundaries.
+
 ## Sources
 
 - [Base Database Service](https://docs.oracle.com/en/cloud/paas/base-database/about/index.html)
@@ -65,3 +69,14 @@ Start with the [lakehouse recipe](recipe-lakehouse-analytics.md) for ingestion t
 - [Data Flow applications and runs](https://docs.oracle.com/en-us/iaas/Content/data-flow/using/concepts.htm)
 - [Streaming overview](https://docs.oracle.com/en-us/iaas/Content/Streaming/Concepts/streamingoverview.htm)
 - [AI Data Platform and Data Science architecture](https://docs.oracle.com/en/solutions/ai-data-platform-data-science-workloads/)
+- [Database Tools overview](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview.html)
+- [Database Tools MCP server support and authentication](https://docs.oracle.com/en-us/iaas/database-tools/doc/overview-mcp-server.html)
+- [CIMD client access](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/cimd.htm)
+- [MCP service logs](https://docs.oracle.com/en-us/iaas/releasenotes/database-tools/logging.htm)
+- [Diagnostics and Management target support](https://docs.oracle.com/en-us/iaas/database-management/doc/database-management-oracle-databases.html)
+- [Unified onboarding](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/unified-onboarding-dbm-opsi.htm)
+- [Privilege analysis](https://docs.oracle.com/en-us/iaas/releasenotes/database-management/privilege-analysis.htm)
+- [Database Management releases](https://docs.oracle.com/en-us/iaas/releasenotes/services/database-management/)
+- [Ops Insights scope, retention and service-change notice](https://docs.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html)
+- [AWR collection and customer-owned warehouse](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/awr-snapshot-collection-bring-your-own-warehouse.htm)
+- [SQL Monitoring reports](https://docs.oracle.com/en-us/iaas/releasenotes/operations-insights/sql-monitoring-reports.htm)

@@ -1,6 +1,6 @@
 # Recipe: on-premises access to private OCI applications
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Workload contract
 
@@ -43,9 +43,15 @@ For failure, capture timestamp, caller, hostname/resolved address and sanitized 
 
 Report the exact connection/attachment/route/security objects inspected or changed and the actual client-side result. Identify external-team work separately from completed OCI operations. Removing a temporary route or session is different from canceling a shared provider circuit. Before cleanup, enumerate other users of the DRG, resolver endpoints and connection, and preserve the requested long-lived application access.
 
+## Include translation and maintenance in the flow
+
+If source and destination IPv4 ranges overlap, evaluate the supported [DRG NAT](service-vcn-routing.md) path and record original/translated addresses, DNS answers and return routes. For planned FastConnect work, verify an alternate path before [traffic draining](service-hybrid-connectivity.md), then test the application through the changed path.
+
 ## Sources
 
 - [FastConnect connectivity and peering models](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/fastconnectoverview.htm)
 - [Site-to-Site VPN setup paths](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingIPsec.htm)
 - [DRG routing](https://docs.oracle.com/en-us/iaas/Content/Network/Tasks/managingDRGs.htm)
 - [Private DNS](https://docs.oracle.com/en-us/iaas/Content/DNS/Concepts/dnszonemanagement.htm)
+- [IPv4 NAT on DRG attachments](https://docs.oracle.com/en-us/iaas/releasenotes/network/nat-drg.htm)
+- [FastConnect maintenance controls](https://docs.oracle.com/en-us/iaas/releasenotes/network/fast-connect-enhancements.htm)

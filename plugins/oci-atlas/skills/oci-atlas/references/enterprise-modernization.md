@@ -1,6 +1,6 @@
 # Choose an enterprise application modernization path
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Inventory the application before choosing infrastructure
 
@@ -29,8 +29,14 @@ Do not assume a VM image alone captures databases, external files, identity prov
 
 Include overlapping environments during transition, software entitlements, persistent storage, protection and network transfer. Rehosting can preserve operating responsibility rather than remove it. Keep current certifications, service availability and commercial terms tied to authoritative sources; do not infer them from an old architecture diagram.
 
+## Choose the migration unit
+
+For a supported VMware VM or AWS EC2 relocation, use [Cloud Migrations](service-cloud-migrations.md) to discover assets and plan compatible targets. Moving a guest does not modernize its middleware, migrate its database into a managed service, or transfer an application license. Coordinate final synchronization and writer/client cutover separately from target instance launch. Keep source retirement dependent on application acceptance and recovery requirements.
+
 ## Sources
 
 - [Architecture Center](https://docs.oracle.com/solutions/)
 - [WebLogic Server for OCI](https://docs.oracle.com/en/cloud/paas/weblogic-cloud/)
 - [Oracle Cloud VMware Solution](https://docs.oracle.com/en-us/iaas/Content/VMware/Concepts/ocvsoverview.htm)
+- [Cloud Migrations resource model and workflow](https://docs.oracle.com/en-us/iaas/Content/cloud-migration/cloud-migration-overview.htm)
+- [Supported AWS Arm migrations](https://docs.oracle.com/en-us/iaas/releasenotes/cloud-migration/ocm_aws_arm_migration.htm)

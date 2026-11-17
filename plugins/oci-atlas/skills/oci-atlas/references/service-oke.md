@@ -1,6 +1,6 @@
 # OKE clusters, workloads, and identities
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Select the cluster and data plane
 
@@ -32,9 +32,20 @@ Delete workload-owned consumers before shared cluster/network/storage dependenci
 
 Budget for the chosen cluster features, worker capacity, volumes, load balancers, registry storage and observability. Specify requests/limits and readiness behavior before configuring replicas. Record namespace, service account, immutable image, configuration version and persistent-volume ownership; a rollback of the Deployment does not reverse a database migration.
 
+## Version lifecycle, storage, and GPU repair
+
+At the November 17, 2026 review, OKE supports Kubernetes 1.37.1 alongside 1.36.4 and 1.35.2; the cited notice ends 1.34.10 support on December 21, 2026. Use current support notices and inspect control-plane, node, add-on and application compatibility before selecting an upgrade. A version still appearing in a selector is not proof that it remains supported.
+
+Virtual nodes support persistent volumes backed by File Storage through the documented integration. Verify node type, CSI/storage configuration, mount-target reachability and file permissions; do not apply a managed-node Block Volume assumption to a virtual node.
+
+Eligible bare metal GPU nodes in enhanced clusters support maintenance-event repair. OKE makes selected nodes unavailable for new work and attempts draining. A STOP event returns the same worker after processing; TERMINATE removes the instance, with managed-pool capacity management creating a replacement. Inspect NodeHealthReport and node conditions, preserve checkpoints, and verify replacement capacity and application recovery.
+
 ## Sources
 
 - [OKE cluster types and node choices](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengclustersnodes.htm)
 - [Workload identity](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contenggrantingworkloadaccesstoresources.htm)
 - [Container Registry](https://docs.oracle.com/en-us/iaas/Content/Registry/Concepts/registryoverview.htm)
 - [Kubernetes pod diagnosis](https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/)
+- [OKE Kubernetes 1.37.1 support and retirement notice](https://docs.oracle.com/en-us/iaas/releasenotes/conteng/conteng-K8s-1-37-1-support.htm)
+- [OKE GPU maintenance event repair](https://docs.oracle.com/en-us/iaas/releasenotes/conteng/conteng_node-maintenance-event-repair.htm)
+- [OKE File Storage support for virtual nodes](https://docs.oracle.com/en-us/iaas/releasenotes/conteng/conteng_virtual-nodes-persistent-storage-support.htm)

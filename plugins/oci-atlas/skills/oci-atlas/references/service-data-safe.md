@@ -1,6 +1,6 @@
 # Data Safe targets, assessments, auditing, and masking
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Choose the database-security task
 
@@ -35,9 +35,14 @@ Review automatic registration policies and shared connectors before changing the
 
 Retain the target/PDB, feature, assessment time, finding and owner of the proposed correction. Budget retained audit data and any separately metered capabilities using current service terms. A masking workflow should name its approved copy, related-column rules and application invariants before any value changes.
 
+## Cryptographic posture assessment
+
+Crypto Posture Assessment provides a centralized view for registered target databases. Use it to identify findings and their target context, then inspect the recommended database/network changes with the owning administrator. A completed assessment is not encryption remediation or a blanket compliance result. Preserve assessment time, target coverage and exceptions, and verify changed settings independently after an authorized fix.
+
 ## Sources
 
 - [Data Safe capabilities and feature entry points](https://docs.oracle.com/en-us/iaas/data-safe/index.html)
 - [Target registration](https://docs.oracle.com/en-us/iaas/data-safe/doc/target-database-registration.html)
 - [Target connectivity choices](https://docs.oracle.com/en-us/iaas/data-safe/doc/connectivity-options-target-databases.html)
 - [Masking workflow and data-change implications](https://docs.oracle.com/en-us/iaas/data-safe/doc/data-masking-overview.html)
+- [Data Safe cryptographic assessment](https://docs.oracle.com/en-us/iaas/releasenotes/data-safe/crypto-assessment.htm)

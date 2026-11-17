@@ -10,7 +10,7 @@ Reviewed: 2026-11-03
 
 **Flow:** Client → application listener → private database endpoint; runtime → Secrets API. Image pull is a separate registry path.
 
-**Starting configuration:** Reuse existing foundations. The [container application example](https://github.com/subhanchaudry/oci-atlas/tree/v1.1.0/examples/container-api) supplies a small Python API and Terraform for workload-owned resources. It adds no public ingress. Add TLS ingress, replicas and recovery capacity only to meet explicit availability/exposure requirements.
+**Starting configuration:** Reuse existing foundations. The [container application example](https://github.com/subhanchaudry/oci-atlas/tree/v1.2.0/examples/container-api) supplies a small Python API and Terraform for workload-owned resources. It adds no public ingress. Add TLS ingress, replicas and recovery capacity only to meet explicit availability/exposure requirements.
 
 ## Completion and handoff
 

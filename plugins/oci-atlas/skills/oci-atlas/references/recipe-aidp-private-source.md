@@ -1,6 +1,6 @@
 # Recipe: Connect AIDP to a private database source
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Outcome and inputs
 
@@ -40,9 +40,17 @@ For missing metadata, inspect source account visibility and catalog limitations 
 
 Use [cost management](service-cost-management.md) to record runtime, retained storage, traffic and shared-service costs. Use [workload selection](workload-selection.md) for alternatives and [support handoff](troubleshoot-support-handoff.md) for unresolved service boundaries.
 
+## Separate external catalogs from hosting
+
+For a supported Snowflake external catalog, configure access to the existing source and verify permitted schemas from the actual AIDP compute. This does not provision Snowflake natively in OCI. Use the [AIDP feature-status guidance](service-ai-data-platform.md) before choosing credential, lineage or Git workflows; preview features are not required steps in this GA recipe.
+
 ## Sources
 
 - [Data platform architecture](https://docs.oracle.com/en/solutions/data-platform-lakehouse/index.html)
 - [External catalogs](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/external-catalogs.html)
 - [Workspaces](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/workspaces.html)
 - [AIDP and Data Science workflow architecture](https://docs.oracle.com/en/solutions/ai-data-platform-data-science-workloads/)
+- [AIDP dated feature history and preview labels](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidwn/index.html)
+- [AIDP deployed agents and runtime identity](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/agent-flow-deployment.html)
+- [AI compute autoscaling](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/ai-compute.html)
+- [Agent memory and retention](https://docs.oracle.com/en/cloud/paas/ai-data-platform/aidug/agent-memory.html)

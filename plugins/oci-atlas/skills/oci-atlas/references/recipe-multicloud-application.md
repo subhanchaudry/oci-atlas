@@ -1,6 +1,6 @@
 # Recipe: Connect a multicloud application to Oracle data
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Outcome and inputs
 
@@ -40,8 +40,15 @@ Record egress, interconnect and database cost assumptions separately. Plan circu
 
 Use [cost management](service-cost-management.md) to record runtime, retained storage, traffic and shared-service costs. Use [workload selection](workload-selection.md) for alternatives and [support handoff](troubleshoot-support-handoff.md) for unresolved service boundaries.
 
+## Preserve address and migration boundaries
+
+For overlapping IPv4 networks, consult [DRG NAT](service-vcn-routing.md) and verify translation, DNS and return paths across both owners. If the task is relocating supported AWS guests, use [Cloud Migrations](service-cloud-migrations.md); cross-cloud application access alone does not require moving the database or changing its authoritative writer.
+
 ## Sources
 
 - [Autonomous Database on Azure reference architecture](https://docs.oracle.com/en/solutions/deploy-autonomous-database-db-at-azure/index.html)
 - [Hybrid connectivity](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 - [Oracle Interconnect for Azure](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/azure.htm)
+- [IPv4 NAT on DRG attachments](https://docs.oracle.com/en-us/iaas/releasenotes/network/nat-drg.htm)
+- [Cloud Migrations resource model and workflow](https://docs.oracle.com/en-us/iaas/Content/cloud-migration/cloud-migration-overview.htm)
+- [Supported AWS Arm migrations](https://docs.oracle.com/en-us/iaas/releasenotes/cloud-migration/ocm_aws_arm_migration.htm)

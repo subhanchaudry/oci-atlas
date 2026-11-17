@@ -1,6 +1,6 @@
 # Generative AI model and agent selection
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Resolve the product and request contract
 
@@ -33,9 +33,34 @@ For model changes, inspect payload compatibility, output behavior, routing and c
 
 Use [Generative AI Agents](service-generative-ai-agents.md) for knowledge bases, ingestion, tools, sessions and endpoints. For direct inference, record endpoint, serving mode, model identifier, request format and output contract together. Track input/output tokens and embedding volume where returned; separate dedicated capacity from request-based usage and keep client timeouts/retries bounded.
 
+## Managed code execution and hosted applications
+
+Agent Sandbox provides temporary isolated Linux workspaces within a Generative AI project. Resolve compute, lifetime, command timeouts and network access before execution. CLI/SDK operations cover commands, cancellation, file transfer and snapshots; the Console supports project enablement, networking and monitoring. Export required results before stopping or deleting the sandbox, and distinguish a snapshot from a guarantee of application recovery.
+
+Hosted application authentication is a separate decision. Supported choices include OCI IAM, identity-domain bearer tokens and browser-session OAuth 2.1 with PKCE. Selecting No authentication removes platform-managed endpoint authentication; use it only for public content or a deliberately designed application authentication layer. It is not a workaround for denied access to private data.
+
+Persistent file storage survives hosted-application restarts and redeployments. The reviewed release allows up to 50 GB and requires minimum and maximum replicas both set to one. Do not present that configuration as a multi-replica availability design. Record storage paths, retained state and cleanup ownership.
+
+## Responses API context and model discovery
+
+The OCI Responses API supports explicit compaction through POST /responses/compact and automatic compaction through context_management on POST /responses. It requires a Generative AI project OCID and follows the selected model's regional/serving availability. Verify what context is retained in subsequent requests; compaction is not permanent memory or an access-control boundary.
+
+Discover the current model catalog and supported import/hardware combinations, then record the exact model, region, serving mode and request API. Model import, native fine-tuning and externally trained artifacts are distinct workflows. Routing profiles select permitted inference destinations; access from a local region does not establish local inference or universal private-endpoint support.
+
+## Availability boundary for announced AI offerings
+
+At the November 17, 2026 review, Cerebras inference is announced for 2027, AI Media Models is in preview, and Cost Advisor for AI has limited availability. They are excluded from this guide's GA recommendations. Check the exact feature and its dependencies rather than treating an AIWorld announcement as proof of current operational support.
+
 ## Sources
 
 - [Current Generative AI API and product entry points](https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm)
 - [Model concepts and hosting modes](https://docs.oracle.com/en-us/iaas/Content/generative-ai/concepts.htm)
 - [Regional routing and CPU-only access](https://docs.oracle.com/en-us/iaas/Content/generative-ai/cpu-only-regions.htm)
 - [Generative AI Agents tools](https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/overview.htm)
+- [Agent Sandbox lifecycle](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/sandboxes.htm)
+- [Hosted browser-session authentication](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/hosted-deployments-oauth.htm)
+- [Hosted persistent file storage](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/hosted-applications-persistent-file-storage.htm)
+- [OCI Responses API compaction](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/responses-api-compaction.htm)
+- [Current model, hosting and routing releases](https://docs.oracle.com/en-us/iaas/releasenotes/services/generative-ai/)
+- [Hosted applications without platform authentication](https://docs.oracle.com/en-us/iaas/releasenotes/generative-ai/hosted-applications-no-authentication.htm)
+- [November AI availability and exclusions](https://blogs.oracle.com/ai-and-datascience/whats-new-in-ai-november-2026)

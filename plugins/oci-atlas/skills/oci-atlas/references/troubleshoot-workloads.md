@@ -1,6 +1,6 @@
 # Diagnose workloads, runs, and serving failures
 
-Reviewed: 2026-11-03
+Reviewed: 2026-11-17
 
 ## Find the execution that actually failed
 
@@ -46,6 +46,10 @@ Use the [diagnostic response pattern](troubleshoot-connectivity.md#report-the-di
 
 Capture artifact revision, run/request ID, first meaningful error and any committed outputs. Separate control-plane completion from application readiness. For a consumer, inspect acknowledgement and business idempotency; for a data task, inspect watermarks and target partitions; for IaC, inspect state ownership and the next plan. Escalate with the [support handoff](troubleshoot-support-handoff.md) instead of replaying an unknown write.
 
+## Separate health, integrity, and application success
+
+For a GPU job, inspect [cluster health](service-gpu-hpc.md), scheduler state and checkpoints before repair. For a model deployment, an [artifact signature](service-data-science.md) validates integrity, not prediction quality. For image publishing failure, check whether the destination is a pull-only [registry cache](service-container-registry.md) before changing credentials.
+
 ## Sources
 
 - [Kubernetes pod diagnosis](https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/)
@@ -53,3 +57,7 @@ Capture artifact revision, run/request ID, first meaningful error and any commit
 - [Data Integration design/runtime model](https://docs.oracle.com/en-us/iaas/Content/data-integration/using/overview.htm)
 - [Data Science jobs](https://docs.oracle.com/en-us/iaas/Content/data-science/using/jobs-about.htm)
 - [Resource Manager jobs and state](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/resourcemanager.htm)
+- [GPU Cluster Health Checks](https://docs.oracle.com/en-us/iaas/releasenotes/compute/cluster-health-checks.htm)
+- [Artifact signature verification](https://docs.oracle.com/en-us/iaas/releasenotes/data-science/artifact-signature.htm)
+- [Compute-target egress, mounts and run retention](https://docs.oracle.com/en-us/iaas/releasenotes/data-science/egress-mounts-jobs-compute-targets.htm)
+- [Pull-through cache and top-level repositories](https://docs.oracle.com/en-us/iaas/releasenotes/registry/OCIR-Top-Level-and-Pull-Through-Repositories.htm)
